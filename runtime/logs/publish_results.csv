@@ -1,0 +1,4 @@
+run_id,question,runtime_version,parameter_version,structure,main_variable,qa_status,publish_status,reading,salt_income,data_cycle
+zhihu-20260729-middle-manager-promotion-001,为什么工作中，很多高层领导明知道某位中层领导缺乏管理能力，但还是提拔了他当中层？,ZH-RUNTIME-V2.1,PARAM-V2.1,ACTIVE-01 职场组织型回答结构,组织可控性,未执行,DONE,19,0,2026-07-31已抓取
+zhihu-20260729-senior-leader-not-fired-001,公司高层明明不行，大老板为什么还不裁掉他们？,ZH-RUNTIME-V2.1,PARAM-V2.1,ACTIVE-01 职场组织型回答结构,组织风险押注,未执行,DONE,164,9,2026-07-31已抓取
+zhihu-20260729-fuzzy-responsibility-boundary-001,领导布置任务故意模糊责任界限，作为底层员工，如何在谁都不得罪的提前下，保护好自己？,ZH-RUNTIME-V2.1,PARAM-V2.1,ACTIVE-01 职场组织型回答结构,责任边界保护,未执行,DONE,59,4,2026-07-31已抓取

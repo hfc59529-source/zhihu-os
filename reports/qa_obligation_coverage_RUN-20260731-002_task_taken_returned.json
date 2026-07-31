@@ -1,0 +1,103 @@
+{
+  "run_id": "RUN-20260731-002",
+  "question": "领导不声不响把你手里的任务拿走后，过了几个月，发现别人干不了，想还给你，你会怎么做呢？",
+  "ir_path": "reports/ir_20260731_task_taken_returned.json",
+  "writer_input_package_path": "reports/writer_input_package_RUN-20260731-002_task_taken_returned.json",
+  "draft_path": "reports/draft_RUN-20260731-001_task_taken_returned.md",
+  "qa_a": {
+    "follow_ir": true,
+    "core_judgment_preserved": true,
+    "new_variable_added": false,
+    "ending_done": true,
+    "publish_blocker": false,
+    "notes": [
+      "本次只验证装配层和 QA coverage；正文沿用 Run 001 draft，不改 Analyzer、不改 IR、不改 ACTIVE 协议。"
+    ]
+  },
+  "qa_b": {
+    "ai_score": 92,
+    "repeat_score": 1,
+    "zhihu_feel_score": 90,
+    "collection_value_score": 90,
+    "parameter_visible": false,
+    "notes": [
+      "QA-B 不只输出总分，改为逐项检查 Writer Input Package obligation。"
+    ]
+  },
+  "obligation_coverage": [
+    {
+      "obligation": "ACTIVE-01 结构五步：反常识 -> 冲突 -> 机制 -> 推导 -> 结尾",
+      "source_contract": "structure_contract",
+      "result": "PARTIAL",
+      "evidence": [
+        "开头承接“不接像不配合；接了可能背锅”。",
+        "正文解释任务离开后的过程、信息、资源和结果风险变化。",
+        "结尾回到责任不能原样接。"
+      ],
+      "problem": "结构步骤在正文中存在，但冲突、机制、推导边界没有被逐项标记，部分段落合并后推进感不足。"
+    },
+    {
+      "obligation": "CR-03 判断工具：看现状、权限、资源、验收标准是否重置",
+      "source_contract": "behavior_contract",
+      "result": "PASS",
+      "evidence": [
+        "正文多次落到“先把现状、权限、资源和验收标准摆到台面上”。",
+        "行动段给出接手清单和领导确认口径。"
+      ],
+      "problem": ""
+    },
+    {
+      "obligation": "主要行为目标：收藏；次要行为目标：评论补充经历",
+      "source_contract": "behavior_contract",
+      "result": "WARNING",
+      "evidence": [
+        "正文有可收藏判断和处理顺序。",
+        "没有明显评论触发位。"
+      ],
+      "problem": "收藏目标兑现较好，评论补充经历没有被显式设计。"
+    },
+    {
+      "obligation": "阅读推进：解释后必须推进问题或落到场景",
+      "source_contract": "expression_contract",
+      "result": "WARNING",
+      "evidence": [
+        "RR 脚本结果为 risks none。",
+        "正文中段围绕责任口径和接手确认有重复解释。"
+      ],
+      "problem": "程序化 RR 通过，但人工 coverage 仍标记中段推进速度一般。"
+    },
+    {
+      "obligation": "RE-08 AI痕迹控制与 RE-10 真人观察感",
+      "source_contract": "expression_contract",
+      "result": "PARTIAL",
+      "evidence": [
+        "正文没有显性后台术语和编号式三点论。",
+        "有领导、任务、资料、进度、跨部门协调等泛化职场场景。"
+      ],
+      "problem": "真人观察感主要来自泛化场景，作者在场材料不足。"
+    },
+    {
+      "obligation": "素材边界：不编造公司案例、具体人物和无来源数字",
+      "source_contract": "material_package",
+      "result": "PASS",
+      "evidence": [
+        "正文未出现具体公司、具体人物或无来源数字。",
+        "示例均为泛化职场动作。"
+      ],
+      "problem": ""
+    },
+    {
+      "obligation": "验收门槛：QA-A PASS，QA-B 无 FAIL，coverage 无 FAIL",
+      "source_contract": "acceptance_contract",
+      "result": "PASS",
+      "evidence": [
+        "QA-A 通过。",
+        "QA-B 没有 FAIL。",
+        "obligation_coverage 没有 FAIL。"
+      ],
+      "problem": ""
+    }
+  ],
+  "decision": "REVISE",
+  "revision_instruction": "不改 IR。若重写正文，只要求 Writer 强化 ACTIVE-01 步骤推进、压缩中段重复解释、增加一个作者观察式现实节点，并补一个低冲突评论触发位。"
+}

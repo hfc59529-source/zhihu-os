@@ -1,0 +1,40 @@
+{
+  "run_id": "RUN-20260731-001",
+  "question": "领导不声不响把你手里的任务拿走后，过了几个月，发现别人干不了，想还给你，你会怎么做呢？",
+  "question_url": "https://www.zhihu.com/question/1924918325315606504",
+  "draft_path": "reports/draft_RUN-20260731-001_task_taken_returned.md",
+  "ir_path": "reports/ir_20260731_task_taken_returned.json",
+  "qa_a": {
+    "follow_ir": true,
+    "topic_drift": false,
+    "core_judgment_preserved": true,
+    "new_variable_added": false,
+    "ending_done": true,
+    "publish_blocker": false,
+    "notes": []
+  },
+  "qa_b": {
+    "ai_score": 92,
+    "repeat_score": 1,
+    "reason_repetition": {
+      "score": 1,
+      "level": "Pass",
+      "rule": "同一判断出现 1 次 Pass；2 次 Warning；3 次 Fail。",
+      "evidence": [
+        "已将后半段四步重复解释压缩为一份接手清单。",
+        "结尾改为短句收束，避免再次解释同一判断。"
+      ]
+    },
+    "zhihu_feel_score": 90,
+    "collection_value_score": 90,
+    "parameter_visible": false,
+    "notes": [
+      "正文没有显性展开后台参数。",
+      "V1 自动 QA 拦截后生成 V2：减少引号式概念、压缩一句话段落、增加场景承接。",
+      "最终自动推理校验 Pass，阅读体验校验 Pass，风险项 none。",
+      "建议动作可收藏，语气克制，适合发布。",
+      "人工 QA 追加后已修正文案重复解释：后半段压缩，结尾更短。"
+    ]
+  },
+  "decision": "PASS"
+}

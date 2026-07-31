@@ -1,0 +1,39 @@
+{
+  "run_id": "RUN-20260731-001",
+  "question": "领导不声不响把你手里的任务拿走后，过了几个月，发现别人干不了，想还给你，你会怎么做呢？",
+  "question_url": "https://www.zhihu.com/question/1924918325315606504",
+  "publish_url": "",
+  "quality_metrics": {
+    "qa_a_pass": true,
+    "qa_b_pass": true,
+    "ai_risk": "medium-low",
+    "repeat_risk": "low",
+    "collection_point_done": true,
+    "publishable": true
+  },
+  "engineering_metrics": {
+    "ir_chars": 344,
+    "writer_prompt_changed": false,
+    "manual_edit_count": 2,
+    "token_cost": 0,
+    "elapsed_minutes": 0,
+    "debug_difficulty": "low"
+  },
+  "publish_metrics": {
+    "read": null,
+    "like": null,
+    "collect": null,
+    "comment": null,
+    "salt": null
+  },
+  "failure_patterns": [
+    {
+      "pattern_id": "FP-20260731-002",
+      "layer": "QA",
+      "symptom": "Same reasoning appears twice: first as boundary confirmation, then again as four-step action explanation.",
+      "root_cause": "Writer preserved both mechanism explanation and action checklist instead of compressing the second occurrence.",
+      "occurrence_count": 1,
+      "upgrade_candidate": false
+    }
+  ]
+}

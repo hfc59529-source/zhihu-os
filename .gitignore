@@ -1,0 +1,59 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.coverage
+.venv/
+venv/
+ENV/
+env/
+build/
+dist/
+*.egg-info/
+
+# Environment and secrets
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials/
+secrets/
+cookies/
+.aws/
+.ssh/
+.aws-credentials
+.notion-token
+.zhihu-cookies
+
+# IDE and local agent configuration
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+*~
+
+# Logs, caches and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+.cache/
+tmp/
+temp/
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
