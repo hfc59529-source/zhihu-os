@@ -2,7 +2,7 @@ Production ID: ZH-20260801-002
 Patch Version: Patch-v1
 Base: Draft-v1.md（冻结版本）
 Proposed by: Claude
-Status: PENDING GPT REVIEW（未应用，Codex 不得执行，等待 GPT 输出 Approve / Reject / Revise）
+Status: DEPRECATED（流程修正：Patch 只能在 GPT 对 Audit_Report 输出裁决后才能撰写，本文件写于修正前，视为无效，不作为参考。当前有效材料为 Audit_Report-v2.md，尚无 Patch）
 
 说明：本 Patch 对应 Audit_Report.md 中"发现问题 1"的选项 B（合并判断句与场景收束句）。
 这是一个建议性修改，不是既定结论。删除的这句判断是否属于"重复"而非"强化"，

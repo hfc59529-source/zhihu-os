@@ -3,19 +3,21 @@ Review Version: Review-v1
 
 # Trace Check
 
-Trace Status：INCOMPLETE（待 GPT 审核 Patch）
+Trace Status：INCOMPLETE（待 GPT 审核 Audit_Report）
 
-**流程变更（本轮生效）**：Audit / Patch 分离。Claude 不再直接修改正文，只输出 Audit_Report + Patch，由 GPT 独立审核后 Codex 才应用。此前 Article-v2.md / Article-Final.md / EditorialReview-v1.md 是旧流程下 Claude 直接改正文产出的结果，未经 GPT 审核，**已作废，标记为 SUPERSEDED，不作为发布依据**。
+**流程变更（本轮生效，见 [生产审计决策流程 V1.0](../../docs/生产审计决策流程.md)）**：Draft 冻结 → Claude 只写 Audit_Report（不写 Patch）→ GPT 裁决 Approve/Reject/Revise → 裁决之后 Claude 才写 Patch → Apply Patch → Final Validation → Release。此前 Article-v2.md / Article-Final.md / EditorialReview-v1.md / Patch-v1.diff 均系流程修正前产出，**已作废（SUPERSEDED / DEPRECATED），不作为发布依据**。
 
 | 项目 | 状态 | 文件 |
 |---|---|---|
 | Production ID | COMPLETE | ZH-20260801-002 |
 | Production Card | COMPLETE | Card-v1.md |
 | Draft | FROZEN | Draft-v1.md（Codex 原始草稿，冻结，未修改） |
-| Claude Audit | COMPLETE | Audit_Report.md（只提问题，未直接改正文） |
-| Claude Patch | PENDING GPT REVIEW | Patch.diff（建议性修改，未应用） |
-| GPT Review | PENDING | 待 GPT 输出 Approve / Reject / Revise |
-| Codex Apply | NOT STARTED | 待 GPT Approve 后由 Codex 应用 Patch，生成 Article-Final.md |
+| Claude Audit | COMPLETE | Audit_Report.md（v2，标准 Issue 格式，只提问题不写 Patch） |
+| GPT Review | PENDING | 待 GPT 对 Issue-01 输出 Approve / Reject / Revise |
+| Claude Patch | NOT STARTED | 待 GPT 裁决后才能撰写（流程规定不能提前写） |
+| Apply Patch | NOT STARTED | 待 Patch 完成后由 Codex 执行 |
+| Final Validation | NOT STARTED | 对照 Production Card 的机械校验，非重新全文审核 |
+| Decision Log | IN PROGRESS | Decision_Log.md（Issue-01 待 GPT 判断后填写） |
 | Publish Record | PENDING | Publish-v1.md（未写入知乎草稿箱） |
 
 原因分析状态：禁止进入。发布与观察数据未完成。
