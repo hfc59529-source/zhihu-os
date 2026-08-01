@@ -320,6 +320,8 @@ Production Card 是日常生产默认交付对象。除非用户明确要求生�
 
 Codex 负责读取 runtime、选择变量、压缩知识并输出固定格式 Production Card。
 
+Trigger Engine 当前仅为待评审架构提案，不参与生产运行；现有唯一权威入口仍保持不变。
+
 Claude 只负责根据 Production Card、`知乎正文推理协议 V1.0` 和 `知乎正文表达协议 V3` 写正文，不直接读取 Notion 或 runtime，不新增变量，不修改核心机制，不虚构案例。
 
 GPT / Codex 不直接生产文案，不重写正文。日常默认只交付可复制 Production Card；完整正文模式下只负责执行编排、校验、QA 判定、生成修正指令和交付通过 QA 的 Claude 正文。
