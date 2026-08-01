@@ -11,16 +11,19 @@ Decision Log Version: v1
 建议删减其中一组重复，保留 Card 指定的收束句作为唯一结尾，但不确定是否会影响结尾节奏感，留给裁决。
 
 **GPT：**
-（待填写：GPT 独立审核后的判断和理由）
+Approve。Issue 成立：结尾短判断在 15 行内重复压缩同一信息，不是必要强调，而是已完成信息传递后的重复。
 
 **最终：**
-（待定）
+按 Approve 执行 Patch：保留 Card 指定的收束句，删除重复短句。
 
 **负责人：**
-（待定）
+Claude 生成 Patch；GPT 做 Final Validation。
 
 **原因：**
-（待定）
+重复发生在结尾收束阶段，信息增量不足，降低阅读体验。
+
+**Patch 状态：**
+COMPLETE。Patch-v1.diff 已按裁决撰写并应用为 Article-Patched-v1.md，删除三句重复短判断，保留 Card 指定收束句。待 GPT Final Validation。
 
 ---
 
