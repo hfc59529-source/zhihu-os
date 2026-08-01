@@ -20,7 +20,7 @@ Final Article: Article-Patched-v1.md
 
 本文件为误提前生成的机器校验记录，不能作为 RELEASE_READY 依据。
 
-当前真实状态：READY_FOR_AUDIT。QA 前修正已完成，`validate_reasoning.py` 与阅读体验校验均通过；需先完成人工审计，若 AUDIT_PASS，再进入 READY_FOR_FINAL_VALIDATION。
+当前真实状态：READY_FOR_FINAL_VALIDATION。人工审计已 AUDIT_PASS；下一步执行 Final Validation。
 
 ## 治理状态
 
