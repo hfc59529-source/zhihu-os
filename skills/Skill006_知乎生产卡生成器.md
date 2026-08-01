@@ -4,6 +4,8 @@ Status：ACTIVE
 
 执行版本：ZH-RUNTIME-V3.0-TEACHER
 
+当前调用边界：本技能不属于 Codex 选题采集职责。Codex 当前只执行 `docs/Codex选题采集协议.md`，生成选题包并保存候选池后立即停止；Production Card 生成由 Claude 后续接管。
+
 ## 目标
 
 将已经完成的 L1 结构实例装配成 Claude 可直接执行的正文施工卡。
@@ -14,15 +16,17 @@ Codex 不负责重新设计正文结构。
 
 Claude 不负责读取 Notion、runtime 或后台参数。
 
-## Codex 职责
+## 历史 Codex 职责
 
-Codex 只做三件事：
+以下为旧生产卡链路说明，不得覆盖当前 Codex 选题采集边界。Codex 当前不得调用本节生成 Production Card。
+
+Codex 旧链路只做三件事：
 
 1. 读取。
 2. 压缩。
 3. 校验。
 
-日常正式生产模式下，Codex 只交付可复制 Production Card。只有用户明确要求“生产正文”“写回答”“调用正文节点”“按完整链路生产”时，才在 Production Card 校验通过后继续调用正文生产节点。
+日常正式生产模式下，Production Card 由 Claude 后续接管生成；Codex 不再交付可复制 Production Card。
 
 ## 固定读取
 
