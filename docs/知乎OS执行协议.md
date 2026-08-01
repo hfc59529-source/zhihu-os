@@ -71,7 +71,7 @@ Codex 的禁止动作：
 
 - 不得直接写 `Draft-v1.md` 正文。
 - 不得直接改写、润色或替换 `Article-v*.md` / `Article-Patched-v*.md` / `Article-Final.md` 正文。
-- 不得在 Patch 未完成、Final Validation 未通过、用户未验收时修改 `Release-v*.md` 的正文段落。
+- 不得在 Patch 未完成、Patch Validation 未通过、用户未验收时修改 `Release-v*.md` 的正文段落。
 - 不得把审核建议直接执行成正文 Patch。
 
 Claude / 写作角色负责：
@@ -80,7 +80,7 @@ Claude / 写作角色负责：
 - 根据 Audit_Report 和 Decision_Log 执行 Patch。
 - 生成正文变更记录。
 
-若 Codex 在 QA / Audit / Final Validation 中发现正文问题，必须停止在正文文件上的写入动作，只更新审核文件和状态文件，并交接到 `READY_FOR_PATCH`。
+若 Codex 在 QA / Audit / Patch Validation 中发现正文问题，必须停止在正文文件上的写入动作，只更新审核文件和状态文件，并交接到 `READY_FOR_PATCH`。
 
 ## 0.1 生产 / 系统研发分离纪律
 

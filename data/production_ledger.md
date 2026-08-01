@@ -1,6 +1,8 @@
 # Production Ledger
 
-**生产闭环与发布闭环已分离**：本表的"状态"只反映生产链路（Draft → Audit → Decision → Patch → Final Validation → Release）；发布相关状态见新增的 **Release Status** 列，以及独立的 [Publish_Queue.md](Publish_Queue.md)。Release 完成 ≠ 已经发布。
+**生产闭环与发布闭环已分离**：本表的"状态"只反映生产链路（Draft → Audit → Decision → Patch → Patch Validation → User Review → Release）；发布相关状态见新增的 **Release Status** 列，以及独立的 [Publish_Queue.md](Publish_Queue.md)。Release 完成 ≠ 已经发布。
+
+**历史批次说明**：ZH-20260801-002 至 ZH-20260801-010 属于用户验收节点建立前的历史生产记录，保留原始事实，不补造 `USER_APPROVED`。从 ZH-20260801-011 起，必须严格执行：无 Issue 时 `AUDIT_PASS → READY_FOR_USER_REVIEW → USER_APPROVED → RELEASE_READY`；有 Patch 时 `PATCH_VALIDATED → READY_FOR_USER_REVIEW → USER_APPROVED → RELEASE_READY`。
 
 | Production ID | 标题 | Top3 Source | Audit Result | Patch 数 | 生产状态 | Release Status | AI 创作提示 |
 |---|---|---|---|---|---|---|---|
@@ -14,10 +16,10 @@
 | ZH-20260801-008 | 频繁跳槽和长期坚守一家公司，哪个更有前途？ | 未记录（见 Top3_Context.md） | Clean Pass | 0 | Final Validation PASSED，Release-v1 已生成（Draft-v1 直接作为依据；未复现 006/007 模式） | Ready | 待观察 |
 | ZH-20260801-009 | 真正工作厉害的人，有哪些明显特征？ | 未记录（见 Top3_Context.md） | Clean Pass | 0 | Final Validation PASSED，Release-v1 已生成（Draft-v1 直接作为依据；未复现 Observation-01） | Ready | 待观察 |
 | ZH-20260801-010 | 如何让领导知道你干了很多工作？ | 未记录（见 Top3_Context.md） | Clean Pass | 0 | Final Validation PASSED，Release-v1 已生成（Draft-v1 直接作为依据；Observation-01 Closed，Observation-02 Open） | Ready | 待观察 |
-| ZH-20260801-011 | 你们知道为什么好多公司推行绩效考核失败吗？ | 快速语境总结（见 Top3_Context.md，降权使用） | Issue（1） | 1 | Patch-v2 已由 Claude 执行（2 处表达修正），复检 Pass；待进入 Final Validation | READY_FOR_FINAL_VALIDATION | 待复核 |
-| ZH-20260801-012 | 领导是如何看待不争不抢的员工？ | 快速语境总结（见 Top3_Context.md，降权使用） | 待人工审计 | 0 | QA 前修正完成；validate_reasoning.py PASS；阅读体验 risks: none；未进入人工审计 / Final Validation / Release | READY_FOR_AUDIT | 待人工审计 |
+| ZH-20260801-011 | 你们知道为什么好多公司推行绩效考核失败吗？ | 快速语境总结（见 Top3_Context.md，降权使用） | Issue（1） | 1 | Patch-v2 已由 Claude 执行（2 处表达修正），Codex 复核 Pass；待 GPT / 人工 Patch Validation | PATCH_VALIDATION_PENDING | 待复核 |
+| ZH-20260801-012 | 领导是如何看待不争不抢的员工？ | 快速语境总结（见 Top3_Context.md，降权使用） | 待人工审计 | 0 | QA 前修正完成；validate_reasoning.py PASS；阅读体验 risks: none；未进入人工审计 / Patch Validation / Release | READY_FOR_AUDIT | 待人工审计 |
 
-**Release Status 取值**：Ready（Release-v1 已生成，未进队列）/ Queued（已进 Publish_Queue）/ Draft Box（已写入知乎草稿箱）/ Published（已正式发布）
+**Release Status 取值**：READY_FOR_USER_REVIEW（Audit PASS 或 Patch Validation PASS，待用户验收）/ RELEASE_READY（用户已验收，Release-v1 已生成或确认）/ Queued（已进 Publish_Queue）/ Draft Box（已写入知乎草稿箱）/ Published（已正式发布）
 
 **Audit Result 统计口径（ZH-MILESTONE-010 触发）**：新流程样本（002-010）共 9 篇，Clean Pass 5 篇（56%），Issue 4 篇（44%，全部已 Revise/Approve 通过），Final Validation 通过率 100%（9/9），Patch 后回退 0，误判 Issue 0。
 

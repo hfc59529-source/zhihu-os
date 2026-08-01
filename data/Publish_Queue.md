@@ -1,6 +1,28 @@
 # Publish Queue
 
-独立于生产 Ledger 的发布队列。生产闭环（Draft→Audit→Decision→Patch→Final Validation→Release）和发布闭环（Publish Queue→人工确认→草稿箱→最终检查→正式发布→数据回流）彻底分开，避免定位问题时混淆是文案问题还是发布问题。
+独立于生产 Ledger 的发布队列。生产闭环（Draft→Audit→Decision→Patch→Patch Validation→User Review→Release）和发布闭环（Publish Queue→草稿箱→最终检查→正式发布→数据回流）彻底分开，避免定位问题时混淆是文案问题还是发布问题。
+
+## 入队前置条件
+
+当前有效入口只能是：
+
+```text
+USER_APPROVED
+↓
+Release-v1
+↓
+RELEASE_READY
+↓
+Publish Queue
+```
+
+Audit PASS 或 Patch Validation PASS 之后只能进入 `READY_FOR_USER_REVIEW`，不得生成或确认 Release，不得进入 Publish Queue；只有用户明确 `USER_APPROVED` 后，Codex 才能生成或确认 `Release-v1.md`，并将状态更新为 `RELEASE_READY`。
+
+已存在 `Release-v1.md` 不能单独作为入队依据。
+
+## 历史队列
+
+以下 002-010 属于用户验收节点建立前的历史批次，保留原始记录事实，不补造 `USER_APPROVED`。
 
 | Production ID | 发布时间 | 状态 |
 |---|---|---|
@@ -14,16 +36,18 @@
 | ZH-20260801-009 | 待定 | Ready |
 | ZH-20260801-010 | 待定 | Ready |
 
-**状态取值**：Ready（Release-v1 已就绪，未排期）/ Scheduled（已排定发布时间）/ Draft Box（已写入知乎草稿箱，等人工最终检查）/ Published（已正式发布）
+**状态取值**：Ready（用户已验收，Release-v1 已就绪，未排期）/ Scheduled（已排定发布时间）/ Draft Box（已写入知乎草稿箱，等人工最终检查）/ Published（已正式发布）
 
 ## 发布闭环（后续单独验证，当前不执行）
 
 ```
+USER_APPROVED
+↓
 Release-v1
 ↓
-Publish Queue（本文件）
+RELEASE_READY
 ↓
-人工确认
+Publish Queue（本文件）
 ↓
 写入知乎草稿箱
 ↓
@@ -36,6 +60,6 @@ Publish Queue（本文件）
 
 ## 当前优先级
 
-1. 继续生产至 ZH-20260801-010（生产闭环优先，样本量不足以支撑复盘）
-2. 本队列先积累 Ready 项，不自动写入知乎草稿箱
-3. 等有一批 Ready 后，统一安排固定时间发布，控制发布时间变量
+1. 011 起，未经过 `USER_APPROVED` 的 Production 不得进入本队列。
+2. 历史批次只保留事实，不回填用户验收。
+3. 等有一批真正 `RELEASE_READY` 后，统一安排固定时间发布，控制发布时间变量。
