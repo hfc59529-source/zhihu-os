@@ -11,7 +11,7 @@
 
 ## 使用规则
 
-本文件为 Trigger Engine 架构提案附属草案，不参与当前生产运行。
+本文件是 Production Card Generator（Skill006）生产过程中读取的数据资源，与 Parameter Library、Observation 地位一致，不属于任何独立 Engine。当前状态 PROPOSAL，不参与当前生产运行。
 
 Evidence 负责回答：为什么能触发？
 

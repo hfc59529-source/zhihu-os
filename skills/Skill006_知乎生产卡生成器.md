@@ -67,6 +67,12 @@ Production Card 的正文骨架只能来自 `runtime/知乎结构库快照.md` �
 
 Skill006 只能把已完成的结构实例装配进模板。
 
+## Trigger 判断（内部能力，状态 PROPOSAL）
+
+Trigger 判断不是独立系统或独立入口，是 Skill006 内部候选的一个判断步骤，位于"问题识别"之后、"ACTIVE 结构调用"之前，用来决定是否需要额外读取 `trigger_library.md` / `pattern_library.md` / `evidence_library.md` 中的场景化规律。
+
+当前状态为 PROPOSAL，不参与生产运行，不影响本文件其余准入规则和输出要求。详见 [`docs/Trigger_Engine_V1.md`](../docs/Trigger_Engine_V1.md) 与 [`docs/Trigger_Engine_Architecture_Review_20260801.md`](../docs/Trigger_Engine_Architecture_Review_20260801.md)。
+
 ## 后台参数规则
 
 后台可继续读取：

@@ -1,4 +1,4 @@
-# Trigger Engine V1
+# Trigger 判断能力 V1（原 Trigger Engine，已并入 Skill006）
 
 状态：PROPOSAL
 日期：2026-08-01
@@ -11,7 +11,9 @@
 
 ## 定位
 
-Trigger Engine 是待评审架构提案，目标是未来可能优化“题目 → 参数库 → Production Card”中的参数调用层。
+Trigger 判断不是独立系统，是 Production Card Generator（Skill006）内部的一项候选能力，目标是未来可能优化”题目 → 参数库 → Production Card”中的参数调用层。
+
+系统只有一个生产入口：Production Card Generator。Trigger 判断只是它内部多出的一步，不是新的中心节点。
 
 不替换、不修改：
 
@@ -36,7 +38,7 @@ Trigger Engine 是待评审架构提案，目标是未来可能优化“题目 �
 什么时候触发这条规律？
 ```
 
-Trigger Engine 的目标不是增加更多参数，而是减少默认调用，让每次进入 Production Card 的内容依据更明确。
+Trigger 判断的目标不是增加更多参数，而是减少默认调用，让每次进入 Production Card 的内容依据更明确。
 
 本文件不代表当前运行事实，不得被日常生产自动调用。
 
@@ -87,21 +89,27 @@ Pattern 是写作施工包，不是参数堆叠。
 
 ## 生产调用链
 
+Trigger 判断不作为独立链条存在，而是 Generator 内部步骤：
+
 ```text
 题目
 ↓
-Trigger Engine
-↓
-Trigger
-↓
-Pattern
-↓
-Production Card
+Production Card Generator（Skill006）
+├── 问题分类
+├── Trigger 判断（本提案新增能力）
+├── ACTIVE 结构选择
+├── Pattern 选择
+├── Evidence 调用
+├── Parameter 调用
+├── Observation 调用
+└── Card 输出
 ↓
 正文
 ```
 
 ## 证据链
+
+Evidence / Trigger / Pattern 是 Generator 生产过程中读取的数据资源，与 Parameter Library、Observation 地位一致，不隶属于任何"Engine"：
 
 ```text
 平台采集
@@ -111,11 +119,9 @@ Production Card
 Comparison Report
 Observation
 ↓
-Evidence
+Evidence Library
 ↓
-Trigger
-↓
-Pattern
+Generator 内部 Trigger 判断步骤读取 Trigger Library / Pattern Library
 ↓
 Production Card
 ```
@@ -124,12 +130,12 @@ Production Card
 
 `production_variable_library.md` 暂不删除、不改名、不物理迁移。
 
-提案倾向采用“上层路由”关系：
+提案倾向：Trigger 判断作为 Skill006 内部的选择性调用步骤，不是独立路由层：
 
 ```text
 题目
 ↓
-Trigger 路由
+Production Card Generator（Skill006）内部 Trigger 判断步骤
 ↓
 从 production_variable_library.md 选择性调用
 ↓
@@ -139,15 +145,15 @@ Production Card
 在架构审查通过前：
 
 1. 旧 CV 仍是当前生产系统的唯一权威内容变量入口。
-2. Trigger Engine 不替代 `production_variable_library.md`。
-3. Trigger Engine 不参与当前生产调用。
+2. Trigger 判断不替代 `production_variable_library.md`。
+3. Trigger 判断不参与当前生产调用。
 4. 新发现仍先进入 Observation。
 
 ## 禁止事项
 
 1. 禁止因为单篇 Observation 新增正式 Trigger。
 2. 禁止因为一个 Supports 结论升级协议。
-3. 禁止把 Trigger Engine 扩展成第二套 Production Card。
+3. 禁止把 Trigger 判断扩展成第二套 Production Card 或独立 Engine。
 4. 禁止让 Trigger 直接决定正文段落；正文段落仍由 Production Card 承载。
 5. 禁止把 Evidence 原文塞进 Claude 正文输入。
 

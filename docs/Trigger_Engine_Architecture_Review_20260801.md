@@ -79,7 +79,31 @@ TR-WC-01｜职场利益冲突型
 - 让 Production Card 默认依赖 Trigger Engine。
 - 宣布 Trigger Engine 为 ACTIVE。
 
-## 5. 建议状态
+## 5. 归属判定
+
+任何新增能力，先回答四选一：
+
+```text
+□ 新系统
+□ 新模块
+☑ 现有模块能力增强
+□ 参数优化
+□ 流程优化
+```
+
+只有满足以下三个条件时，才允许升级为独立系统：
+
+1. 有独立生命周期；
+2. 能被多个模块独立调用；
+3. 可以脱离 Production Card Generator 单独运行。
+
+Trigger 判断三个条件都不满足：生命周期依赖 Generator；只服务 Production Card；无法单独运行。
+
+因此结论是：**Trigger 是 Production Card Generator（Skill006）的内部能力（Internal Capability），不是新系统，不是新入口。**
+
+不存在"Trigger Engine"这个独立组件；Trigger / Pattern / Evidence 三个库的地位与 Parameter Library、Observation 一致，都是 Generator 生产过程中读取的数据资源，不是某个 Engine 专属的资源。
+
+## 6. 建议状态
 
 建议三步：
 
@@ -93,7 +117,7 @@ ACTIVE
 
 当前状态：
 
-- Trigger Engine：PROPOSAL
+- Trigger 判断能力（Skill006 内部步骤）：PROPOSAL
 - TR-WC-01：可申请进入 EXPERIMENT
 - 现有生产系统：继续 ACTIVE
 
@@ -101,9 +125,11 @@ ACTIVE
 
 任何涉及唯一权威入口、库结构或生产调用链的变更，必须先经过架构审查，不能由单次 Observation 直接触发正式落地。
 
+默认不新增系统；系统只有一个生产入口：Production Card Generator（Skill006）。
+
 ## 当前结论
 
-Trigger Engine 保留为待评审架构提案。
+Trigger 判断保留为 Skill006 内部能力提案，状态 PROPOSAL。
 
-当前不参与生产运行，不替代 `production_variable_library.md`，不修改 Production Card，不影响 ZH-20260801-011 / 012 当前流程。
+当前不参与生产运行，不替代 `production_variable_library.md`，不修改 Production Card，不影响 ZH-20260801-011 / 012 当前流程，不作为独立入口或独立系统存在。
 
