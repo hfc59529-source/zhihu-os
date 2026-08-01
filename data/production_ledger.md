@@ -14,7 +14,7 @@
 | ZH-20260801-008 | 频繁跳槽和长期坚守一家公司，哪个更有前途？ | 未记录（见 Top3_Context.md） | Clean Pass | 0 | Final Validation PASSED，Release-v1 已生成（Draft-v1 直接作为依据；未复现 006/007 模式） | Ready | 待观察 |
 | ZH-20260801-009 | 真正工作厉害的人，有哪些明显特征？ | 未记录（见 Top3_Context.md） | Clean Pass | 0 | Final Validation PASSED，Release-v1 已生成（Draft-v1 直接作为依据；未复现 Observation-01） | Ready | 待观察 |
 | ZH-20260801-010 | 如何让领导知道你干了很多工作？ | 未记录（见 Top3_Context.md） | Clean Pass | 0 | Final Validation PASSED，Release-v1 已生成（Draft-v1 直接作为依据；Observation-01 Closed，Observation-02 Open） | Ready | 待观察 |
-| ZH-20260801-011 | 你们知道为什么好多公司推行绩效考核失败吗？ | 快速语境总结（见 Top3_Context.md，降权使用） | Issue（minor） | 1 | Final Validation PASSED，Release-v1 已生成（Patch-v1 已应用；阅读体验 risks: none；待人工审计） | Ready | 待人工审计 |
+| ZH-20260801-011 | 你们知道为什么好多公司推行绩效考核失败吗？ | 快速语境总结（见 Top3_Context.md，降权使用） | 待人工审计 | 0 | QA 前修正完成；validate_reasoning.py PASS；阅读体验 risks: none；未进入 Patch / Final Validation / Release | READY_FOR_AUDIT | 待人工审计 |
 
 **Release Status 取值**：Ready（Release-v1 已生成，未进队列）/ Queued（已进 Publish_Queue）/ Draft Box（已写入知乎草稿箱）/ Published（已正式发布）
 

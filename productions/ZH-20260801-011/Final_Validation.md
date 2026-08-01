@@ -18,7 +18,9 @@ Final Article: Article-Patched-v1.md
 
 ## 结论
 
-内容生产校验通过；待人工审计与发布确认后，方可进入草稿箱或正式发布。
+本文件为误提前生成的机器校验记录，不能作为 RELEASE_READY 依据。
+
+当前真实状态：READY_FOR_AUDIT。QA 前修正已完成，`validate_reasoning.py` 与阅读体验校验均通过；需先完成人工审计，若 AUDIT_PASS，再进入 READY_FOR_FINAL_VALIDATION。
 
 ## 治理状态
 

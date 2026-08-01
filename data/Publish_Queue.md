@@ -13,7 +13,6 @@
 | ZH-20260801-008 | 待定 | Ready |
 | ZH-20260801-009 | 待定 | Ready |
 | ZH-20260801-010 | 待定 | Ready |
-| ZH-20260801-011 | 待定 | Ready |
 
 **状态取值**：Ready（Release-v1 已就绪，未排期）/ Scheduled（已排定发布时间）/ Draft Box（已写入知乎草稿箱，等人工最终检查）/ Published（已正式发布）
 
