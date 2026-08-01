@@ -2,6 +2,7 @@ Production ID: ZH-20260801-013
 Card Version: Card-v1
 Source Context: Top3_Context.md
 Variable Snapshot: ../../runtime/production_variable_snapshot.md
+Link Status: TEST_ONLY_PLACEHOLDER，真实知乎问题链接待补；未替换前不得发布
 
 ===Production Card Begin===
 Claude版 Production Card

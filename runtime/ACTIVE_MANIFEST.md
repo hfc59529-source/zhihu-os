@@ -30,10 +30,10 @@
 | 模块 | 文件路径 | SHA256 | 来源权威 |
 | --- | --- | --- | --- |
 | MASTER | docs/08_总AI执行中心.md | aba49440693630bc450095370be6267cd37c24b074f96aabc24b1e7214273ed0 | 本地 MASTER |
-| 执行协议 | docs/知乎OS执行协议.md | 030694f58d6c7527f9bb6b747f48ac6f91c5f07b32e619c8b3ea7c2f5560dbfa | 本地协议层 |
+| 执行协议 | docs/知乎OS执行协议.md | a1931c73e89db739d86ab5307f28302675d9ab1195f7bc5f775095145a845ccd | 本地协议层 |
 | 总控 Prompt | templates/知乎OS总控提示词.md | ef534aeacb7cf4f8ee2c39aa6764ef94d334f67566f0eb517b4ba12a3ef3dbe4 | 本地 Prompt 模板 |
 | Production Card 模板 | templates/Production Card模板.md | 73d55b5b307096a365a8582e98605b7f03cdc11b980ec493b011dfa2455651bd | 本地模板层 |
-| Production Card 生成 | skills/Skill006_知乎生产卡生成器.md | fdfce028e36809bd2fc5d85f8e552dc1b9c1fa6adc69c03adb264cd649e6c060 | 本地 Skill |
+| Production Card 生成 | skills/Skill006_知乎生产卡生成器.md | 0f57f7d23d00e4d2ad3ab217e621a9ce628b7ff35a9f072d7ad40515d5072896 | 本地 Skill |
 | Production Card 校验 | scripts/validate_production_card.py | bafb71220ba914fa42387eba9b75058d3707b74eb48bc69a08dd9ef2c7d374f7 | 本地校验脚本 |
 | runtime一致性校验 | scripts/validate_runtime_consistency.py | 82dc977810792233f04dbeafa886be38e15b0ef39b18bd0609ae9a5bd0e85b31 | 本地校验脚本 |
 | ACTIVE 结构 | runtime/知乎结构库快照.md | 8a0d2c841153c43667d3de9805683fc03ba84be48c1d284894dc17e3f57b76c2 | runtime 发布快照 |

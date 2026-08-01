@@ -1,7 +1,7 @@
 # Codex QA｜ZH-20260801-013
 
 审核对象：Article-Patched-v1.md
-状态：READY_FOR_LINK_REPLACEMENT
+状态：READY_FOR_LINK_INPUT
 
 ## 自动校验
 
@@ -56,3 +56,12 @@ Pass
 - 未改动结构、变量、核心判断和前文推导链。
 - 重新运行 `validate_reasoning.py`：PASS，仍仅保留 concept budget warning。
 - 当前唯一发布阻塞项：真实知乎问题链接待替换。
+
+## 链接前置规则更正
+
+更正结论：
+
+- 按最新系统纪律，Production Card 之前必须保存真实知乎问题链接。
+- 本篇 `Card-v1.md` 使用占位链接，只能视为本地校验测试产物。
+- 当前不应继续发布链路；必须先补真实知乎问题链接，再重新确认 Card 链接字段。
+- 下一步状态由 `READY_FOR_LINK_REPLACEMENT` 更正为 `READY_FOR_LINK_INPUT`。
