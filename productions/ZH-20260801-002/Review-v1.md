@@ -13,12 +13,12 @@ Trace Status：INCOMPLETE（待 GPT 审核 Audit_Report）
 | Production Card | COMPLETE | Card-v1.md |
 | Draft | FROZEN | Draft-v1.md（Codex 原始草稿，冻结，未修改） |
 | Claude Audit | COMPLETE | Audit_Report.md（v2，标准 Issue 格式，只提问题不写 Patch） |
-| GPT Review | PENDING | 待 GPT 对 Issue-01 输出 Approve / Reject / Revise |
-| Claude Patch | NOT STARTED | 待 GPT 裁决后才能撰写（流程规定不能提前写） |
-| Apply Patch | NOT STARTED | 待 Patch 完成后由 Codex 执行 |
-| Final Validation | NOT STARTED | 对照 Production Card 的机械校验，非重新全文审核 |
-| Decision Log | IN PROGRESS | Decision_Log.md（Issue-01 待 GPT 判断后填写） |
-| Publish Record | PENDING | Publish-v1.md（未写入知乎草稿箱） |
+| GPT Review | COMPLETE | Decision_Log.md — Issue-01：Revise（压缩，非删除；理由：原句承担 Problem Reframing 功能） |
+| Claude Patch | COMPLETE | Patch-v2.diff（按 GPT 裁决撰写，压缩保留 Reframing 层） |
+| Apply Patch | COMPLETE | Article-Patched-v1.md（Patch 已应用） |
+| Final Validation | PENDING | 待 GPT 对四项固定清单（符合 Production Card / 解决 Issue / 无新 Bug / 无误删）裁决 |
+| Decision Log | COMPLETE（Issue-01） | Decision_Log.md |
+| Publish Record | PENDING | Publish-v1.md（Final Validation 通过后才由 Codex 生成 Release-v1，未写入知乎草稿箱） |
 
 原因分析状态：禁止进入。发布与观察数据未完成。
 
