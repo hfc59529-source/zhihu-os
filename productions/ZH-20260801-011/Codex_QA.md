@@ -1,7 +1,7 @@
 # Codex QA
 
 Production ID: ZH-20260801-011
-当前状态：可发布，待人工发布确认（RELEASE_READY）
+当前状态：待用户验收（READY_FOR_USER_REVIEW）
 
 ## 已完成
 
@@ -16,7 +16,8 @@ Production ID: ZH-20260801-011
 - 人工审计：PASS
 - Patch：未执行
 - Final Validation：PASS
-- Release：未进入
+- 用户验收：未执行
+- Release：Release-v1 已生成草稿，但未获用户验收确认
 - 发布：未执行
 - 数据回收：未执行
 
@@ -24,7 +25,7 @@ Production ID: ZH-20260801-011
 
 ==============================
 【当前状态】
-可发布，待人工发布确认（RELEASE_READY）
+待用户验收（READY_FOR_USER_REVIEW）
 
 【本阶段负责人】
 Codex
@@ -36,11 +37,11 @@ Codex
 ✓ 正文及 QA 结果已归档
 
 【下一阶段负责人】
-人工
+用户
 
 【需要动作】
-人工确认是否发布。
+阅读最终正文并确认是否通过用户验收。用户验收通过后，才允许进入 RELEASE_READY / 发布队列 / 草稿箱。
 
 【边界说明】
-Final Validation 已通过；当前未发布，未写入草稿箱，未回收数据。
+Final Validation 已通过；当前等待用户阅读最终正文，未发布，未写入草稿箱，未回收数据。
 ==============================

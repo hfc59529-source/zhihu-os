@@ -4,7 +4,7 @@ Production ID: ZH-20260801-011
 问题：你们知道为什么好多公司推行绩效考核失败吗？
 链接：https://www.zhihu.com/question/1907358768624280756
 最终稿：Article-Patched-v1.md
-状态：可发布，待人工发布确认（RELEASE_READY）
+状态：待用户验收（READY_FOR_USER_REVIEW）
 
 ## 正文
 
