@@ -12,8 +12,8 @@
 | ZH-20260801-006 | 工作中发生紧急情况，领导正在午睡，要不要叫醒他？ | 未记录（见 Top3_Context.md） | Issue（1） | 1 | Final Validation PASSED，Release-v1 已生成（Patch-v1 已应用） | Ready | 待观察 |
 | ZH-20260801-007 | 如果领导很笨，又很有主见，我们该怎么办？ | 未记录（见 Top3_Context.md） | Issue（1） | 1 | Final Validation PASSED，Release-v1 已生成（Patch-v1 已应用） | Ready | 待观察 |
 | ZH-20260801-008 | 频繁跳槽和长期坚守一家公司，哪个更有前途？ | 未记录（见 Top3_Context.md） | Clean Pass | 0 | Final Validation PASSED，Release-v1 已生成（Draft-v1 直接作为依据；未复现 006/007 模式） | Ready | 待观察 |
-| ZH-20260801-009 | 真正工作厉害的人，有哪些明显特征？ | 未记录（见 Top3_Context.md） | Clean Pass | 0 | Claude Audit 完成，CLEAN（无 Issue，连续第二篇未复现 006/007 模式），待 GPT Final Validation | - | 待观察 |
+| ZH-20260801-009 | 真正工作厉害的人，有哪些明显特征？ | 未记录（见 Top3_Context.md） | Clean Pass | 0 | Final Validation PASSED，Release-v1 已生成（Draft-v1 直接作为依据；未复现 Observation-01） | Ready | 待观察 |
 
 **Release Status 取值**：Ready（Release-v1 已生成，未进队列）/ Queued（已进 Publish_Queue）/ Draft Box（已写入知乎草稿箱）/ Published（已正式发布）
 
-**Audit Result 统计口径**（供 ZH-MILESTONE-010 使用）：当前 8 篇纳入新流程（002-009），Clean Pass 4 篇（50%），Issue 4 篇（50%，全部已 Revise/Approve 通过），Final Validation 通过率 100%（已验证的 7/7，009 待验证）。**观察更新**：006、007 出现"结尾分点后压缩重述"模式，008、009 连续两篇未复现，已记入 [Milestone_Observations.md](Milestone_Observations.md) Observation-01，样本 2 YES / 2 NO，倾向局部巧合，010 完成后统一判断。仅差 1 篇（010）即可触发 ZH-MILESTONE-010 复盘。
+**Audit Result 统计口径**（供 ZH-MILESTONE-010 使用）：当前 8 篇纳入新流程（002-009），Clean Pass 4 篇（50%），Issue 4 篇（50%，全部已 Revise/Approve 通过），Final Validation 通过率 100%（8/8），Patch 后回退 0，误判 Issue 0。**观察更新**：006、007 出现"结尾分点后压缩重述"模式，008、009 连续两篇未复现，已记入 [Milestone_Observations.md](Milestone_Observations.md) Observation-01，样本 2 YES / 2 NO，倾向局部巧合，010 完成后统一判断。仅差 1 篇（010）即可触发 ZH-MILESTONE-010 复盘。
