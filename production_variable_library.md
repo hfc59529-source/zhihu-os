@@ -11,7 +11,7 @@ Status：ACTIVE
 2. 平台样本、216篇历史文章和后续发布文章，都只能回写本库对应变量记录。
 3. 禁止新增“平台变量库”“账号变量库”“候选变量库”“实验变量库”等重复入口。
 4. 平台高频出现不等于允许正式生产调用。
-5. Production Card 默认只读取本库中 `当前状态=ACTIVE` 且 `是否允许生产调用=是` 的变量。
+5. Claude 正文生产默认只调用本库中 `当前状态=ACTIVE` 且 `是否允许生产调用=是` 的变量。
 6. `HYPOTHESIS` 和 `EXPERIENCE` 只允许在指定单变量实验中调用，不能进入日常默认生产。
 7. `DEPRECATED` 禁止生产调用。
 8. Trigger 不作为独立生产对象存在；每条变量自己的“适用题型 / 触发条件 / 禁用边界 / 当前状态 / 调用权重”合起来就是该变量的触发规则。
@@ -45,7 +45,7 @@ Status：ACTIVE
 ↓
 HYPOTHESIS
 ↓
-Production Card 实验调用
+Claude 指定单变量实验调用
 ↓
 账号验证
 ↓
@@ -62,19 +62,19 @@ DEPRECATED
 
 生命周期自动判定优先于人工感觉。人工只负责补录证据、确认反例和执行状态变更，不得绕过证据门槛直接升级。
 
-## 运行时快照
+## 正文生产调用清单
 
-`production_variable_library.md` 是长期总库，不直接交给 Production Card 全量读取。
+`production_variable_library.md` 是长期总库，不直接交给 Claude 全量读取。
 
-正式生产时必须先生成：
+正式生产时，Claude 必须基于选题包和本库字段形成本题变量调用清单：
 
 ```text
-runtime/production_variable_snapshot.md
+生产前变量推荐
 ```
 
-快照只保留本题命中的变量，默认 3 至 20 条。Production Card 只读取该快照，不读取完整变量库。
+调用清单只保留本题命中的变量，默认 3 至 20 条。Claude 只调用该清单内完成本题推导所必需的最少变量，不读取完整变量库。
 
-每条命中变量在快照中必须记录：
+每条命中变量在调用清单中必须记录：
 
 ```text
 变量编码：
@@ -84,7 +84,7 @@ runtime/production_variable_snapshot.md
 是否实际调用：
 ```
 
-运行时快照不是第二套变量库，不保存长期证据，不反向覆盖本库。
+调用清单不是第二套变量库，不保存长期证据，不反向覆盖本库。
 
 ## 调用原则
 
@@ -94,7 +94,7 @@ runtime/production_variable_snapshot.md
    3. 适用题型与本题一致；
    4. 触发条件在本题中真实成立；
    5. 与更高优先级变量不存在功能重复或逻辑冲突。
-   变量进入推荐列表，不代表必须进入 Production Card。Production Card 只调用完成本题推导所必需的最少变量。
+   变量进入推荐列表，不代表必须进入正文。Claude 只调用完成本题推导所必需的最少变量。
 2. 变量必须来自本库，不允许临时凭感觉新增。
 3. 平台样本发现的新变量，必须先写入本库同一变量记录，状态最高只能推到 `HYPOTHESIS`。
 4. 每次生产必须记录：
@@ -204,7 +204,7 @@ runtime/production_variable_snapshot.md
 | 新变量 → OBSERVED | 平台样本中出现可命名变量，但样本不足或命中率不足 | 创建同一变量记录，生产权限为否 |
 | OBSERVED → HYPOTHESIS | 平台样本数达到最低采样量，命中率达到候选门槛，且无强反例 | 更新平台证据字段，允许进入账号实验 |
 | HYPOTHESIS → EXPERIENCE | 账号连续 3 篇同向验证，且没有明显低于账号基准 | 更新账号证据字段，允许指定单变量实验 |
-| EXPERIENCE → ACTIVE | 账号累计 10 篇同向验证，且收益表现稳定 | 设置允许生产调用，进入日常 Production Card |
+| EXPERIENCE → ACTIVE | 账号累计 10 篇同向验证，且收益表现稳定 | 设置允许生产调用，进入 Claude 日常正文生产 |
 | 任意状态 → DEPRECATED | 长期低于账号基准、稳定反例、变量冲突、被更强变量替代或平台环境失效 | 禁止生产调用并记录反例 |
 | DEPRECATED → HYPOTHESIS | 只有新平台样本出现明显恢复证据，且重新进入账号实验 | 不得直接恢复 ACTIVE |
 
