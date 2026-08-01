@@ -52,3 +52,11 @@ python3 scripts/validate_consistency_engine.py productions/ZH-20260801-002/Artic
 ## 最终裁定
 
 **PASS → 可写入知乎草稿箱**
+
+## 复盘补充（用户审核后追加）
+
+两处流程问题需要说明：
+
+1. **实验分组决策时机**：本篇最终发布 B 组（Article-v2）是在总编辑总审完成后才决定的，这属于流程漏洞——实验分组应在 Production Card 生成时锁定，而不是审完发现哪个更好再选。已在 [EXP002.md 协议修正记录](../../research/experiments/EXP002.md) 中记录，并升级 Production Card 至 [V3.3](../../templates/ProductionCard_V3.3.md) 引入 Experiment Lock 机制防止复发。本篇按已生效决定（发布 B 组）执行，不再回退。
+
+2. **"重复判断句"删除的定性**：Round 1 中删除的"中心位置没了，责任却还留着" + "最怕的不是……最怕的是……"，其"重复"判断未经数据验证，也可能是知乎常见的"故事→判断→更狠判断"强化手法。该判断已重新定性为 Hypothesis（见 EXP002.md），而非已证实的编辑结论。本篇修改保留（用户已确认按此版本发布），但后续同类判断应作为可测试变量记录，而非编辑单次主观执行。
