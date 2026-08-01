@@ -18,6 +18,7 @@
 | ZH-20260801-010 | 如何让领导知道你干了很多工作？ | 未记录（见 Top3_Context.md） | Clean Pass | 0 | Final Validation PASSED，Release-v1 已生成（Draft-v1 直接作为依据；Observation-01 Closed，Observation-02 Open） | Ready | 待观察 |
 | ZH-20260801-011 | 你们知道为什么好多公司推行绩效考核失败吗？ | 快速语境总结（见 Top3_Context.md，降权使用） | Card Issue | 1 | Card_Audit_Report.md 判定 Card-v1 把原问题导向管理框架，当前正文不进入 Patch Validation / User Review；待重做 Production Card | CARD_REWORK_REQUIRED | 待重做 Card |
 | ZH-20260801-012 | 领导是如何看待不争不抢的员工？ | 快速语境总结（见 Top3_Context.md，降权使用） | 待人工审计 | 0 | QA 前修正完成；validate_reasoning.py PASS；阅读体验 risks: none；未进入人工审计 / Patch Validation / Release | READY_FOR_AUDIT | 待人工审计 |
+| ZH-20260801-013 | 未来20年什么是优质资产？ | 历史资产弱参考（见 Top3_Context.md） | QA Pass | 0 | 真实链接已补；Card PASS；validate_reasoning.py PASS_WITH_WARNING；Release-v1 已生成；runtime manifest 存在既有 SHA mismatch 待系统维护 | Ready | 待观察 |
 
 **Release Status 取值**：READY_FOR_USER_REVIEW（Audit PASS 或 Patch Validation PASS，待用户验收）/ RELEASE_READY（用户已验收，Release-v1 已生成或确认）/ Queued（已进 Publish_Queue）/ Draft Box（已写入知乎草稿箱）/ Published（已正式发布）
 

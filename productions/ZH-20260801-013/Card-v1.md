@@ -2,7 +2,7 @@ Production ID: ZH-20260801-013
 Card Version: Card-v1
 Source Context: Top3_Context.md
 Variable Snapshot: ../../runtime/production_variable_snapshot.md
-Link Status: TEST_ONLY_PLACEHOLDER，真实知乎问题链接待补；未替换前不得发布
+Link Status: REAL_LINK_CONFIRMED
 
 ===Production Card Begin===
 Claude版 Production Card
@@ -11,7 +11,7 @@ Claude版 Production Card
 未来20年什么是优质资产？
 
 问题链接：
-https://www.zhihu.com/question/000000000
+https://www.zhihu.com/question/633780178
 
 平台：
 知乎
@@ -150,4 +150,4 @@ STRUCT-V3.0-TEACHER-TS01
 - 历史资产命中检查：PASS，历史检索命中 12 篇，但结构/变量字段 UNKNOWN，已按弱参考处理，未替代 ACTIVE 结构和变量快照。
 - 事实和安全边界检查：PASS，已禁止荐股、荐币、投资承诺、无来源数字和资产配置建议。
 - 版本一致性检查：PASS，`runtime/ACTIVE_MANIFEST.md` 已同步，`scripts/validate_runtime_consistency.py` 通过。
-- 链接边界：真实知乎问题链接待补，当前使用校验占位链接。
+- 链接边界：PASS，真实知乎问题链接已替换为 `https://www.zhihu.com/question/633780178`。
