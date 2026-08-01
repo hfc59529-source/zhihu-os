@@ -65,6 +65,7 @@ Codex 的正式职责是：
 - 读取 runtime、历史资产、ACTIVE 结构和变量。
 - 生成并校验 Production Card。
 - 执行 QA、审核记录、状态归档和发布记录。
+- 进入用户验收时，生成或展示包含原问题、链接、正文版本和完整正文的用户验收包。
 - 在发现正文问题时生成 Issue、Evidence、Risk、修正目标和交接状态。
 
 Codex 的禁止动作：
@@ -73,6 +74,7 @@ Codex 的禁止动作：
 - 不得直接改写、润色或替换 `Article-v*.md` / `Article-Patched-v*.md` / `Article-Final.md` 正文。
 - 不得在 Patch 未完成、Patch Validation 未通过、用户未验收时修改 `Release-v*.md` 的正文段落。
 - 不得把审核建议直接执行成正文 Patch。
+- 不得在用户未 `USER_APPROVED` 前，把 `Release-v1.md` 当作用户验收包或发布稿使用。
 
 Claude / 写作角色负责：
 
