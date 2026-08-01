@@ -11,7 +11,7 @@
 
 ## 使用规则
 
-本文件是 Production Card Generator（Skill006）生产过程中读取的数据资源，与 Parameter Library、Observation 地位一致，不属于任何独立 Engine。当前状态 PROPOSAL，不参与当前生产运行。
+本文件是研究草稿，不进入 runtime，不进入 Skill006 固定读取，不参与当前生产运行。已被 `production_variable_library.md` 变量记录中的平台证据、账号证据字段覆盖的内容，不需要在本文件重复维护。
 
 Evidence 负责回答：为什么能触发？
 

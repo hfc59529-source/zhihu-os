@@ -13,7 +13,7 @@
 
 Trigger 负责回答：什么时候调用？
 
-本文件是 Production Card Generator（Skill006）生产过程中读取的数据资源，与 Parameter Library、Observation 地位一致，不属于任何独立 Engine。当前状态 PROPOSAL，不参与当前生产运行。
+本文件是研究草稿，不进入 runtime，不进入 Skill006 固定读取，不参与当前生产运行。Trigger 真正可执行的部分已内置于 `production_variable_library.md` 每条变量的“适用题型 / 触发条件 / 禁用边界”字段，由变量匹配规则本身完成，不需要本文件作为独立调用对象。
 
 每个 Trigger 必须挂 Evidence。未挂 Evidence 或状态未达 HYPOTHESIS 的 Trigger，不允许自动进入正式 Production Card。
 

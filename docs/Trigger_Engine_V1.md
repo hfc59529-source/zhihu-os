@@ -1,19 +1,23 @@
-# Trigger 判断能力 V1（原 Trigger Engine，已并入 Skill006）
+# Trigger 判断能力 V1（已归档：能力已并入 production_variable_library.md）
 
-状态：PROPOSAL
+状态：DEPRECATED（作为独立提案已否决，能力已被参数库调用原则吸收）
 日期：2026-08-01
 
-是否生效：否
+是否生效：否（本文件不再单独生效）
 
 是否进入生产调用：否
 
 是否替代唯一权威库：否
 
-## 定位
+## 定位（历史记录，仅供参考）
 
-Trigger 判断不是独立系统，是 Production Card Generator（Skill006）内部的一项候选能力，目标是未来可能优化”题目 → 参数库 → Production Card”中的参数调用层。
+架构审查最终结论：Trigger 不需要作为独立系统、独立入口，也不需要作为 Production Card Generator（Skill006）的独立步骤存在。
 
-系统只有一个生产入口：Production Card Generator。Trigger 判断只是它内部多出的一步，不是新的中心节点。
+`production_variable_library.md` 中每条变量已经带有"适用题型 / 触发条件 / 禁用边界 / 当前状态 / 是否允许生产调用 / 调用权重"六个字段，这就是 Trigger 能力本身。真正需要的调整是把参数库"先匹配题型，再调用变量"这句粗规则，展开成六层匹配顺序，而不是在参数库之外新建一套 Trigger 流程。
+
+该调整已落地于 `production_variable_library.md` 的"调用原则"与"运行时快照"章节，详见 [`Trigger_Engine_Architecture_Review_20260801.md`](Trigger_Engine_Architecture_Review_20260801.md) 第 3、5 节。
+
+本文件以下内容保留作为设计过程记录，不代表当前生产事实，不得被日常生产引用。
 
 不替换、不修改：
 

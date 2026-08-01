@@ -320,7 +320,7 @@ Production Card 是日常生产默认交付对象。除非用户明确要求生�
 
 Codex 负责读取 runtime、选择变量、压缩知识并输出固定格式 Production Card。
 
-Trigger 判断当前仅为 Skill006 内部能力提案（PROPOSAL），不是独立系统或独立入口，不参与生产运行；系统唯一生产入口仍是 Skill006｜知乎生产卡生成器。
+Trigger 能力不新增系统、入口或生产步骤：它已内置于 `production_variable_library.md` 每条变量的“适用题型 / 触发条件 / 禁用边界”字段，由变量匹配规则本身完成。Trigger / Pattern / Evidence 三份文件保留为研究草稿，不进入 runtime，不进入 Skill006 固定读取。
 
 Claude 只负责根据 Production Card、`知乎正文推理协议 V1.0` 和 `知乎正文表达协议 V3` 写正文，不直接读取 Notion 或 runtime，不新增变量，不修改核心机制，不虚构案例。
 

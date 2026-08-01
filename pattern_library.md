@@ -11,7 +11,7 @@
 
 ## 使用规则
 
-本文件是 Production Card Generator（Skill006）生产过程中读取的数据资源，与 Parameter Library、Observation 地位一致，不属于任何独立 Engine。当前状态 PROPOSAL，不参与当前生产运行。
+本文件是研究草稿，不进入 runtime，不进入 Skill006 固定读取，不参与当前生产运行。正文骨架只能来自 ACTIVE 结构库；Pattern 记录不得被当作第二套结构权威使用。
 
 Pattern 负责回答：触发以后怎么写？
 

@@ -34,50 +34,36 @@
 | 上层路由 | 参数库保留，Trigger 只决定调用哪些参数 | 风险较低，迁移可控 |
 | 并行体系 | 两套入口同时存在 | 容易形成双权威和冲突调用 |
 
-当前最稳妥选择：上层路由。
+最终判定：以上三种关系都不成立，因为不需要建立 Trigger 这个外部对象。
+
+`production_variable_library.md` 中每条变量本身已经带有“适用题型 / 触发条件 / 禁用边界 / 当前状态 / 是否允许生产调用 / 调用权重”六个字段，这就是 Trigger 能力本身，只是分散在每条变量记录里，没有被当成匹配规则完整写出来。
 
 ```text
 题目
 ↓
-Trigger 路由
-↓
-从 production_variable_library.md 选择性调用
+production_variable_library.md 依据自身字段完成匹配
 ↓
 Production Card
 ```
 
 ## 3. 最小落地方式
 
-当前不落地正式架构，只保留 Proposal。
+不新增触发器对象。真正需要落地的只是把参数库现有的"生产前必须先匹配题型，再调用变量"这句粗规则，展开成可执行的六层匹配顺序（生产权限 → 禁用边界 → 适用题型 → 触发条件 → 去重冲突 → 权重排序），并在运行时快照中补充"命中依据 / 禁用边界检查 / 本题用途 / 是否实际调用"四个字段。
 
-若进入实验，最小方式应是：
+已落地于 [`production_variable_library.md`](../production_variable_library.md) 的"调用原则"与"运行时快照"章节。
 
-- 只做一个实验性触发器。
-- 不建立正式三库。
-- 不迁移全部 CV。
-- 不改生产状态机。
-- 不改变唯一权威库。
-- 只在少量同类题目上测试。
-
-候选实验：
-
-```text
-TR-WC-01｜职场利益冲突型
-状态：EXPERIMENT（待申请）
-证据：Observation-03
-作用：决定是否调用“先接情绪、再解释机制”的已有规律
-```
+原候选实验 TR-WC-01（职场利益冲突型，证据 Observation-03，作用：决定是否调用"先接情绪、再解释机制"）不再作为独立 Trigger 申请 EXPERIMENT，而是转化为对 CV002 / CV004 等既有变量触发条件的补充证据，按现有变量生命周期回写。
 
 ## 4. 暂时不该落地的部分
 
 当前不应：
 
 - 把参数库整体改名。
-- 一次性建立正式 Trigger / Pattern / Evidence 三库。
-- 批量迁移 CV001-CV006。
+- 建立正式 Trigger / Pattern / Evidence 三库并投入生产调用。
+- 批量迁移 CV001-CV006 到新字段结构。
 - 修改 README 正式入口。
-- 让 Production Card 默认依赖 Trigger Engine。
-- 宣布 Trigger Engine 为 ACTIVE。
+- 让 Production Card 默认依赖任何独立 Trigger 对象。
+- 在 Skill006 主流程中新增 Trigger 步骤。
 
 ## 5. 归属判定
 
@@ -86,9 +72,8 @@ TR-WC-01｜职场利益冲突型
 ```text
 □ 新系统
 □ 新模块
-☑ 现有模块能力增强
-□ 参数优化
-□ 流程优化
+□ 现有模块能力增强
+☑ 参数优化 / 流程细化
 ```
 
 只有满足以下三个条件时，才允许升级为独立系统：
@@ -97,39 +82,27 @@ TR-WC-01｜职场利益冲突型
 2. 能被多个模块独立调用；
 3. 可以脱离 Production Card Generator 单独运行。
 
-Trigger 判断三个条件都不满足：生命周期依赖 Generator；只服务 Production Card；无法单独运行。
+Trigger 判断三个条件都不满足。更进一步：它甚至不需要作为 Generator 的独立步骤存在，因为参数库的"适用题型 / 触发条件 / 禁用边界"字段本身就是 Trigger。
 
-因此结论是：**Trigger 是 Production Card Generator（Skill006）的内部能力（Internal Capability），不是新系统，不是新入口。**
+因此结论是：**Trigger 不是新系统、不是新入口、也不是 Generator 的新步骤，而是 `production_variable_library.md` 现有"变量匹配"规则的精确化。**
 
-不存在"Trigger Engine"这个独立组件；Trigger / Pattern / Evidence 三个库的地位与 Parameter Library、Observation 一致，都是 Generator 生产过程中读取的数据资源，不是某个 Engine 专属的资源。
+Trigger / Pattern / Evidence 三份文件保留为研究草稿，不进入 runtime，不进入 Skill006 固定读取。
 
 ## 6. 建议状态
 
-建议三步：
-
-```text
-PROPOSAL
-↓
-EXPERIMENT
-↓
-ACTIVE
-```
-
-当前状态：
-
-- Trigger 判断能力（Skill006 内部步骤）：PROPOSAL
-- TR-WC-01：可申请进入 EXPERIMENT
-- 现有生产系统：继续 ACTIVE
+- 参数库匹配规则精确化（六层匹配顺序 + 快照命中字段）：已落地为 ACTIVE 规则的一部分，见 `production_variable_library.md`。
+- Trigger / Pattern / Evidence Library：保留为研究草稿，不进入生产。
+- 现有生产系统：继续 ACTIVE，主流程不变。
 
 ## 固定原则
 
 任何涉及唯一权威入口、库结构或生产调用链的变更，必须先经过架构审查，不能由单次 Observation 直接触发正式落地。
 
-默认不新增系统；系统只有一个生产入口：Production Card Generator（Skill006）。
+默认不新增系统、不新增入口、不新增生产步骤；优先检查能否通过精确化现有规则解决问题。
 
 ## 当前结论
 
-Trigger 判断保留为 Skill006 内部能力提案，状态 PROPOSAL。
+不建立 Trigger Engine，也不在 Skill006 中新增 Trigger 步骤。
 
-当前不参与生产运行，不替代 `production_variable_library.md`，不修改 Production Card，不影响 ZH-20260801-011 / 012 当前流程，不作为独立入口或独立系统存在。
+Trigger 真正的价值——参数不能因为 ACTIVE 就全量调用，必须判断"什么时候适用"——已通过精确化 `production_variable_library.md` 的调用原则实现，不新增系统、入口或生产流程，不影响 ZH-20260801-011 / 012 当前流程。
 
