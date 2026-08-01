@@ -1,8 +1,8 @@
 Production ID: ZH-20260801-002
 Review Version: SemanticReview-v2
 Article Version: Article-v2
-Experiment Group: B
-Variable: Opening Pattern
+Status: Historical Semantic Review
+Note: 该文件为 Article-v2 过程审核记录；当前正式发布稿见 Article-Final.md。
 
 # 四项语义审核
 

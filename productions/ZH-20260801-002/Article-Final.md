@@ -1,7 +1,5 @@
 Production ID: ZH-20260801-002
-Article Version: Article-v2
-Status: Historical Draft
-Note: 该文件为历史过程稿；当前正式发布稿见 Article-Final.md。
+Article Version: Final
 
 会议上，新来的年轻领导开始布置项目。
 

@@ -1,8 +1,8 @@
 Production ID: ZH-20260801-002
 Consistency Version: Consistency-v2
 Article Version: Article-v2
-Experiment Group: B
-Variable: Opening Pattern
+Status: Historical Consistency Record
+Note: 该文件为 Article-v2 过程校验记录；当前正式发布稿见 Article-Final.md。
 
 # Consistency Engine 最终验收报告 V2.0
 
