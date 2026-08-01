@@ -7,3 +7,4 @@
 ## 实验记录
 
 - [EXP001 - 正文生成接口表达层优化](experiments/EXP001.md)
+- [EXP002 - 平台表达变量与 AI 识别相关性实验](experiments/EXP002.md)
