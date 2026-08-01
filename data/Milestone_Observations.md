@@ -34,3 +34,23 @@
 - 治理结论：**不需要修改 Production Card 施工规范，不需要新增正文参数**。维持现状，作为已关闭的观察项存档，若未来样本中再次连续出现，重新开启观察而非假设已解决。
 
 **状态更新：Observed → Closed（无需升级为参数或协议变更）**
+
+## Observation-02：Card字段重叠
+
+状态：Open
+
+证据等级：待观察，未进入 Active。
+
+定义：Production Card 中多个字段表达同一核心判断，导致 Draft 忠实执行 Card 后在首尾形成高度相似的判断表达。该现象不等同于 Draft 短距离重复，不直接构成正文 Issue。
+
+当前证据：
+
+| Production ID | 是否出现 | 证据位置 | GPT Decision |
+|---|---|---|---|
+| ZH-20260801-010 | YES | Card 的“唯一核心判断”与段落 7“具体内容”表达同一判断；Draft 首尾忠实落地，形成首尾呼应 | Clean / Final Validation PASS |
+
+当前判断：
+
+- 这是 Card 层观察，不是 Draft 层 Bug。
+- 010 单篇证据不足，不修改 Card 模板或施工规范。
+- 011/012/013 若继续出现，再判断是否进入治理。
