@@ -1,7 +1,7 @@
 Production ID: ZH-20260801-003
-Article Version: Patched-v1
-Base: Draft-v1.md + Patch-v1.diff（已应用）
-Status: AWAITING FINAL VALIDATION（GPT 尚未完成四项校验，不等于 Release）
+Release Version: Release-v1
+Base: Article-Patched-v1.md
+Status: RELEASED（GPT Final Validation Passed）
 
 领导把任务拿走的时候，你已经吃了一次亏。
 

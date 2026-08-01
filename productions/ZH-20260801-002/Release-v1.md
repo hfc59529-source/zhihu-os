@@ -1,7 +1,7 @@
 Production ID: ZH-20260801-002
-Article Version: Patched-v1
-Base: Draft-v1.md + Patch-v2.diff（已应用）
-Status: AWAITING FINAL VALIDATION（GPT 尚未完成四项校验，不等于 Release）
+Release Version: Release-v1
+Base: Article-Patched-v1.md
+Status: RELEASED（GPT Final Validation Passed）
 
 会议上，新来的年轻领导开始布置项目。
 
