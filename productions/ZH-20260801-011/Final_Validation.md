@@ -1,27 +1,55 @@
 # Final Validation
 
 Production ID: ZH-20260801-011
-Final Article: Article-Patched-v1.md
+当前状态：可发布（RELEASE_READY）
+验证对象：Article-Patched-v1.md / Release-v1.md
 
-## 检查结果
+## 验证原则
 
-- Production Card 执行：PASS
-- Draft 冻结后审计：PASS
-- Claude Audit：PASS with minor patch
-- GPT 裁决：PASS，采纳小修
-- Patch：PASS，未改变核心判断和段落顺序
-- 首屏核心反转：PASS
-- 后台术语泄漏：PASS，未出现参数名、审计术语或变量编码
-- 事实和安全边界：PASS
-- 阅读体验程序校验：PASS，`validate_reading_experience.py` 输出 risks: none
-- 发布可用性：PASS
+Final Validation 不重新评价内容质量，只验证交付物、状态、校验结果和版本一致性。
+
+## 1. 文件一致性
+
+PASS。
+
+- Release-v1.md 存在。
+- Audit_Report.md 存在，结论为 AUDIT_PASS。
+- Decision_Log.md 存在，记录无 Issue，下一状态为 READY_FOR_FINAL_VALIDATION。
+- Codex_QA.md 存在，记录 Reasoning / Reading 均通过。
+
+## 2. 状态一致性
+
+PASS。
+
+- production_ledger 当前记录为 READY_FOR_FINAL_VALIDATION。
+- production_runs.jsonl 当前记录为 READY_FOR_FINAL_VALIDATION。
+- Audit_Report 已明确下一状态为 READY_FOR_FINAL_VALIDATION。
+
+## 3. 校验一致性
+
+PASS。
+
+- validate_reasoning.py：PASS。
+- validate_reading_experience.py：PASS，risks: none。
+- 人工审计：AUDIT_PASS。
+- 三项结果均对应当前 Article-Patched-v1.md。
+
+## 4. 发布完整性
+
+PASS。
+
+- Production ID 正确：ZH-20260801-011。
+- 问题链接存在：https://www.zhihu.com/question/1907358768624280756
+- Release-v1.md 已同步当前最终正文。
+- 发布素材完整。
 
 ## 结论
 
-本文件为误提前生成的机器校验记录，不能作为 RELEASE_READY 依据。
+RELEASE_READY。
 
-当前真实状态：READY_FOR_FINAL_VALIDATION。人工审计已 AUDIT_PASS；下一步执行 Final Validation。
+下一阶段负责人：人工。
 
-## 治理状态
+需要动作：人工确认后，才可进入发布队列 / 草稿箱 / 正式发布。
 
-冻结。未出现同类连续问题、流程阻塞、参数持续失效或 Comparison Report 明确支持/反证。
+边界说明：本阶段未发布，未写入草稿箱，未回收数据。
+

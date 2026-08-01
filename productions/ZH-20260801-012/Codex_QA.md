@@ -1,21 +1,20 @@
 # Codex QA
 
-Production ID: ZH-20260801-011
-当前状态：可发布，待人工发布确认（RELEASE_READY）
+Production ID: ZH-20260801-012
+当前状态：QA通过，待人工审计（READY_FOR_AUDIT）
 
 ## 已完成
 
 - Production Card 校验：PASS
 - Draft-v1 正文已生成
+- QA 前修正版 Article-QA-v1.md 已生成
 - validate_reasoning.py：PASS
 - 阅读体验程序校验：PASS，`validate_reading_experience.py` 输出 risks: none
-- 正文及 QA 结果已归档
 
 ## 未完成
 
-- 人工审计：PASS
-- Patch：未执行
-- Final Validation：PASS
+- 人工审计：未执行
+- Final Validation：未进入
 - Release：未进入
 - 发布：未执行
 - 数据回收：未执行
@@ -24,7 +23,7 @@ Production ID: ZH-20260801-011
 
 ==============================
 【当前状态】
-可发布，待人工发布确认（RELEASE_READY）
+QA通过，待人工审计（READY_FOR_AUDIT）
 
 【本阶段负责人】
 Codex
@@ -36,11 +35,11 @@ Codex
 ✓ 正文及 QA 结果已归档
 
 【下一阶段负责人】
-人工
+GPT / 人工审计
 
 【需要动作】
-人工确认是否发布。
+开始人工审计。
 
 【边界说明】
-Final Validation 已通过；当前未发布，未写入草稿箱，未回收数据。
+Codex 不执行人工审计，不提前生成 Patch，不进入发布流程。
 ==============================
