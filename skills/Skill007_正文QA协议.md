@@ -1,6 +1,8 @@
 # Skill007｜正文 QA 协议 V2.0
 
-Status：ACTIVE
+Status：LEGACY_RETIRED
+
+当前调用边界：Production Card 已退出日常生产主链，本协议不再作为日常正文审核入口。GPT / 人工审核固定使用 `templates/GPT审核清单.md`，并以审核结果写入 `data/parameter_call_log.md`。
 
 ## 目标
 

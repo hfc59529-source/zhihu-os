@@ -1,10 +1,10 @@
 # Skill006｜知乎生产卡生成器 V2.0
 
-Status：ACTIVE
+Status：LEGACY_RETIRED
 
 执行版本：ZH-RUNTIME-V3.0-TEACHER
 
-当前调用边界：本技能不属于 Codex 选题采集职责。Codex 当前只执行 `docs/Codex选题采集协议.md`，生成选题包并保存候选池后立即停止；Production Card 生成由 Claude 后续接管。
+当前调用边界：Production Card 已退出日常生产主链。本技能仅保留为历史归档；Codex 当前只执行 `docs/Codex选题采集协议.md`，生成选题包并保存候选池后立即停止。
 
 ## 目标
 

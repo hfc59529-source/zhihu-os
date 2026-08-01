@@ -1,5 +1,9 @@
 # Production Card 模板
 
+Status：LEGACY_RETIRED
+
+当前调用边界：Production Card 已退出日常生产主链。本模板仅保留为历史归档，不再作为日常生产产物。
+
 模板版本：CARD-TEMPLATE-V3.0-TEACHER
 
 执行版本：ZH-RUNTIME-V3.0-TEACHER

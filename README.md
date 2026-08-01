@@ -4,20 +4,20 @@
 
 本系统负责知乎内容生产、平台样本学习与账号数据验证。
 
-当前系统内核升级为 `知乎OS Compiler V1`：
+当前日常生产主链：
 
 ```text
-Analyzer
+Codex 选题包
 ↓
-Production Card IR
+Claude 调用参数并推理
 ↓
-Writer Prompt
+Claude 生成正文
 ↓
-Writer
+GPT / 人工审核参数与正文
 ↓
-QA
+Codex 记录参数调用日志
 ↓
-Feedback
+必要时维护参数 / Prompt / 调用规则
 ```
 
 核心原则：
@@ -150,49 +150,49 @@ L2｜账号实验
 回答：这些平台变量证据在本账号是否有效。
 
 L3｜ACTIVE变量
-回答：哪些已验证变量允许进入 Production Card。
+回答：哪些已验证变量允许 Claude 在正文生产中调用。
 
 唯一内容变量权威源是 `production_variable_library.md`，显示名称为《知乎内容变量参数库》。日常生产只调用该库中 `当前状态=ACTIVE` 且 `是否允许生产调用=是` 的变量。L1 和 L2 只在系统升级、规律验证和周期复盘时回写同一变量记录。
 
 ## 工作流程
 
+```text
 截图
 ↓
 Codex
 ↓
-读取总控协议
+读取原问题
 ↓
-读取 runtime ACTIVE 执行快照
+检查方向与重复
 ↓
-读取账号画像快照
+补充必要事实
 ↓
-执行历史资产检索
+生成选题包
 ↓
-生成 Production Card
-↓
-交付可复制 Production Card 与 26 维参数调用审计
+停止，等待 Claude 接管
 ```
 
-正文生产只在用户明确要求“生产正文”“写回答”“调用正文节点”“按完整链路生产”时继续：
+正文生产由 Claude 接管：
 
 ```text
-Production Card
+选题包
 ↓
-读取知乎正文推理协议 V1.0
+调用参数
 ↓
-Claude 按卡生成正文
+推理
 ↓
-运行正文推理校验
+生成正文
 ↓
-发布
+GPT / 人工审核
 ↓
-抓取数据
+参数调用日志
 ↓
 本地记录
 ↓
 周期复盘
 ↓
 回写 Notion 管理源并发布下一版 runtime
+```
 
 ## 账号画像
 
@@ -218,6 +218,15 @@ L0-L3复盘
 2. 兴趣分布：季度或半年更新，用于校准选题方向。
 
 其它画像字段，包括性别、年龄、地域、关注来源和活跃分层，作为账号基线画像，不参与每篇正文复盘。
+
+## Codex 职责定义
+
+Codex 有两类职责：
+
+1. 单篇生产前：只做选题采集与入库。
+2. 长期系统层：维护参数库、知识库、样本库和参数调用日志。
+
+Production Card 已退出日常生产主链。Codex 不生成 Production Card，不写正文，不调表达，不审正文，不修改正文，不做单篇阅读体验优化。
 
 ## Codex 选题采集完成定义
 
@@ -276,13 +285,13 @@ Codex 不生成 Production Card，不提炼核心观点，不设计正文结构�
 
 后续生产模式：
 
-选题包完成后，Claude 才负责判断怎么写，并生成 Production Card、正文和后续 QA 所需材料。
+选题包完成后，Claude 直接调用参数、推理并生成正文；GPT / 人工再按固定清单审核。
 
 审计模式触发词：
 
 - 检查流程
 - 审计系统
-- 检查 Production Card
+- 检查参数调用
 - 只生成生产卡
 - 不写正文
 - 检查参数调用
@@ -301,28 +310,43 @@ Codex 负责读取问题、筛选选题、检查重复并输出固定格式选�
 
 Trigger 能力不新增系统、入口或生产步骤：它已内置于 `production_variable_library.md` 每条变量的“适用题型 / 触发条件 / 禁用边界”字段，由变量匹配规则本身完成。Trigger / Pattern / Evidence 三份文件保留为研究草稿，不进入 runtime，不进入 Skill006 固定读取。
 
-Claude 负责根据选题包生成 Production Card，并根据 Production Card、`知乎正文推理协议 V1.0` 和 `知乎正文表达协议 V3` 写正文，不直接读取 Notion 或 runtime，不新增变量，不虚构案例。
+Claude 负责根据选题包调用参数、推理并生成正文，不直接读取 Notion 或 runtime，不新增变量，不虚构案例。
 
 GPT / Codex 不直接生产文案，不重写正文。Codex 默认只交付选题包。
 
-## 正文推理协议
+## 参数调用日志
 
-`docs/知乎正文推理协议 V1.0.md` 位于 Production Card 与 Claude 正文生产 Prompt 之间。
+Codex 负责维护 `data/parameter_call_log.md`。
 
-它只约束正文生成前的推理过程，不新增 Production Card 字段，不修改结构库，不修改参数库，不修改表达协议。
+每篇文章记录：
 
-## 正文表达协议
+- Production ID。
+- 选题编号。
+- Claude 声称调用参数。
+- GPT / 人工确认实际生效参数。
+- GPT / 人工审核归因。
+- 发布后阅读、点赞、收藏、收益。
+- 是否需要回写参数库。
 
-`docs/知乎正文表达协议 V3.md` 位于正文推理协议与 Claude 正文生产 Prompt 之间。
+参数调用日志以 GPT / 人工审核结果为准，不以 Claude 自报为准；只记录调用事实和结果，不反推正文写法，不替正文做表达优化。
 
-它只约束正文怎么说出来，不决定写什么，不新增变量，不修改核心机制，不替代 QA。
+## Claude 正文生成
 
-Claude 正文生成后，先运行 `scripts/validate_reasoning.py`，再进入 Skill007 正文 QA。
+Claude 根据选题包调用参数、推理并生成正文。
 
-## 正文 QA
+Claude 不生成 Production Card，不要求 Codex 补 Card，不直接读取 Notion 或 runtime，不新增参数。
 
-`Skill007｜正文 QA 协议` 负责审核 Claude 正文是否遵守 Production Card。
+## GPT 审核
 
-Skill007 只审核，不修改正文，不重写正文，不增加新观点，不修改 Production Card。
+GPT / 人工审核固定使用 [GPT审核清单.md](/Users/huangsheng/Documents/知乎系统/templates/GPT审核清单.md)。
 
-Skill007 V1.0 已进入冻结期：连续生产 20 篇知乎正文后，再根据 QA 数据决定是否升级 V1.1。
+审核只看两张清单：
+
+- 参数审核。
+- 正文审核。
+
+最终只输出：
+
+- PASS。
+- 正文问题。
+- 系统问题。

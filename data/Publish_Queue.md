@@ -16,7 +16,7 @@ RELEASE_READY
 Publish Queue
 ```
 
-Audit PASS 或 Patch Validation PASS 之后只能进入 `READY_FOR_USER_REVIEW`，不得生成或确认 Release，不得进入 Publish Queue；只有用户明确 `USER_APPROVED` 后，Codex 才能生成或确认 `Release-v1.md`，并将状态更新为 `RELEASE_READY`。
+Audit PASS 或 Patch Validation PASS 之后只能进入 `READY_FOR_USER_REVIEW`，不得生成或确认 Release，不得进入 Publish Queue；只有用户明确 `USER_APPROVED` 后，后续生产角色才能生成或确认 `Release-v1.md`，并将状态更新为 `RELEASE_READY`。
 
 已存在 `Release-v1.md` 不能单独作为入队依据。
 

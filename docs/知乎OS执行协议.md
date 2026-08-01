@@ -4,6 +4,24 @@
 
 ## 1. 强制执行原则
 
+## 0.0 Production Card 退出声明
+
+Production Card 已退出日常生产主链。凡本文件后续历史章节出现 Production Card、Skill006、Skill007、Card 校验、Claude 版 Production Card 等表述，均视为 `LEGACY_RETIRED`，不得覆盖当前链路：
+
+```text
+Codex 选题包
+↓
+Claude 调用参数并推理
+↓
+Claude 生成正文
+↓
+GPT / 人工固定清单审核
+↓
+GPT / 人工确认实际生效参数
+↓
+Codex 写入参数调用日志
+```
+
 知乎系统有两个入口：
 
 1. 用户输入型：用户上传知乎选题截图、问题截图、回答截图，或给出一个知乎选题。
@@ -39,7 +57,7 @@
 停止
 ```
 
-选题包完成后，Codex 不得继续执行历史资产压缩、ACTIVE 老师结构实例化、ACTIVE 规律回流、后台质量参数检查或 Production Card 校验。Production Card、正文生产和正文 QA 由 Claude 后续接管。
+选题包完成后，Codex 不得继续执行历史资产压缩、ACTIVE 老师结构实例化、ACTIVE 规律回流、后台质量参数检查或 Production Card 校验。Production Card 已退出日常生产主链；正文生产由 Claude 后续接管，审核归因由 GPT / 人工接管。
 
 ## 1.1 题目链接保存纪律
 
@@ -57,9 +75,9 @@
 
 只有用户明确要求“生产正文”“写回答”“调用正文节点”“按完整链路生产”时，才继续调用知乎正文推理协议 V1.0、知乎正文表达协议 V3、正文生产、正文推理校验和正文 QA。
 
-## 1.2 Codex / Claude 写作边界
+## 1.2 Codex / Claude / GPT 边界
 
-Codex 的正式职责是：
+Codex 的单篇生产前职责是：
 
 - 采集与保存题目、真实知乎问题链接。
 - 读取问题页，完整保存原问题、问题描述和必要上下文。
@@ -68,11 +86,20 @@ Codex 的正式职责是：
 - 补充必要事实背景。
 - 生成标准化选题包并保存到候选池。
 
+Codex 的长期系统维护职责是：
+
+- 维护参数库、知识库和样本库。
+- 维护 `data/parameter_call_log.md`。
+- 在 GPT / 人工连续确认同类系统问题后，修复参数、Prompt 或调用规则。
+- 积累高表现样本、失败样本和平台规律。
+
 Codex 的禁止动作：
 
 - 不得生成 Production Card。
 - 不得提炼唯一核心判断。
 - 不得设计文章结构、段落安排、开头写法或结尾句。
+- 不得调表达。
+- 不得审正文。
 - 不得直接写 `Draft-v1.md` 正文。
 - 不得直接改写、润色或替换 `Article-v*.md` / `Article-Patched-v*.md` / `Article-Final.md` 正文。
 - 不得在 Patch 未完成、Patch Validation 未通过、用户未验收时修改 `Release-v*.md` 的正文段落。
@@ -82,12 +109,20 @@ Codex 的禁止动作：
 Claude / 写作角色负责：
 
 - 根据 Codex 选题包判断怎么写。
-- 生成 Production Card。
-- 根据 Production Card 生成正文。
+- 调用参数并推理。
+- 根据选题包生成正文。
 - 根据 Audit_Report 和 Decision_Log 执行 Patch。
 - 生成正文变更记录。
 
-若 Codex 在 QA / Audit / Patch Validation 中发现正文问题，必须停止在正文文件上的写入动作，只更新审核文件和状态文件，并交接到 `READY_FOR_PATCH`。
+GPT / 人工负责：
+
+- 检查参数有没有调用对。
+- 检查正文有没有执行好。
+- 确认实际生效参数。
+- 判断问题来自系统，还是来自正文执行。
+- 只有连续同类问题被确认为系统问题时，才反馈 Codex 进入系统维护。
+
+Codex 不进入单篇正文 QA / Audit / Patch Validation。Codex 只在系统问题成立后维护参数、Prompt、调用规则或参数调用日志。
 
 ## 0.1 生产 / 系统研发分离纪律
 

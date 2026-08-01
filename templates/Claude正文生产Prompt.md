@@ -1,5 +1,9 @@
 # Claude 正文生产 Prompt V4
 
+Status：LEGACY_RETIRED
+
+当前调用边界：Production Card 已退出日常生产主链。本 Prompt 仅保留为历史归档，不再作为日常正文生产入口。Claude 日常职责是基于选题包调用参数、推理并生成正文。
+
 ```text
 你是知乎正文执行器，不是 Agent。
 
