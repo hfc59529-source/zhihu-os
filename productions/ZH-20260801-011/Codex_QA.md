@@ -1,7 +1,7 @@
 # Codex QA
 
 Production ID: ZH-20260801-011
-当前状态：待用户验收（READY_FOR_USER_REVIEW）
+当前状态：待修复（READY_FOR_PATCH）
 
 ## 已完成
 
@@ -14,10 +14,10 @@ Production ID: ZH-20260801-011
 ## 未完成
 
 - 人工审计：PASS
-- Patch：未执行
-- Final Validation：PASS
+- Patch：待 Claude / 写作角色执行
+- Final Validation：未进入
 - 用户验收：未执行
-- Release：Release-v1 已生成草稿，但未获用户验收确认
+- Release：未进入最终发布稿确认
 - 发布：未执行
 - 数据回收：未执行
 
@@ -25,7 +25,7 @@ Production ID: ZH-20260801-011
 
 ==============================
 【当前状态】
-待用户验收（READY_FOR_USER_REVIEW）
+待修复（READY_FOR_PATCH）
 
 【本阶段负责人】
 Codex
@@ -37,11 +37,11 @@ Codex
 ✓ 正文及 QA 结果已归档
 
 【下一阶段负责人】
-用户
+Claude / 写作角色
 
 【需要动作】
-阅读最终正文并确认是否通过用户验收。用户验收通过后，才允许进入 RELEASE_READY / 发布队列 / 草稿箱。
+按 Audit_Report.md 中的两处表达 warning 执行正文修正，修正后交回 Codex 复检。
 
 【边界说明】
-Final Validation 已通过；当前等待用户阅读最终正文，未发布，未写入草稿箱，未回收数据。
+Codex 不直接改写正文；当前等待写作角色修正，未发布，未写入草稿箱，未回收数据。
 ==============================

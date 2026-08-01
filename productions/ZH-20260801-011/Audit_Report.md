@@ -1,7 +1,7 @@
 # Card 一致性审核｜Skill007 V2.0
 
 Production ID：ZH-20260801-011
-当前状态：审计通过（AUDIT_PASS）
+当前状态：审计发现问题（AUDIT_ISSUE）
 审核对象：Article-Patched-v1.md
 Card：Card-v1.md
 审核口径：Production Card 是唯一内容权威；不引用 PD / RR / RE / BT / CR、Reasoning Protocol、Expression Protocol 或历史 Prompt 字段。
@@ -14,7 +14,6 @@ Pass
 
 python3 scripts/validate_reasoning.py productions/ZH-20260801-011/Article-Patched-v1.md
 Pass
-- warning: concept budget observed: level1=1/1, level2=0/3, level3=1/5; concepts=保证, 项目交付不达预期
 
 python3 scripts/validate_reading_experience.py productions/ZH-20260801-011/Article-Patched-v1.md
 risks:
@@ -32,14 +31,32 @@ risks:
 - 收尾一致性：PASS。结尾回收到“绩效不是年底问责，而是平时把什么活重要、谁该负责、做好以后怎么兑现说清楚”。
 - 后台痕迹检查：PASS。未发现审计术语、参数名或系统字段泄露。
 
-## 问题
+## 重新审核发现的问题
 
-无。
+1. `validate_reasoning.py` 虽然 PASS，但保留 concept budget warning：`保证`、`项目交付不达预期`。
+2. 两处 warning 不改变正文结构和核心判断，但会留下可避免的发布前表达风险。
+
+## 待修正动作
+
+- 将“保证系统里的数字好看”改为“让系统里的数字好看”。
+- 将“绩效表上写一句‘项目交付不达预期’”改为“绩效表上只留下一句交付没达到预期”。
+- 未改动 Card、结构、主判断、段落顺序和结尾回收。
+
+## 复检结果
+
+```text
+python3 scripts/validate_production_card.py productions/ZH-20260801-011/Card-v1.md
+Pass
+
+python3 scripts/validate_reading_experience.py productions/ZH-20260801-011/Article-Patched-v1.md
+risks:
+- none
+```
 
 ## 审核结论
 
-PASS。
+AUDIT_ISSUE。
 
-下一状态：READY_FOR_FINAL_VALIDATION。
+下一状态：READY_FOR_PATCH。
 
-边界说明：本阶段只完成 Card 一致性审核，不执行发布，不写入草稿箱，不回收数据。
+边界说明：Codex 只完成审核裁决和修正任务定义，不直接改写正文；正文修正交给 Claude / 写作角色执行。不执行发布，不写入草稿箱，不回收数据。

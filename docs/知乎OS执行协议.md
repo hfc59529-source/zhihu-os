@@ -57,6 +57,31 @@ Production Card 之前必须完成题目链接保存。
 
 只有用户明确要求“生产正文”“写回答”“调用正文节点”“按完整链路生产”时，才继续调用知乎正文推理协议 V1.0、知乎正文表达协议 V3、正文生产、正文推理校验和正文 QA。
 
+## 1.2 Codex / Claude 写作边界
+
+Codex 的正式职责是：
+
+- 采集与保存题目、真实知乎问题链接。
+- 读取 runtime、历史资产、ACTIVE 结构和变量。
+- 生成并校验 Production Card。
+- 执行 QA、审核记录、状态归档和发布记录。
+- 在发现正文问题时生成 Issue、Evidence、Risk、修正目标和交接状态。
+
+Codex 的禁止动作：
+
+- 不得直接写 `Draft-v1.md` 正文。
+- 不得直接改写、润色或替换 `Article-v*.md` / `Article-Patched-v*.md` / `Article-Final.md` 正文。
+- 不得在 Patch 未完成、Final Validation 未通过、用户未验收时修改 `Release-v*.md` 的正文段落。
+- 不得把审核建议直接执行成正文 Patch。
+
+Claude / 写作角色负责：
+
+- 根据 Production Card 生成正文。
+- 根据 Audit_Report 和 Decision_Log 执行 Patch。
+- 生成正文变更记录。
+
+若 Codex 在 QA / Audit / Final Validation 中发现正文问题，必须停止在正文文件上的写入动作，只更新审核文件和状态文件，并交接到 `READY_FOR_PATCH`。
+
 ## 0.1 生产 / 系统研发分离纪律
 
 知乎OS默认进入日常生产模式。日常生产的目标是最快速度产出可发布正文，不承担系统研发任务。
