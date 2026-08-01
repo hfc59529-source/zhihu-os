@@ -8,9 +8,9 @@ Publish Version: Publish-v1
 | 发布平台 | 知乎 |
 | 问题 | 人过五十岁，单位领导班子年轻化，自己逐步被边缘化，如何渡过漫长的职场尾声？ |
 | 问题链接 | https://www.zhihu.com/question/1975857029030622987 |
-| 发布状态 | Article-Final 已完成 Claude 七项总审（PASS），**尚未写入知乎草稿箱** |
+| 发布状态 | 流程变更为 Audit/Patch 分离；Draft-v1.md 已冻结，Claude Patch 待 GPT 审核，**未写入知乎草稿箱** |
 | 发布时间 | 待发布 |
 | 发布链接 | 待发布 |
 | 是否人工点击发布 | 待确认 |
-| 正式发布稿 | Article-Final.md |
-| 备注 | 用户决策：退出日常 A/B 实验管理，本篇身份为当前正式发布稿。此前记录曾错误标注"已写入知乎回答编辑器"，经核实本次会话未执行任何知乎写入操作，该状态为记录错误，已订正。实际写入草稿箱这一步尚未发生，需明确执行人（Claude 用浏览器工具执行 / 用户手动执行）后再进行。 |
+| 正式发布稿 | 尚不存在（等 GPT Approve Patch 后由 Codex 生成 Article-Final.md） |
+| 备注 | 旧流程下的 Article-v2.md / Article-Final.md 系 Claude 未经第三方审核直接改正文所得，已作废（SUPERSEDED，见 Review-v1.md）。当前唯一可信来源是 Draft-v1.md（冻结）+ Audit_Report.md + Patch.diff。需 GPT 独立输出 Approve/Reject/Revise 后，由 Codex 应用 Patch 生成新的 Article-Final.md，再进入草稿箱写入与发布环节。 |

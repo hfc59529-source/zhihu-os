@@ -4,6 +4,7 @@ Article Version: Article-v2
 Article Status: Final Draft Review
 Note: 本记录作为总编辑审核过程保留；日常流程不再使用 A/B 实验分组。
 Reviewer: Claude（总编辑）
+Status: SUPERSEDED（旧流程记录：Claude 当时既审核又直接改正文，未经 GPT 独立审核。已被 Audit_Report.md + Patch.diff 取代，本文件仅作历史记录保留）
 
 # 发布前七项总审
 
