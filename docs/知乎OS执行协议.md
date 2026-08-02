@@ -197,7 +197,7 @@ L1｜平台样本：发现变量
 ↓
 L2｜账号实验：验证变量
 ↓
-L3｜ACTIVE变量：生产调用
+L3｜ACTIVE变量：生产触发
 ```
 
 本账号历史文章不再承担“发现规律”的主要任务，只用于验证平台变量是否适合本账号。
@@ -238,25 +238,25 @@ L3｜ACTIVE变量：生产调用
 
 平台分析不得再输出独立“平台规律”。平台样本只能输出变量证据卡，所有变量发现、命中统计和候选证据必须统一写入 `production_variable_library.md` 对应变量记录。
 
-若变量已存在，只更新平台证据字段，不得创建同义重复变量。若变量不存在，创建 `OBSERVED` 状态变量。
+若变量已存在，只更新平台证据字段，不得创建同义重复变量。若变量不存在，创建 `DISCOVERED` 状态变量。
 
 统一状态链：
 
 ```text
-OBSERVED
+DISCOVERED
 ↓
-HYPOTHESIS
+CANDIDATE
 ↓
-EXPERIENCE
+REVIEW
 ↓
 ACTIVE
 ```
 
-`DEPRECATED` 为废止状态。
+`DEPRECATED` 为废止状态，长期无恢复证据后归档为 `ARCHIVED`。
 
-平台样本只能推动 `OBSERVED → HYPOTHESIS`。账号样本负责推动 `HYPOTHESIS → EXPERIENCE → ACTIVE`。
+平台样本只能推动 `DISCOVERED → CANDIDATE`。账号样本负责推动 `CANDIDATE → REVIEW → ACTIVE`。
 
-正文生产节点只能读取 `production_variable_library.md` 中 `当前状态=ACTIVE` 且 `是否允许生产调用=是` 的变量。`HYPOTHESIS` 和 `EXPERIENCE` 只允许作为指定单变量实验调用，`DEPRECATED` 禁止生产调用。
+正文生产节点只能触发 `production_variable_library.md` 中 `当前状态=ACTIVE` 且 `触发资格=是` 的变量。`CANDIDATE` 和 `REVIEW` 只允许作为指定单变量实验触发，`DEPRECATED` 和 `ARCHIVED` 禁止触发。
 
 禁止新增“平台变量库”“账号变量库”或任何第二套参数体系。
 
@@ -265,19 +265,19 @@ ACTIVE
 ```text
 平台采样
 ↓
-新增变量（OBSERVED）
+新增变量（DISCOVERED）
 ↓
 平台继续采样
 ↓
 满足证据
 ↓
-HYPOTHESIS
+CANDIDATE
 ↓
-Claude 正文节点实验调用
+Claude 正文节点实验触发
 ↓
 账号验证
 ↓
-EXPERIENCE
+REVIEW
 ↓
 继续验证
 ↓
@@ -286,6 +286,10 @@ ACTIVE
 长期失效
 ↓
 DEPRECATED
+↓
+长期无恢复证据
+↓
+ARCHIVED
 ```
 
 正文生产节点不直接全量读取 `production_variable_library.md`。每次正式生产必须由 Claude 侧生成或刷新 `runtime/production_variable_snapshot.md`，只把本题命中的变量交给正文节点。
@@ -1095,7 +1099,7 @@ Codex 不得用“GPT会审”作为降低报告质量的理由；GPT 也不得�
 ↓
 production_variable_library.md 对应变量记录
 ↓
-状态变化：OBSERVED / HYPOTHESIS / EXPERIENCE / ACTIVE / DEPRECATED
+状态变化：DISCOVERED / CANDIDATE / REVIEW / ACTIVE / DEPRECATED / ARCHIVED
 ```
 
 禁止输出独立“平台规律”，禁止再把 Top1/Top2/Top3 排名作为长期生产资产保存。排名只用于采集定位，长期保存对象是变量证据。
@@ -1151,14 +1155,14 @@ Scope：
 | Opinion | 禁止进入 Global | 禁止进入 Topic，除非转化为已验证机制 | 只能进入单篇正文节点 |
 | Evidence | 禁止进入 Global | 禁止进入 Topic，除非进入已验证样本库 | 只能作为本题证据或历史弱参考 |
 
-`Hypothesis` 不进入正式生产调用，只进入候选规则或验证记录。
+`CANDIDATE` 不进入正式生产触发，只进入候选规则或验证记录。
 
 无法判断时，不再直接升级，也不直接删除，必须标记为：
 
 ```text
-Status：HYPOTHESIS
+Status：CANDIDATE
 证据：单篇 / 多篇 / 数据不足
-下一步：等待 3 篇以上同类样本验证；达到 10 篇稳定成立后，才允许申请 ACTIVE。
+下一步：等待 3 篇以上同类样本验证进入 REVIEW；达到 10 篇稳定成立后，才允许申请 ACTIVE。
 ```
 
 系统规则只能固化“动作”，不得固化“答案”。

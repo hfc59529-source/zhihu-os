@@ -32,7 +32,7 @@
 | result_layer | 结果分层：A高收益，B高千阅读收益，C高阅读低收益，D低阅读低收益；可多层命中 |
 | deep_review | 是否进入代表样本深度复盘；是/否 |
 | historical_rule_status | 历史规律状态：未提取/候选规律/05.5验证中/已进入ACTIVE |
-| evidence_level | 证据等级：RAW/HYPOTHESIS/EXPERIENCE/ACTIVE |
+| evidence_level | 证据等级（对应 `production_variable_library.md` Parameter 生命周期）：RAW/CANDIDATE/REVIEW/ACTIVE |
 | status | 当前状态，如已发布/草稿/删除/未知 |
 | sample_level | 当前层级，L0/L1/L2/L3；L0试采默认L0 |
 | upgrade_reason | 升级原因；L0默认留空 |
@@ -48,8 +48,8 @@
 
 04内容资产库是唯一总表，不再另建历史回填总表。历史数据按50篇一批增量回填，先补基础结果字段，再由脚本自动计算千阅读收益、结果分层和代表样本标记。题型、结构、变量、首屏、机制无法判断时统一写`UNKNOWN`，不阻塞分层和复盘。
 
-证据升级路径固定为：
+证据升级路径固定为（与 `production_variable_library.md` Parameter 生命周期一致，RAW 对应尚未正式建档的原始证据，早于 DISCOVERED）：
 
-`RAW -> HYPOTHESIS -> EXPERIENCE -> ACTIVE`
+`RAW -> CANDIDATE -> REVIEW -> ACTIVE`
 
 历史样本只能先进入05.5验证库；只有经过新文章再次验证并满足证据门槛后，才能升级为ACTIVE。

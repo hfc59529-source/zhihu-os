@@ -1,6 +1,8 @@
 # Trigger 判断能力 V1（已归档：能力已并入 production_variable_library.md）
 
-状态：DEPRECATED（作为独立提案已否决，能力已被参数库调用原则吸收）
+术语状态：INACTIVE_PROPOSAL — 本文件术语（`OBSERVED`/`HYPOTHESIS`/`EXPERIENCE`、"调用"）已过时，不随 GOVERNANCE-PRINCIPLE-V1.6 / production_variable_library V3 同步更新。当前权威状态链和术语见 `production_variable_library.md`。
+
+状态：DEPRECATED（作为独立提案已否决，能力已被参数库触发规则吸收）
 日期：2026-08-01
 
 是否生效：否（本文件不再单独生效）

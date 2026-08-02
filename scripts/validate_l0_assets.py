@@ -37,7 +37,7 @@ REQUIRED_FIELDS = [
 ]
 
 NUMERIC_FIELDS = ["views", "likes", "comments", "favorites", "earnings", "earnings_per_1k_views"]
-EVIDENCE_LEVELS = {"RAW", "HYPOTHESIS", "EXPERIENCE", "ACTIVE"}
+EVIDENCE_LEVELS = {"RAW", "CANDIDATE", "REVIEW", "ACTIVE"}
 HISTORICAL_RULE_STATUSES = {"未提取", "候选规律", "05.5验证中", "已进入ACTIVE"}
 DEEP_REVIEW_VALUES = {"是", "否"}
 

@@ -44,9 +44,9 @@
 | `templates/Claude正文生产Prompt.md` | 01 生产系统 | 是，Claude正文生产Prompt权威 | Production Card、Claude正文 | 知识库、复盘库不得维护正文Prompt |
 | `templates/Production Card模板.md` | 01 生产系统 | 是，Production Card字段模板权威 | Skill006、Claude正文生产Prompt | 生产卡实例不得新增或删减模板字段 |
 | `templates/单次任务模板.md` | 01 生产系统 | 是，单次任务输入格式权威 | Codex日常任务、生产卡生成 | 生产卡、复盘库不得维护任务模板 |
-| `docs/知乎内容质量参数库_V2.md` | 02 知识系统 | 是，质量参数权威 | 总AI执行中心、Skill006、QA | 生产协议只调用参数，不复制维护参数 |
+| `docs/知乎内容质量参数库_V2.md` | 02 知识系统 | 是，质量参数权威 | 总AI执行中心、Skill006、QA | 生产协议只触发参数，不复制维护参数 |
 | `runtime/ACTIVE_MANIFEST.md` | 02 知识系统 | 是，Codex日常执行快照清单权威 | Codex日常生产、Skill006、校验脚本 | Notion更新未发布到runtime前不得直接影响生产 |
-| `runtime/知乎内容质量参数快照.md` | 02 知识系统 | 是，Codex日常参数执行权威 | Skill006、Production Card、QA | 未标记ACTIVE的Notion参数不得进入生产调用 |
+| `runtime/知乎内容质量参数快照.md` | 02 知识系统 | 是，Codex日常参数执行权威 | Skill006、Production Card、QA | 未标记ACTIVE的Notion参数不得进入生产触发 |
 | `runtime/知乎ACTIVE规律快照.md` | 02 知识系统 | 是，Codex日常规律执行权威 | Skill006、爆款规律提取 | 单篇复盘不得直接覆盖runtime规律 |
 | `runtime/知乎结构库快照.md` | 02 知识系统 | 是，Codex日常结构执行权威 | 内容路由、Skill006、Production Card | Notion草稿结构不得直接进入生产 |
 | `runtime/知乎账号画像快照.md` | 02 知识系统 | 是，账号画像执行快照权威 | 选题准入、选题扩展、案例选择、复盘样本优先级 | 不得新增 Production Card 字段，不得直接修改 Prompt |

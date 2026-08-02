@@ -1,5 +1,7 @@
 # Trigger Engine 架构审查
 
+术语状态：INACTIVE_PROPOSAL — 本文件术语（`OBSERVED`/`HYPOTHESIS`/`EXPERIENCE`、"调用"）已过时，不随 GOVERNANCE-PRINCIPLE-V1.6 / production_variable_library V3 同步更新。当前权威状态链和术语见 `production_variable_library.md`。
+
 状态：PROPOSAL REVIEW
 日期：2026-08-01
 

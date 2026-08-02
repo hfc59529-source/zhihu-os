@@ -117,7 +117,7 @@ Structure Matcher 读取：
 - Analyzer 输出。
 - runtime ACTIVE 结构快照。
 - 历史资产检索摘要。
-- 允许生产调用的 ACTIVE 变量。
+- 触发资格=是的 ACTIVE 变量。
 
 Structure Matcher 禁止：
 

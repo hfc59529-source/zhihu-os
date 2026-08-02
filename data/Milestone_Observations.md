@@ -2,6 +2,31 @@
 
 用途：记录进入 ZH-MILESTONE-010 统一复盘的观察项。这里不写入参数库，不修改协议，只保存待判断问题、平台验证过程和最终结论。
 
+对象类型：Observation（观察）。与 `production_variable_library.md` 的 Parameter（参数）对象职责分离——Observation 只描述"观察到了什么、怎么验证、证据是否支持"，不描述"能不能进入生产"。Observation 状态和 Parameter 状态是两条独立状态链，不共用状态名，不发生对象类型变异（一条 Observation 不会自己变成一条 Parameter 记录）。
+
+## Observation 生命周期
+
+```text
+OPEN
+↓
+VALIDATING
+↓
+SUPPORTED ──→ CLOSED
+REJECTED ─────→ CLOSED
+INCONCLUSIVE ─→ CLOSED
+```
+
+| 状态 | 定义 |
+|---|---|
+| OPEN | 刚从审核或生产中记录的问题，尚未开始验证 |
+| VALIDATING | 正在收集平台样本或账号样本证据 |
+| SUPPORTED | 证据支持该观察成立 |
+| REJECTED | 证据不支持，观察不成立 |
+| INCONCLUSIVE | 证据不足以下结论，且样本来源已穷尽或超出观察窗口 |
+| CLOSED | 观察结束，不再更新（无论最终结论是 SUPPORTED / REJECTED / INCONCLUSIVE） |
+
+`SUPPORTED` 不等于自动创建或修改 `production_variable_library.md` 中的 Parameter 记录——是否创建/推进 Parameter，是治理判断的下一步，由 [系统治理原则.md](../docs/系统治理原则.md) 的规则决定，两者靠 ID 引用连接。
+
 ## Observation 治理边界
 
 Observation 是审核问题和参数修改之间的隔离层。
@@ -13,24 +38,26 @@ Observation 是审核问题和参数修改之间的隔离层。
 ↓
 审核
 ↓
-Observation
+Observation（OPEN）
 ↓
-平台验证
+平台验证（VALIDATING）
 ↓
-参数修改判断
+结论（SUPPORTED / REJECTED / INCONCLUSIVE → CLOSED）
 ↓
-更新参数库
+SUPPORTED 时，判断是否创建或推进 Parameter 记录
+↓
+更新参数库（如适用）
 ↓
 记录变更
 ```
 
 执行规则：
 
-1. 审核发现问题，只写 Observation。
-2. 未完成平台验证，不改正式参数。
-3. 验证结果不支持，Observation 关闭，不进入参数库。
-4. 验证结果支持，才修改 `production_variable_library.md` 对应参数字段。
-5. 每次参数修改必须关联 Observation ID。
+1. 审核发现问题，只写 Observation（状态 OPEN）。
+2. 未完成平台验证（未进入或走完 VALIDATING），不改正式参数。
+3. 结论为 REJECTED 或 INCONCLUSIVE，Observation 关闭（CLOSED），不进入参数库。
+4. 结论为 SUPPORTED，才可能修改 `production_variable_library.md` 对应参数字段。
+5. 每次参数修改必须在 Parameter 记录的"证据引用"字段关联 Observation ID。
 6. 不新增独立 Trigger、Evidence、Change Log 系统。
 
 标准字段：
@@ -41,10 +68,10 @@ Observation ID：
 题目：
 审核来源：
 问题类型：
-关联参数：
+关联 Parameter ID（如已存在对应参数记录）：
 问题描述：
 初步修正意见：
-验证状态：
+生命周期状态：OPEN / VALIDATING / SUPPORTED / REJECTED / INCONCLUSIVE / CLOSED
 平台证据：
 最终结论：
 处理动作：
@@ -53,10 +80,14 @@ Observation ID：
 问题类型限定为：
 
 - 结构问题
-- 参数误调用
+- 参数触发错误
 - 触发条件错误
 - 禁用边界缺失
 - 表达问题
+
+## 历史记录状态口径说明
+
+以下两条 Observation 建立于本文件采用正式生命周期状态之前，沿用当时的"Open / Closed"二态记法。按新口径对照：旧记法的 `Open` 对应 `OPEN`（尚未完成验证）或 `VALIDATING`（已有部分证据但未终结），旧记法的 `Closed` 对应 `CLOSED`（终态），具体结论仍以原文叙述为准，不倒填 SUPPORTED / REJECTED / INCONCLUSIVE 标签。
 
 ## Observation-01：尾段重复压缩
 

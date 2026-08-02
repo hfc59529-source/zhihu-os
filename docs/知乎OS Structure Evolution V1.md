@@ -116,7 +116,7 @@ Structure Lab 是 Research Layer 内的结构实验室。
 | 行为目标 | 服务停留、看完、收藏、评论或转发中的哪些 |
 | 传播规律 | 为什么读者会继续读、收藏或评论 |
 | 反例 | 该结构在哪些样本失败 |
-| 验证状态 | OBSERVED / HYPOTHESIS / EXPERIENCE / ACTIVE / DEPRECATED |
+| 验证状态 | DISCOVERED / CANDIDATE / REVIEW / ACTIVE / DEPRECATED / ARCHIVED |
 
 ## 4. ACTIVE 升级门槛
 
@@ -131,14 +131,14 @@ Structure Lab 是 Research Layer 内的结构实验室。
 
 未满足前，只能保留在 Research Layer，不得进入 Production Layer。
 
-## 5. 生产调用边界
+## 5. 生产触发边界
 
-Production Layer 永远只调用 ACTIVE 结构。
+Production Layer 永远只触发 ACTIVE 结构。
 
 Structure Matcher 只能读取：
 
 - `runtime/知乎结构库快照.md`
-- `production_variable_library.md` 中允许生产调用的 ACTIVE 变量
+- `production_variable_library.md` 中触发资格=是的 ACTIVE 变量
 - 当前 Analyzer 输出
 - 历史资产检索摘要
 - 账号画像执行快照
