@@ -1,4 +1,8 @@
 run_id,question,runtime_version,parameter_version,structure,main_variable,qa_status,publish_status,reading,salt_income,data_cycle
-zhihu-20260729-middle-manager-promotion-001,为什么工作中，很多高层领导明知道某位中层领导缺乏管理能力，但还是提拔了他当中层？,ZH-RUNTIME-V2.1,PARAM-V2.1,ACTIVE-01 职场组织型回答结构,组织可控性,未执行,DONE,19,0,2026-07-31已抓取
-zhihu-20260729-senior-leader-not-fired-001,公司高层明明不行，大老板为什么还不裁掉他们？,ZH-RUNTIME-V2.1,PARAM-V2.1,ACTIVE-01 职场组织型回答结构,组织风险押注,未执行,DONE,164,9,2026-07-31已抓取
-zhihu-20260729-fuzzy-responsibility-boundary-001,领导布置任务故意模糊责任界限，作为底层员工，如何在谁都不得罪的提前下，保护好自己？,ZH-RUNTIME-V2.1,PARAM-V2.1,ACTIVE-01 职场组织型回答结构,责任边界保护,未执行,DONE,59,4,2026-07-31已抓取
+zhihu-20260729-middle-manager-promotion-001,为什么工作中，很多高层领导明知道某位中层领导缺乏管理能力，但还是提拔了他当中层？,ZH-RUNTIME-V2.1,PARAM-V2.1,ACTIVE-01 职场组织型回答结构,组织可控性,未执行,DONE,20,0,2026-07-31已抓取；2026-08-02截图补录：赞同0/评论0/收藏0/喜欢0；发布于07-29
+zhihu-20260729-senior-leader-not-fired-001,公司高层明明不行，大老板为什么还不裁掉他们？,ZH-RUNTIME-V2.1,PARAM-V2.1,ACTIVE-01 职场组织型回答结构,组织风险押注,未执行,DONE,223,9,2026-07-31已抓取；2026-08-02截图补录：赞同4/评论0/收藏2/喜欢0；发布于07-29
+zhihu-20260729-fuzzy-responsibility-boundary-001,领导布置任务故意模糊责任界限，作为底层员工，如何在谁都不得罪的提前下，保护好自己？,ZH-RUNTIME-V2.1,PARAM-V2.1,ACTIVE-01 职场组织型回答结构,责任边界保护,未执行,DONE,60,4,2026-07-31已抓取；2026-08-02截图补录：赞同1/评论0/收藏0/喜欢0；发布于07-29
+ZH-20260802-001,提拔你当了部门负责人，第一件事该干啥？,UNKNOWN,UNKNOWN,ACTIVE-TS02 老师解决题场景施工结构,第一件事不是行动而是校准,未找到正式QA记录,PUBLISHED_SCREENSHOT,13,UNKNOWN,2026-08-02截图补录；赞同1/评论0/收藏0/喜欢0；发布于8小时前
+ZH-20260801-001,职场中怎么改掉弱者气息？,UNKNOWN,UNKNOWN,ACTIVE-TS01 老师爆款机制推进结构,边界/交换价值/后果预期信号清楚,SemanticReview-v1 PASS,PUBLISHED_SCREENSHOT,6,UNKNOWN,2026-08-02截图补录；赞同0/评论0/收藏0/喜欢0；被折叠；发布于23小时前
+ZH-20260731-unknown_mofish,为什么老板明知你摸鱼却不拆穿？,UNKNOWN,UNKNOWN,UNKNOWN,老板不拆穿是因为拆穿不划算,未找到,PUBLISHED_SCREENSHOT,5,UNKNOWN,2026-08-02截图补录；赞同0/评论0/收藏0/喜欢0；发布于07-31；无Production ID
+ZH-20260801-003,领导不声不响把你手里的任务拿走后，过了几个月，发现别人干不了，想还给你，你会怎么做呢？,UNKNOWN,UNKNOWN,ACTIVE-TS02 老师解决题场景施工结构,任务回来等于风险回流并需重新立项,Final_Validation PASS,PUBLISHED_SCREENSHOT,24,UNKNOWN,2026-08-02截图补录；赞同0/评论0/收藏0/喜欢0；发布于07-31
