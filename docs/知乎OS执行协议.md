@@ -110,6 +110,7 @@ Claude / 写作角色负责：
 
 - 根据 Codex 选题包判断怎么写。
 - 调用参数并推理。
+- 锁定 Explanation Target（一致解释目标）：所有段落共同回答同一个读者真实困惑，不得在正文中切换解释对象。
 - 根据选题包生成正文。
 - 根据 Audit_Report 和 Decision_Log 执行 Patch。
 - 生成正文变更记录。
@@ -118,6 +119,7 @@ GPT / 人工负责：
 
 - 检查参数有没有调用对。
 - 检查正文有没有执行好。
+- 检查正文是否出现 Explanation Target Drift（解释目标漂移）、跳题、断层或观点堆叠。
 - 确认实际生效参数。
 - 判断问题来自系统，还是来自正文执行。
 - 只有连续同类问题被确认为系统问题时，才反馈 Codex 进入系统维护。
@@ -135,7 +137,9 @@ Codex 不进入单篇正文 QA / Audit / Patch Validation。Codex 只在系统�
 ↓
 主变量
 ↓
-一句核心机制
+Explanation Target（一致解释目标）
+↓
+唯一核心判断
 ↓
 正文
 ↓
@@ -147,6 +151,7 @@ Codex 不进入单篇正文 QA / Audit / Patch Validation。Codex 只在系统�
 日常生产最多执行三个轻量检查：
 
 - 有没有跑偏。
+- 有没有 Explanation Target Drift（解释目标漂移）。
 - 有没有太像 AI。
 - 有没有实际收藏点。
 

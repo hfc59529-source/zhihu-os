@@ -71,6 +71,13 @@ ABSTRACT_ONLY_TOKENS = [
     "现实承接",
 ]
 
+EXPLANATION_TARGET_REQUIREMENTS = [
+    "读者真实困惑",
+    "因果追问链",
+    "因果追问终点",
+    "唯一核心判断",
+]
+
 CLAUDE_DIRECT_OUTPUT_REQUIREMENTS = [
     "直接生成一篇可发布的知乎回答",
     "不要反问",
@@ -175,10 +182,56 @@ def validate_segments(text: str, failures: list[str]) -> None:
             if not match or len(match.group(1).strip()) < 8:
                 code = "FAIL-CARD-NO-SCENE" if subfield == "现实场景或例子" else "FAIL-CARD-ABSTRACT"
                 failures.append(f"{code}: segment {index} missing concrete {subfield}")
+            elif subfield == "推进关系":
+                relation = match.group(1).strip()
+                if relation in ABSTRACT_ONLY_TOKENS:
+                    failures.append(
+                        f"FAIL-CARD-EXPLANATION-TARGET-DRIFT: segment {index} 推进关系 is not a concrete explanation step"
+                    )
         goal_match = re.search(r"(?m)^(.+?)(?:\n|$)", segment.strip())
         goal_text = goal_match.group(1).strip() if goal_match else ""
         if goal_text in ABSTRACT_ONLY_TOKENS:
             failures.append(f"FAIL-CARD-ABSTRACT: segment {index} uses abstract-only label")
+
+
+def validate_explanation_target(text: str, structure_instance: str, failures: list[str]) -> None:
+    for field in EXPLANATION_TARGET_REQUIREMENTS:
+        if len(section(text, field)) < 12 and field not in {"因果追问链", "因果追问终点"}:
+            failures.append(f"FAIL-CARD-EXPLANATION-TARGET-DRIFT: {field} is too thin")
+
+    true_confusion = section(text, "读者真实困惑")
+    original_understanding = section(text, "读者原始理解")
+    core_judgment = section(text, "唯一核心判断")
+    if true_confusion and original_understanding and true_confusion.strip() == original_understanding.strip():
+        failures.append("FAIL-CARD-EXPLANATION-TARGET-DRIFT: 读者真实困惑 must differ from 读者原始理解")
+    if core_judgment and len(core_judgment) < 18:
+        failures.append("FAIL-CARD-EXPLANATION-TARGET-DRIFT: 唯一核心判断 must state the final judgment")
+
+    causal_chain_match = re.search(
+        r"(?ms)^因果追问链：\s*(.*?)(?=^因果追问终点：|\Z)",
+        structure_instance,
+    )
+    causal_chain = causal_chain_match.group(1).strip() if causal_chain_match else ""
+    causal_items = [
+        item.strip()
+        for item in re.findall(r"(?m)^\s*\d+\.\s*(.+)", causal_chain)
+        if item.strip()
+    ]
+    if len(causal_items) < 3:
+        failures.append("FAIL-CARD-NO-CAUSAL-CHAIN: causal chain must contain at least 3 numbered steps")
+    for index, item in enumerate(causal_items, start=1):
+        if len(item) < 8:
+            failures.append(f"FAIL-CARD-EXPLANATION-TARGET-DRIFT: causal step {index} is too thin")
+        if item in ABSTRACT_ONLY_TOKENS:
+            failures.append(f"FAIL-CARD-EXPLANATION-TARGET-DRIFT: causal step {index} is abstract-only")
+
+    endpoint_match = re.search(r"(?m)^因果追问终点：\s*(.{8,})", structure_instance)
+    if not endpoint_match:
+        failures.append("FAIL-CARD-NO-CAUSAL-CHAIN: missing causal endpoint")
+    else:
+        endpoint = endpoint_match.group(1).strip()
+        if endpoint in ABSTRACT_ONLY_TOKENS:
+            failures.append("FAIL-CARD-EXPLANATION-TARGET-DRIFT: causal endpoint is abstract-only")
 
 
 def main() -> int:
@@ -213,14 +266,7 @@ def main() -> int:
         if not match or len(match.group(1).strip()) < 8:
             failures.append(f"FAIL-CARD-ABSTRACT: 结构实例化 missing concrete {field}")
 
-    causal_chain_match = re.search(
-        r"(?ms)^因果追问链：\s*(.*?)(?=^因果追问终点：|\Z)",
-        structure_instance,
-    )
-    if count_numbered_items(causal_chain_match.group(1) if causal_chain_match else "") < 3:
-        failures.append("FAIL-CARD-NO-CAUSAL-CHAIN: causal chain must contain at least 3 numbered steps")
-    if not re.search(r"(?m)^因果追问终点：\s*.{8,}", structure_instance):
-        failures.append("FAIL-CARD-NO-CAUSAL-CHAIN: missing causal endpoint")
+    validate_explanation_target(text, structure_instance, failures)
 
     validate_segments(text, failures)
 

@@ -51,18 +51,21 @@ QA 只检查以下事项：
 1. 题目一致性：正文是否回答 Production Card 中的问题。
 2. 核心判断一致性：正文是否兑现 Production Card 的唯一核心判断。
 3. 结构一致性：正文是否按 Production Card 的结构实例化和分段施工说明推进。
-4. 场景一致性：正文是否使用 Production Card 要求的现实场景或例子，且没有虚构 Card 未提供的真实事实。
-5. 边界一致性：正文是否遵守 Production Card 的事实和安全边界。
-6. 表达约束一致性：正文是否遵守 Production Card 的表达约束。
-7. 收尾一致性：正文是否完成 Production Card 的结尾回收方式。
-8. 后台痕迹检查：正文是否泄露参数名、审计术语、变量编码或系统施工痕迹。
+4. Explanation Target（一致解释目标）：正文所有段落是否共同回答同一个读者真实困惑，是否出现 Explanation Target Drift（解释目标漂移）。
+5. 场景一致性：正文是否使用 Production Card 要求的现实场景或例子，且没有虚构 Card 未提供的真实事实。
+6. 边界一致性：正文是否遵守 Production Card 的事实和安全边界。
+7. 表达约束一致性：正文是否遵守 Production Card 的表达约束。
+8. 收尾一致性：正文是否完成 Production Card 的结尾回收方式。
+9. 后台痕迹检查：正文是否泄露参数名、审计术语、变量编码或系统施工痕迹。
 
 ## PASS 标准
 
 同时满足以下条件，判定 PASS：
 
 - 正文主线能回到 Production Card 的问题和唯一核心判断。
+- 正文所有段落都共同回答同一个读者真实困惑。
 - Production Card 要求的段落职责、场景要求和推进关系均已兑现。
+- 未出现跳题、断层或观点堆叠。
 - 未新增 Production Card 没有提供的一级结构、核心概念、真实案例、数据或结论。
 - 未违反 Production Card 的事实和安全边界。
 - 未出现明显后台字段、参数名、审计术语或系统施工痕迹。
@@ -75,6 +78,7 @@ QA 只检查以下事项：
 - 正文回答了另一个问题。
 - 正文替换、稀释或反转 Production Card 的唯一核心判断。
 - 正文绕开 Production Card 的分段施工说明，改成另一套论证结构。
+- 正文切换了解释对象，出现 Explanation Target Drift（解释目标漂移）、跳题、断层或观点堆叠。
 - 正文遗漏 Production Card 明确要求的关键段落职责、现实场景或结尾回收。
 - 正文新增 Production Card 未提供的理论框架、真实案例、数据、人物、公司、行业事实或核心判断。
 - 正文违反 Production Card 的事实和安全边界。
@@ -122,6 +126,7 @@ Production ID：
 - 题目一致性：
 - 核心判断一致性：
 - 结构一致性：
+- Explanation Target（一致解释目标）：
 - 场景一致性：
 - 边界一致性：
 - 表达约束一致性：
@@ -156,6 +161,7 @@ Codex 生成修正指令时，只能引用：
 - 修改 Production Card。
 - 增加 Production Card 没有的新观点。
 - 增加 Production Card 没有的新变量、案例、数据或理论。
+- 反向补写 Production Card 没有定义的新解释逻辑。
 - 使用旧参数体系解释为什么要改。
 
 ## 停止条件

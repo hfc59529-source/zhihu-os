@@ -43,6 +43,7 @@
 | `templates/知乎OS总控提示词.md` | 01 生产系统 | 是，总控提示词权威 | Codex日常生产、执行协议 | 生产卡、正文、复盘库不得维护总控提示词 |
 | `templates/Claude正文生产Prompt.md` | 01 生产系统 | 是，Claude正文生产Prompt权威 | Production Card、Claude正文 | 知识库、复盘库不得维护正文Prompt |
 | `templates/Production Card模板.md` | 01 生产系统 | 是，Production Card字段模板权威 | Skill006、Claude正文生产Prompt | 生产卡实例不得新增或删减模板字段 |
+| Explanation Target（一致解释目标）字段定义 | 01 生产系统 | 是，归属现有 Production Card 字段：`读者真实困惑`、`因果追问链`、`因果追问终点`、`唯一核心判断`、`分段施工说明/推进关系` | Skill006、Claude正文生产Prompt、Skill007、Production Card 校验脚本 | 不得新增独立 Skill、Engine、流程节点、知识库或平行字段体系 |
 | `templates/单次任务模板.md` | 01 生产系统 | 是，单次任务输入格式权威 | Codex日常任务、生产卡生成 | 生产卡、复盘库不得维护任务模板 |
 | `docs/知乎内容质量参数库_V2.md` | 02 知识系统 | 是，质量参数权威 | 总AI执行中心、Skill006、QA | 生产协议只触发参数，不复制维护参数 |
 | `runtime/ACTIVE_MANIFEST.md` | 02 知识系统 | 是，Codex日常执行快照清单权威 | Codex日常生产、Skill006、校验脚本 | Notion更新未发布到runtime前不得直接影响生产 |
