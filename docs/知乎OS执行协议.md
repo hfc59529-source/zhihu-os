@@ -34,12 +34,13 @@ Codex 写入参数调用日志
 1. 截图识别
 2. 选题提取（必须同时保存题目原文和真实知乎问题链接）
 3. 读取原问题和问题描述
-4. 选题初筛
-5. 必要事实补充
-6. 历史重复检查
-7. 生成标准选题包
-8. 保存到候选池
-9. 停止，等待 Claude 接管
+4. 开放式决策题硬过滤
+5. 选题初筛
+6. 必要事实补充
+7. 历史重复检查
+8. 生成标准选题包
+9. 保存到候选池
+10. 停止，等待 Claude 接管
 
 系统自采型必须先执行：
 
@@ -47,6 +48,8 @@ Codex 写入参数调用日志
 知乎入口采集
 ↓
 候选池整理
+↓
+开放式决策题硬过滤
 ↓
 输出 Daily_Topic_Top3
 ↓
@@ -263,11 +266,14 @@ L3｜ACTIVE变量：生产触发
 生产边界：
 
 - Trigger Candidate 只回答题目是否值得优先生产，不得输出 ACTIVE、结构、参数、核心判断或正文方向。
+- 开放式决策题默认 REJECT：问题主体是“如果你……”“你会不会……”“你会怎么选……”“你会如何处理……”，且核心目标是让回答者做选择时，不进入正式生产，不生成 Production Card，不采集 `Answer_Benchmark_Top3`。
+- 开放式决策题稳定判断法：如果把题目改成“为什么”仍能回答机制，则保留；如果改成“为什么”以后问题就不存在，直接放弃。
 - 读者视角校准只回答视角，不回答内容；只能迁移旧 Production Card 已有能力，输出读者真实困惑、读者原始理解和实际读者范围。
 - 读者真实困惑、读者原始理解、实际读者范围三个字段的唯一权威来源是选题包「3. 读者视角校准」节。Production Card 必须直接消费选题包中的这三个字段，不得重新生成或独立推导第二份版本；如认为选题包中的字段有误，必须退回选题包修正，不得在 Card 内部另写一份。
 - Topic Package 只回答题目事实、必要上下文、是否值得写、重复检查、风险提示、`Answer_Benchmark_Top3`、`Existing_View_Coverage`、`Possible_Current_Gap`、`Existing_Parameter_Matches` 和 `New_Parameter_Observations`。
 - `Answer_Benchmark_Top3` 只回答竞争环境、同题高赞回答已覆盖内容、`Possible_Current_Gap`、已有参数命中和待审核参数缺口。
-- Possible Current Gap 不是正文方向；Production Card 可以采用、拒绝或重新推导。
+- Top3 参数命中不是参数验证：高赞回答命中某参数，只能说明该参数出现在高赞回答中，不能说明该参数导致高赞。真正的参数验证只能来自本账号 Production Card 调用后的发布结果和复盘数据。
+- `Possible_Current_Gap` / Candidate Gap 仅为研究结论，不属于 Production Card 输入，不具有约束力；Claude / Production Card 可以接受、修改、否决，或完全重新定义正文切入。
 - ACTIVE、核心判断、最终参数、结构和表达，必须在 Production Card 生成过程中由生产决策层推理得出，不得由 Topic、Trigger 或 `Answer_Benchmark_Top3` 提前决定。
 
 采集任务必须分流：
