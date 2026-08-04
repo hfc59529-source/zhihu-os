@@ -1,6 +1,6 @@
 # Codex 选题采集协议
 
-执行版本：TOPIC-COLLECTOR-V1.0
+执行版本：TOPIC-COLLECTOR-V1.1
 
 状态：ACTIVE
 
@@ -13,9 +13,12 @@ Codex 只负责：
 - 从知乎平台或用户指定来源发现问题。
 - 读取问题页，完整保存原问题。
 - 判断问题是否值得进入候选池。
+- 排出 `Daily_Topic_Top3`。
+- 对进入正式候选的问题采集 `Answer_Benchmark_Top3`。
+- 基于 `Answer_Benchmark_Top3` 完成已有观点覆盖分析、现有参数命中检查和参数缺口记录。
 - 补充必要事实背景。
 - 检查历史重复。
-- 生成标准化选题包。
+- 生成完整 Topic Package。
 - 保存到候选池。
 
 单篇生产前，Codex 不负责：
@@ -28,6 +31,7 @@ Codex 只负责：
 - 修改生产协议。
 - 优化系统架构。
 - 新增参数或规则。
+- 将单篇高赞回答中的新现象直接写入 ACTIVE 参数。
 
 选题包完成后，Codex 任务立即结束，后续交给 Claude。
 
@@ -54,7 +58,17 @@ H1 热榜校验
 ↓
 用 Trigger Candidate 排序
 ↓
+输出 Daily_Topic_Top3
+↓
 读者视角校准
+↓
+采集 Answer_Benchmark_Top3
+↓
+已有观点覆盖分析
+↓
+匹配现有参数库
+↓
+记录参数缺口（待审核）
 ↓
 生成选题包
 ↓
@@ -67,14 +81,14 @@ Codex 不得继续生成 Production Card 或正文。
 
 ## 2.0.0 读者视角校准
 
-读者视角校准是从旧 Production Card 字段中迁移到当前选题入口的既有能力，不是新增对象。它是 Production Card 之前的标准检查步骤，位于 Topic Pool 之后、Top3 Context 之前。
+读者视角校准是从旧 Production Card 字段中迁移到当前选题入口的既有能力，不是新增对象。它是 Production Card 之前的标准检查步骤，位于 Topic Pool 之后、Answer_Benchmark_Top3 之前。
 
 ```text
 Topic Pool
 ↓
 读者视角校准
 ↓
-Top3 Context
+Answer_Benchmark_Top3
 ↓
 Production Card
 ```
@@ -100,28 +114,106 @@ Production Card
 
 这些字段本质是 Viewpoint Calibration（视角校准），用于恢复旧 Card 中已经存在但在当前链路中没有被稳定调用的能力，减少早期偏航：回答了自己想回答的问题、混淆提问者和读者、观点正确但没有命中读者点进来的原因。
 
-## 2.0.1 Production Boundary
+## 2.0.1 Top3 对象命名边界
 
-Codex 选题采集只输出 Topic Pool、读者视角校准、Topic Package、Top3 Context 和 Possible Current Gap。
+禁止继续使用模糊字段名、文件名或变量名 `Top3`。
+
+必须区分两个对象：
+
+| 对象名 | 中文名 | 对象 | 用途 | 保存位置 |
+|---|---|---|---|---|
+| `Daily_Topic_Top3` | 当日候选问题前三 | 问题 | 选题排序、决定当天优先生产顺序 | `data/Topic_Pool.md` 或当日 Topic Pool 汇总 |
+| `Answer_Benchmark_Top3` | 同问题高赞回答前三 | 回答 | 同题学习、语境校准、现有参数匹配、参数缺口发现 | Topic Package 内部字段 |
+
+两者不得共用字段、文件名或变量名。
+
+历史文件 `Top3_Context.md` 只作为旧产物保留；新产物必须使用 `Answer_Benchmark_Top3` 字段和标题。若需要独立文件，命名为 `Answer_Benchmark_Top3.md`。
+
+## 2.0.2 Production Boundary
+
+Codex 选题采集只输出 Topic Pool、`Daily_Topic_Top3`、读者视角校准、Topic Package、`Answer_Benchmark_Top3` 和 `Possible_Current_Gap`。
 
 禁止在选题采集阶段输出或暗示以下对象：
 
 - ACTIVE。
 - 正文结构。
-- 正文参数。
+- 正文最终参数。
 - 唯一核心判断。
 - 正文方向。
 - 表达策略。
 
 Trigger Candidate 只用于判断题目生产优先级，不得绑定 ACTIVE、结构或正文参数。
 
-Top3 Context 只回答：
+`Answer_Benchmark_Top3` 可以回答：
 
 - 别人已经写了什么。
 - 当前竞争环境是什么。
-- 可能有哪些 Possible Current Gap。
+- 当前题目的平台语境是什么。
+- 可能有哪些 `Possible_Current_Gap`。
+- 现有参数库中哪些参数被高赞回答真实触发。
+- 哪些重要效果暂时无法被现有参数解释。
 
-`Possible Current Gap` 不是正文方向。Production Card 可以采用，也可以不采用，最终决策权属于 Production Card 生成过程。
+`Possible_Current_Gap` 不是正文方向。Production Card 可以采用，也可以不采用，最终决策权属于 Production Card 生成过程。
+
+`Answer_Benchmark_Top3` 可以影响当前 Production Card 的参数候选和差异定位，但不能自动决定正文方向、自动新增 ACTIVE 参数、自动修改参数库，Claude 也不得重新打开知乎重复采集同题高赞回答。
+
+## 2.0.3 Answer_Benchmark_Top3 固定用途
+
+`Answer_Benchmark_Top3` 指某一个候选问题下，当前页面默认排序前三条有效高赞回答；对象是回答，不是当天前三个问题。默认使用知乎问题页当前默认排序，必须记录 `Sample Source`、采集时间、页面加载深度和可信度。
+
+### A. 当前题目语境
+
+必须输出：
+
+- `Existing_View_Coverage`：三篇回答分别回答了什么、哪些观点已经被覆盖。
+- `Possible_Current_Gap`：当前题目仍可能存在的空白。
+- `Avoid_Repetition`：当前回答应避免与哪些内容重复。
+
+### B. 现有参数匹配
+
+逐篇检查高赞回答触发了现有参数库中的哪些 ACTIVE 参数或已登记参数。
+
+每个参数命中至少记录：
+
+- `Parameter_ID`
+- `Parameter_Evidence`
+- `Parameter_Location`
+- `Parameter_Strength`
+
+不允许只写抽象结论，必须有原文证据、短摘录或段落定位。没有证据的参数命中无效。
+
+### C. 新参数缺口发现
+
+当高赞回答中存在重要效果，但现有参数库无法解释时，只记录参数缺口，不得新增参数。
+
+固定字段：
+
+- `Parameter_Gap_Description`
+- `Evidence`
+- `Existing_Parameter_Match: None`
+- `Status: 待审核`
+
+Codex 只有两个权限：命中已有参数，提交参数缺口。是否建立候选参数、是否合并、删除、进入 ACTIVE，必须由用户审核决定。
+
+参数缺口治理流程：
+
+```text
+高赞回答
+↓
+发现参数缺口
+↓
+记录为待审核
+↓
+用户审核
+↓
+是否建立候选参数
+↓
+多次独立问题中重复出现
+↓
+用户再次审核
+↓
+进入 ACTIVE
+```
 
 ## 2.1 选题有效期
 
@@ -276,7 +368,7 @@ Codex 只补充生产正文所必需的信息。
 - 问题描述。
 - 提问时间。
 - 当前关注、浏览、回答数量。
-- 高赞回答主要方向。
+- `Answer_Benchmark_Top3` 的元数据、摘要、证据定位、已有观点覆盖、现有参数命中和参数缺口。
 - 问题涉及的行业或场景。
 - 必要的公开事实背景。
 - 可能存在的事实争议。
@@ -310,6 +402,21 @@ Codex 只补充生产正文所必需的信息。
 - B：可以生产。
 - C：暂缓。
 - D：淘汰。
+
+Topic Package 至少包含：
+
+- Question
+- Question Owner
+- Primary Reader
+- Reading Motivation
+- Daily Topic Rank
+- Answer Benchmark Top3
+- Existing View Coverage
+- Possible Current Gap
+- Existing Parameter Matches
+- New Parameter Observations
+- Source Links
+- Capture Time
 
 ## 8. 候选池保存规则
 
@@ -349,8 +456,10 @@ Codex 选题包中不得出现：
 3. 核心矛盾已识别。
 4. 重复检查已完成。
 5. 必要背景已整理。
-6. 推荐级别已给出。
-7. 选题包已保存。
+6. `Daily_Topic_Top3` 已在 Topic Pool 中明确。
+7. 正式候选题的 `Answer_Benchmark_Top3` 已采集并完成三项分析。
+8. 推荐级别已给出。
+9. Topic Package 已保存。
 
 完成后不得继续分析内容。
 

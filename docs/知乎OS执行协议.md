@@ -1,6 +1,6 @@
 # 知乎OS执行协议
 
-执行版本：ZH-RUNTIME-V3.0-TEACHER / TOPIC-COLLECTOR-V1.0
+执行版本：ZH-RUNTIME-V3.0-TEACHER / TOPIC-COLLECTOR-V1.1
 
 ## 1. 强制执行原则
 
@@ -11,7 +11,7 @@ Production Card 已退出 Codex 日常生产主链。Skill006、Skill007、Card 
 ```text
 Codex 选题包
 ↓
-Claude 调用参数并推理
+Claude 消费 Topic Package 并推理
 ↓
 Claude 生成正文
 ↓
@@ -48,9 +48,19 @@ Codex 写入参数调用日志
 ↓
 候选池整理
 ↓
+输出 Daily_Topic_Top3
+↓
 选题准入判断
 ↓
-生成标准选题包
+采集正式候选题 Answer_Benchmark_Top3
+↓
+现有观点覆盖分析
+↓
+现有参数命中检查
+↓
+参数缺口记录（待审核）
+↓
+生成标准 Topic Package
 ↓
 保存到候选池
 ↓
@@ -82,9 +92,12 @@ Codex 的单篇生产前职责是：
 - 采集与保存题目、真实知乎问题链接。
 - 读取问题页，完整保存原问题、问题描述和必要上下文。
 - 判断是否符合账号方向、是否存在明确矛盾、是否有讨论价值、是否适合当前账号回答。
+- 输出 `Daily_Topic_Top3`：当天筛选出的前三个候选问题，对象是问题，用于选题排序。
+- 对进入正式候选的问题采集 `Answer_Benchmark_Top3`：同一问题下默认排序前三条有效高赞回答，对象是回答，用于同题 Benchmark、语境校准和参数发现。
+- 完成 `Existing_View_Coverage`、`Possible_Current_Gap`、`Existing_Parameter_Matches` 和 `New_Parameter_Observations`。
 - 检查历史选题库和已发布文章是否重复。
 - 补充必要事实背景。
-- 生成标准化选题包并保存到候选池。
+- 生成标准化 Topic Package 并保存到候选池。
 
 Codex 的长期系统维护职责是：
 
@@ -101,6 +114,8 @@ Codex 的禁止动作：
 - 不得调表达。
 - 不得审正文。
 - 不得直接写 `Draft-v1.md` 正文。
+- 不得因 `Answer_Benchmark_Top3` 发现新效果而直接新增、推进或激活参数。
+- 不得把参数缺口写成正式参数；参数缺口只能提交为 `待审核`。
 - 不得直接改写、润色或替换 `Article-v*.md` / `Article-Patched-v*.md` / `Article-Final.md` 正文。
 - 不得在 Patch 未完成、Patch Validation 未通过、用户未验收时修改 `Release-v*.md` 的正文段落。
 - 不得把审核建议直接执行成正文 Patch。
@@ -108,17 +123,19 @@ Codex 的禁止动作：
 
 Claude / 写作角色负责：
 
-- 根据 Codex 选题包判断怎么写。
-- 调用参数并推理。
+- 只消费 Codex Topic Package 判断怎么写。
+- 基于 Topic Package 中的 `Answer_Benchmark_Top3`、已有参数命中和参数缺口提示进行推理。
 - 锁定 Explanation Target（一致解释目标）：所有段落共同回答同一个读者真实困惑，不得在正文中切换解释对象。
 - 根据选题包生成正文。
 - 根据 Audit_Report 和 Decision_Log 执行 Patch。
 - 生成正文变更记录。
+- 不重新打开知乎采集同题高赞回答。
 
 GPT / 人工负责：
 
 - 检查参数有没有调用对。
 - 检查正文有没有执行好。
+- 审核 Codex 提交的参数缺口，决定删除、合并、建立候选参数或继续观察。
 - 检查正文是否出现 Explanation Target Drift（解释目标漂移）、跳题、断层或观点堆叠。
 - 确认实际生效参数。
 - 判断问题来自系统，还是来自正文执行。
@@ -247,10 +264,10 @@ L3｜ACTIVE变量：生产触发
 - Trigger Candidate 只回答题目是否值得优先生产，不得输出 ACTIVE、结构、参数、核心判断或正文方向。
 - 读者视角校准只回答视角，不回答内容；只能迁移旧 Production Card 已有能力，输出读者真实困惑、读者原始理解和实际读者范围。
 - 读者真实困惑、读者原始理解、实际读者范围三个字段的唯一权威来源是选题包「3. 读者视角校准」节。Production Card 必须直接消费选题包中的这三个字段，不得重新生成或独立推导第二份版本；如认为选题包中的字段有误，必须退回选题包修正，不得在 Card 内部另写一份。
-- Topic Package 只回答题目事实、必要上下文、是否值得写、重复检查和风险提示。
-- Top3 Context 只回答竞争环境、Top3 已覆盖内容和 Possible Current Gap。
+- Topic Package 只回答题目事实、必要上下文、是否值得写、重复检查、风险提示、`Answer_Benchmark_Top3`、`Existing_View_Coverage`、`Possible_Current_Gap`、`Existing_Parameter_Matches` 和 `New_Parameter_Observations`。
+- `Answer_Benchmark_Top3` 只回答竞争环境、同题高赞回答已覆盖内容、`Possible_Current_Gap`、已有参数命中和待审核参数缺口。
 - Possible Current Gap 不是正文方向；Production Card 可以采用、拒绝或重新推导。
-- ACTIVE、核心判断、参数、结构和表达，必须在 Production Card 生成过程中由生产决策层推理得出，不得由 Topic、Trigger 或 Top3 Context 提前决定。
+- ACTIVE、核心判断、最终参数、结构和表达，必须在 Production Card 生成过程中由生产决策层推理得出，不得由 Topic、Trigger 或 `Answer_Benchmark_Top3` 提前决定。
 
 采集任务必须分流：
 
@@ -263,11 +280,15 @@ L3｜ACTIVE变量：生产触发
 
 平台分析不得再输出独立“平台规律”。平台样本只能输出变量证据卡，所有变量发现、命中统计和候选证据必须统一写入 `production_variable_library.md` 对应变量记录。
 
-若变量已存在，只更新平台证据字段，不得创建同义重复变量。若变量不存在，创建 `DISCOVERED` 状态变量。
+若变量已存在，只更新平台证据字段，不得创建同义重复变量。若变量不存在，日常 Codex 任务只能提交 `待审核` 参数缺口；经用户审核批准后，才可创建 `DISCOVERED` 状态变量。
 
 统一状态链：
 
 ```text
+待审核（不属于正式 Parameter 状态）
+↓
+用户审核通过
+↓
 DISCOVERED
 ↓
 CANDIDATE
@@ -279,7 +300,7 @@ ACTIVE
 
 `DEPRECATED` 为废止状态，长期无恢复证据后归档为 `ARCHIVED`。
 
-平台样本只能推动 `DISCOVERED → CANDIDATE`。账号样本负责推动 `CANDIDATE → REVIEW → ACTIVE`。
+平台样本经用户审核后只能推动 `DISCOVERED → CANDIDATE`。账号样本负责推动 `CANDIDATE → REVIEW → ACTIVE`。
 
 正文生产节点只能触发 `production_variable_library.md` 中 `当前状态=ACTIVE` 且 `触发资格=是` 的变量。`CANDIDATE` 和 `REVIEW` 只允许作为指定单变量实验触发，`DEPRECATED` 和 `ARCHIVED` 禁止触发。
 
@@ -784,7 +805,7 @@ ACTIVE / Prompt 升级
 3. 再汇总为变量验证卡。
 4. 最后判断证据等级和规则升级。
 
-同题 Top3 平台样本不是本人数据，只能进入 L3 深度事实包作为竞争环境参考，不得进入 L0/L1 行为结果统计。样本必须记录 Sample Source，默认排序与赞同排序不得混用。
+同题 `Answer_Benchmark_Top3` 平台样本不是本人数据，只能进入 Topic Package 作为同题 Benchmark、竞争环境参考、现有参数命中证据和参数缺口观察来源，不得进入 L0/L1 行为结果统计。样本必须记录 Sample Source，默认排序与赞同排序不得混用。
 
 ### 1.4.8 变量验证卡
 
@@ -1033,12 +1054,17 @@ GPT 必须先从截图中识别以下字段：
 
 爆款案例分析协议改为平台变量证据提取协议。
 
-同题 Top3 平台样本分析不是单次生产硬门槛。它属于复盘增强项，适合在有链接、有样本、有时间时执行，不作为日常生产阻塞条件。
+正式候选题的 `Answer_Benchmark_Top3` 是 Codex 选题阶段的标准职责。它不是复盘增强项，也不由 Claude 在正文阶段补采。
 
 知乎“默认排序”不等于“赞同数排序”。生产模块默认使用平台当前默认排序作为主要分析对象；历史赞同数排序作为长期规律研究对象。两者不得混用，所有样本必须记录采样来源。
 
-日常生产优先从 runtime 执行快照读取以下材料：
+日常正文生产优先从 Codex Topic Package 和 runtime 执行快照读取以下材料：
 
+- `Answer_Benchmark_Top3`
+- `Existing_View_Coverage`
+- `Possible_Current_Gap`
+- `Existing_Parameter_Matches`
+- `New_Parameter_Observations`
 - 已分析爆款样本
 - TOP文章变量提取
 - 选题库相邻问题
@@ -1046,13 +1072,13 @@ GPT 必须先从截图中识别以下字段：
 - 变量证据
 - 历史收益证据
 
-如果用户提供同题样本或要求严格竞品分析，再执行同题 Top3 平台样本分析。
+如果用户额外提供同题样本或要求严格竞品分析，只能作为补充材料标注来源，不替代 Codex 在 Topic Package 中已经完成的 `Answer_Benchmark_Top3`。
 
-如果没有同题平台样本，GPT 可以基于已读取的 runtime 相邻知识和历史样本提取变量证据，但必须标注为“基于 runtime 相邻样本提取”，不能伪称读取了同题平台样本。
+如果没有同题平台样本，不得伪称已读取 `Answer_Benchmark_Top3`；正式候选题应退回 Codex 选题采集补齐。只有不可访问、权限不足或用户明确要求快速跳过时，才允许标注为“同题样本缺失，基于 runtime 相邻样本提取”，并降级使用。
 
-日常待生产问题默认采集有效平台样本 Top5；只需快速生产时采集 Top3 平台样本。日常生产默认采用当前页面默认排序 Top3/Top5；赞同数 Top3/Top5 用于长期规律研究；最新回答 Top3 可作为当前竞争环境补充。Top1 至 Top3 做深度分析，Top4 至 Top5 用于交叉验证。若页面前5条存在盐选节选、广告引流、无实质内容、偏题或明显过时回答，必须继续向下补足 5 个有效样本。
+日常正式候选题默认采集 `Answer_Benchmark_Top3`。长期变量训练任务默认采集有效平台样本 Top5；赞同数 Top5 用于长期规律研究；最新回答样本可作为当前竞争环境补充。若页面前三条存在盐选节选、广告引流、无实质内容、偏题或明显过时回答，必须继续向下补足 3 个有效 `Answer_Benchmark_Top3` 样本。
 
-只采问题不构成完整平台样本。进入变量提取前，必须完成每题有效 Top5 回答正文采集，并为每条回答记录 Sample Source、正文读取状态、回答链接、作者、发布时间、赞同、评论、正文全文、首屏方式、结构路径、解释机制、收藏点和评论触发点。未完成 Top5 回答正文读取的问题只能标记为 `QUESTION_ONLY`，不得进入变量提取、变量统计、参数升级、正文节点升级或 Prompt 升级。
+只采问题不构成完整平台样本。进入长期变量提取前，必须完成每题有效 Top5 回答正文采集，并为每条回答记录 Sample Source、正文读取状态、回答链接、作者、发布时间、赞同、评论、正文全文、首屏方式、结构路径、解释机制、收藏点和评论触发点。未完成 Top5 回答正文读取的问题只能标记为 `QUESTION_ONLY`，不得进入长期变量提取、变量统计、参数升级、正文节点升级或 Prompt 升级。
 
 特殊问题动态调整：
 
@@ -1063,8 +1089,8 @@ GPT 必须先从截图中识别以下字段：
 | Top5观点高度一致 | Top5即可 |
 | Top5分歧明显 | 补到Top8 |
 | 高价值、高竞争题 | Top10 |
-| 新问题、回答数量少 | Top3或全部 |
-| 只需快速生产 | Top3轻分析 |
+| 新问题、回答数量少 | Answer_Benchmark_Top3 或全部 |
+| 只需快速生产 | Answer_Benchmark_Top3 轻分析 |
 
 平台样本分析必须形成问题级聚合结论，包含 Top5共同观点、Top5共同结构、重复最严重的内容、观点分歧、用户未被满足的问题、本篇差异化方向、推荐结构、推荐变量和禁止重复表达。
 

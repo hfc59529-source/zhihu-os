@@ -1,6 +1,6 @@
 # Topic Pool
 
-用途：记录每日不同选题入口的轻量采样结果和选题包索引，避免看到单个题就直接生产。Topic Pool 只回答“这题是否值得进入候选池”，不替代选题包、Production Card、Top3_Context 或发布复盘。
+用途：记录每日不同选题入口的轻量采样结果和选题包索引，避免看到单个题就直接生产。Topic Pool 只回答“这题是否值得进入候选池”，不替代 Topic Package、Production Card、Answer_Benchmark_Top3 或发布复盘。
 
 有效期规则：选题只在采集当天有效。历史 Topic Pool 只用于入口统计、Trigger 训练和复盘回查，不得直接复用为当天生产题；每天生产前必须重新采集当日话题，再用 Trigger Candidate 排序。
 
@@ -35,7 +35,11 @@
 ↓
 判断是否值得生产
 ↓
-生成选题包
+输出 Daily_Topic_Top3
+↓
+对正式候选题采集 Answer_Benchmark_Top3
+↓
+生成 Topic Package
 ↓
 保存到候选池
 ↓
@@ -50,7 +54,7 @@ data/topic_candidates/YYYY-MM-DD/TOPIC-YYYYMMDD-NNN.md
 
 ## 记录表
 
-| 日期 | 来源 | 问题 | 链接 | 可见信号 | Top3 快速判断 | 是否生产 | Production ID | 原因 | 发布后表现 |
+| 日期 | 来源 | 问题 | 链接 | 可见信号 | Daily_Topic_Rank / Answer_Benchmark_Top3 快速判断 | 是否生产 | Production ID | 原因 | 发布后表现 |
 |---|---|---|---|---|---|---|---|---|---|
 | 2026-08-01 | 旧候选池 / 你可能感兴趣 | 被领导边缘化后，无事可做，工资不变，怎么办？ | https://www.zhihu.com/question/2037499606204953274 | 45 回答 / 72 关注 / 24,393 浏览 | Top3 以稳住、学习、找事做为主；差异化空白是风险分型和选择权 | 已生产 | ZH-20260801-005 | 入口不合格：未先走当日固定入口采样；保留为异常样本，不纳入入口优劣统计 | 待发布后回填 |
 | 2026-08-01 | 推荐问题 | 真正工作厉害的人，有哪些明显特征？ | https://www.zhihu.com/question/2022677494298322185 | 78 回答 / 182 关注 / 53,101 浏览 | Top3 已覆盖时间节点、优先级、精力、系统思维和危机处理；差异化空白是把“厉害”拆成组织可验证的交付习惯 | 已生产 | ZH-20260801-009 | 推荐问题入口样本；与004相邻但切口不同，用于验证相近题材下生产稳定性 | 待发布后回填 |
@@ -84,10 +88,10 @@ data/topic_candidates/YYYY-MM-DD/TOPIC-YYYYMMDD-NNN.md
 2. 选题只在采集当天有效；隔日不得直接复用旧 Topic Pool 或旧候选池进入生产。
 3. 历史选题只用于入口统计、Trigger 训练和复盘回查；如需再次生产，必须在当天重新采集、重新记录、重新排序。
 4. P0-P4 是采集优先级；H1 是独立热度校验，不属于选题入口。
-5. 当天 Topic Pool 完成后，先做 H1 热榜校验，再用 `data/trigger_candidate_ranking.md` 排序，输出 Top3，再决定当天生产题。
+5. 当天 Topic Pool 完成后，先做 H1 热榜校验，再用 `data/trigger_candidate_ranking.md` 排序，输出 `Daily_Topic_Top3`，再决定当天生产题。
 6. P0、P1 已取得至少 3 个符合账号方向且可被 Trigger Candidate 解释的候选题时，P2-P4 只做补充，不再强制逐入口采满。
-7. 每个入口默认最多采 1 题，不平均投入写作资源；目标是尽快获得足够好的 Top3，不是完成入口打卡。
-8. 选题阶段只读取原问题、补充必要事实、检查重复，不写 Card，不写 Draft。
-9. 当天进入候选池的题必须保存完整选题包；后续 Claude 接管生产后，再回填 Production ID。
+7. 每个入口默认最多采 1 题，不平均投入写作资源；目标是尽快获得足够好的 `Daily_Topic_Top3`，不是完成入口打卡。
+8. 选题阶段读取原问题、补充必要事实、检查重复，并对正式候选题采集 `Answer_Benchmark_Top3`；不写 Card，不写 Draft。
+9. 当天进入候选池的题必须保存完整 Topic Package；后续 Claude 接管生产后，再回填 Production ID。
 10. 未经 Topic Pool 的题不得直接进入 005 之后的新生产编号；异常情况必须在原因中说明。
 11. 入口优劣只在 30 天后统计，不提前下结论。
