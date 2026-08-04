@@ -19,7 +19,7 @@
 | ZH-20260801-011 | 你们知道为什么好多公司推行绩效考核失败吗？ | 快速语境总结（见 Top3_Context.md，降权使用） | Card Issue | 1 | CARD_REWORK_REQUIRED（Card_Audit_Report.md 判定 Card-v1 把原问题导向管理框架，当前正文不进入 Patch Validation / User Review；待重做 Production Card） | NOT_ENTERED | 待重做 Card |
 | ZH-20260801-012 | 领导是如何看待不争不抢的员工？ | 快速语境总结（见 Top3_Context.md，降权使用） | 待人工审计 | 0 | READY_FOR_AUDIT（QA 前修正完成；validate_reasoning.py PASS；阅读体验 risks: none；未进入人工审计 / Patch Validation / Release） | NOT_ENTERED | 待人工审计 |
 | ZH-20260801-013 | 未来20年什么是优质资产？ | 历史资产弱参考（见 Top3_Context.md） | QA Pass | 0 | READY_FOR_USER_REVIEW（未找到 USER_APPROVED 记录；Release-v1 已提前生成，标记为 INVALID_PREMATURE_ARTIFACT；runtime manifest 存在既有 SHA mismatch 待系统维护） | NOT_ENTERED | 待用户验收 |
-| ZH-20260804-001 | 为什么现在越来越多的企业二代们普遍不愿意接班？ | 实拍 Top3（见 Top3_Context.md，Possible Current Gap 候选 A/B） | PASS WITH 2 ISSUES（Approve x2，见 Decision_Log.md） | 1 | PATCH_VALIDATION_REQUIRED（Patch-v1 已生成为 Article-Patched-v1.md，解决 Scope Drift 与结尾升级；待人工 Final Validation） | NOT_ENTERED | 待 Final Validation |
+| ZH-20260804-001 | 为什么现在越来越多的企业二代们普遍不愿意接班？ | 实拍 Top3（见 Top3_Context.md，Possible Current Gap 候选 A/B） | Final Validation PASS（见 Final_Validation.md） | 1 | READY_FOR_USER_REVIEW（Patch-v1 已应用为 Article-Patched-v1.md；Final Validation PASS；等待用户验收） | NOT_ENTERED | 待用户验收 |
 
 **Production Status 取值**：DRAFT_READY / READY_FOR_AUDIT / CARD_REWORK_REQUIRED / PATCH_REQUIRED / PATCH_VALIDATION_REQUIRED / READY_FOR_USER_REVIEW / USER_APPROVED / RELEASE_COMPLETED；历史兼容值：LEGACY_COMPLETED / LEGACY_RELEASE_COMPLETED。
 
