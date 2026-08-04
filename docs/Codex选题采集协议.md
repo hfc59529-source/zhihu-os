@@ -54,6 +54,8 @@ H1 热榜校验
 ↓
 用 Trigger Candidate 排序
 ↓
+读者视角校准
+↓
 生成选题包
 ↓
 保存到候选池
@@ -63,9 +65,44 @@ H1 热榜校验
 
 Codex 不得继续生成 Production Card 或正文。
 
+## 2.0.0 读者视角校准
+
+读者视角校准是从旧 Production Card 字段中迁移到当前选题入口的既有能力，不是新增对象。它是 Production Card 之前的标准检查步骤，位于 Topic Pool 之后、Top3 Context 之前。
+
+```text
+Topic Pool
+↓
+读者视角校准
+↓
+Top3 Context
+↓
+Production Card
+```
+
+读者视角校准只回答视角，不回答内容。
+
+固定字段：
+
+| 字段 | 只回答 |
+|---|---|
+| 读者真实困惑 | 题主显性问题背后真正困扰读者的判断困境是什么？ |
+| 读者原始理解 | 读者点开前最可能带着什么常见理解或误解？ |
+| 实际读者范围 | 除题主外，哪些读者最可能点开并读完？ |
+
+禁止输出：
+
+- ACTIVE 应该选什么。
+- 核心观点是什么。
+- 结构怎么写。
+- 反转是什么。
+- Gap 是什么。
+- 正文怎么展开。
+
+这些字段本质是 Viewpoint Calibration（视角校准），用于恢复旧 Card 中已经存在但在当前链路中没有被稳定调用的能力，减少早期偏航：回答了自己想回答的问题、混淆提问者和读者、观点正确但没有命中读者点进来的原因。
+
 ## 2.0.1 Production Boundary
 
-Codex 选题采集只输出 Topic Pool、Topic Package、Top3 Context 和 Possible Current Gap。
+Codex 选题采集只输出 Topic Pool、读者视角校准、Topic Package、Top3 Context 和 Possible Current Gap。
 
 禁止在选题采集阶段输出或暗示以下对象：
 

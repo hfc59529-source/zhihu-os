@@ -245,6 +245,7 @@ L3｜ACTIVE变量：生产触发
 生产边界：
 
 - Trigger Candidate 只回答题目是否值得优先生产，不得输出 ACTIVE、结构、参数、核心判断或正文方向。
+- 读者视角校准只回答视角，不回答内容；只能迁移旧 Production Card 已有能力，输出读者真实困惑、读者原始理解和实际读者范围。
 - Topic Package 只回答题目事实、必要上下文、是否值得写、重复检查和风险提示。
 - Top3 Context 只回答竞争环境、Top3 已覆盖内容和 Possible Current Gap。
 - Possible Current Gap 不是正文方向；Production Card 可以采用、拒绝或重新推导。
