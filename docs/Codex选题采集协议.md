@@ -188,12 +188,34 @@ Trigger Candidate 只用于判断题目生产优先级，不得绑定 ACTIVE、�
 
 固定字段：
 
+- `Gap_ID`
 - `Parameter_Gap_Description`
 - `Evidence`
 - `Existing_Parameter_Match: None`
 - `Status: 待审核`
+- `Review_Result: 未审核`
+- `Review_Note`
+- `Merge_Target`
+- `Occurrence_Count`
+- `Occurrence_Refs`
 
 Codex 只有两个权限：命中已有参数，提交参数缺口。是否建立候选参数、是否合并、删除、进入 ACTIVE，必须由用户审核决定。
+
+审核结果只允许四种：
+
+| Review_Result | 含义 | 后续动作 |
+|---|---|---|
+| 驳回 | 已有参数可以解释，或证据不足 | 关闭缺口，不进入参数库 |
+| 合并 | 缺口本质属于已有参数 | 填写 `Merge_Target`，归入已有参数证据 |
+| 候选参数 | 用户批准进入候选参数前置流程 | 进入 Candidate 前置验证，不直接 ACTIVE |
+| 正式参数 | 极少发生，原则上不由单题直接进入 | 仅在用户明确批准且证据链充分时执行 |
+
+每个缺口必须记录重复次数：
+
+- `Occurrence_Count`：同类缺口在独立问题中累计出现次数。
+- `Occurrence_Refs`：每次出现的题目或 Production ID，如 `ZH001 / ZH007 / ZH011`。
+
+重复次数只提供审核依据，不自动触发 Candidate 或 ACTIVE。
 
 参数缺口治理流程：
 
@@ -206,7 +228,7 @@ Codex 只有两个权限：命中已有参数，提交参数缺口。是否建�
 ↓
 用户审核
 ↓
-是否建立候选参数
+审核结果：驳回 / 合并 / 候选参数 / 正式参数
 ↓
 多次独立问题中重复出现
 ↓
