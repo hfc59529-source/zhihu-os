@@ -1,0 +1,8 @@
+production_id,article_id,question_title,question_url,answer_url,published_at,trace_status,source,notes
+ZH-20260802-001,UNKNOWN,提拔你当了部门负责人，第一件事该干啥？,https://www.zhihu.com/question/1978759645523907490,UNKNOWN,发布于 8 小时前,PARTIAL,reports/outcome_linking_trace_20260802.md,已能追到 Topic Pool 和 Card；缺 answer_url / article_id / 正式 QA
+ZH-20260801-001,answer_2066924156592116539,职场中怎么改掉弱者气息？,https://www.zhihu.com/question/2005699650552886454,https://www.zhihu.com/answer/2066924156592116539,2026-08-01 约 11:35 +03:00,COMPLETE,productions/ZH-20260801-001/Publish-v1.md,截图显示被折叠；已具备 answer_id
+ZH-20260731-unknown_mofish,UNKNOWN,为什么老板明知你摸鱼却不拆穿？,UNKNOWN,UNKNOWN,发布于 07-31,BROKEN,reports/outcome_linking_trace_20260802.md,无正式 Production ID；仅保留历史未知生产，不补造 ID
+ZH-20260801-003,UNKNOWN,领导不声不响把你手里的任务拿走后，过了几个月，发现别人干不了，想还给你，你会怎么做呢？,UNKNOWN,UNKNOWN,发布于 07-31,COMPLETE_LOCAL_CHAIN,reports/outcome_linking_trace_20260802.md,本地生产链完整；缺 answer_url / article_id
+zhihu-20260729-fuzzy-responsibility-boundary-001,UNKNOWN,领导布置任务故意模糊责任界限，作为底层员工，如何在谁都不得罪的前提下，保护好自己？,https://www.zhihu.com/question/1911346542637462559,UNKNOWN,发布于 07-29,LEGACY_RUN,runtime/logs/production_runs.jsonl,旧运行日志体系；缺正文、QA、answer_url / article_id
+zhihu-20260729-middle-manager-promotion-001,UNKNOWN,为什么工作中，很多高层领导明知道某位中层领导缺乏管理能力，但还是提拔了他当中层？,https://www.zhihu.com/question/15128661178,UNKNOWN,发布于 07-29,LEGACY_RUN,runtime/logs/production_runs.jsonl,旧运行日志体系；有参数审计文件；缺 answer_url / article_id
+zhihu-20260729-senior-leader-not-fired-001,UNKNOWN,公司高层明明不行，大老板为什么还不裁掉他们？,https://www.zhihu.com/question/13633116099,UNKNOWN,发布于 07-29,LEGACY_RUN,runtime/logs/production_runs.jsonl,旧运行日志体系；缺正文、QA、answer_url / article_id

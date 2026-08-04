@@ -61,6 +61,8 @@
 | `data/L0_README.md` | 04 复盘系统 | 是，L0内容资产口径权威 | L0内容资产总账、报告、复盘 | 生产系统不得维护L0字段口径 |
 | `data/l0_content_assets.csv` | 04 复盘系统 | 数据来源，内容资产总账权威 | L1样本、L2验证、收益报告、单篇复盘 | 首页和生产卡只引用，不复制维护 |
 | `data/l1_sample_list.csv` | 04 复盘系统 | 是，L1分层样本权威 | L2变量验证、实验复盘 | L0总账不得直接形成规律结论 |
+| `data/production_article_map.csv` | 04 复盘系统 | 是，Production ID 与 article_id 映射权威 | 参数调用日志、L0内容资产总账、单篇复盘 | 不得在报告里另建长期映射表 |
+| `docs/单篇复盘执行协议.md` | 04 复盘系统 | 是，单篇复盘执行口径权威 | 参数调用日志、Observation、周期复盘 | 临时报告不得替代日常复盘协议 |
 | `reports/l0_asset_report.md` | 04 复盘系统 | 报告，不替代数据源 | L0检查、收益回看 | 不得反向修改L0口径 |
 | `reports/l1_sample_report.md` | 04 复盘系统 | 报告，不替代数据源 | L1样本检查、L2验证 | 不得替代L1样本清单 |
 | `reports/earnings_backfill_report.md` | 04 复盘系统 | 报告，不替代数据源 | 收益数据回填、复盘判断 | 不得替代内容资产总账 |
