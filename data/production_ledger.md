@@ -20,6 +20,8 @@
 | ZH-20260801-012 | 领导是如何看待不争不抢的员工？ | 快速语境总结（见 Top3_Context.md，降权使用） | 待人工审计 | 0 | QA 前修正完成；validate_reasoning.py PASS；阅读体验 risks: none；未进入人工审计 / Patch Validation / Release | READY_FOR_AUDIT | 待人工审计 |
 | ZH-20260801-013 | 未来20年什么是优质资产？ | 历史资产弱参考（见 Top3_Context.md） | QA Pass | 0 | 真实链接已补；Card PASS；validate_reasoning.py PASS_WITH_WARNING；Release-v1 已生成；runtime manifest 存在既有 SHA mismatch 待系统维护 | Ready | 待观察 |
 
+| ZH-20260804-001 | 为什么现在越来越多的企业二代们普遍不愿意接班？ | 实拍 Top3（见 Top3_Context.md，Possible Current Gap 候选 A/B） | 待人工审计 | 0 | Card-v1 / Draft-v1 已完成，按 ACTIVE-TS01 生成；未进入人工审计 / Patch Validation / Release | READY_FOR_AUDIT | 待人工审计 |
+
 **Release Status 取值**：READY_FOR_USER_REVIEW（Audit PASS 或 Patch Validation PASS，待用户验收）/ RELEASE_READY（用户已验收，Release-v1 已生成或确认）/ Queued（已进 Publish_Queue）/ Draft Box（已写入知乎草稿箱）/ Published（已正式发布）
 
 **Audit Result 统计口径（ZH-MILESTONE-010 触发）**：新流程样本（002-010）共 9 篇，Clean Pass 5 篇（56%），Issue 4 篇（44%，全部已 Revise/Approve 通过），Final Validation 通过率 100%（9/9），Patch 后回退 0，误判 Issue 0。

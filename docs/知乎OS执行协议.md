@@ -242,6 +242,14 @@ L3｜ACTIVE变量：生产触发
 - 小时榜用于捕捉当天新机会；日榜 / 周榜 / 热榜用于判断候选题是否存在持续热度或公共扩散性。
 - 日榜 / 周榜 / 热榜不得替代小时榜成为当天主采样入口。
 
+生产边界：
+
+- Trigger Candidate 只回答题目是否值得优先生产，不得输出 ACTIVE、结构、参数、核心判断或正文方向。
+- Topic Package 只回答题目事实、必要上下文、是否值得写、重复检查和风险提示。
+- Top3 Context 只回答竞争环境、Top3 已覆盖内容和 Possible Current Gap。
+- Possible Current Gap 不是正文方向；Production Card 可以采用、拒绝或重新推导。
+- ACTIVE、核心判断、参数、结构和表达，必须在 Production Card 生成过程中由生产决策层推理得出，不得由 Topic、Trigger 或 Top3 Context 提前决定。
+
 采集任务必须分流：
 
 - 选题候选采集：创作中心近期热点、推荐问题、邀请回答用于判断本账号可以答什么。

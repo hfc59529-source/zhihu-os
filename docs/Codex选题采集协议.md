@@ -63,6 +63,29 @@ H1 热榜校验
 
 Codex 不得继续生成 Production Card 或正文。
 
+## 2.0.1 Production Boundary
+
+Codex 选题采集只输出 Topic Pool、Topic Package、Top3 Context 和 Possible Current Gap。
+
+禁止在选题采集阶段输出或暗示以下对象：
+
+- ACTIVE。
+- 正文结构。
+- 正文参数。
+- 唯一核心判断。
+- 正文方向。
+- 表达策略。
+
+Trigger Candidate 只用于判断题目生产优先级，不得绑定 ACTIVE、结构或正文参数。
+
+Top3 Context 只回答：
+
+- 别人已经写了什么。
+- 当前竞争环境是什么。
+- 可能有哪些 Possible Current Gap。
+
+`Possible Current Gap` 不是正文方向。Production Card 可以采用，也可以不采用，最终决策权属于 Production Card 生成过程。
+
 ## 2.1 选题有效期
 
 选题只在采集当天有效。
