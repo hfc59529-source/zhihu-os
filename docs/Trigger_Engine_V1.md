@@ -150,7 +150,7 @@ Production Card
 
 在架构审查通过前：
 
-1. 旧 CV 仍是当前生产系统的唯一权威内容变量入口。
+1. 旧 CV 仍是当前生产模块的唯一权威内容变量入口。
 2. Trigger 判断不替代 `production_variable_library.md`。
 3. Trigger 判断不参与当前生产调用。
 4. 新发现仍先进入 Observation。

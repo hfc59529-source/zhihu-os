@@ -94,7 +94,7 @@ Trigger / Pattern / Evidence 三份文件保留为研究草稿，不进入 runti
 
 - 参数库匹配规则精确化（六层匹配顺序 + 快照命中字段）：已落地为 ACTIVE 规则的一部分，见 `production_variable_library.md`。
 - Trigger / Pattern / Evidence Library：保留为研究草稿，不进入生产。
-- 现有生产系统：继续 ACTIVE，主流程不变。
+- 现有生产模块：继续 ACTIVE，主流程不变。
 
 ## 固定原则
 
@@ -107,4 +107,3 @@ Trigger / Pattern / Evidence 三份文件保留为研究草稿，不进入 runti
 不建立 Trigger Engine，也不在 Skill006 中新增 Trigger 步骤。
 
 Trigger 真正的价值——参数不能因为 ACTIVE 就全量调用，必须判断"什么时候适用"——已通过精确化 `production_variable_library.md` 的调用原则实现，不新增系统、入口或生产流程，不影响 ZH-20260801-011 / 012 当前流程。
-
