@@ -12,12 +12,12 @@
 
 | 指标 | 结果 |
 |---|---:|
-| 新流程样本 | 9 |
+| Pre-User-Gate Audit Batch（用户验收门禁前审计批次） | 9 |
 | Clean Pass | 5 |
 | Issue | 4 |
 | Clean Pass 率 | 56% |
 | Issue 率 | 44% |
-| Final Validation 通过率 | 100% |
+| Final Validation 通过率（不含 User Review / Release Gate） | 100% |
 | Patch 后回退 | 0 |
 | 误判 Issue | 0 |
 
@@ -27,7 +27,7 @@
 - Claude 已能给出 Clean Pass，不再为了证明价值而制造 Issue。
 - GPT 裁决稳定在 PASS / Approve / Revise，没有重新写文章。
 - Patch 后没有引入新 Bug，说明修补链路可控。
-- Ledger、Publish Queue、Release-v1、Final_Validation 能追溯生产状态。
+- Ledger、Publish Queue、Release-v1、Final_Validation 能追溯审计流程状态；本批次未纳入当前 User Review Gate。
 
 工程验收结果：PASS。
 

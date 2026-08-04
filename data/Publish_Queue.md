@@ -26,17 +26,17 @@ Audit PASS 或 Patch Validation PASS 之后只能进入 `READY_FOR_USER_REVIEW`�
 
 | Production ID | 发布时间 | 状态 |
 |---|---|---|
-| ZH-20260801-002 | 待定 | Ready |
-| ZH-20260801-003 | 待定 | Ready |
-| ZH-20260801-004 | 待定 | Ready |
-| ZH-20260801-005 | 待定 | Ready |
-| ZH-20260801-006 | 待定 | Ready |
-| ZH-20260801-007 | 待定 | Ready |
-| ZH-20260801-008 | 待定 | Ready |
-| ZH-20260801-009 | 待定 | Ready |
-| ZH-20260801-010 | 待定 | Ready |
+| ZH-20260801-002 | 待定 | LEGACY_RELEASE_READY |
+| ZH-20260801-003 | 待定 | LEGACY_RELEASE_READY |
+| ZH-20260801-004 | 待定 | LEGACY_RELEASE_READY |
+| ZH-20260801-005 | 待定 | LEGACY_RELEASE_READY |
+| ZH-20260801-006 | 待定 | LEGACY_RELEASE_READY |
+| ZH-20260801-007 | 待定 | LEGACY_RELEASE_READY |
+| ZH-20260801-008 | 待定 | LEGACY_RELEASE_READY |
+| ZH-20260801-009 | 待定 | LEGACY_RELEASE_READY |
+| ZH-20260801-010 | 待定 | LEGACY_RELEASE_READY |
 
-**状态取值**：Ready（用户已验收，Release-v1 已就绪，未排期）/ Scheduled（已排定发布时间）/ Draft Box（已写入知乎草稿箱，等人工最终检查）/ Published（已正式发布）
+**状态取值**：RELEASE_READY（用户已验收，Release-v1 已就绪，未排期）/ QUEUED（已进发布队列）/ DRAFT_BOX（已写入知乎草稿箱，等人工最终检查）/ PUBLISHED（已正式发布）/ LEGACY_RELEASE_READY（历史批次已完成当时版本 Release 文件，但未经过当前 User Review Gate）
 
 ## 发布闭环（后续单独验证，当前不执行）
 
