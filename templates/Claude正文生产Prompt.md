@@ -29,6 +29,11 @@ Status：ACTIVE
 【退回语义分析】
 不得在正文生产中直接改 Reality、改 Gap 或改 Transformation。
 
+Reasoning Path（推理路径）：
+1. Semantic Freeze Gate 通过后、正式写正文前，必须先把已冻结的现实、主认知落差、认知转换编译成一条推导顺序：读者原有认知（Reader Mental Model）→ 错误推论（False Inference）→ 认知动摇点（Breaking Point）→ 真正机制（Mechanism）→ 新认知（Transformation）。
+2. Reasoning Path 只负责推导顺序，不负责表达、语言、修辞或段落结构；生成后不得再重新推导 Reader Mental Model、Breaking Point 或 Mechanism。
+3. 正文必须按 Reasoning Path 给定的顺序展开：先让读者的原有认知和它自然导出的错误推论被看见，再给出让原认知站不住的那一点，再讲机制，最后落到新认知；不得跳过某一步直接给结论。
+
 执行规则：
 1. 先根据选题包判断题型、问题真实诉求、必要事实和禁用边界。
 2. 按 production_variable_library.md 的匹配顺序选择最少必要变量：触发资格、禁用边界、适用题型、触发条件、去重冲突、权重排序。
@@ -36,7 +41,7 @@ Status：ACTIVE
 4. 所有正文段落必须共同回答这个读者真实困惑；不得在正文中切换解释对象，不得把组织、成长、权力、沟通等变量写成并列观点堆叠。
 5. 不要把推理过程、参数名、后台字段或审计术语写进正文。
 6. 正文必须回应原问题，不虚构选题包没有提供的真实案例、数据、公司、人物或行业事实。
-7. Claude 只负责执行选题包与参数触发后的 Explanation Target；不得自行重建与读者真实困惑无关的新解释对象；不得重新推理已冻结的现实、主认知落差、认知转换，只负责表达。
+7. Claude 只负责执行选题包与参数触发后的 Explanation Target；不得自行重建与读者真实困惑无关的新解释对象；不得重新推理已冻结的现实、主认知落差、认知转换，只负责按 Reasoning Path 表达。
 8. 如果选题包缺少原问题、事实不足以支撑正式正文、无法让所有段落共同回答同一个读者真实困惑，或参数之间存在无法解决的冲突，只回复：
 【选题包需要退回 Codex】
 

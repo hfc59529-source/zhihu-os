@@ -173,6 +173,7 @@ Runtime Assembly 负责把 Slim IR 和 Router 结果装配成 Writer Input Packa
 它输出：
 
 - Writer Input Package。
+- Reasoning Path（推理路径，详见 4.4 节；作为 Writer Input Package 内容的一部分交付，不单独构成新的输出契约）。
 
 Runtime Assembly 禁止：
 
@@ -202,6 +203,40 @@ docs/Writer Input Package Schema V1.md
 ```
 
 Writer Input Package 保存本次实际调用的版本、引用和义务摘要。它是运行证据，不是第二规则权威。
+
+## 4.4 Reasoning Path（推理路径，Compiler 内部中间表示）
+
+Reasoning Path 不是新的 Layer，也不是 Card，不改变本文件第 2 节六层架构。它是 Runtime Assembly 阶段内部生成的中间表示（Intermediate Representation），和 Slim IR 同属一类对象：只在 Analyzer → Structure Matcher → Router → Slim IR → Runtime Assembly 这条既有单向流内部产生和消费，不新增独立的输入/输出契约，也不在六层架构图中单独编号。
+
+它为什么不是 Layer：Layer 的判定标准是拥有独立职责、独立输入输出契约、并出现在第 2 节六层架构图中；Reasoning Path 没有独立契约，只是 Runtime Assembly 组装 Writer Input Package 时生成的一项内容，随 Writer Input Package 一起交付给 Writer，不单独进出六层流水线。
+
+**输入**：Semantic Freeze Gate 冻结后的 Reality、Main Gap、Transformation（只读，不得重新推导三者本身）。
+
+**输出**：
+
+```text
+Reader Mental Model（读者原有认知）
+↓
+False Inference（读者自然会得到的错误推论）
+↓
+Breaking Point（哪一句开始发现原认知失效）
+↓
+Mechanism（真正机制）
+↓
+Transformation（新的认知）
+```
+
+**职责**：只负责推导顺序——把 Semantic 编译成正文应该按什么顺序展开，不负责表达、语言、修辞或正文结构。
+
+**禁止事项**：
+
+- 不得修改 Reality、Main Gap、Transformation。
+- 不得决定正文语言、修辞或段落结构（由 Writer Prompt 和结构库负责）。
+- 不得越过 Structure Matcher 决定使用哪个 ACTIVE 结构。
+
+Structure Matcher 仍然只负责结构匹配，不得生成 Reasoning Path；Router 仍然只负责路由规则调用，不得修改 Reasoning Path 或 Semantic。
+
+Writer 必须按 Reasoning Path 给定的推导顺序完成正文，不得重新推导 Reader Mental Model，不得重新决定 Breaking Point 或 Mechanism，不得跳过某一步直接给结论。
 
 ## 5. L3 Writer Prompt
 
@@ -240,7 +275,7 @@ Writer 只负责：
 - 按同一份 Production Card IR。
 - 生成正文。
 
-Writer 不得重新推理已冻结的现实、主认知落差、认知转换，只负责表达。
+Writer 不得重新推理已冻结的现实、主认知落差、认知转换，只负责表达；正文必须按 Reasoning Path（见 4.4 节）给定的推导顺序展开，不得重新推导 Reader Mental Model、Breaking Point 或 Mechanism，不得跳步直接给结论。
 
 A/B 测试时，唯一变量必须是 Writer 模型。
 

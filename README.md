@@ -25,6 +25,8 @@ Structure Matcher
 ↓
 Router
 ↓
+Reasoning Path（推理路径，Compiler 内部中间表示，非新增 Layer）
+↓
 Claude Writer
 ↓
 QA
@@ -43,6 +45,8 @@ Metrics
 Semantic Freeze Gate 成功后，现实、主认知落差、认知转换成为本次 Production 的 Single Source of Truth（唯一事实来源）。Analyzer、Structure Matcher、Router、Writer、QA 不得修改；如发现 Semantic 错误，只能返回【退回语义分析】，不得自行修正。
 
 详见 [`docs/内容架构总则.md`](docs/内容架构总则.md) 与 [`templates/Claude正文生产Prompt.md`](templates/Claude正文生产Prompt.md)。
+
+Reasoning Path（推理路径）：Router 之后、Writer 之前，由 Runtime Assembly 内部生成，把已冻结的 Reality / Main Gap / Transformation 编译成正文推导顺序（读者原有认知 → 错误推论 → 认知动摇点 → 真正机制 → 新认知）。它是 Compiler 内部中间表示，不是新的 Layer、不是 Card，只负责推导顺序，不负责表达；Writer 必须按这个顺序展开正文，不得重新推导。详见 [`docs/知乎OS Compiler V1.md`](docs/知乎OS%20Compiler%20V1.md) 第 4.4 节。
 
 Production Card 已退役，不恢复；本链不新增对象、不新增流程，只是把《内容架构总则》四层正式接入生产入口。
 
