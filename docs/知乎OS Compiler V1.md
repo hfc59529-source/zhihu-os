@@ -69,12 +69,15 @@ Analyzer 只回答：
 - 辅助变量是什么。
 - 核心机制是什么。
 
+Analyzer 只能消费已冻结的现实（Reality）、主认知落差（Main Gap）、认知转换（Transformation）三个对象，不得重新修改这三者，定义见《内容架构总则》与语义冻结门（Semantic Freeze Gate）。
+
 Analyzer 禁止：
 
 - 写正文。
 - 讨论表达风格。
 - 生成开头、结尾、金句或文案。
 - 判断知乎感、AI味和收藏感。
+- 修改已冻结的现实、主认知落差、认知转换。
 
 ## 4. L2 Production Card IR
 
@@ -121,6 +124,8 @@ Structure Matcher 读取：
 - 历史资产检索摘要。
 - 触发资格=是的 ACTIVE 变量。
 
+Structure Matcher 只负责匹配结构，不得重新分析问题（不得重新判断现实、主认知落差或认知转换）。
+
 Structure Matcher 禁止：
 
 - 读取未验证候选结构。
@@ -128,6 +133,7 @@ Structure Matcher 禁止：
 - 写正文。
 - 修改 IR。
 - 把爆款样本原文直接带入生产。
+- 重新分析问题或修改已冻结的语义三对象。
 
 输出字段必须优先中文，允许保留英文兼容别名。
 
@@ -146,6 +152,7 @@ Router 禁止：
 - 修改 Analyzer。
 - 扩写 IR 为长 Prompt。
 - 复制结构库、参数库、推理协议或表达协议全文。
+- 修改已冻结的现实、主认知落差、认知转换（Semantic）。
 
 Router 的输出只能作为 Runtime Assembly 的输入引用。
 
@@ -232,6 +239,8 @@ Writer 只负责：
 - 按同一份 Writer Prompt。
 - 按同一份 Production Card IR。
 - 生成正文。
+
+Writer 不得重新推理已冻结的现实、主认知落差、认知转换，只负责表达。
 
 A/B 测试时，唯一变量必须是 Writer 模型。
 

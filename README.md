@@ -7,18 +7,42 @@
 当前日常生产主链：
 
 ```text
-Codex 选题包
+选题包（Question Package）
 ↓
-Claude 调用参数并推理
+Top3 Context
 ↓
-Claude 生成正文
+现实（Reality）
 ↓
-GPT / 人工审核参数与正文
+主认知落差（Main Gap）
 ↓
-Codex 记录参数调用日志
+认知转换（Transformation）
 ↓
-必要时维护参数 / Prompt / 调用规则
+语义冻结门（Semantic Freeze Gate）
+↓
+Analyzer
+↓
+Structure Matcher
+↓
+Router
+↓
+Claude Writer
+↓
+QA
+↓
+User Review
+↓
+Release
+↓
+Publish
+↓
+Metrics
 ```
+
+语义冻结门（Semantic Freeze Gate）：现实、主认知落差、认知转换三项冻结成功后，才能进入 Analyzer；否则禁止进入正文生产，返回【选题包需要退回语义分析】。三项冻结后，Analyzer 及之后所有阶段不得修改，只能消费。详见 [`docs/内容架构总则.md`](docs/内容架构总则.md) 与 [`templates/Claude正文生产Prompt.md`](templates/Claude正文生产Prompt.md)。
+
+Production Card 已退役，不恢复；本链不新增对象、不新增流程，只是把《内容架构总则》四层正式接入生产入口。
+
+生产链原有的记录与维护动作仍然保留：Codex 记录参数调用日志，必要时维护参数 / Prompt / 调用规则。
 
 核心原则：
 
@@ -102,7 +126,7 @@ ACTIVE规律库负责日常生产触发
 
 ## 唯一交接对象
 
-选题包是当前日常生产主链的唯一交接对象。
+选题包是当前日常生产主链的唯一交接对象。选题包来源允许两种：Codex 采集，或用户手动提供（User Manual），两者权威完全一致，都进入同一条生产主链。
 
 Codex 生成选题包后停止；Claude 根据选题包调用参数、推理并生成正文；GPT / 人工审核参数和正文归因。
 
