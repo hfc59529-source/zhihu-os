@@ -35,6 +35,8 @@ Reasoning First 表示：任何自动化之前，先定义推导；任何字段�
 
 详见 [`docs/知乎OS Compiler V1.md`](docs/知乎OS%20Compiler%20V1.md)。
 
+内容语义架构（现实／认知落差／认知转换／平台表达）详见 [`docs/内容架构总则.md`](docs/内容架构总则.md)，它是 Compiler 的语义上游，不替代 Compiler。
+
 系统设计边界详见 [`docs/00-设计原则.md`](docs/00-设计原则.md)。
 
 当前系统进入第二阶段：

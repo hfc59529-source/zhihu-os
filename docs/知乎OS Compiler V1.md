@@ -4,6 +4,8 @@ Status：ACTIVE_KERNEL
 
 本文件定义知乎OS的内容编译器内核。
 
+Compiler 的语义上游是 [内容架构总则](内容架构总则.md)：现实、认知落差、认知转换、平台表达是语义层描述，本文件的 Analyzer、Slim IR、Runtime Assembly、Writer 等是工程实现。Compiler 不重新定义现实、认知落差、认知转换这几个语义概念，只负责把它们编译成正文；本文件已锁定的层级和字段定义不因《内容架构总则》而改变。
+
 知乎OS不再被视为 Prompt 系统，而是内容编译器：
 
 ```text
