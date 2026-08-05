@@ -285,6 +285,7 @@ QA 禁止：
 - 修改 Analyzer。
 - 修改 Production Card IR。
 - 修改 Writer Prompt。
+- 修改已冻结的现实、主认知落差、认知转换（Semantic Freeze Gate 的 Single Source of Truth）。发现 Semantic 错误时，只能输出【退回语义分析】，不得自行修正。
 
 QA 只能输出问题、等级和修正指令。
 

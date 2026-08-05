@@ -25,6 +25,9 @@ Status：ACTIVE
 2. 三者冻结后，后续 Analyzer、Structure Matcher、Router、正文生成等任何阶段不得修改，只能消费。
 3. 如果选题包提供的信息无法唯一确定现实、主认知落差或认知转换中的任意一项，只回复：
 【选题包需要退回语义分析】
+4. Semantic Freeze Gate 成功后，现实、主认知落差、认知转换成为本次生产的 Single Source of Truth（唯一事实来源）。Claude 不得自行修正三者，即使正文写作中发现三者似乎有误，也只能回复：
+【退回语义分析】
+不得在正文生产中直接改 Reality、改 Gap 或改 Transformation。
 
 执行规则：
 1. 先根据选题包判断题型、问题真实诉求、必要事实和禁用边界。

@@ -38,7 +38,11 @@ Publish
 Metrics
 ```
 
-语义冻结门（Semantic Freeze Gate）：现实、主认知落差、认知转换三项冻结成功后，才能进入 Analyzer；否则禁止进入正文生产，返回【选题包需要退回语义分析】。三项冻结后，Analyzer 及之后所有阶段不得修改，只能消费。详见 [`docs/内容架构总则.md`](docs/内容架构总则.md) 与 [`templates/Claude正文生产Prompt.md`](templates/Claude正文生产Prompt.md)。
+语义冻结门（Semantic Freeze Gate）：现实、主认知落差、认知转换三项冻结成功后，才能进入 Analyzer；否则禁止进入正文生产，返回【选题包需要退回语义分析】。
+
+Semantic Freeze Gate 成功后，现实、主认知落差、认知转换成为本次 Production 的 Single Source of Truth（唯一事实来源）。Analyzer、Structure Matcher、Router、Writer、QA 不得修改；如发现 Semantic 错误，只能返回【退回语义分析】，不得自行修正。
+
+详见 [`docs/内容架构总则.md`](docs/内容架构总则.md) 与 [`templates/Claude正文生产Prompt.md`](templates/Claude正文生产Prompt.md)。
 
 Production Card 已退役，不恢复；本链不新增对象、不新增流程，只是把《内容架构总则》四层正式接入生产入口。
 
