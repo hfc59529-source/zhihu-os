@@ -4,7 +4,7 @@ Production ID: ZH-20260808-001
 
 ## Status
 
-TOPIC_PACKAGE_READY_FOR_PRODUCTION_CARD
+RELEASED_AWAITING_PUBLISH
 
 ## Topic Binding
 
@@ -20,9 +20,15 @@ This Production ID starts at the user manual topic selection step. All later Pro
 
 ## Current Gate
 
-Topic Package exists and `Answer_Benchmark_Top3` has been collected from the question page default sort.
+Answer_Benchmark_Top3 collected. Per user correction on 2026-08-08, Production Card is LEGACY_RETIRED and not part of the ACTIVE daily pipeline (README.md: Question Package → Semantic Freeze Gate → Reasoning Path → Claude Writer → QA). Card step was skipped by design, not an oversight.
 
-Production Card may be generated next. Do not skip directly to draft/body.
+Draft went through Draft-v1 → Draft-v5 under Patch discipline (Assets/Issues separation each round). A Parameter Attribution Audit was run against `production_variable_library.md` before v4; CV002/CV004/CV005 realization had been lost during the v3 Explanation Target correction and was restored in v4, with CV004 rewritten to describe cost/exit-risk distribution mechanics only (no unsupported motive attribution).
+
+GPT QA on Draft-v5 (after the CV004 evidence-strength patch): PASS. CV001–CV006 all confirmed realized in text, no parameter conflicts, no remaining reading-experience issues. Released as `Release-v1.md`.
+
+Known open gap (not blocking): this Production has no entry in `data/parameter_call_log.md`; the claimed-parameters declaration step was skipped when the draft was first written and only reconstructed retroactively via audit. Flagged for later log entry, not for process fix today.
+
+Next: actual publish to Zhihu (user-executed), then capture article_id and complete the Production ID ↔ article_id mapping so this can be evaluated at the Evidence Gate.
 
 Collected Answer_Benchmark_Top3:
 
