@@ -4,7 +4,7 @@ Production ID: ZH-20260808-001
 
 ## Status
 
-RELEASED_AWAITING_PUBLISH
+PUBLISHED_MAPPED
 
 ## Topic Binding
 
@@ -28,7 +28,13 @@ GPT QA on Draft-v5 (after the CV004 evidence-strength patch): PASS. CV001–CV00
 
 Known open gap (not blocking): this Production has no entry in `data/parameter_call_log.md`; the claimed-parameters declaration step was skipped when the draft was first written and only reconstructed retroactively via audit. Flagged for later log entry, not for process fix today.
 
-Next: actual publish to Zhihu (user-executed), then capture article_id and complete the Production ID ↔ article_id mapping so this can be evaluated at the Evidence Gate.
+Published answer captured from Zhihu question page:
+
+- article_id: answer_2069522411372933416
+- answer_url: https://www.zhihu.com/answer/2069522411372933416
+- mapping authority: `data/production_article_map.csv`
+
+Next: wait for review-window data and earnings recovery.
 
 Collected Answer_Benchmark_Top3:
 
