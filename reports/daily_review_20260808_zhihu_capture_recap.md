@@ -16,24 +16,53 @@
 | 状态 | 数量 | 说明 |
 |---|---:|---|
 | 已有 Production ID 映射 | 7 | 可进入生产链路回溯，但部分为旧流程或 Trace 断裂 |
-| UNKNOWN Production ID | 3 | 只能作为平台结果事实，不可做变量归因 |
-| 收益已采集 | 0 | 当前快照均为 UNKNOWN / NOT_COLLECTED |
+| UNATTRIBUTABLE_LEGACY | 3 | 反查确认仓库内无对应 Production 记录，不可归因（见下方专节） |
+| 收益已采集 | 0 | 当前快照均为 UNKNOWN / NOT_COLLECTED，本轮反查未获取新收益数据源，仍待补 |
 | 折叠记录 | 1 | `ZH-20260801-001` 显示被折叠 |
+
+## UNATTRIBUTABLE_LEGACY 反查结论（2026-08-08 补充）
+
+反查方法：`UNKNOWN 快照 → 标题/answer_id → data/production_article_map.csv / runtime/logs/publish_results.csv → productions/ 目录 → git 全历史检索`。
+
+| 标题 | answer_id | 归因链断点 |
+|---|---|---|
+| 领导提拔下属时，哪些人是会被提前PASS掉的？ | answer_2067364159130448284 | `production_article_map.csv`、`publish_results.csv`、`productions/` 均无匹配记录；`git log --all -S` 未检出更早的 Draft/Card/Release 提交 |
+| 我朋友去面试，公司规模不大…他犹豫到底要不要去上班？ | answer_2067269682923676093 | 同上 |
+| 作为一位空降的领导，如何才能迅速赢得团队的信任呢？ | answer_2067298333178196355 | 同上 |
+
+三条记录在 `data/l0_content_assets.csv`、`data/review_data_snapshots.csv` 中除阅读/赞同/评论外全部字段为 `UNKNOWN`（含 source structure、main_variable），首次出现于 2026-08-04 的截图录入提交（`c699ef7`），发布时间标注为 08-02。这证明这三篇在本地生产闭环（Draft→Audit→Decision→Release）中从未留痕，只能作为**已证事实**记录：
+
+> 存在"线上已发布内容无法追溯到仓库 Production 记录"的历史数据缺口。
+
+**边界声明**：此结论仅覆盖 08-02 这一批次，不推定当前生产链路仍存在同类缺口，不作为系统问题立案，不触发流程审计。
+
+**样本池拆分**：
+- Attributed Samples（可归因样本）：7 条有 Production ID 映射的记录 → 可用于评价生产系统参数
+- Unattributed Samples（不可归因样本）：上述 3 条 UNATTRIBUTABLE_LEGACY → 只能作为 Content Asset 研究平台结果，不可反推生产参数或 Reasoning Path
 
 ## 阅读表现排序
 
 | 排名 | Production ID | 标题 | 阅读 | 赞同 | 收藏 | 评论 | 折叠 | 复盘口径 |
 |---:|---|---|---:|---:|---:|---:|---|---|
-| 1 | UNKNOWN | 领导提拔下属时，哪些人是会被提前PASS掉的？ | 274 | 3 | 0 | 0 | 否 | 未映射，不能归因 |
+| 1 | UNATTRIBUTABLE_LEGACY | 领导提拔下属时，哪些人是会被提前PASS掉的？ | 274 | 3 | 0 | 0 | 否 | 不可归因，仅作 Content Asset 研究 |
 | 2 | zhihu-20260729-senior-leader-not-fired-001 | 公司高层明明不行，大老板为什么还不裁掉他们？ | 242 | 4 | 2 | 0 | 否 | 旧流程，本批相对最好 |
 | 3 | zhihu-20260729-fuzzy-responsibility-boundary-001 | 领导布置任务故意模糊责任界限，作为底层员工，如何在谁都不得罪的前提下，保护好自己？ | 61 | 1 | 0 | 0 | 否 | 旧流程，低表现 |
-| 4 | UNKNOWN | 我朋友去面试，公司规模不大，他侧面了解这个岗位，年年都在招聘，根本留不住人，他犹豫到底要不要去上班？ | 29 | 1 | 0 | 0 | 否 | 未映射，不能归因 |
-| 5 | UNKNOWN | 作为一位空降的领导，如何才能迅速赢得团队的信任呢？ | 27 | 0 | 2 | 0 | 否 | 未映射，不能归因 |
+| 4 | UNATTRIBUTABLE_LEGACY | 我朋友去面试，公司规模不大，他侧面了解这个岗位，年年都在招聘，根本留不住人，他犹豫到底要不要去上班？ | 29 | 1 | 0 | 0 | 否 | 不可归因，仅作 Content Asset 研究 |
+| 5 | UNATTRIBUTABLE_LEGACY | 作为一位空降的领导，如何才能迅速赢得团队的信任呢？ | 27 | 0 | 2 | 0 | 否 | 不可归因，仅作 Content Asset 研究 |
 | 6 | ZH-20260801-003 | 领导不声不响把你手里的任务拿走后，过了几个月，发现别人干不了，想还给你，你会怎么做呢？ | 25 | 0 | 0 | 0 | 否 | 新链路完整，但分发弱 |
 | 7 | zhihu-20260729-middle-manager-promotion-001 | 为什么工作中，很多高层领导明知道某位中层领导缺乏管理能力，但还是提拔了他当中层？ | 20 | 0 | 0 | 0 | 否 | 旧流程，不能可靠归因 |
 | 8 | ZH-20260802-001 | 提拔你当了部门负责人，第一件事该干啥？ | 16 | 1 | 0 | 0 | 否 | 样本过早，继续观察 |
 | 9 | ZH-20260731-unknown_mofish | 为什么老板明知你摸鱼却不拆穿？ | 8 | 0 | 0 | 0 | 否 | Trace 断裂，不能归因 |
 | 10 | ZH-20260801-001 | 职场中怎么改掉弱者气息？ | 6 | 0 | 0 | 0 | 是 | 首要归因为折叠 / 分发异常 |
+
+### 可归因样本 Top 2（重新计算，排除 UNATTRIBUTABLE_LEGACY 与 Trace 断裂）
+
+| 排名 | Production ID | 标题 | 阅读 |
+|---:|---|---|---:|
+| 1 | zhihu-20260729-senior-leader-not-fired-001 | 公司高层明明不行，大老板为什么还不裁掉他们？ | 242 |
+| 2 | zhihu-20260729-fuzzy-responsibility-boundary-001 | 领导布置任务故意模糊责任界限，作为底层员工，如何在谁都不得罪的前提下，保护好自己？ | 61 |
+
+两者均属旧流程（`zhihu-2026072*` 系列），缺正式 QA / 正文完整记录，只能作为候选观察对象进入下一步 Article-level Review，不能直接证明当前 ACTIVE 参数有效。
 
 ## 历史基线对照
 
@@ -71,18 +100,18 @@
 
 `ZH-20260801-003` 阅读 25，`ZH-20260802-001` 阅读 16。两条都有生产链路信息，但数据窗口和分发量不足，结论应为继续观察，而不是修改 ACTIVE。
 
-### 5. 未映射高阅读样本需要先补 Production ID
+### 5. 阅读第一的样本已确认不可归因
 
-阅读第一的 `领导提拔下属时，哪些人是会被提前PASS掉的？` 为 UNKNOWN Production ID。它是本批最值得补映射的对象；未补映射前，只能作为平台结果事实。
+`领导提拔下属时，哪些人是会被提前PASS掉的？` 阅读 274，本批最高，但反查确认仓库内无对应 Production 记录，状态固化为 `UNATTRIBUTABLE_LEGACY`。它可以进入 Content Asset 研究（为什么这条阅读高），但不进入生产参数评价。真正用于评价生产系统的 Top 2 见上方"可归因样本 Top 2"。
 
 ## 下一步补采清单
 
 | 优先级 | 动作 | 目标 |
 |---:|---|---|
-| P0 | 补 `UNKNOWN` 三条的 Production ID / article_id 映射 | 先解决能不能归因 |
-| P0 | 补收益字段 | 当前全部 NOT_COLLECTED，无法做收益复盘 |
-| P1 | 对阅读前 2 条补正文 / QA / 参数调用证据 | 判断是否能进入候选规律观察 |
+| P0 | 补收益字段 | 当前全部 NOT_COLLECTED，本轮反查未获取新收益数据源，仍需登录态抓取或人工截图补录才能推进 |
+| P1 | 对可归因 Top 2（高层不裁题 / 责任边界题）补正文 / QA / 参数调用证据 | 判断是否能进入候选规律观察 |
 | P1 | 复查 `ZH-20260801-001` 折叠原因 | 避免把平台折叠误判成参数失败 |
+| P2 | 对 3 条 UNATTRIBUTABLE_LEGACY 做 Content Asset 层面的独立研究（选题/标题层面） | 与生产参数评价分开，不混入 Attribution Chain |
 | P2 | 补评论 Top20 与同题前三高赞回答 | 支撑更细的读者反馈和竞品语境分析 |
 
 ## 本轮结论
