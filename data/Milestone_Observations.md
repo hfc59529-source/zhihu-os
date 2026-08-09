@@ -169,3 +169,40 @@ Source（如为参数缺口）：高赞Top3 / 用户发布结果 / 人工审核 
 - 这是 Card 层观察，不是 Draft 层 Bug。
 - 010 单篇证据不足，不修改 Card 模板或施工规范。
 - 011/012/013 若继续出现，再判断是否进入治理。
+
+## Observation-03：ACTIVE 权威文件间 Production Card 架构版本不一致
+
+```text
+Observation ID：Observation-03
+Gap ID（如为参数缺口）：不适用
+Source（如为参数缺口）：人工审核
+对应内容 ID：TOPIC-20260809-002 / ZH-20260809-002（触发本次审核，非本观察的证据对象）
+题目：不适用（本观察为系统一致性问题，非单篇正文问题）
+审核来源：人工审核
+问题类型：结构问题（当前问题类型限定表六项中无"跨文件权威/架构版本冲突"类别，暂归入结构问题，最贴近但不完全对应，需治理评审确认是否需要扩类型）
+关联 Parameter ID（如已存在对应参数记录）：不适用
+问题描述：
+以下五处均为当前标注 ACTIVE 的权威文件，对"Production Card 是否仍属于正式生产链"存在直接文本冲突，非推断：
+1. `docs/知乎OS执行协议.md` 与 `docs/08_总AI执行中心.md`：明确 Production Card 已退出 Codex 日常生产主链。
+2. `templates/Claude正文生产Prompt.md`（V5，ACTIVE）：唯一施工依据为选题包 + ACTIVE 变量，不生成 Production Card。
+3. `skills/Skill007_正文QA协议.md`：自我标注 `Status：LEGACY_RETIRED`，声明"本协议不再作为日常正文审核入口"。
+4. `docs/知乎OS权威归属表.md`：页首声明 Production Card 已退出主链，但表体第54/55/57/58/71/72行仍列 Skill006、Skill007、Production Card模板、"当前正文以生产卡为准"为现行权威。
+5. `production_variable_library.md`（ACTIVE，唯一内容变量权威库）：第109-149行 Trigger Matrix 通用规则将"是否实际激活"定义为"写入 Card"，且每次生产必须记录 Experiment ID 等字段，Trigger 与 Activation 为连续同一条协议，非独立层级。
+6. `docs/00-设计原则.md`：Compiler 主链仍含 Production Card 节点；原则九、十、十二仍将 Production Card IR 列入正式链路。
+7. `docs/系统治理原则.md` 自身：变更日志 V1.5（第424行）仍写"Production Card 为正文阶段唯一内容权威"，说明治理原则文件本身也是冲突证据的一部分，而非冲突之外的裁判者。
+初步修正意见：
+需要治理评审在权威归属表或对应文件中，显式写入 Precedence / Supersession Rule（例如"V5 与知乎OS执行协议取代 00-设计原则第9/10/12条及参数库 Trigger Matrix 的 Card 语义"，或反向决定保留 Card 架构并撤回 V5），当前不建议由本次审核直接裁定方向。
+生命周期状态：OPEN
+缺口状态（如适用）：不适用
+审核结果（如适用）：不适用
+审核说明：
+本次未发现证据证明该架构不一致已实际影响 TOPIC-20260809-002 / ZH-20260809-002 的执行（该产物未触碰 Skill006/Skill007/Production Card，仅使用 V5 + CV001/CV002）；两者目前判定为相关但因果未验证。
+归入参数 ID：不适用
+候选参数 ID：不适用
+正式参数 ID：不适用
+重复次数：1（首次记录）
+重复证据引用：不适用
+平台证据：不适用（本观察不依赖平台/账号样本，依赖文件文本本身，验证方式应为治理评审通读五处原文确认摘录准确，而非等待生产样本积累）
+最终结论：待定（OPEN，未进入 VALIDATING）
+处理动作：不修改任何正式协议或参数记录；等待治理评审对上述五处摘录逐一确认后决定 Precedence Rule 归属，再决定是否推进为 SUPPORTED 并触发对应文件修订。
+```
