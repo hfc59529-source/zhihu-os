@@ -59,15 +59,15 @@
 | Explanation Target（一致解释目标）字段定义 | 01 生产模块 | 是，归属现有 Production Card 字段：`读者真实困惑`、`因果追问链`、`因果追问终点`、`唯一核心判断`、`分段施工说明/推进关系` | Skill006、Claude正文生产Prompt、Skill007、Production Card 校验脚本 | 不得新增独立 Skill、Engine、流程节点、知识库或平行字段体系 |
 | `templates/单次任务模板.md` | 01 生产模块 | 是，单次任务输入格式权威 | Codex日常任务、生产卡生成 | 生产卡、复盘库不得维护任务模板 |
 | `docs/知乎内容质量参数库_V2.md` | 02 知识模块 | 是，质量参数权威 | 总AI执行中心、Skill006、QA | 生产协议只触发参数，不复制维护参数 |
-| `runtime/ACTIVE_MANIFEST.md` | 02 知识模块 | 是，Codex日常执行快照清单权威 | Codex日常生产、Skill006、校验脚本 | Notion更新未发布到runtime前不得直接影响生产 |
-| `runtime/知乎内容质量参数快照.md` | 02 知识模块 | 是，Codex日常参数执行权威 | Skill006、Production Card、QA | 未标记ACTIVE的Notion参数不得进入生产触发 |
-| `runtime/知乎ACTIVE规律快照.md` | 02 知识模块 | 是，Codex日常规律执行权威 | Skill006、爆款规律提取 | 单篇复盘不得直接覆盖runtime规律 |
-| `runtime/知乎结构库快照.md` | 02 知识模块 | 是，Codex日常结构执行权威 | 内容路由、Skill006、Production Card | Notion草稿结构不得直接进入生产 |
+| `runtime/ACTIVE_MANIFEST.md` | 02 知识模块 | 是，Codex日常执行快照清单权威 | Codex日常生产、Skill006、校验脚本 | Git docs/templates 修改未经 `scripts/release_runtime.py` 发布前不得直接影响生产 |
+| `runtime/知乎内容质量参数快照.md` | 02 知识模块 | 是，Codex日常参数执行权威 | Skill006、Production Card、QA | 未标记ACTIVE的参数不得进入生产触发 |
+| `runtime/知乎ACTIVE规律快照.md` | 02 知识模块 | 是，Codex日常规律执行权威（内容混装 COMPILE/Writer/Audit 职责，SPLIT REQUIRED，见迁移审计） | Skill006、爆款规律提取 | 单篇复盘不得直接覆盖runtime规律 |
+| `runtime/知乎结构库快照.md` | 02 知识模块 | 是，Codex日常结构执行权威 | 内容路由、Skill006、Production Card | 未发布的结构草稿不得直接进入生产 |
 | `runtime/知乎账号画像快照.md` | 02 知识模块 | 是，账号画像执行快照权威 | 选题准入、选题扩展、案例选择、复盘样本优先级 | 不得新增 Production Card 字段，不得直接修改 Prompt |
 | `production_variable_library.md`｜知乎内容变量参数库 | 02 知识模块 | 是，唯一内容变量权威库 | Skill006、Production Card、正文生产、平台样本学习、账号验证 | 不得新建平台变量库、账号变量库或第二套参数体系 |
 | `l2_variable_records.md` | 02 知识模块 | 变量标注材料，不是生产权威 | 知乎内容变量参数库、L2.5变量验证 | 不得作为第二套账号变量库 |
 | `l2_variable_validation.md` | 02 知识模块 | 变量验证材料，不是生产权威 | 知乎内容变量参数库、复盘模块 | 不得作为第二套账号变量库，不得把单次验证升级为稳定协议 |
-| 结构库 / ACTIVE规律库 / 参数库 / 案例库 / 平台规则（Notion） | 02 知识模块 | 是，管理与审批权威 | runtime发布、周期复盘、版本升级 | Notion修改未发布到runtime前不得直接进入Codex日常生产 |
+| 结构库 / ACTIVE规律库 / 参数库 / 案例库 / 平台规则（Notion） | 02 知识模块 | 否，已退出 Production Authority Chain（2026-08-09 治理变更），降级为 Reference / Archive，不拥有管理、审批或执行权威 | 不适用——不再是任何 runtime 发布或日常生产的上游 | 生产系统权威链收缩为 Git docs/templates → production_variable_library.md → runtime 执行快照 → ACTIVE_MANIFEST，不再经过 Notion；Notion 内容如需重新参与生产，须先以 Git 文件形式提出 Change Proposal，不得直接引用 Notion 页面作为依据 |
 | `skills/Skill006_知乎生产卡生成器.md` 输出的 Production Card | 03 运行模块 | 是，单篇执行对象权威 | Claude正文、QA、发布终检、复盘 | 不得新建第二套Run数据库或任务系统 |
 | 当前正文 | 03 运行模块 | 单篇运行产物，以生产卡为准 | QA、发布状态、单篇复盘 | 正文不得反向修改Production Card |
 | 生产状态 / 发布状态 | 03 运行模块 | 运行状态权威，以生产卡记录为准 | 首页待办视图、复盘模块 | 复盘库不得替代运行状态 |
@@ -82,7 +82,7 @@
 | `reports/l1_sample_report.md` | 04 复盘模块 | 报告，不替代数据源 | L1样本检查、L2验证 | 不得替代L1样本清单 |
 | `reports/earnings_backfill_report.md` | 04 复盘模块 | 报告，不替代数据源 | 收益数据回填、复盘判断 | 不得替代内容资产总账 |
 | `reports/production_experiment_001.md` | 04 复盘模块 | 单次实验记录 | 复盘模块、后续规律验证 | 不得升级为稳定生产协议 |
-| `知乎TOP10事实包_V1_给GPT复盘.md` | 04 复盘模块 | 复盘事实包 | 单篇复盘、规律验证、知识更新 | 不得替代Notion知识层 |
+| `知乎TOP10事实包_V1_给GPT复盘.md` | 04 复盘模块 | 复盘事实包 | 单篇复盘、规律验证、知识更新 | 不得替代 `docs/` 下的治理与协议权威文件 |
 | `docs/系统治理原则.md` | 05 治理模块 | 是，证据门槛、状态流转和系统修改条件权威 | 参数库、Observation、复盘模块、生产模块 | 各模块不得另建治理原则 |
 | `scripts/validate_production_card.py` | 01 生产模块 | 工具，生产卡校验权威 | Skill006、生产卡模板 | 不得成为任务系统 |
 | `scripts/validate_l0_assets.py` | 04 复盘模块 | 工具，L0数据校验权威 | L0内容资产总账、L0报告 | 不得修改L0字段口径 |
