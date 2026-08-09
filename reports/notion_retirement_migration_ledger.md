@@ -81,7 +81,7 @@ OUT OF SCOPE
 | 结构02｜约束—决策 | 06｜知乎结构库 | `runtime/知乎结构库快照.md` | 错误认知 -> 真实约束 -> 关键变量 -> 决策方法 -> 风险边界 | Git TS02 已覆盖解决题/决策题场景、动作、边界、升级条件 | 中 | SKIP / ARCHIVE | `research/notion_archive/` | Pending | 不独立迁为 Runtime 结构；可用于判断 TS02 是否遗漏“关键变量/风险边界” |
 | 05 每日收益流水 | 05｜知乎单篇复盘库 | `reports/earnings_backfill_report.md`; `data/l0_content_assets.csv`; `data/review_data_snapshots.csv` | `知乎每日收益｜YYYY-MM-DD`、收益、记录时间、换算说明 | 多数只是日收益流水；Git 已有收益回填报告和结构化快照承接收益事实 | 中 | SKIP / ARCHIVE | `reports/earnings_backfill_report.md` 或 `research/notion_archive/` | Pending | 不重复迁每日流水；若需保留，只归档为收益来源证据 |
 | 05 账号/选题纠偏复盘 | 05｜知乎单篇复盘库 | `data/Milestone_Observations.md`; `production_variable_library.md` | `知乎账号近期复盘记录｜选题跑偏与纠偏规则`、`近30天高商业价值问题复盘｜老板与管理身份题` | 有复盘文本、下一轮动作、边界条件和收益/阅读数据，但其中可能混有未经当前 Git 门槛验证的因果判断 | 高 | ARCHIVE / OBSERVATION CANDIDATE | `research/notion_archive/` first; possible `data/Milestone_Observations.md` after evidence split | Pending Evidence Split | 不直接 MERGE。先把原始收益/阅读/样本事实归档为 Evidence；只有能按 Git Observation 字段写清“观察到了什么、如何验证、证据是否支持”的部分，才可转为 OPEN / VALIDATING Observation。不得把“选题跑偏”“老板/管理身份题有效”等旧复盘结论直接写成 SUPPORTED，不自动推进 Parameter，不直接改选题规则 |
-| 05 规律迁移候选 | 05｜知乎单篇复盘库 | `data/Milestone_Observations.md`; `production_variable_library.md`; `docs/知乎内容质量参数库_V2.md` | 身份冲突机制模型、最强句前置、每篇实验只改一个变量、利益揭露提升停留、垂直度推荐稳定性等 | Notion 多数状态为 假设/经验，验证次数 0-7；有历史证据价值，但未达到当前 Git ACTIVE 门槛 | 中 / 高 | ARCHIVE / selective MERGE | `data/Milestone_Observations.md` | Pending | 以 Observation 归档；只有已有 Git 参数缺同等证据引用时才 MERGE，不得直接进 runtime |
+| 05 规律迁移候选 | 05｜知乎单篇复盘库 | `data/Milestone_Observations.md`; `production_variable_library.md`; `docs/知乎内容质量参数库_V2.md` | 身份冲突机制模型、最强句前置、每篇实验只改一个变量、利益揭露提升停留、垂直度推荐稳定性等 | Notion 多数状态为 假设/经验，验证次数 0-7；有历史证据价值，但未达到当前 Git ACTIVE 门槛，且旧复盘判断可能混合 Evidence、Observation、Hypothesis 和 Parameter candidate | 中 / 高 | ARCHIVE / PARAMETER-OR-OBSERVATION CANDIDATE | `research/notion_archive/` first; possible `data/Milestone_Observations.md` after reclassification | Pending Evidence Reclassification | 不直接 selective MERGE。逐条拆为 Evidence -> Observation -> Hypothesis / Parameter Candidate -> 重新验证；“Git 参数缺同等证据引用”只能触发证据补链审计，不能直接把旧规律迁入 Parameter、Prompt 或 runtime |
 | 05 旧协议影响字段 | 05｜知乎单篇复盘库 | `docs/系统治理原则.md`; `docs/生产审计决策流程.md` | 协议影响、升级规律、废弃规律、ACTIVE规律、下一轮动作 | 旧 Notion 复盘库曾承担协议升级建议，当前 Git 已要求证据驱动和人工治理 | 低 / 中 | ARCHIVE / DROP | `research/notion_archive/` | Pending | 旧协议影响不能自动改 Git 规则；只保留能解释历史决策的记录 |
 | 08 规则优先级治理 | 08｜知乎协议中心 | `docs/系统治理原则.md`; `docs/知乎OS权威归属表.md` | `08-00｜知乎规则优先级 V1.0`、协议状态、调用权限、低优先级不得覆盖高优先级 | Git 已覆盖 Notion 退出权威链、证据门槛、单一事实来源和状态治理；Notion 表达可做对照 | 中 | SKIP / selective MERGE | `docs/系统治理原则.md`; `docs/知乎OS权威归属表.md` | Pending | 只合并 Git 缺失的治理句；不恢复 L0-L7 协议中心 |
 | 08 选题/输入协议 | 08｜知乎协议中心 | `docs/Codex选题采集协议.md`; `templates/选题包模板.md`; `docs/Input Rules V1.md` | 选题筛选四道门、题意识别卡、母题识别、高收益选题五维评分、六入口协议 | Git 已有 Pre-Run 选题采集和 Input Rules 分工；Notion 旧字段有历史决策证据 | 中 | SKIP / ARCHIVE / selective MERGE | `docs/Codex选题采集协议.md`; `research/notion_archive/` | Pending | 不能把旧评分模型恢复为 DECISION 规则；只补事实入口或缺失边界 |
@@ -159,7 +159,7 @@ OUT OF SCOPE
 结论：
 
 - `知乎每日收益｜YYYY-MM-DD` 类记录多为收益流水，和 Git 收益回填报告 / L0 / review snapshots 高度重叠，默认 SKIP；仅在需要证明来源时 ARCHIVE。
-- `规律迁移｜...` 类记录多数是 假设 / 经验 状态，适合转成 Observation，不允许直接进入 ACTIVE 规律或 Runtime。
+- `规律迁移｜...` 类记录多数是 假设 / 经验 状态，需先重分类为 Evidence、Observation candidate、Hypothesis 或 Parameter candidate；不得因 Git 参数缺证据引用而直接 selective MERGE，不允许直接进入 ACTIVE 规律或 Runtime。
 - `知乎账号近期复盘记录｜选题跑偏与纠偏规则`、`近30天高商业价值问题复盘｜老板与管理身份题` 证据价值较高，但需先拆分 Evidence / Observation candidate；旧复盘中的因果判断不得直接作为 SUPPORTED Observation。
 - `协议影响`、`升级规律`、`ACTIVE规律` 等旧字段只作为历史治理证据，不自动修改 Git 规则。
 
