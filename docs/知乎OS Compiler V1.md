@@ -2,7 +2,7 @@
 
 Status：DESIGN_FROZEN（架构规格已冻结，尚未进入 Runtime Release，本文件不具备执行权威；执行权威只来自 `runtime/ACTIVE_MANIFEST.md` 中 `Status: ACTIVE` 的 Manifest，见该文件与 `scripts/validate_runtime_consistency.py`）
 
-本文件定义知乎OS的内容编译流水线。V1 首版（Analyzer / Structure Matcher / Router / Slim IR / Runtime Assembly / Writer Input Package / Writer / QA-A/QA-B / Feedback 九对象链）已废弃，替换为下面的六节点流水线。废弃原因：九对象链是同一批职责在工程实现层被反复升级为独立对象的结果（Compiler 自己同时维护 Production Card IR、Runtime Assembly、Writer Input Package、Reasoning Path 四个相邻中间对象），与 README、执行协议、总AI执行中心各自维护的生产链文本互相不一致，2026-08-09 治理评审已将该不一致记录为 Observation-03（REJECTED → CLOSED，结论：不构成有效权威冲突，因为唯一发布过的 Runtime 是 07-31 Card-based 版本，本次废弃的九对象链描述本身也从未取得过 Runtime 权威）。
+本文件定义知乎OS的内容编译流水线。V1 首版（Analyzer / Structure Matcher / Router / Slim IR / Runtime Assembly / Writer Input Package / Writer / QA-A/QA-B / Feedback 九对象链）已废弃，替换为下面的七节点流水线。废弃原因：九对象链是同一批职责在工程实现层被反复升级为独立对象的结果（Compiler 自己同时维护 Production Card IR、Runtime Assembly、Writer Input Package、Reasoning Path 四个相邻中间对象），与 README、执行协议、总AI执行中心各自维护的生产链文本互相不一致，2026-08-09 治理评审已将该不一致记录为 Observation-03（REJECTED → CLOSED，结论：不构成有效权威冲突，因为唯一发布过的 Runtime 是 07-31 Card-based 版本，本次废弃的九对象链描述本身也从未取得过 Runtime 权威）。
 
 Compiler 的语义上游仍是 [内容架构总则](内容架构总则.md)：现实、认知落差、认知转换、平台表达是语义层描述，本文件的六节点是工程实现。Compiler 不重新定义这几个语义概念，只负责把它们编译成正文。
 
@@ -33,7 +33,7 @@ Compiler 的语义上游仍是 [内容架构总则](内容架构总则.md)：现
 
 如果无法归节点，默认拒绝新增。
 
-## 2. 六节点流水线
+## 2. 七节点流水线
 
 ```text
 INPUT
@@ -46,10 +46,12 @@ WRITE
 ↓
 AUDIT
 ↓
+REVIEW
+↓
 RELEASE
 ```
 
-每个节点只有一个职责，接口定义为 Input / Decision Right / Output / Forbidden 四项，互不重叠。Structure Matcher、Router、Reasoning Path、参数触发等原九对象链中的能力，不再各自升级为独立节点，全部降级为 COMPILE 节点内部能力。
+每个节点只有一个职责，接口定义为 Input / Decision Right / Output / Forbidden 四项，互不重叠。Structure Matcher、Router、Reasoning Path、参数触发等原九对象链中的能力，不再各自升级为独立节点，全部降级为 COMPILE 节点内部能力。REVIEW 独立于 RELEASE：AUDIT PASS 只代表审核条件满足，不代表用户已经看过正文；是否接受最终正文是一个不可压缩的独立 Decision Right（人工验收），不得压进 RELEASE 变成一个布尔前置条件——这是对齐现有 `docs/生产审计决策流程.md`、`docs/生产状态机与交接规范.md`、`data/Publish_Queue.md` 三份文件共同确认的纪律：即使 Audit Clean Pass，也不能从 AUDIT_PASS 直接跳到 RELEASE_READY。
 
 ## 3. INPUT
 
@@ -192,31 +194,55 @@ Forbidden:
     后者，能否进入 AUDIT 取决于前者是否已经形成可发布的操作定义）
 ```
 
-## 8. RELEASE
+## 8. REVIEW
 
 ```text
 Input:
-  数据对象：Audit PASS + User Approved
+  数据对象：Draft + AuditResult（result: PASS）
+  规则引用：无独立 Runtime Rules 分区——REVIEW 不核对合同条款（AUDIT 已核对完），
+    只做人工最终判断，不需要机械化的判定标准
+
+Decision Right:
+  人（User）判断最终正文是否接受，唯一、不可压缩的验收权
+  （对应现有 `READY_FOR_USER_REVIEW` → `USER_APPROVED` / `USER_REJECTED` 状态转移）
+
+Output:
+  Approval：USER_APPROVED，或 USER_REJECTED（附用户指出的问题）
+
+Forbidden:
+  不得直接修改正文（发现问题只能标注，退回 WRITE 由 Writer 按 Patch 规则修改）
+  不得修改 Decision / Execution IR
+  不得跳过：AUDIT 未 PASS 的 Draft 不得进入 REVIEW
+```
+
+USER_REJECTED 的退回路径：若需要修复，退回 WRITE（Execution IR + Current Draft + 用户指出的问题作为 Approved Issues），修复后重新进入 AUDIT，不直接跳回 REVIEW（必须重新确认审核条件满足）。Codex 不得借用户拒绝直接改写正文。
+
+## 9. RELEASE
+
+```text
+Input:
+  数据对象：Approval（USER_APPROVED） + Draft + Runtime Version
   规则引用：Runtime Release → Release Rules 分区（发布前置条件）
 
 Decision Right:
-  仅状态转换：READY_FOR_RELEASE → RELEASED，记录 Run ID + Runtime Version + 时间戳
+  无内容判断权，仅状态转换：READY_FOR_RELEASE → RELEASED，
+    记录 Run ID + Runtime Version + 时间戳
 
 Output:
   Release（发布记录，绑定生产该内容时使用的 Runtime Version）
 
 Forbidden:
   不做任何内容判断
-  没有 Audit PASS 或没有 User Approved，不得转换状态，无例外
+  没有 USER_APPROVED，不得转换状态，无例外（Audit PASS 不能替代 USER_APPROVED）
 ```
 
-## 9. Writer 可替换性
+## 10. Writer 可替换性
 
 Writer（对应 WRITE 节点执行者）是可替换模型，可选执行模型包括 Claude、Codex、GPT 及后续其它模型。
 
 A/B 测试时，唯一变量必须是 Writer 模型本身。禁止同时改变 Execution IR、Writer Rules、Audit Rules，否则无法判断模型差异。
 
-## 10. SSP｜Single Source of Policy
+## 11. SSP｜Single Source of Policy
 
 任何规则只有一个权威来源。其它节点只能引用，不得复制维护。
 
@@ -227,25 +253,26 @@ A/B 测试时，唯一变量必须是 Writer 模型本身。禁止同时改变 E
 | 正文路线、结构、素材边界、本篇特有验收标准 | COMPILE（写入 Execution IR） |
 | 人话表达、节奏、留白 | Runtime.Writer Rules |
 | 通用可判定表达检查（重复、参数显形等） | Runtime.Audit Rules |
+| 最终正文是否接受 | REVIEW（人工，唯一权威，不得由 AUDIT 或 RELEASE 代为判断） |
 | 发布前置条件 | Runtime.Release Rules |
 | 收益评估 | Learning Plane（不在本流水线内，见下） |
 
 如果同一规则出现在多处，必须删除重复项，只保留唯一权威。
 
-## 11. 单向流与 Learning Plane 回路
+## 12. 单向流与 Learning Plane 回路
 
 ```text
 Governance Plane（治理：提出变更 → 批准 → Runtime Release）
      ↓ 发布
 Runtime Plane（当前唯一允许执行的规则与知识快照）
      ↓ 供给
-INPUT → DECISION → COMPILE → WRITE → AUDIT → RELEASE
-                                           ↓ 结果
-                                        Metrics
-                                           ↓
-                                   Learning Plane（数据 → 证据 → 假设 → 验证）
-                                           ↓ change proposal
-                                     回到 Governance Plane
+INPUT → DECISION → COMPILE → WRITE → AUDIT → REVIEW → RELEASE
+                                                    ↓ 结果
+                                                 Metrics
+                                                    ↓
+                                            Learning Plane（数据 → 证据 → 假设 → 验证）
+                                                    ↓ change proposal
+                                              回到 Governance Plane
 ```
 
 禁止反向修改：
@@ -253,9 +280,10 @@ INPUT → DECISION → COMPILE → WRITE → AUDIT → RELEASE
 - COMPILE 不得修改 Decision。
 - WRITE 不得修改 Execution IR，不得重新推导 Decision。
 - AUDIT 不得修改 Draft、Execution IR、Decision。
+- REVIEW 不得修改正文、Execution IR、Decision。
 - Learning Plane 不得直接改 Runtime；只能形成 Change Proposal 交回 Governance Plane。
 
-## 12. 失败模式升级闸门
+## 13. 失败模式升级闸门
 
 任何 Runtime Rules（Input/Decision/Compile/Writer/Audit/Release Rules）的升级，必须先进入 Failure Pattern 记录。
 
@@ -275,9 +303,9 @@ INPUT → DECISION → COMPILE → WRITE → AUDIT → RELEASE
 
 未满 3 次时：只记录，不改 Runtime Rules。
 
-## 13. 试运行门槛
+## 14. 试运行门槛
 
-六节点流水线进入正式生产前，需完成至少 10 篇真实知乎生产验证，且满足：
+七节点流水线进入正式生产前，需完成至少 10 篇真实知乎生产验证，且满足：
 
 - Execution IR 持续保持精简。
 - Writer Rules 基本不需要单题改动。
@@ -288,8 +316,8 @@ INPUT → DECISION → COMPILE → WRITE → AUDIT → RELEASE
 
 10 篇前禁止：批量迁移历史数据、删除旧资产、重构 Notion 首页或数据库结构。
 
-## 14. 待处理事项（本次未处理，如实记录）
+## 15. 待处理事项（本次未处理，如实记录）
 
-- `docs/知乎OS Compiler Data Flow V1.md` 仍描述旧九对象链的输入输出（Analyzer.json / IR.json 等），尚未随本次规格重写同步更新，暂不视为本文件的有效引用来源。
-- `runtime/ACTIVE_MANIFEST.md` 的 Partitions 仍沿用旧资产分类，未按本文件的六节点重新组织；本文件本身也未进入任何 Runtime Release，Status 为 DESIGN_FROZEN，不具备执行权威。
+- `runtime/ACTIVE_MANIFEST.md` 的 Partitions 仍沿用旧资产分类，未按本文件的七节点重新组织；本文件本身也未进入任何 Runtime Release，Status 为 DESIGN_FROZEN，不具备执行权威。
+- Manifest Contract 的 Status 枚举（`DRAFT | ACTIVE | DEPRECATED`）尚未扩展为 `DRAFT | TRIAL | ACTIVE | DEPRECATED`；七节点流水线要满足本文件第14节的10篇试运行门槛，需要先有 `TRIAL` 状态提供受控执行权威，这一步尚未落代码（`scripts/validate_runtime_consistency.py` 的 `VALID_STATUS` 与 `scripts/release_runtime.py` 的 `--status` 参数化）。
 - Production Card、Skill006、Writer Input Package Schema 等旧对象的具体退场方式（删除 / 归档 / 内容迁入 Execution IR 载体）尚未落地，仅在设计层完成了职责判断（见对话记录中"现有系统哪些东西保留，哪些降级"一节）。
