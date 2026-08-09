@@ -12,7 +12,7 @@ Status：ACTIVE
 2. 平台样本、216篇历史文章和后续发布文章，都只能回写本库对应变量记录。
 3. 禁止新增"平台变量库""账号变量库""候选变量库""实验变量库"等重复入口。
 4. 平台高频出现不等于具备触发资格（Trigger Eligibility）。
-5. Claude 正文生产默认只触发本库中 `当前状态=ACTIVE` 且 `触发资格=是` 的变量。触发（Trigger）指题目、样本特征或结构条件命中变量的适用题型与触发条件，使其进入本题触发矩阵；写入 Production Card 是激活（Activation）；Claude 按 Card 生成正文是执行（Execution）；正文中实际体现该变量效果是实现（Realization）。四个环节按顺序发生，不得跳过。
+5. Claude 正文生产默认只触发本库中 `当前状态=ACTIVE` 且 `触发资格=是` 的变量。触发（Trigger）指题目、样本特征或结构条件命中变量的适用题型与触发条件，使其进入本题触发矩阵；COMPILE 将命中变量写入 `Execution IR.triggered_rule_ids`（规则类变量）或 `Execution IR.acceptance_criteria`（本篇正文义务）是激活（Activation）；WRITE 按 Execution IR 生成正文是执行（Execution）；正文中实际体现该变量效果是实现（Realization）。四个环节按顺序发生，不得跳过。
 6. `CANDIDATE` 和 `REVIEW` 状态的变量只允许在指定单变量实验中触发，不能进入日常默认生产。
 7. `DEPRECATED` 和 `ARCHIVED` 禁止触发。
 8. Trigger 不作为独立生产对象存在；每条变量自己的"适用题型 / 触发条件 / 禁用边界 / 当前状态 / 触发权重"合起来就是该变量的触发规则（Trigger Rule）。
@@ -21,7 +21,7 @@ Status：ACTIVE
 11. `待审核` 必须有审核闭环。用户审核结果只允许四种：`驳回`、`合并`、`候选参数`、`正式参数`。不是所有待审核缺口都会变成参数。
 12. 参数缺口、候选参数、正式参数必须使用不同编号：参数缺口为 `Gap-001`，候选参数为 `Candidate-001`，正式参数沿用参数库域编码如 `PD-09` / `RR-02` / `CR-01`。
 13. `Answer_Benchmark_Top3` 只能产生 `Parameter Match` / 参数命中和出现频率统计，不能产生参数验证。高赞回答命中某参数，不等于该参数导致高赞。
-14. 真正的参数验证只能来自本账号发布结果：Production Card 调用参数后，经过发布，再用阅读、赞同、收藏、评论、收益和复盘数据验证效果。
+14. 真正的参数验证只能来自本账号发布结果：Execution IR 激活参数、经 WRITE/AUDIT/REVIEW 后发布，再用阅读、赞同、收藏、评论、收益和复盘数据验证效果。
 15. 新参数不能由 AI 自行决定。是否删除、合并、建立候选参数、推进到 ACTIVE，必须由用户或用户授权的治理评审确认。
 
 ## 赛道边界
@@ -125,7 +125,7 @@ ARCHIVED
 命中依据：
 禁用边界检查：
 本题用途：
-是否实际激活（写入 Card）：
+是否实际激活（写入 Execution IR.triggered_rule_ids 或 acceptance_criteria）：
 ```
 
 触发矩阵不是第二套变量库，不保存长期证据，不反向覆盖本库。
