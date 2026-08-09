@@ -92,7 +92,7 @@ OUT OF SCOPE
 | 00 知乎项目OS 首页 | 知乎项目OS 根页面 | `README.md`; `docs/知乎OS权威归属表.md` | 00-04 功能区、唯一入口、驾驶舱、当前启用数据库、运行规则、系统边界 | Git 已有 README 和权威归属表；Notion 首页包含旧 Production Card 唯一执行对象说法 | 中 | SKIP / ARCHIVE | `README.md`; `research/notion_archive/` | Pending | 仅归档旧信息架构证据；不恢复“生产卡唯一执行对象” |
 | Notion 版权威归属表 | 知乎OS权威归属表 | `docs/知乎OS权威归属表.md` | 页面归属、模块边界、Production Authority | Git 已有更新版，并已声明 Notion 退出 Production Authority Chain | 高 | SKIP | `docs/知乎OS权威归属表.md` | Checked | Git 版本更新，Notion 版只作为历史证据 |
 | 03 高盐粒收益问题池 | 03｜知乎高收益问题池 | `data/Topic_Pool.md`; `data/topic_candidates/`; `data/l1_sample_list.csv` | 高收益问题、旧收益证据、候选题池 | 可能包含 Git 未覆盖的高收益候选题 | 中 | PENDING CLASSIFICATION | TBD | Not Started | 需后续单独做 Schema + row coverage；不得直接并入当前 Topic Pool |
-| 05.5 规律验证库 | 知乎规律验证库 | `data/Milestone_Observations.md`; `production_variable_library.md` | Observation / Hypothesis / Experience / ACTIVE、Evidence、反例、连续验证、成功次数、成功率、下一步验证动作、是否允许升级协议 / MASTER | Notion 旧生命周期与 Git Observation / Parameter 生命周期相似但不等价；多数行仍是 Hypothesis 0/10、Hypothesis 1/10 或 Observation 1/10，并自带反例条件 | 高 | ARCHIVE / selective MIGRATE | `research/notion_archive/` or Legacy Observation Archive | Checked | 只迁独有历史 Evidence；不迁旧生命周期，不迁升级 MASTER / 协议权限，不把旧 Hypothesis 重新激活成当前 OPEN Observation |
+| 05.5 规律验证库 | 知乎规律验证库 | `data/Milestone_Observations.md`; `production_variable_library.md` | Observation / Hypothesis / Experience / ACTIVE、Evidence、反例、连续验证、成功次数、成功率、下一步验证动作、是否允许升级协议 / MASTER | Notion 旧生命周期与 Git Observation / Parameter 生命周期相似但不等价；Schema 确认其承担“发现规律 -> 验证 -> 升级系统”的旧治理职责，不是普通 Evidence 库 | 高 | ARCHIVE / selective MIGRATE | `research/notion_archive/` or Legacy Observation Archive | Decision Checked / record-level migration pending execution | 只迁独有历史 Evidence；不迁旧生命周期，不迁升级 MASTER / 协议权限，不把旧 Hypothesis 重新激活成当前 OPEN Observation；行级 Git/Notion 差集仍待执行 |
 | 旧知乎规律库 | 知乎规律库（历史证据层） | `runtime/知乎ACTIVE规律快照.md`; `production_variable_library.md`; `data/Milestone_Observations.md` | 历史规律、经验、假设、失效记录 | 与 ACTIVE｜知乎规律库不同，可能有旧规律资产 | 中 | PENDING CLASSIFICATION | TBD | Not Started | 需区分 ACTIVE 规律库与旧规律库；Notion 状态不继承 |
 | 旧知乎收益库 | 知乎收益库（历史证据层） | `data/l0_content_assets.csv`; `data/review_data_snapshots.csv`; `reports/earnings_backfill_report.md` | 收益快照、收益明细、历史收益记录 | 可能已被 earnings_backfill_report 覆盖，也可能有未迁快照 | 中 | PENDING CLASSIFICATION | TBD | Not Started | 需按 answer_url/article_id 核对，不按标题近似覆盖 |
 | 07 评论金矿库 | 07｜知乎评论金矿库 | `data/Milestone_Observations.md`; `docs/单篇复盘执行协议.md` | 高价值评论、评论诱因、读者反馈、需求信号 | Git 目前没有明确评论资产库，可能有复盘证据价值 | 中 | PENDING CLASSIFICATION | `data/Milestone_Observations.md` or `research/notion_archive/` | Not Started | 只能作为读者反馈证据，不直接生成生产规则 |
@@ -100,7 +100,7 @@ OUT OF SCOPE
 | 06 生产卡库 | 06｜知乎生产卡 | `productions/`; `templates/Production Card模板.md` | 历史 Production Card 实例、生产状态、发布状态 | 当前 Git 有 productions 目录，Production Card 已退出日常主链 | 中 | ARCHIVE / MERGE | `productions/` or `research/notion_archive/` | Not Started | 需按 Production ID 核对；只保留 Git 缺失且有追溯价值的实例 |
 | 07 正文 QA 库 | 07｜正文 QA | `productions/`; `docs/整体审核七项清单.md`; `docs/生产审计决策流程.md` | 历史 QA、终检、问题归因、发布前检查 | Git 部分 productions 下已有 QA/Audit/Release 文件 | 中 | ARCHIVE / MERGE | `productions/` or `data/Milestone_Observations.md` | Not Started | 需按 Production ID/标题核对，不迁旧 QA 规则为新 AUDIT 权威 |
 | 平台爆款样本库 | 知乎平台爆款样本库｜职场 | `docs/知乎平台样本学习协议.md`; `data/Milestone_Observations.md` | 平台高赞样本、传播规律、样本证据 | Git 有平台样本学习协议，但未必有全部样本数据 | 高 | PENDING CLASSIFICATION | `research/notion_archive/` or future evidence data | Not Started | 需单独判定版权/引用边界；不得直接进入 Production Card/Execution IR |
-| L2 正文变量矩阵 | L2｜正文变量矩阵 | `reports/zhihu_l2_variable_matrix_pilot_20260729.md`; `l2_variable_records.md`; `l2_variable_validation.md` | 2026-07-29 7 篇第一轮 L2 实验：唯一主变量、辅助变量、首屏、结构、信息价值、认知奖励、传播变量、收益数据 | Git 已完整覆盖 7 篇 pilot 报告，且后续已有 16 篇正式变量标注和 L2.5 分组验证；Notion relation / view / formula 属于数据库实现，不是知识差集 | 高 | SKIP | None | Covered | 可从 Notion 退役待办划掉；不重复迁数据库 |
+| L2 正文变量矩阵 | L2｜正文变量矩阵 | `reports/zhihu_l2_variable_matrix_pilot_20260729.md`; `l2_variable_records.md`; `l2_variable_validation.md` | 2026-07-29 7 篇第一轮 L2 实验：唯一主变量、辅助变量、首屏、结构、信息价值、认知奖励、传播变量、收益数据；其中 5 篇有全文证据，2 篇只有摘录需复核 | Git 可证明覆盖 7 篇 pilot 报告的运行结论：L2 变量矩阵可以开始运行；不证明变量有效、不证明稳定赚钱、不允许升级 ACTIVE、不允许影响 Prompt。Notion L2 全部行尚未完成 Query，不能宣告全库 Covered | 高 | SKIP candidate / coverage unverified | TBD | Coverage Unverified | 暂不从 Notion 退役待办划掉；需在 Query Data Source 额度恢复后核对 Notion L2 全部记录。根目录 `l2_variable_records.md` 与 `l2_variable_validation.md` 可作为后续 Git 覆盖证据，但不能替代 Notion 全库行级核验 |
 | 知乎表达样本库 | 知乎表达样本库 | `docs/知乎正文表达协议 V3.md`; `data/Milestone_Observations.md`; `reports/` | 表达样本、AI味、可迁移等级、表达证据 | Git 有表达协议和 2026-07-31 表达证据报告 | 中 / 高 | MERGE / ARCHIVE | `data/Milestone_Observations.md`; `reports/` | Not Started | 需保留样本证据，不能变成第二套 Writer Rules |
 | 7/25-7/31 数据快照页 | 根页面直属快照页 | `reports/`; `data/review_data_snapshots.csv`; `data/l0_content_assets.csv` | 近10篇回答、TOP10事实包、生产表现、收益明细、关注者画像、后台数据与同题样本 | Git 已有部分报告和数据表，但可能缺原始快照说明 | 中 | MERGE / ARCHIVE / SKIP | `reports/`; `data/review_data_snapshots.csv` | Not Started | 需按页面逐条核对；优先保留可证明数据来源的快照 |
 | Candidate v0.1｜内容变更分级与审批规则 | ACTIVE｜知乎规律库 | `docs/系统治理原则.md`; `data/Milestone_Observations.md`; `production_variable_library.md` | Level A 语言表达层、Level B 用户行为层、Level C 系统治理层；Level C 需人工审批 | Notion 状态为 REVIEW，证据样本数 1；Git 治理原则已明确“做信息隔离，不做对象膨胀”和参数/观察生命周期 | 中 | ARCHIVE / SKIP | `data/Milestone_Observations.md` 或 no-op | Pending | 不迁为 ACTIVE 规律；如保留，只作为治理观察证据 |
@@ -182,15 +182,15 @@ OUT OF SCOPE
 
 - 根页面确认还存在 03 高收益问题池、05.5 规律验证库、旧知乎规律库、旧知乎收益库、07 评论金矿库、09 Skill Center、06 生产卡库、07 正文 QA 库、平台爆款样本库、L2 正文变量矩阵、知乎表达样本库和多份 7/25-7/31 数据快照页。
 - 这些资产属于“知乎项目OS / 知乎系统”子树，进入本台账；但多数尚未完成 Schema + row coverage。
-- 05.5 规律验证库已定案为 ARCHIVE / selective MIGRATE：只保留独有历史 Evidence，不继承旧生命周期或升级权限。
-- L2 正文变量矩阵已定案为 SKIP：7 篇 pilot 已被 Git 报告覆盖，且 Git 已有更新的 16 篇 L2 + L2.5 验证。
+- 05.5 规律验证库方向已核为 ARCHIVE / selective MIGRATE：只保留独有历史 Evidence，不继承旧生命周期或升级权限；行级 Git/Notion 差集仍待执行。
+- L2 正文变量矩阵暂降为 SKIP candidate / coverage unverified：7 篇 pilot 高度可能已被 Git 报告覆盖，但 Notion 全部记录未能 Query，不能宣告全库 Covered。
 - 优先级高的下一批是：平台爆款样本库、06 生产卡库、07 正文 QA 库、03 高收益问题池。
 - 根页面本身和 Notion 版权威归属表已被 Git README / 权威归属表覆盖，只保留历史证据，不作为生产权威。
 
 ### Tooling Notes
 
 - 尝试直接查询 L2 数据库全部行时，Notion Query Data Source 当前额度已用完；未重试。
-- 该限制不影响 L2 定案，因为 2026-07-29 7 篇 pilot 与 Git `reports/zhihu_l2_variable_matrix_pilot_20260729.md` 已逐项对上，且 Git 后续已有 `l2_variable_records.md` 与 `l2_variable_validation.md`。
+- 该限制影响 L2 覆盖定案：目前只能证明 2026-07-29 7 篇 pilot 与 Git `reports/zhihu_l2_variable_matrix_pilot_20260729.md` 高度对应，不能证明 Notion L2 全库已被 Git 覆盖。
 
 ## Remaining Work
 
