@@ -70,7 +70,7 @@ OUT OF SCOPE
 |---|---|---|---|---|---|---|---|---|---|
 | 内容资产基础字段 | 04｜知乎内容资产库 | `data/l0_content_assets.csv`; `data/review_data_snapshots.csv`; `data/production_article_map.csv` | 问题、问题链接、回答链接、平台、发布时间、阅读、赞同、收藏、评论、收益、千阅读收益 | 大部分 6-7 月已发布内容在 L0 / L1 / review snapshot 已覆盖；04 中部分链接缺失或为空 | 中 | SKIP / MERGE | `data/l0_content_assets.csv`; `data/review_data_snapshots.csv` | Pending | 先以 article_id / answer_url 为主键核对；标题近似不能自动覆盖 |
 | 内容资产收益回填证据 | 04｜知乎内容资产库 / 收益快照相关页 | `reports/earnings_backfill_report.md`; `data/l0_content_assets.csv` | 2026-07-22 收益快照、已回填收益、冲突收益 | Git 已有独立回填报告：新增匹配 24 条，冲突 3 条，来源存在但 L0 未命中为 0 | 高 | SKIP | `reports/earnings_backfill_report.md` | Covered | 已有报告足以证明该批收益迁移历史，不重复迁 |
-| 内容资产人工复盘字段 | 04｜知乎内容资产库 | `data/Milestone_Observations.md` 或后续 Archive 文件 | 复盘结论、异常记录、核心结论、数据结果、当前实验变量、首屏检查、失败原因分类 | Git L0 多数只保留基础事实，Notion 有人工解释和导入备注 | 中 | ARCHIVE / MERGE | `data/Milestone_Observations.md` 或 `research/notion_archive/` | Pending | 只迁有证据价值的复盘；不得升级成 Runtime 规则 |
+| 内容资产人工复盘字段 | 04｜知乎内容资产库 | `data/Milestone_Observations.md` 或后续 Archive 文件 | 复盘结论、异常记录、核心结论、数据结果、当前实验变量、首屏检查、失败原因分类 | Git L0 多数只保留基础事实；Notion 有人工解释和导入备注，但这些字段混合了事实、观察、解释、因果判断、实验变量和失败归因 | 中 | ARCHIVE / OBSERVATION CANDIDATE | `research/notion_archive/` first; possible `data/Milestone_Observations.md` after evidence split | Pending Evidence Split | 不直接 MERGE。先将可核验事实、异常说明、导入备注归档为 Evidence；复盘结论、核心结论、当前实验变量、失败原因分类必须逐条拆分，只有能按 Git Observation 字段写清验证对象和证据状态的部分，才可进入 OPEN / VALIDATING Observation。不得直接写入 L0、Parameter、Prompt 或 runtime |
 | 内容资产旧商业字段 | 04｜知乎内容资产库 | 无当前等价对象 | 服务身份、旧服务身份、内容目的、引导动作、命中账本、体系分类、目标人群、用户类型、咖啡/商业主线字段 | 属于知乎系统内部混入的历史脏数据字段，不代表咖啡/商业系统进入本次审计范围 | 低 | DROP | None | Pending | 只因它们混在知乎 OS 子树内才记录为 DROP；不得外扩审计咖啡、商业或供应链系统 |
 | 2026-07 旧候选题事实 | 02｜知乎选题库 | `data/Topic_Pool.md`; `data/topic_candidates/` | 原问题、问题链接、来源、创建时间、最后更新、是否回答、状态、放弃原因 | Git 当前 Topic Pool 主要覆盖 2026-08-01 之后；02 有大量 2026-07 候选题未覆盖 | 中 | MIGRATE / ARCHIVE | `data/Topic_Pool.md` 或 `research/notion_archive/` | Pending | 只作为历史候选池和入口复盘，不直接进入当天生产 |
 | 旧选题评分证据 | 02｜知乎选题库 | 无完整等价对象；部分理念已进入 `docs/知乎平台样本学习协议.md` | 评分证据V1、长期搜索价值V1、历史收益证据V1、认知优势匹配V1、推荐原因V1、评分置信度 | Notion 有旧评分过程；Git 没有逐题保留 | 中 | ARCHIVE | `research/notion_archive/` | Pending | 可保留为 Legacy Decision Evidence，不作为当前 DECISION 规则 |
@@ -115,7 +115,7 @@ OUT OF SCOPE
 结论：
 
 - 基础内容事实大多已在 Git 数据层覆盖。
-- Notion 独有价值集中在人工复盘、异常说明、旧收益导入备注、核心短概念和栏目/账号归属。
+- Notion 独有价值集中在人工复盘、异常说明、旧收益导入备注、核心短概念和栏目/账号归属；其中人工复盘字段需先做 Evidence Split，不得把复盘结论、核心结论、当前实验变量或失败原因分类直接 MERGE 进当前知识体系。
 - 非知乎经营字段、咖啡/商业旧体系字段默认 DROP；这不扩大本次范围，不继续审计知乎项目OS外部系统。
 
 ### 02｜知乎选题库
@@ -194,7 +194,7 @@ OUT OF SCOPE
 
 ## Remaining Work
 
-1. 为 04 逐条确认需 MERGE 的人工复盘字段，避免把旧商业字段带回 Git。
+1. 为 04 逐条拆分人工复盘字段的 Evidence / Observation candidate，避免把旧商业字段、复盘结论、实验变量或失败归因直接带回 Git。
 2. 为 02 导出 2026-07 候选题事实清单，决定进入 `Topic_Pool.md` 历史段还是 `research/notion_archive/`。
 3. 为 05 抽取高证据价值复盘记录，优先处理选题跑偏、老板/管理身份题、身份冲突机制模型、单变量实验原则；先拆 Evidence 与 Observation candidate，再判断是否进入 `data/Milestone_Observations.md`。
 4. 对 08 做逐条治理句对照，优先处理规则优先级、数据复盘、发布前终检；旧 Master / Production Card 调度只归档不恢复。
