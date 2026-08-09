@@ -33,9 +33,23 @@ Codex 只负责：
 - 新增参数或规则。
 - 将单篇高赞回答中的新现象直接写入 ACTIVE 参数。
 
-选题包完成后，Codex 任务立即结束，后续交给 Claude。
+选题包完成后，Codex 任务立即结束，交给 INPUT。
 
 Codex 的长期系统维护职责另见 `docs/Codex系统维护协议.md`。系统维护不得与单篇选题采集混在同一次生产任务中执行。
+
+## 1.1 INPUT Boundary（Topic Package ≠ Input Package）
+
+本协议是 Topic Package 采集规则的唯一权威；`templates/选题包模板.md` 只是本协议的记录 Schema（字段槽位），不得另行定义或变相扩展采集规则、判定标准或程序——模板里的"边界"提示只是范围提醒，不是第二份规则。
+
+Topic Package 允许保存选题排序、平台 Benchmark、参数研究和 Candidate Gap 等采集与研究信息（`Answer_Benchmark_Top3`、`Existing_View_Coverage`、`Possible_Current_Gap`、`Existing_Parameter_Matches`、`New_Parameter_Observations` 等）。但只有以下三项能跨过 INPUT Boundary，进入 Compiler V1 的 Input Package：
+
+```text
+Source Facts —— 原问题、问题描述、问题链接、必要事实、平台可见信号
+Benchmark Context —— 同题 Top3 高赞回答原文
+重复检查结果
+```
+
+`读者真实困惑`、`核心矛盾`、`Possible_Current_Gap` 等已带解释性质的字段，属于 DECISION 节点的输入参考，不属于 INPUT 的 Output；Benchmark Context 中的观点、结论不得被 DECISION 当作 Source Facts 使用，只能提供"读者已有认知是什么"这一事实层。权威定义见 [`docs/知乎OS Compiler V1.md`](知乎OS%20Compiler%20V1.md) 第3节。
 
 ## 2. 固定流程
 

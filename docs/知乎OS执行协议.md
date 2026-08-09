@@ -9,18 +9,28 @@
 Production Card 已退出 Codex 日常生产主链。Skill006、Skill007、Card 校验、Claude 版 Production Card、正文推理校验、正文 QA、Patch Validation 和 Release 均不得由 Codex 在单篇任务中执行。
 
 ```text
-Codex 选题包
+Codex 选题包（Topic Package）
 ↓
-Claude 消费 Topic Package 并推理
+──────── INPUT Boundary ────────
 ↓
-Claude 生成正文
+Claude 执行 INPUT → Input Package
 ↓
-GPT / 人工固定清单审核
+Claude 执行 DECISION → 锁定 Reality / Main Gap / Transformation / Core Judgment
+↓
+Claude 执行 COMPILE → Execution IR
+↓
+Claude 执行 WRITE → Draft
+↓
+GPT / 人工执行 AUDIT（固定清单，核对 Execution IR 的 Acceptance Criteria + Runtime.Audit Rules）
 ↓
 GPT / 人工确认实际生效参数
 ↓
+用户执行 REVIEW（唯一验收权）
+↓
 Codex 写入参数调用日志
 ```
+
+节点定义、Decision Right 边界和 Forbidden 事项以 [`docs/知乎OS Compiler V1.md`](知乎OS%20Compiler%20V1.md) 为唯一权威；本协议只描述 Codex 的 INPUT 前置边界与执行顺序，不得与 Compiler V1 的节点定义冲突。
 
 知乎盈利系统有两个入口：
 
@@ -125,15 +135,14 @@ Codex 的禁止动作：
 - 不得把审核建议直接执行成正文 Patch。
 - 不得在用户未 `USER_APPROVED` 前，把 `Release-v1.md` 当作用户验收包或发布稿使用。
 
-Claude / 写作角色负责：
+Claude 依次执行 INPUT / DECISION / COMPILE / WRITE 四个节点，各节点的 Decision Right 和 Forbidden 事项以 Compiler V1 为准，不得合并成一步"消费 Topic Package 判断怎么写"：
 
-- 只消费 Codex Topic Package 判断怎么写。
-- 基于 Topic Package 中的 `Answer_Benchmark_Top3`、已有参数命中和参数缺口提示进行推理。
-- 锁定 Explanation Target（一致解释目标）：所有段落共同回答同一个读者真实困惑，不得在正文中切换解释对象。
-- 根据选题包生成正文。
-- 根据 Audit_Report 和 Decision_Log 执行 Patch。
-- 生成正文变更记录。
-- 不重新打开知乎采集同题高赞回答。
+- INPUT：从 Topic Package 提取 Source Facts、Benchmark Context，完成重复检查，输出 Input Package；不得在这一步判断"这题该怎么写"。
+- DECISION：基于 Input Package 锁定 Reality / Main Gap / Transformation / Core Judgment，锁定 Explanation Target（一致解释目标：所有段落共同回答同一个读者真实困惑）；冻结后不得自行修改。
+- COMPILE：把 Decision 编译成 Reasoning Path、Structure、Material Boundary、Acceptance Criteria，输出 Execution IR；不得决定具体措辞。
+- WRITE：只消费 Execution IR 生成 Draft；不得重新推导 Decision 或 Reasoning Path，不得引入 Execution IR 之外的案例、数据。
+- Patch 重入时：消费 Execution IR + Current Draft + Approved Issues，按 Audit_Report 和 Decision_Log 执行修复，生成正文变更记录。
+- 不重新打开知乎采集同题高赞回答（该职责属于 INPUT 前置的 Codex 采集边界）。
 
 GPT / 人工负责：
 
@@ -525,11 +534,15 @@ MD协议
 ↓
 Codex生成选题包
 ↓
-Codex停止并交接Claude
+Codex停止并交接INPUT
 ↓
-Claude正文节点处理
+Claude依次执行 INPUT/DECISION/COMPILE/WRITE
 ↓
-GPT / 人工审核归因
+GPT / 人工执行 AUDIT
+↓
+用户执行 REVIEW
+↓
+RELEASE
 ↓
 平台反馈
 ```

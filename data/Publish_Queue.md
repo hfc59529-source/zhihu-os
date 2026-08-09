@@ -4,21 +4,9 @@
 
 ## 入队前置条件
 
-当前有效入口只能是：
+`RELEASE_READY` 状态的产生条件（`USER_APPROVED` 前置、Audit PASS 不能替代用户验收等）唯一权威定义在 [`docs/生产状态机与交接规范.md`](../docs/生产状态机与交接规范.md)，本文件不重复维护该规则，只消费其结果：只有状态已经是 `RELEASE_READY` 的 Production 才能入队。
 
-```text
-USER_APPROVED
-↓
-Release-v1
-↓
-RELEASE_READY
-↓
-Publish Queue
-```
-
-Audit PASS 或 Patch Validation PASS 之后只能进入 `READY_FOR_USER_REVIEW`，不得生成或确认 Release，不得进入 Publish Queue；只有用户明确 `USER_APPROVED` 后，后续生产角色才能生成或确认 `Release-v1.md`，并将状态更新为 `RELEASE_READY`。
-
-已存在 `Release-v1.md` 不能单独作为入队依据。
+已存在 `Release-v1.md` 不能单独作为入队依据；入队依据只能是《生产状态机与交接规范》确认的 `RELEASE_READY` 状态本身。
 
 ## 历史队列
 

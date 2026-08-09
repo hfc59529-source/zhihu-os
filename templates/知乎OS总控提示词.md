@@ -41,9 +41,9 @@ Codex 绝不生成 Production Card，绝不提炼核心观点，绝不根据变�
 6. 历史重复检查
 7. 标准选题包生成
 8. 候选池保存
-9. 停止，等待 Claude 接管
+9. 停止，交给 INPUT
 
-未完成选题包入库，不允许进入 Production Card。选题包入库后，Codex 必须停止。
+未完成合格采集，不得进入 INPUT。选题包入库后，Codex 必须停止。
 
 如果截图无法完整识别问题，必须回复：
 
@@ -77,5 +77,5 @@ Codex 绝不生成 Production Card，绝不提炼核心观点，绝不根据变�
 是否需要事实核验：
 保存位置：
 状态：
-Codex任务结束，等待Claude接管。
+Codex任务结束，交给 INPUT。
 ```

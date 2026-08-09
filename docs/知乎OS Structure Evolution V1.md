@@ -1,8 +1,8 @@
 # 知乎OS Structure Evolution V1
 
-状态：ACTIVE_SCHEMA
+状态：ACTIVE_SCHEMA（Research Layer：Structure Lab、候选结构、ACTIVE 升级门槛部分持续有效；Production Layer 接口已随 `docs/知乎OS Compiler V1.md` 七节点重写，见第1、5节）
 
-本文件定义知乎OS的结构进化机制。
+本文件定义知乎OS的结构进化机制。Node（Structure Matcher 作为独立生产节点）已废弃，但 Capability（结构研究、候选结构验证、ACTIVE 升级）和 Research Protocol 均未失效——只是连接 Production Layer 的接口需要对齐 Compiler V1。
 
 它不属于日常生产链，不直接决定单篇文章怎么写。它属于 Research Layer，负责把知乎爆款样本拆成候选结构，经过验证后发布为 ACTIVE 结构，再由生产链调用。
 
@@ -21,27 +21,23 @@ Research Layer
 规律验证
 ↓
 ACTIVE结构
+↓
+Runtime Compile Rules（`runtime/知乎结构库快照.md`）
 ═══════════════
-Production Layer
-Question
+Production Layer（七节点，权威见 `docs/知乎OS Compiler V1.md`）
+INPUT
 ↓
-Analyzer
+DECISION
 ↓
-Structure Matcher
+COMPILE（结构选择能力：读取 Runtime Compile Rules，产出 Execution IR.Structure）
 ↓
-Router
+WRITE
 ↓
-Slim IR
+AUDIT
 ↓
-Runtime Assembly
+REVIEW
 ↓
-Writer Input Package
-↓
-Writer
-↓
-QA
-↓
-Feedback
+RELEASE
 ═══════════════
 Learning Layer
 收益
@@ -75,9 +71,9 @@ Research Layer 只负责发现和验证结构，不直接进入生产。
 
 Research Layer 禁止：
 
-- 直接修改 Runtime Assembly。
-- 直接修改单篇 IR。
-- 直接影响 Writer。
+- 直接修改 Execution IR。
+- 直接修改单篇 Decision。
+- 直接影响 WRITE。
 - 未经验证把候选结构写入 `runtime/知乎结构库快照.md`。
 
 ## 3. Structure Lab
@@ -131,19 +127,19 @@ Structure Lab 是 Research Layer 内的结构实验室。
 
 未满足前，只能保留在 Research Layer，不得进入 Production Layer。
 
-## 5. 生产触发边界
+## 5. 生产触发边界（COMPILE 的结构选择能力）
 
-Production Layer 永远只触发 ACTIVE 结构。
+Production Layer 永远只触发 ACTIVE 结构。原 Structure Matcher 节点已废弃，其结构匹配能力降级为 COMPILE 节点的内部能力（见 Compiler V1 第5节），不再是独立生产节点，不产生独立中间对象；匹配结果只写入 Execution IR 的 Structure 字段。
 
-Structure Matcher 只能读取：
+COMPILE 的结构选择能力只能读取：
 
 - `runtime/知乎结构库快照.md`
 - `production_variable_library.md` 中触发资格=是的 ACTIVE 变量
-- 当前 Analyzer 输出
+- 当前 DECISION 输出（Reality / Main Gap / Transformation / Core Judgment）
 - 历史资产检索摘要
 - 账号画像执行快照
 
-Structure Matcher 不得读取未发布的候选结构、单篇爆款拆解原文或未验证研究结论。
+COMPILE 不得读取未发布的候选结构、单篇爆款拆解原文或未验证研究结论。
 
 ## 6. 中文字段原则
 

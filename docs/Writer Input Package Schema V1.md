@@ -1,6 +1,12 @@
 # Writer Input Package Schema V1
 
-Status: ACTIVE_SCHEMA
+Status: DEPRECATED
+
+本文件定义的 Analyzer → Router → Slim IR → Runtime Assembly → Writer Input Package 装配链已被 `docs/知乎OS Compiler V1.md` 的七节点流水线取代：COMPILE 与 WRITE 之间只保留 Execution IR 一个正式中间对象，本文件定义的 Writer Input Package 对象不再存在。本文件定义的 required_steps、step_obligations、material、acceptance 等能力已并入 Execution IR（见 Compiler V1 第5节 COMPILE）。
+
+本文件只作历史参考保留，不得被当前 Codex / Claude / GPT 单篇任务引用、执行或转写；不重写为 Execution IR V2，避免形成第二个 Execution IR Schema 权威。以下为原文，保留供历史查阅。
+
+---
 
 本文件定义 Writer 启动前的运行时装配产物。
 
