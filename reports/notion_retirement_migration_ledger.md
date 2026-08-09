@@ -75,7 +75,7 @@ OUT OF SCOPE
 | 2026-07 旧候选题事实 | 02｜知乎选题库 | `data/Topic_Pool.md`; `data/topic_candidates/` | 原问题、问题链接、来源、创建时间、最后更新、是否回答、状态、放弃原因 | Git 当前 Topic Pool 主要覆盖 2026-08-01 之后；02 有大量 2026-07 候选题未覆盖 | 中 | MIGRATE / ARCHIVE | `data/Topic_Pool.md` 或 `research/notion_archive/` | Pending | 只作为历史候选池和入口复盘，不直接进入当天生产 |
 | 旧选题评分证据 | 02｜知乎选题库 | 无完整等价对象；部分理念已进入 `docs/知乎平台样本学习协议.md` | 评分证据V1、长期搜索价值V1、历史收益证据V1、认知优势匹配V1、推荐原因V1、评分置信度 | Notion 有旧评分过程；Git 没有逐题保留 | 中 | ARCHIVE | `research/notion_archive/` | Pending | 可保留为 Legacy Decision Evidence，不作为当前 DECISION 规则 |
 | 旧选题生产决策字段 | 02｜知乎选题库 | 新架构 DECISION；`data/Topic_Pool.md` | 决策、主收益来源V1、内容机制V1、推荐主机制V1、推荐正文结构V1、选题总分、公式字段 | 属于旧生产逻辑和旧评分模型 | 低 / 中 | ARCHIVE / DROP | `research/notion_archive/` | Pending | 有证据解释价值则 Archive；公式输出和旧路由不迁入 Runtime |
-| 结构03｜事件驱动机制型 | 06｜知乎结构库 | `runtime/知乎结构库快照.md` | 反常识判断 -> 核心短概念 -> 真实事件 -> 机制拆解 -> 多事件验证 -> 规律升级 -> 回答原题 | Git 当前 ACTIVE-TS01 / TS02 未包含这个完整事件驱动结构；Notion 记录状态为 ACTIVE / 已验证 / 结构规律，但不能直接继承状态 | 高 | MERGE | 后续结构库源文件或结构演进审计；不是直接改 runtime | Pending | 强 MERGE 候选。需在 Git 源规则中重写为候选结构，再走 release_runtime.py |
+| 结构03｜事件驱动机制型 | 06｜知乎结构库 | `runtime/知乎结构库快照.md`; `docs/知乎OS Structure Evolution V1.md` | 反常识判断 -> 核心短概念 -> 真实事件 -> 机制拆解 -> 多事件验证 -> 规律升级 -> 回答原题 | Git 当前 ACTIVE-TS01 / TS02 未包含这个完整同构结构；但 Notion 记录状态为 ACTIVE / 已验证 / 结构规律只能作为 Legacy Evidence，不能继承为 Git 结构权威。当前尚未核足来源样本、反例、适用/禁用条件、本账号实验和收益中位数对比 | 高 | STRUCTURE CANDIDATE / audit required | Structure Lab / `research/notion_archive/`; not runtime | Pending Evidence Audit | 不直接 MERGE。只能先归档为候选结构提案，按 `docs/知乎OS Structure Evolution V1.md` 补齐候选结构字段并通过结构演进审计；未发布前不得写入 `runtime/知乎结构库快照.md`，不得被 Structure Matcher 或 Writer 读取 |
 | 结构00｜通用解释六段式 | 06｜知乎结构库 | `runtime/知乎结构库快照.md` | 直接结论 -> 现实场景 -> 核心机制 -> 适用边界 -> 可执行动作 -> 规则收束 | Git 已有 TS01/TS02；Notion 兜底结构验证次数 0，验证等级为假设 | 低 | ARCHIVE / DROP | `research/notion_archive/` | Pending | 可作为旧兜底结构证据；不建议迁入当前 Runtime |
 | 结构01｜反常识—选择权 | 06｜知乎结构库 | `runtime/知乎结构库快照.md` | 反常识 -> 情绪伤口 -> 利益关系 -> 组织规则 -> 选择权 | Git TS01 已吸收“反常识、情绪入口、机制终点、选择权”等能力 | 中 | SKIP / ARCHIVE | `research/notion_archive/` | Pending | 不独立迁为 Runtime 结构；可保留旧结构演化证据 |
 | 结构02｜约束—决策 | 06｜知乎结构库 | `runtime/知乎结构库快照.md` | 错误认知 -> 真实约束 -> 关键变量 -> 决策方法 -> 风险边界 | Git TS02 已覆盖解决题/决策题场景、动作、边界、升级条件 | 中 | SKIP / ARCHIVE | `research/notion_archive/` | Pending | 不独立迁为 Runtime 结构；可用于判断 TS02 是否遗漏“关键变量/风险边界” |
@@ -139,7 +139,7 @@ OUT OF SCOPE
 | 结构00｜通用解释六段式 | 部分被 TS01 / TS02 覆盖 | ARCHIVE / DROP | 兜底结构，验证次数 0，验证等级假设 |
 | 结构01｜反常识—选择权 | 被 TS01 大量吸收 | SKIP / ARCHIVE | 旧结构演化证据，不独立入 Runtime |
 | 结构02｜约束—决策 | 被 TS02 部分吸收 | SKIP / ARCHIVE | 可作为 TS02 对照，不独立入 Runtime |
-| 结构03｜事件驱动机制型 | Git 缺完整同构结构 | MERGE | 强候选，但必须经 Git 源规则和 runtime release，不继承 Notion ACTIVE |
+| 结构03｜事件驱动机制型 | Git 缺完整同构结构，但缺少可继承的 Git 结构验证证据 | STRUCTURE CANDIDATE / audit required | 只能作为候选结构提案进入 Structure Lab；需补来源样本、反例、适用/禁用条件、本账号实验和收益对比，不继承 Notion ACTIVE，不直接 MERGE |
 
 ### ACTIVE｜知乎规律库
 
