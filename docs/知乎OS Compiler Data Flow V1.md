@@ -107,7 +107,9 @@ Raw Input
   },
   "structure": {
     "selected_structure_id": "",
-    "match_evidence": []
+    "match_evidence": [],
+    "required_steps": [],
+    "step_obligations": []
   },
   "material_boundary": {
     "allowed": [],
@@ -116,9 +118,14 @@ Raw Input
   "expression_constraints": [],
   "acceptance_criteria": [
     {"id": "", "requirement": ""}
-  ]
+  ],
+  "triggered_rule_ids": []
 }
 ```
+
+`structure.required_steps` / `structure.step_obligations`：本 Run 已实例化后的结构执行义务，不是结构库全文，AUDIT 核对"Structure 义务有没有缺失"时的 Expected 来源。
+
+`triggered_rule_ids`：本 Run 按 Runtime.Compile Rules 条件触发的 Global Rule ID 列表（只存 ID，不存正文），AUDIT 据此判断本 Run 应加载哪些条件触发的 Audit Rule。
 
 `expression_constraints` 与 `acceptance_criteria` 只能是本次 Run 特有条目，不得复制 Runtime.Writer Rules / Runtime.Audit Rules 中已存在的通用条款。
 
@@ -146,10 +153,13 @@ Approved Issues            # AuditResult.Issues 中被判定需要修改的子�
 {
   "run_id": "",
   "version": "v1",
+  "writer_model": "",
   "body": "",
   "based_on_execution_ir": true
 }
 ```
+
+`writer_model`：本次实际执行 WRITE 的模型（Claude / Codex / GPT / 其它），每个版本（v1、Patch 后的 vN）都必须记录，用于 Writer 可替换性的 A/B 归因。
 
 下一节点：AUDIT。
 

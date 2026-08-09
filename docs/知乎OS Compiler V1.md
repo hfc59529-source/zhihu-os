@@ -110,10 +110,19 @@ Decision Right:
   把 Decision 编译成：
     Reasoning Path（Reader Mental Model → False Inference → Breaking Point →
                     Mechanism → Transformation）
-    Structure（本题调用哪个 ACTIVE 结构，及匹配依据）
+    Structure（本题调用哪个 ACTIVE 结构、匹配依据，以及该结构对本 Run
+      实例化后的具体执行义务：required_steps 本 Run 必须完成的结构步骤，
+      逐条对应该 ACTIVE 结构定义的步骤；step_obligations 每一步在本 Run 里
+      具体要求做到什么——这两项不是复制整个结构库，只保存本 Run 已实例化
+      后的义务，因此不违反 SSP；没有它们 AUDIT 就没有 Expected 可核对
+      "Structure 义务有没有缺失"）
     Material Boundary（哪些事实/案例可用，哪些禁用）
     Expression Constraints（本篇特有的表达约束）
     Acceptance Criteria（本篇特有的、AUDIT 要核对的具体义务）
+    Triggered Rule IDs（本 Run 按 Runtime.Compile Rules 的条件触发规则，
+      从 Runtime.Audit Rules 的固定候选集合中，实际命中了哪些 Global Rule
+      ID——只存 ID，不存规则正文，规则正文唯一权威仍在 Runtime Release；
+      没有这个字段，AUDIT 就不知道本 Run 该加载哪些条件触发的 Audit Rule）
 
 Output:
   Execution IR
@@ -127,6 +136,7 @@ Forbidden:
   Expression Constraints / Acceptance Criteria 只能是"本 Run 特有义务"，不得把
     Runtime.Audit Rules 中已存在的通用检查项（Global Operational Checks）复制
     进 Execution IR——通用规则永远只活在 Runtime Release 里，不允许被复制出第二份
+  Triggered Rule IDs 只能是 ID 引用，不得连带复制规则正文
 ```
 
 ## 6. WRITE
@@ -145,6 +155,11 @@ Input（修复重入 / Patch）:
 
 Decision Right:
   具体措辞、段落衔接、节奏、开头收尾——"这句话怎么说"（局部推理权）
+
+Output 运行元数据（每次执行都必须记录，不只是首次）：
+  writer_model（本次实际执行 WRITE 的模型：Claude / Codex / GPT / 其它——
+    第10节"Writer 可替换性"的 A/B 归因依赖这个字段，缺了它就无法验证
+    模型差异，这不是"怎么写"的决策，只是执行者身份记录，不占用 Decision Right）
 
 Forbidden:
   不得重新推导 Reality / Main Gap / Transformation / Core Judgment / Reasoning Path
@@ -342,5 +357,6 @@ INPUT → DECISION → COMPILE → WRITE → AUDIT → REVIEW → RELEASE
 ## 15. 待处理事项（本次未处理，如实记录）
 
 - `runtime/ACTIVE_MANIFEST.md` 的 Partitions 仍沿用旧资产分类，未按本文件的七节点重新组织；本文件本身也未进入任何 Runtime Release，Status 为 DESIGN_FROZEN，不具备执行权威。
-- Manifest Contract 的 Status 枚举（`DRAFT | ACTIVE | DEPRECATED`）尚未扩展为 `DRAFT | TRIAL | ACTIVE | DEPRECATED`；七节点流水线要满足本文件第14节的10篇试运行门槛，需要先有 `TRIAL` 状态提供受控执行权威，这一步尚未落代码（`scripts/validate_runtime_consistency.py` 的 `VALID_STATUS` 与 `scripts/release_runtime.py` 的 `--status` 参数化）。
+- Manifest Contract 的 Status 枚举已扩展为 `DRAFT | TRIAL | ACTIVE | DEPRECATED`（`scripts/validate_runtime_consistency.py` 的 `VALID_STATUS`、`scripts/release_runtime.py` 的 `--status` 参数化均已完成并测试），但尚未实际执行过一次 TRIAL 发布——`runtime/ACTIVE_MANIFEST.md` 仍是 `Status: DRAFT`。
 - Production Card、Skill006、Writer Input Package Schema 等旧对象的具体退场方式（删除 / 归档 / 内容迁入 Execution IR 载体）尚未落地，仅在设计层完成了职责判断（见对话记录中"现有系统哪些东西保留，哪些降级"一节）。
+- `data/parameter_call_log.md` 的记录表列结构已扩展（Trigger Matrix Trace 字段：Experiment ID / 推荐变量 / 实际激活变量 / 未激活变量 / 预期结果），但截至本次修改仍是空表——尚未有任何 TRIAL Run 产生过一条新结构的记录。
