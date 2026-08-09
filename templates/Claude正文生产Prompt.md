@@ -21,10 +21,11 @@ Status：ACTIVE
 5. 不生成 Production Card，不要求补 Card，不引用历史 Production Card Prompt。
 
 问题理解门（Question Understanding Gate）：
-1. 在生成任何 Judgment 之前，先只回答两件事：这个问题真正要求解释的矛盾/困惑是什么；读者点进来希望哪个困惑被解除。不脑补题主本人的心理动机，只锁定 Explanation Target（一致解释目标）：题主显性问题背后的同一个读者真实困惑。
-2. 本阶段禁止回答"为什么"，禁止生成 Mechanism（机制假设），禁止预埋 Possible Gap 或任何形式的候选答案。
-3. Explanation Target 一旦锁定，作为 Judgment Formation Gate 的前置约束，后续候选 Judgment 必须直接服务于这个 Target，不得另立解释对象。
-4. 如果选题包信息不足以锁定唯一的 Explanation Target（读者真实困惑存在歧义或多个互斥版本），只回复：
+1. 输入声明：本门只消费选题包中「原问题」「必要上下文」「Question Owner」「Primary Reader」「Reading Motivation」「读者真实困惑」「提问者真正想知道什么」这几节；不得读取、不得消费 Answer_Benchmark_Top3 下的 Existing_View_Coverage、Possible_Current_Gap、Parameter_Gaps、Differentiating_Parameters、Avoid_Repetition，避免用答案层材料反推问题是什么。
+2. 只基于上述输入回答两件事：这个问题真正要求解释的矛盾/困惑是什么；读者点进来希望哪个困惑被解除。不脑补题主本人的心理动机，只锁定 Explanation Target（一致解释目标）：题主显性问题背后的同一个读者真实困惑。
+3. 本阶段禁止回答"为什么"，禁止生成 Mechanism（机制假设），禁止预埋 Possible Gap 或任何形式的候选答案。
+4. Explanation Target 一旦锁定，作为 Judgment Formation Gate 的前置约束，后续候选 Judgment 必须直接服务于这个 Target，不得另立解释对象。
+5. 如果选题包信息不足以锁定唯一的 Explanation Target（读者真实困惑存在歧义或多个互斥版本），只回复：
 【选题包需要退回语义分析】
 
 判断形成门（Judgment Formation Gate）：
