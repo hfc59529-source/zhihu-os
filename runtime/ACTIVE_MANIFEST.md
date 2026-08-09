@@ -2,8 +2,8 @@
 
 Runtime Version: ZH-RUNTIME-DRAFT
 Status: TRIAL
-Published At: 2026-08-09 18:21:51 UTC
-Based On Commit: 2d8fdbf49a70c9bb65c4b3d4c35f857d415fdc96
+Published At: 2026-08-09 18:41:36 UTC
+Based On Commit: 66b3ca5a0d373031231912174d6fea5c4b136f03
 
 ## Partitions
 
@@ -13,7 +13,7 @@ Based On Commit: 2d8fdbf49a70c9bb65c4b3d4c35f857d415fdc96
 |---|---|
 | docs/知乎OS Compiler V1.md | 5d7bed21283cc5c3a877620aaaeab75623276d26e766fa4b53c9781e6ec11589 |
 | docs/内容架构总则.md | cdf1c858368dec970170f646f6d9fc98aa0d411348e1b63c0f2927e785e70714 |
-| docs/知乎OS权威归属表.md | 765f3fedc4fbdb5c75715834edf38dd77eda2d878ced9dc867ee2b5b63795cd8 |
+| docs/知乎OS权威归属表.md | d161328f2dce7b216a45ebf8a6ff6198b9a15642249f7e08efcc092a75d303bb |
 
 ### Protocol Docs
 
@@ -29,7 +29,7 @@ Based On Commit: 2d8fdbf49a70c9bb65c4b3d4c35f857d415fdc96
 
 | path | sha256 |
 |---|---|
-| templates/Claude正文生产Prompt.md | 635f9082ec33a33aa45ec6cf66a7790854a0cc4fb964a33147a7b15efc93c4fd |
+| templates/Claude正文生产Prompt.md | b9164c0e9ded19e883bbf85320bc20b1d0012e6060eacafc8a8253581a5c2f55 |
 | templates/GPT审核清单.md | 252a04b3fdeac9ae997d7fbfd8bf0221bffdfbc7ce245cca7b6d83873c2b64a7 |
 | docs/知乎内容质量参数库_V2.md | ebb5cdc46488b6b1426b6803521126864c4779f7a6546d860114d8cd6063d007 |
 | docs/生产状态机与交接规范.md | 2f5c4b0e8222b99b3594f19a4e550c291492f3f9360fa015ef838fd9d761ab99 |
@@ -46,7 +46,7 @@ Based On Commit: 2d8fdbf49a70c9bb65c4b3d4c35f857d415fdc96
 | runtime/知乎ACTIVE规律快照.md | 4ad77a341a9327a981ef89b77d26e90b24ca06fd04486226f99f1dda0ed06e1c |
 | runtime/知乎内容质量参数快照.md | 3b27c59b0cd880ee17b57967e8b78a94b3c84d45f209df0386fe4af0f18c77a8 |
 | runtime/知乎账号画像快照.md | be4bffffb6eb7916e11181b2006ce749434e1712767b547c2671dbcde72cf955 |
-| docs/知乎OS Structure Evolution V1.md | 5bd43dfd22ddb989e210bbd313aa5a264572dae7d04630427bad0b02ab9b1cf7 |
+| docs/知乎OS Structure Evolution V1.md | a16d5b025ba8e89dc387561ee91d222b57c5a6a5f66b3c36c08b17575f9c9dae |
 
 ### Governance Infrastructure
 
