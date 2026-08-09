@@ -1,6 +1,6 @@
 # 知乎OS Compiler V1
 
-Status：DESIGN_FROZEN（架构规格已冻结，尚未进入 Runtime Release，本文件不具备执行权威；执行权威只来自 `runtime/ACTIVE_MANIFEST.md` 中 `Status: ACTIVE` 的 Manifest，见该文件与 `scripts/validate_runtime_consistency.py`）
+Status：DESIGN_FROZEN（架构规格已冻结，尚未进入 Runtime Release，本文件本身不具备执行权威；执行权威只来自已发布的 Runtime Manifest：`Status: TRIAL` = 受控试运行执行权威，`Status: ACTIVE` = 正式生产执行权威，`DRAFT` / `DEPRECATED` = 不具备执行权威，见 `runtime/ACTIVE_MANIFEST.md` 与 `scripts/validate_runtime_consistency.py`）
 
 本文件定义知乎OS的内容编译流水线。V1 首版（Analyzer / Structure Matcher / Router / Slim IR / Runtime Assembly / Writer Input Package / Writer / QA-A/QA-B / Feedback 九对象链）已废弃，替换为下面的七节点流水线。废弃原因：九对象链是同一批职责在工程实现层被反复升级为独立对象的结果（Compiler 自己同时维护 Production Card IR、Runtime Assembly、Writer Input Package、Reasoning Path 四个相邻中间对象），与 README、执行协议、总AI执行中心各自维护的生产链文本互相不一致，2026-08-09 治理评审已将该不一致记录为 Observation-03（REJECTED → CLOSED，结论：不构成有效权威冲突，因为唯一发布过的 Runtime 是 07-31 Card-based 版本，本次废弃的九对象链描述本身也从未取得过 Runtime 权威）。
 

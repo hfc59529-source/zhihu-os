@@ -1,6 +1,6 @@
 # 知乎OS Compiler Data Flow V1
 
-Status：DATA_CONTRACT（不解释节点职责、七节点缘由、Governance 或 Runtime 发布逻辑，这些以 `docs/知乎OS Compiler V1.md` 为唯一权威；本文件不具备执行权威，执行权威只来自 `runtime/ACTIVE_MANIFEST.md` 中 `Status: ACTIVE` 的 Manifest）
+Status：DATA_CONTRACT（不解释节点职责、七节点缘由、Governance 或 Runtime 发布逻辑，这些以 `docs/知乎OS Compiler V1.md` 为唯一权威；本文件本身不具备执行权威；执行权威只来自已发布的 Runtime Manifest：`Status: TRIAL` = 受控试运行执行权威，`Status: ACTIVE` = 正式生产执行权威，`DRAFT` / `DEPRECATED` = 不具备执行权威）
 
 本文件只回答：每个节点吃什么对象、吐什么对象、对象最小 Schema 是什么、对象由谁拥有、下一节点是谁。
 
