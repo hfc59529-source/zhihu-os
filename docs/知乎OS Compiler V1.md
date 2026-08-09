@@ -4,7 +4,7 @@ Status：DESIGN_FROZEN（架构规格已冻结，尚未进入 Runtime Release，
 
 本文件定义知乎OS的内容编译流水线。V1 首版（Analyzer / Structure Matcher / Router / Slim IR / Runtime Assembly / Writer Input Package / Writer / QA-A/QA-B / Feedback 九对象链）已废弃，替换为下面的七节点流水线。废弃原因：九对象链是同一批职责在工程实现层被反复升级为独立对象的结果（Compiler 自己同时维护 Production Card IR、Runtime Assembly、Writer Input Package、Reasoning Path 四个相邻中间对象），与 README、执行协议、总AI执行中心各自维护的生产链文本互相不一致，2026-08-09 治理评审已将该不一致记录为 Observation-03（REJECTED → CLOSED，结论：不构成有效权威冲突，因为唯一发布过的 Runtime 是 07-31 Card-based 版本，本次废弃的九对象链描述本身也从未取得过 Runtime 权威）。
 
-Compiler 的语义上游仍是 [内容架构总则](内容架构总则.md)：现实、认知落差、认知转换、平台表达是语义层描述，本文件的六节点是工程实现。Compiler 不重新定义这几个语义概念，只负责把它们编译成正文。
+Compiler 的语义上游仍是 [内容架构总则](内容架构总则.md)：现实、认知落差、认知转换、平台表达是语义层描述，本文件的七节点是工程实现。Compiler 不重新定义这几个语义概念，只负责把它们编译成正文。
 
 知乎OS不再被视为 Prompt 系统，而是内容编译器：
 
