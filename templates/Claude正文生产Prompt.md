@@ -20,8 +20,15 @@ Status：ACTIVE
 4. 不直接读取 Notion 或 runtime，不新增变量，不修改参数库，不发明系统规则。
 5. 不生成 Production Card，不要求补 Card，不引用历史 Production Card Prompt。
 
+问题理解门（Question Understanding Gate）：
+1. 在生成任何 Judgment 之前，先只回答两件事：这个问题真正要求解释的矛盾/困惑是什么；读者点进来希望哪个困惑被解除。不脑补题主本人的心理动机，只锁定 Explanation Target（一致解释目标）：题主显性问题背后的同一个读者真实困惑。
+2. 本阶段禁止回答"为什么"，禁止生成 Mechanism（机制假设），禁止预埋 Possible Gap 或任何形式的候选答案。
+3. Explanation Target 一旦锁定，作为 Judgment Formation Gate 的前置约束，后续候选 Judgment 必须直接服务于这个 Target，不得另立解释对象。
+4. 如果选题包信息不足以锁定唯一的 Explanation Target（读者真实困惑存在歧义或多个互斥版本），只回复：
+【选题包需要退回语义分析】
+
 判断形成门（Judgment Formation Gate）：
-1. 在做任何语义分析之前，先以作者身份自由生成 3 个候选 Judgment：如果整篇回答只能让读者记住一句判断，会是什么。每个候选只写一句话，且必须满足：直接回答原问题；不是对选题包 Possible_Current_Gap 的改写；不追求覆盖全部材料；不是 Answer_Benchmark_Top3 已经说透的内容；后续全文可以只为证明它服务。
+1. 在 Question Understanding Gate 锁定 Explanation Target 之后、在做任何机制层语义分析之前，先以作者身份自由生成 3 个候选 Judgment：如果整篇回答只能让读者记住一句判断，会是什么。每个候选只写一句话，且必须满足：直接回答原问题；不是对选题包 Possible_Current_Gap 的改写；不追求覆盖全部材料；不是 Answer_Benchmark_Top3 已经说透的内容；后续全文可以只为证明它服务。
 2. 从 3 个候选中选 1 个，作为本次生产唯一的 Judgment。选择标准不是理论最完整，而是这句话本身能否往下生长出文章结构（自己带出下一句该讲什么）。
 3. 锁定 Judgment 后不得同时保留多个判断，不得在正文里把其余候选也讲出来。
 
@@ -38,9 +45,9 @@ Reasoning Path（推理路径）：
 3. 正文必须按 Reasoning Path 给定的顺序展开：先让读者的原有认知和它自然导出的错误推论被看见，再给出让原认知站不住的那一点，再讲机制，最后落到新认知；不得跳过某一步直接给结论。
 
 执行规则：
-1. 先根据选题包判断题型、问题真实诉求、必要事实和禁用边界。
+1. 先根据选题包判断题型、必要事实和禁用边界；问题真实诉求已在 Question Understanding Gate 锁定为 Explanation Target，此处只消费，不重新判断。
 2. 按 production_variable_library.md 的匹配顺序选择最少必要变量：触发资格、禁用边界、适用题型、触发条件、去重冲突、权重排序。
-3. 完成正文推理时，必须先锁定 Explanation Target（一致解释目标）：题主显性问题背后的同一个读者真实困惑，且必须与已冻结的主认知落差、认知转换一致。
+3. Explanation Target 已在 Question Understanding Gate 锁定，且必须与已冻结的主认知落差、认知转换一致；此处不得重新定义或调整 Explanation Target。
 4. 所有正文段落必须共同回答这个读者真实困惑；不得在正文中切换解释对象，不得把组织、成长、权力、沟通等变量写成并列观点堆叠。
 5. 不要把推理过程、参数名、后台字段或审计术语写进正文。
 6. 正文必须回应原问题，不虚构选题包没有提供的真实案例、数据、公司、人物或行业事实。
