@@ -192,17 +192,27 @@ Source（如为参数缺口）：人工审核
 7. `docs/系统治理原则.md` 自身：变更日志 V1.5（第424行）仍写"Production Card 为正文阶段唯一内容权威"，说明治理原则文件本身也是冲突证据的一部分，而非冲突之外的裁判者。
 初步修正意见：
 暂不提出。待验证"上述七个冲突点涉及的八个文件是否确实同时构成当前有效权威，并且对同一生产对象给出互不兼容的规则"这一命题是否成立后，再进入治理判断；不预设 Precedence/Supersession Rule 或其他具体解法。
-生命周期状态：OPEN
+生命周期状态：REJECTED → CLOSED
 缺口状态（如适用）：不适用
 审核结果（如适用）：不适用
 审核说明：
-当前未发现该正文调用 Skill006、Skill007 或生成 Production Card 的证据；因此尚不能建立本观察与该正文结果之间的因果关系，也不能反向声称该正文"仅使用"了哪些具体机制——完整执行 Trace 未经证明。
+当前未发现该正文调用 Skill006、Skill007 或生成 Production Card 的证据；因此尚不能建立本观察与该正文结果之间的因果关系，也不能反向声称该正文"仅使用"了哪些具体机制——完整执行 Trace 未经证明（本条结论不受本次 REJECTED 影响，继续有效）。
 归入参数 ID：不适用
 候选参数 ID：不适用
 正式参数 ID：不适用
 重复次数：1（首次记录）
 重复证据引用：不适用
-平台证据：不适用（本观察不依赖平台/账号样本，依赖文件文本本身，验证方式应为治理评审逐条核对上述七个冲突点涉及的八个文件原文，确认摘录准确，而非等待生产样本积累）
-最终结论：待定（OPEN，未进入 VALIDATING）
-处理动作：不修改任何正式协议或参数记录。下一步是验证本命题——"上述七个冲突点涉及的八个文件（含标注 ACTIVE 的权威文件，以及标注 LEGACY_RETIRED 但仍被其他权威文件引用/声明为权威的对象）是否确实同时构成当前有效权威，并对 Production Card 是否属于正式生产链给出互不兼容的规则"——是否成立：成立则 SUPPORTED，此后才讨论治理层如何处理（可能是建立 Precedence Rule，也可能是直接删除某一侧的旧语义，或其他方案，方案本身不属于本次验证目标）；不成立则 REJECTED 或 INCONCLUSIVE 并 CLOSED。
+平台证据：不适用（本观察不依赖平台/账号样本，依赖文件文本本身；验证方式为治理评审逐条核对七个冲突点涉及的八个文件原文，以及 `runtime/ACTIVE_MANIFEST.md`、`backups/20260731-130705/` 发布快照、`scripts/validate_runtime_consistency.py` 实测结果、git 提交历史（含 commit `78aa21f`）与治理批准记录检索结果）
+治理评审结论（2026-08-09）：
+验证命题——"上述七个冲突点涉及的八个文件是否确实同时构成当前有效权威，并对 Production Card 是否属于正式生产链给出互不兼容的规则"——不成立。逐条核对结果：
+1. `docs/知乎OS执行协议.md`、`docs/08_总AI执行中心.md`：在 `ACTIVE_MANIFEST.md` 追踪清单内，当前 SHA256 与 manifest 记录失配（`validate_runtime_consistency.py` 实测 Fail）；`backups/20260731-130705/` 保存的、SHA 与 manifest 一致的发布版本原文仍为 Card-based（要求生成/校验/交付 Production Card）。当前"已退役"文本是未发布工作副本，不具备 Runtime 权威。
+2. `templates/Claude正文生产Prompt.md`：不在 `ACTIVE_MANIFEST.md` 追踪清单内，其"Status：ACTIVE"为文件自我标注，未经治理批准或 runtime 发布程序确认，不构成有效权威。
+3. `skills/Skill007_正文QA协议.md`：同样不在 manifest 追踪清单内，其 LEGACY_RETIRED 状态未经发布程序确认，但也不构成对已发布 runtime 的篡改。
+4. `docs/知乎OS权威归属表.md`：不在 manifest 追踪清单内，页首与表体自相矛盾，属编辑遗留缺陷，不代表两个同时生效的权威。
+5. `production_variable_library.md`：在 manifest 追踪清单内，SHA 已失配，同属未发布工作副本，不具备 Runtime 权威。
+6. `docs/00-设计原则.md`：不在 manifest 追踪清单内；内容与唯一已发布 runtime（07-31 Card-based V3.0-TEACHER）一致，不构成冲突方。
+7. `docs/系统治理原则.md`：V1.5 变更日志是 2026-08-01 的历史记录，与已发布 runtime 一致，是"尚未被后续未批准决策污染"的正确状态，不构成冲突方。
+结论：截至审计时点，唯一有发布证据支持的有效 Runtime 是 2026-08-01 13:07:05 发布的 Card-based V3.0-TEACHER；七个冲突点中并非八个文件同时具有当前 Runtime 权威，"有效权威之间存在架构冲突"这一命题不成立。
+最终结论：REJECTED（文本冲突客观存在，但冲突文件并非同时构成当前有效权威；原命题不成立）→ CLOSED。
+处理动作：不修改任何正式协议或参数记录，不建立 Precedence/Supersession Rule（该需求随原命题一并解除）。本次审计过程中发现的另一个命题——"未经治理批准、未发布的设计工作副本被当作现行规则标注/使用，且 `validate_runtime_consistency.py` 这道 Runtime consistency gate 未能阻止这种情况被继续引用（含今日 TOPIC-20260809-002 / ZH-20260809-002 的生产实际引用了未发布版本的 `templates/Claude正文生产Prompt.md`）"——不属于本 Observation 范围，是否另立新 Observation 记录，留待下一步治理动作单独决定，不在本次收尾中一并处理。
 ```
