@@ -175,12 +175,11 @@ Output:
     Expected Source: Execution IR.AcceptanceCriteria.<N> 或 AuditRule.<ID>
     Expected
     Actual
-    Violation Source（违反的是 Execution IR 的哪个字段，还是哪条 Audit Rule）
-    Return Stage（由 Violation Source 查表得出，AUDIT 不裁量：
-      Expression Constraints / Acceptance Criteria 未兑现但 IR 本身没错 → WRITE
-      Structure / Material Boundary 与 Decision 对不上（COMPILE 编译错了）→ COMPILE
-      Reality / Main Gap / Transformation 本身站不住 → DECISION
-      支撑 Decision 的事实本身不存在或错误 → INPUT）
+    Violation Source（违反的是 Execution IR 的哪个字段，还是哪条 Audit Rule；
+      取值见 Architecture Routing Table，AUDIT 不拥有这张表，只是第一个使用者）
+    Return Stage（由 Violation Source 查 Architecture Routing Table 得出，
+      AUDIT 不裁量，这张表不属于 Runtime.Audit Rules，是全流水线共享的路由规则，
+      定义见本节末尾）
 
 Forbidden:
   不得使用 Expected Source（Execution IR 或已发布 Audit Rule）之外的任何标准；
@@ -194,28 +193,45 @@ Forbidden:
     后者，能否进入 AUDIT 取决于前者是否已经形成可发布的操作定义）
 ```
 
+**Architecture Routing Table（violation_source → return_stage）**：这张表是流水线级的路由规则，不属于 Runtime.Audit Rules，不由 AUDIT 拥有；AUDIT 和 REVIEW 都只是调用方，不得各自维护一份副本。
+
+```text
+Expression Constraints / Acceptance Criteria 未兑现但 IR 本身没错 → WRITE
+Structure / Material Boundary 与 Decision 对不上（COMPILE 编译错了）→ COMPILE
+Reality / Main Gap / Transformation 本身站不住 → DECISION
+支撑 Decision 的事实本身不存在或错误 → INPUT
+```
+
 ## 8. REVIEW
 
 ```text
 Input:
   数据对象：Draft + AuditResult（result: PASS）
-  规则引用：无独立 Runtime Rules 分区——REVIEW 不核对合同条款（AUDIT 已核对完），
-    只做人工最终判断，不需要机械化的判定标准
+  规则引用：无——REVIEW 不核对合同条款（AUDIT 已核对完），只做人工最终判断，
+    不调用 Runtime.Audit Rules，不需要机械化的判定标准
 
 Decision Right:
   人（User）判断最终正文是否接受，唯一、不可压缩的验收权
   （对应现有 `READY_FOR_USER_REVIEW` → `USER_APPROVED` / `USER_REJECTED` 状态转移）
 
 Output:
-  Approval：USER_APPROVED，或 USER_REJECTED（附用户指出的问题）
+  Approval：USER_APPROVED，或 USER_REJECTED（附 rejected_issues[]，
+    每条只做 Issue Type Classification：user_feedback + violation_source，
+    violation_source 查 AUDIT 章节定义的同一张 Architecture Routing Table
+    得出 return_stage——这是复用路由表，不是调用 Runtime.Audit Rules，
+    也不要求填 Expected/Actual/Expected Source：用户拒绝的可能是
+    "核心判断我就不认"，此时并不存在被违反的 AcceptanceCriteria 或 AuditRule，
+    强行填 Expected Source 等于伪造一条合同违规）
 
 Forbidden:
-  不得直接修改正文（发现问题只能标注，退回 WRITE 由 Writer 按 Patch 规则修改）
+  不得直接修改正文（发现问题只能标注，由 return_stage 指向的节点处理）
   不得修改 Decision / Execution IR
   不得跳过：AUDIT 未 PASS 的 Draft 不得进入 REVIEW
+  不得把"是否接受"这个判断和"问题归属哪个节点"这个分类混成同一次裁量——
+    后者是查表，不是 REVIEW 的自由判断，不构成 REVIEW 的第二个 Decision Right
 ```
 
-USER_REJECTED 的退回路径：若需要修复，退回 WRITE（Execution IR + Current Draft + 用户指出的问题作为 Approved Issues），修复后重新进入 AUDIT，不直接跳回 REVIEW（必须重新确认审核条件满足）。Codex 不得借用户拒绝直接改写正文。
+USER_REJECTED 的退回路径：按每条 `rejected_issues[].return_stage` 分别退回 INPUT / DECISION / COMPILE / WRITE 对应节点，不一律退回 WRITE。退回 WRITE 时，`Current Draft + 该条 user_feedback` 作为 Approved Issues 输入；退回 INPUT/DECISION/COMPILE 时，产生该节点的新版本对象，重新沿流水线向下走，最终重新进入 AUDIT，不直接跳回 REVIEW（必须重新确认审核条件满足）。Codex 不得借用户拒绝直接改写正文。
 
 ## 9. RELEASE
 

@@ -179,7 +179,7 @@ Draft
 }
 ```
 
-`return_stage` 由 `violation_source` 机械映射得出（映射表见 `知乎OS Compiler V1.md` 第7节），不是 AUDIT 自行判断的自由字段。
+`return_stage` 由 `violation_source` 查 Architecture Routing Table 机械映射得出（映射表定义见 `知乎OS Compiler V1.md` 第7节；这张表是流水线级共享路由规则，不属于 Runtime.Audit Rules，AUDIT 和 REVIEW 都只是调用方），不是 AUDIT 自行判断的自由字段。
 
 `result: PASS` 时下一节点：REVIEW。
 `result: ISSUES` 时按每条 `return_stage` 分别退回对应节点，产生该节点的新版本对象。
@@ -199,16 +199,24 @@ AuditResult（result: PASS）
 {
   "run_id": "",
   "decision": "USER_APPROVED | USER_REJECTED",
-  "rejected_issues": []
+  "rejected_issues": [
+    {
+      "user_feedback": "",
+      "violation_source": "ExpressionConstraints | AcceptanceCriteria | Structure | MaterialBoundary | Reality | MainGap | Transformation | SourceFacts",
+      "return_stage": "WRITE | COMPILE | DECISION | INPUT"
+    }
+  ]
 }
 ```
 
+`rejected_issues[]` 只做 Issue Type Classification（`user_feedback` + `violation_source` → 查 Architecture Routing Table 得出 `return_stage`），不复用 `AuditResult.issues` 的 `expected/actual/expected_source` 字段——用户拒绝的理由可能不对应任何一条已声明的 Acceptance Criteria 或 Audit Rule（例如"核心判断我不认"），不得为了凑 Schema 伪造一条合同违规。
+
 `decision: USER_APPROVED` 时下一节点：RELEASE。
-`decision: USER_REJECTED` 时退回 WRITE，`rejected_issues` 作为下一次 WRITE 重入的 `Approved Issues` 输入，修复后重新经过 AUDIT，不直接跳回 REVIEW。
+`decision: USER_REJECTED` 时按每条 `return_stage` 分别退回 INPUT / DECISION / COMPILE / WRITE，不一律退回 WRITE；退回节点产生新版本对象后重新沿流水线向下，最终重新进入 AUDIT，不直接跳回 REVIEW。
 
 未经 AUDIT `result: PASS` 的 Draft 不得进入本节点。
 
-下一节点：RELEASE（仅 `USER_APPROVED` 时）。
+下一节点：RELEASE（仅 `decision: USER_APPROVED` 时）。
 
 ## 8. RELEASE
 
