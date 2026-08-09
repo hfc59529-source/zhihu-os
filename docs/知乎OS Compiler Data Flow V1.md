@@ -209,7 +209,7 @@ AuditResult（result: PASS）
 }
 ```
 
-`rejected_issues[]` 只做 Issue Type Classification（`user_feedback` + `violation_source` → 查 Architecture Routing Table 得出 `return_stage`），不复用 `AuditResult.issues` 的 `expected/actual/expected_source` 字段——用户拒绝的理由可能不对应任何一条已声明的 Acceptance Criteria 或 Audit Rule（例如"核心判断我不认"），不得为了凑 Schema 伪造一条合同违规。
+`rejected_issues[]` 每条包含 `user_feedback`（User 原始理由）、`violation_source`（User 判断/确认的分类，不是查表得出，草拟可由 Claude/GPT 辅助但最终须经 User 确认）、`return_stage`（由 `violation_source` 查 Architecture Routing Table 机械映射得出，这一步才是确定性查表）。不复用 `AuditResult.issues` 的 `expected/actual/expected_source` 字段——用户拒绝的理由可能不对应任何一条已声明的 Acceptance Criteria 或 Audit Rule（例如"核心判断我不认"），不得为了凑 Schema 伪造一条合同违规。
 
 `decision: USER_APPROVED` 时下一节点：RELEASE。
 `decision: USER_REJECTED` 时按每条 `return_stage` 分别退回 INPUT / DECISION / COMPILE / WRITE，不一律退回 WRITE；退回节点产生新版本对象后重新沿流水线向下，最终重新进入 AUDIT，不直接跳回 REVIEW。

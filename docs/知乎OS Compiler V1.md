@@ -207,19 +207,26 @@ Reality / Main Gap / Transformation 本身站不住 → DECISION
 ```text
 Input:
   数据对象：Draft + AuditResult（result: PASS）
-  规则引用：无——REVIEW 不核对合同条款（AUDIT 已核对完），只做人工最终判断，
-    不调用 Runtime.Audit Rules，不需要机械化的判定标准
+  规则引用：Architecture Routing Table（仅用于 violation_source → return_stage
+    的机械映射；不引用 Runtime.Audit Rules——REVIEW 不核对合同条款，AUDIT 已核对完）
 
 Decision Right:
   人（User）判断最终正文是否接受，唯一、不可压缩的验收权
-  （对应现有 `READY_FOR_USER_REVIEW` → `USER_APPROVED` / `USER_REJECTED` 状态转移）
+  （对应现有 `READY_FOR_USER_REVIEW` → `USER_APPROVED` / `USER_REJECTED` 状态转移）。
+  若判断为 USER_REJECTED，把每条 user_feedback 定位到 violation_source
+  是同一个 Decision Right 的组成部分，不是脱离验收权的第二次判断——一个人说
+  "这段我不信"时，"不接受"和"为什么不接受、问题出在哪一层"是同一次判断，
+  不是先后两次。violation_source 的分类权唯一属于 User；系统/Claude/GPT
+  可以草拟建议分类供参考，但不得替 User 做出最终分类，草拟建议必须经 User
+  确认才能写入 Approval。violation_source 确定后，映射到 return_stage
+  才是机械查表，不再需要判断。
 
 Output:
-  Approval：USER_APPROVED，或 USER_REJECTED（附 rejected_issues[]，
-    每条只做 Issue Type Classification：user_feedback + violation_source，
-    violation_source 查 AUDIT 章节定义的同一张 Architecture Routing Table
-    得出 return_stage——这是复用路由表，不是调用 Runtime.Audit Rules，
-    也不要求填 Expected/Actual/Expected Source：用户拒绝的可能是
+  Approval：USER_APPROVED，或 USER_REJECTED（附 rejected_issues[]，每条：
+    user_feedback（User 的原始理由，判断权归 User）
+    violation_source（User 判断/确认的分类，不是查表得出）
+    return_stage（violation_source 查 Architecture Routing Table 机械得出）
+    不要求填 Expected/Actual/Expected Source：用户拒绝的可能是
     "核心判断我就不认"，此时并不存在被违反的 AcceptanceCriteria 或 AuditRule，
     强行填 Expected Source 等于伪造一条合同违规）
 
@@ -227,8 +234,8 @@ Forbidden:
   不得直接修改正文（发现问题只能标注，由 return_stage 指向的节点处理）
   不得修改 Decision / Execution IR
   不得跳过：AUDIT 未 PASS 的 Draft 不得进入 REVIEW
-  不得把"是否接受"这个判断和"问题归属哪个节点"这个分类混成同一次裁量——
-    后者是查表，不是 REVIEW 的自由判断，不构成 REVIEW 的第二个 Decision Right
+  Claude / GPT / Codex 不得替 User 最终确定 violation_source，只能提供草拟建议
+  不得把 return_stage 当成可裁量字段——它是对已确定 violation_source 的机械映射
 ```
 
 USER_REJECTED 的退回路径：按每条 `rejected_issues[].return_stage` 分别退回 INPUT / DECISION / COMPILE / WRITE 对应节点，不一律退回 WRITE。退回 WRITE 时，`Current Draft + 该条 user_feedback` 作为 Approved Issues 输入；退回 INPUT/DECISION/COMPILE 时，产生该节点的新版本对象，重新沿流水线向下走，最终重新进入 AUDIT，不直接跳回 REVIEW（必须重新确认审核条件满足）。Codex 不得借用户拒绝直接改写正文。
