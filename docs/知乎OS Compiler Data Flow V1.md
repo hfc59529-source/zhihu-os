@@ -250,7 +250,7 @@ Runtime Version
 | Execution IR | COMPILE | WRITE |
 | Draft | WRITE | AUDIT |
 | AuditResult | AUDIT | REVIEW（PASS）或退回（ISSUES，按 return_stage） |
-| Approval | REVIEW | RELEASE（USER_APPROVED）或退回 WRITE（USER_REJECTED） |
+| Approval | REVIEW | RELEASE（USER_APPROVED）或按 return_stage 退回 INPUT / DECISION / COMPILE / WRITE（USER_REJECTED） |
 | Release | RELEASE | 无（终态） |
 
 任何节点不得读取、缓存或复制不属于自己上一个节点交付的对象；跨节点取数只能通过上一节点的正式输出。
