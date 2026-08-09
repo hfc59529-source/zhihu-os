@@ -183,7 +183,7 @@ OUT OF SCOPE
 - 规则优先级治理已由 Git 当前 Evidence Driven、Single Source of Truth、Evidence Traceability、对象独立生命周期和 Authority Ownership 覆盖，判定 SKIP / ARCHIVE。
 - 选题/输入协议已由 Git 当前 Pre-Run 与 Input Rules 分工覆盖；Notion 六入口、固定配额、五维评分、四道门和母题分类属于 Legacy Decision Logic，判定 SKIP / ARCHIVE。
 - 生成/表达协议已由当前 Execution IR / WRITE 数据契约、Reasoning Protocol、Expression Protocol V3 和 Parameter System 覆盖；Skill005 -> Skill006 属于旧节点架构，判定 SKIP / ARCHIVE。
-- 结构执行、数据复盘、发布前终检等其他 08 子项仍需按各自行级证据单独审计。
+- 结构执行、数据复盘、发布前终检等其余 08 子项不再作为退役阻断逐项补审，默认降级为 Historical Evidence / legacy archive optional；未来仅在通过 Salvage Gate 后重新开启。
 
 ### 其他知乎OS直属资产
 
