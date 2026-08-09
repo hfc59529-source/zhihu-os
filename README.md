@@ -160,7 +160,7 @@ Codex 生成选题包后停止；Claude 根据选题包调用参数、推理并�
 记录数据
 ```
 
-日常生产过程中禁止修改协议、禁止新增参数、禁止优化 Prompt、禁止重构 Notion。
+日常生产过程中禁止修改协议、禁止新增参数、禁止优化 Prompt、禁止重构系统/知识资产。
 
 模式二：系统升级（条件触发）
 
@@ -177,7 +177,7 @@ Codex 生成选题包后停止；Claude 根据选题包调用参数、推理并�
 L1 协议层（Git/MD）
 回答：AI 应该怎么干。
 
-L2 知识层（Notion 管理源 / runtime 执行快照）
+L2 知识层（Git docs/templates 规则源 / runtime 执行快照）
 回答：AI 依据什么干。
 
 L3 执行层（Codex）
@@ -186,7 +186,7 @@ L3 执行层（Codex）
 L4 平台层（知乎/头条）
 回答：真实反馈是什么。
 
-L5 学习层（Notion复盘）
+L5 学习层（Git 复盘资产：`data/`、`reports/`）
 回答：下次如何优化。
 
 ## 三层数据源
@@ -239,7 +239,7 @@ GPT / 人工审核
 ↓
 周期复盘
 ↓
-回写 Notion 管理源并发布下一版 runtime
+回写 Git 规则源（`docs/` / `templates/` / `production_variable_library.md`）并通过 `scripts/release_runtime.py` 发布下一版 runtime
 ```
 
 ## 账号画像
@@ -347,7 +347,7 @@ Codex 不生成 Production Card，不提炼核心观点，不设计正文结构�
 
 禁止因为输入是截图就默认进入审计模式。判断依据是用户意图，不是输入形式。
 
-所有执行协议以 `/docs` 为准；Codex 选题采集以 `docs/Codex选题采集协议.md` 和 `templates/选题包模板.md` 为准。Notion 是管理权威，负责审批和发布下一版 runtime。
+所有执行协议以 `/docs` 为准；Codex 选题采集以 `docs/Codex选题采集协议.md` 和 `templates/选题包模板.md` 为准。Git（`docs/` / `templates/` / `production_variable_library.md`）是管理权威，经治理批准后由 `scripts/release_runtime.py` 审批并发布下一版 runtime；Notion 已退出 Production Authority Chain，降级为 Reference / Archive，详见 `docs/知乎OS权威归属表.md`。
 
 ## 生产接口
 
@@ -357,7 +357,7 @@ Codex 负责读取问题、筛选选题、检查重复并输出固定格式选�
 
 Trigger 能力不新增系统、入口或生产步骤：它已内置于 `production_variable_library.md` 每条变量的“适用题型 / 触发条件 / 禁用边界”字段，由变量匹配规则本身完成。Trigger / Pattern / Evidence 三份文件保留为研究草稿，不进入 runtime，不进入 Skill006 固定读取。
 
-Claude 负责根据选题包调用参数、推理并生成正文，不直接读取 Notion 或 runtime，不新增变量，不虚构案例。
+Claude 负责根据选题包调用参数、推理并生成正文，不直接读取 runtime，不新增变量，不虚构案例。
 
 GPT / Codex 不直接生产文案，不重写正文。Codex 默认只交付选题包。
 
@@ -381,7 +381,7 @@ Codex 负责维护 `data/parameter_call_log.md`。
 
 Claude 根据选题包调用参数、推理并生成正文。
 
-Claude 不生成 Production Card，不要求 Codex 补 Card，不直接读取 Notion 或 runtime，不新增参数。
+Claude 不生成 Production Card，不要求 Codex 补 Card，不直接读取 runtime，不新增参数。
 
 ## GPT 审核
 
