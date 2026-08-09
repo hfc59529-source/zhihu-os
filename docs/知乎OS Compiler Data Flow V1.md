@@ -1,404 +1,218 @@
 # 知乎OS Compiler Data Flow V1
 
-Status：ACTIVE_SCHEMA
+Status：DATA_CONTRACT（不解释节点职责、六节点缘由、Governance 或 Runtime 发布逻辑，这些以 `docs/知乎OS Compiler V1.md` 为唯一权威；本文件不具备执行权威，执行权威只来自 `runtime/ACTIVE_MANIFEST.md` 中 `Status: ACTIVE` 的 Manifest）
 
-本文件定义知乎OS Compiler各层输入、输出和文件产物。
-
-目标：让任何执行者在 5 分钟内知道每层吃什么、吐什么。
+本文件只回答：每个节点吃什么对象、吐什么对象、对象最小 Schema 是什么、对象由谁拥有、下一节点是谁。
 
 ## 1. 数据流总览
 
 ```text
-Question
+Raw Input
 ↓
-Analyzer.json
+Input Package        （owner: INPUT）
 ↓
-Structure Match.json
+Decision              （owner: DECISION）
 ↓
-Router
+Execution IR          （owner: COMPILE）
 ↓
-IR.json
+Draft                 （owner: WRITE）
 ↓
-Runtime Assembly
+AuditResult            （owner: AUDIT）
 ↓
-Writer Input Package.json
-↓
-Writer Prompt
-↓
-Draft.md
-↓
-QA Report
-↓
-Feedback.json
-↓
-Failure Pattern
+Release                （owner: RELEASE）
 ```
 
-## 2. L1 Analyzer
-
-### 输入
+WRITE 有重入分支，不新增节点：
 
 ```text
-Question
-Question URL
-Platform signals
-Historical asset match
-Runtime ACTIVE snapshots
+Execution IR + Current Draft + Approved Issues → Draft-vN   （owner: WRITE）
 ```
 
-### 输出：Analyzer.json
+AUDIT 的退回不新增节点，由 `AuditResult.Issues[].Return Stage` 直接路由回 INPUT / DECISION / COMPILE / WRITE 中的一个。
+
+## 2. INPUT
+
+输入：
+
+```text
+Raw Input
+  question
+  question_url
+  question_description
+  platform_signals
+  benchmark_answers[]   # 同题 Top3 高赞回答原文
+```
+
+输出：`Input Package`
 
 ```json
 {
-  "question": "",
-  "question_url": "",
-  "platform": "知乎",
-  "problem_type": "",
-  "user_intent": "",
-  "hidden_constraints": [],
-  "main_variable": "",
-  "auxiliary_variables": [],
-  "core_mechanism": "",
-  "selection_reason": "",
-  "risk_notes": []
-}
-```
-
-### 禁止
-
-- 不写正文。
-- 不写开头、结尾、金句。
-- 不评价 AI 味。
-- 不维护表达规则。
-
-## 3. L2 Production Card IR
-
-### 输入
-
-```text
-Analyzer.json
-Runtime variable snapshot
-Runtime structure snapshot
-Router result
-Structure Match.json
-```
-
-### 输出：IR.json
-
-```json
-{
-  "question": "",
-  "question_url": "",
-  "platform": "知乎",
-  "core_judgment": "",
-  "core_mechanism": "",
-  "route": "",
-  "outline": [],
-  "ending_judgment": "",
-  "forbidden": [],
-  "publish_target": ""
-}
-```
-
-### 禁止
-
-- 不写表达风格。
-- 不写 AI 味。
-- 不写阅读节奏。
-- 不写 PD / RR / RE / BT 参数。
-- 不复制 Writer Prompt 或 QA 标准。
-
-## 3.1 L1.5 Router
-
-## 2.1 L1.2 Structure Matcher
-
-### 输入
-
-```text
-Analyzer.json
-Runtime structure snapshot
-Historical asset match
-Production variable snapshot
-```
-
-### 输出：Structure Match.json
-
-中文字段为人审权威，英文字段只做脚本兼容。
-
-```json
-{
-  "运行编号": "",
-  "结构匹配": {
-    "选中结构": "",
-    "结构名称": "",
-    "结构版本": "",
-    "选择理由": [],
-    "匹配证据": [],
-    "未选结构": [],
-    "置信度": "high | medium | low",
-    "匹配分": 0,
-    "来源": "runtime/知乎结构库快照.md"
+  "source_facts": {
+    "question": "",
+    "question_url": "",
+    "question_description": "",
+    "necessary_background": [],
+    "platform_signals": {}
   },
-  "structure_match": {
-    "selected_structure_id": "",
-    "selected_structure_name": "",
-    "structure_version": "",
-    "confidence": "",
-    "score": 0,
-    "evidence": []
+  "benchmark_context": {
+    "answers": [
+      {"rank": 0, "author": "", "summary": "", "url": ""}
+    ]
+  },
+  "duplicate_check": {
+    "is_duplicate": false,
+    "matched_history_id": ""
   }
 }
 ```
 
-### 禁止
+下一节点：DECISION。
 
-- 不写正文。
-- 不修改 Analyzer。
-- 不修改 ACTIVE 结构库。
-- 不读取 Research Layer 未发布候选结构。
+## 3. DECISION
 
-## 3.1 L1.5 Router
+输入：`Input Package`
 
-### 输入
-
-```text
-Analyzer.json
-Structure Match.json
-Runtime ACTIVE snapshots
-Historical asset match
-Production variable snapshot
-```
-
-### 输出：Router result
+输出：`Decision`
 
 ```json
 {
-  "structure_id": "",
-  "active_rules": [],
-  "behavior_targets": [],
-  "cr_target": "",
-  "quality_parameters": [],
-  "material_requirements": []
+  "reality": "",
+  "main_gap": "",
+  "transformation": "",
+  "core_judgment": "",
+  "frozen": true
 }
 ```
 
-### 禁止
+`frozen: true` 后本对象不得被任何下游节点改写；退回重做只能整体退回 INPUT/DECISION，产生新的 `Decision` 对象，不得原地修改。
 
-- 不写正文。
-- 不修改 Analyzer。
-- 不修改 IR 决策。
-- 不复制 ACTIVE 资产全文。
+下一节点：COMPILE。
 
-## 3.2 L2.5 Runtime Assembly
+## 4. COMPILE
 
-### 输入
+输入：`Decision`
 
-```text
-IR.json
-Router result
-Structure Match.json
-Runtime ACTIVE snapshots
-Reasoning Protocol
-Expression Protocol
-Production Card / locked run constraints
-```
-
-### 输出：Writer Input Package.json
-
-Schema：
-
-```text
-docs/Writer Input Package Schema V1.md
-```
-
-### 禁止
-
-- 不修改 IR。
-- 不新增结构、变量、事实或机制。
-- 不复制全文协议。
-- 不把 Package 当作第二规则权威。
-
-## 4. L3 Writer Prompt
-
-### 输入
-
-```text
-Writer Input Package.json
-Fixed Writer Prompt version
-```
-
-### 输出
-
-```text
-Writer input package
-```
-
-### 规则
-
-Writer Prompt 只维护表达编译规则：
-
-- 人话转换。
-- 参数隐写。
-- 场景承接。
-- 节奏和留白。
-- 避免培训课、报告腔和管理学腔。
-
-Writer Prompt 不输出业务判断，不修改 IR。
-
-## 5. L4 Writer
-
-### 输入
-
-```text
-Writer Input Package.json
-Writer Prompt
-```
-
-### 输出：Draft.md
-
-```markdown
-正文全文
-```
-
-### 禁止
-
-- 不修改 IR。
-- 不新增主变量。
-- 不新增事实。
-- 不向上游反问。
-- 不输出分析过程。
-
-## 6. L5 QA
-
-### 输入
-
-```text
-IR.json
-Writer Input Package.json
-Draft.md
-```
-
-### 输出：QA Report
+输出：`Execution IR`
 
 ```json
 {
-  "qa_a": {
-    "follow_card": true,
-    "core_judgment_preserved": true,
-    "new_variable_added": false,
-    "publish_blocker": false,
-    "notes": []
+  "reasoning_path": {
+    "reader_mental_model": "",
+    "false_inference": "",
+    "breaking_point": "",
+    "mechanism": "",
+    "transformation": ""
   },
-  "qa_b": {
-    "ai_score": 0,
-    "repeat_score": 0,
-    "zhihu_feel_score": 0,
-    "collection_value_score": 0,
-    "parameter_visible": false,
-    "notes": []
+  "structure": {
+    "selected_structure_id": "",
+    "match_evidence": []
   },
-  "obligation_coverage": [
+  "material_boundary": {
+    "allowed": [],
+    "forbidden": []
+  },
+  "expression_constraints": [],
+  "acceptance_criteria": [
+    {"id": "", "requirement": ""}
+  ]
+}
+```
+
+`expression_constraints` 与 `acceptance_criteria` 只能是本次 Run 特有条目，不得复制 Runtime.Writer Rules / Runtime.Audit Rules 中已存在的通用条款。
+
+下一节点：WRITE。
+
+## 5. WRITE
+
+输入（首次执行）：
+
+```text
+Execution IR
+```
+
+输入（修复重入）：
+
+```text
+Execution IR
+Current Draft
+Approved Issues            # AuditResult.Issues 中被判定需要修改的子集
+```
+
+输出：`Draft`
+
+```json
+{
+  "run_id": "",
+  "version": "v1",
+  "body": "",
+  "based_on_execution_ir": true
+}
+```
+
+下一节点：AUDIT。
+
+## 6. AUDIT
+
+输入：
+
+```text
+Execution IR
+Draft
+```
+
+输出：`AuditResult`
+
+```json
+{
+  "result": "PASS | ISSUES",
+  "issues": [
     {
-      "obligation": "",
-      "source_contract": "",
-      "result": "PASS | PARTIAL | WARNING | FAIL",
-      "evidence": [],
-      "problem": ""
+      "expected_source": "ExecutionIR.AcceptanceCriteria.<id> | AuditRule.<id>",
+      "expected": "",
+      "actual": "",
+      "violation_source": "ExpressionConstraints | AcceptanceCriteria | Structure | MaterialBoundary | Reality | MainGap | Transformation | SourceFacts",
+      "return_stage": "WRITE | COMPILE | DECISION | INPUT"
     }
-  ],
-  "decision": "PASS | REVISE | BLOCK"
+  ]
 }
 ```
 
-### 禁止
+`return_stage` 由 `violation_source` 机械映射得出（映射表见 `知乎OS Compiler V1.md` 第7节），不是 AUDIT 自行判断的自由字段。
 
-- QA 不重写正文。
-- QA 不修改 IR。
-- QA 不修改 Writer Input Package。
-- QA 不修改 Writer Prompt。
+`result: PASS` 时下一节点：RELEASE。
+`result: ISSUES` 时按每条 `return_stage` 分别退回对应节点，产生该节点的新版本对象。
 
-## 7. L6 Feedback
+## 7. RELEASE
 
-### 输入
+输入：
 
 ```text
-Question
-IR.json
-Draft.md
-QA Report
-Publish data
-Engineering metrics
+AuditResult（result: PASS）
+User Approved: true
 ```
 
-### 输出：Feedback.json
+输出：`Release`
 
 ```json
 {
-  "question": "",
-  "question_url": "",
-  "publish_url": "",
-  "quality_metrics": {
-    "qa_a_pass": false,
-    "qa_b_pass": false,
-    "ai_risk": "",
-    "repeat_risk": "",
-    "collection_point_done": false,
-    "publishable": false
-  },
-  "engineering_metrics": {
-    "ir_chars": 0,
-    "writer_prompt_changed": false,
-    "manual_edit_count": 0,
-    "token_cost": 0,
-    "elapsed_minutes": 0,
-    "debug_difficulty": "low | medium | high"
-  },
-  "failure_patterns": []
+  "run_id": "",
+  "runtime_version": "",
+  "released_at": "",
+  "status": "RELEASED"
 }
 ```
 
-## 8. Failure Pattern
+无下一节点（终点）；`Release` 对象是本次 Run 的终态记录。
 
-失败模式只记录重复问题，不直接升级协议。
+## 8. 对象归属总表
 
-### 输出：Failure Pattern Record
+| 对象 | 唯一拥有者 | 下一节点 |
+| --- | --- | --- |
+| Input Package | INPUT | DECISION |
+| Decision | DECISION | COMPILE |
+| Execution IR | COMPILE | WRITE |
+| Draft | WRITE | AUDIT |
+| AuditResult | AUDIT | RELEASE（PASS）或退回（ISSUES，按 return_stage） |
+| Release | RELEASE | 无（终态） |
 
-```json
-{
-  "pattern_id": "",
-  "layer": "Analyzer | IR | Writer Prompt | Writer | QA | Feedback",
-  "symptom": "",
-  "root_cause": "",
-  "evidence": [],
-  "occurrence_count": 1,
-  "first_seen": "",
-  "last_seen": "",
-  "upgrade_candidate": false
-}
-```
-
-### 升级闸门
-
-同一失败模式累计 3 次，才允许进入系统升级评审。
-
-未满 3 次时：
-
-- 只记录。
-- 不改协议。
-- 不改 Writer Prompt。
-- 不改模板。
-
-## 9. 版本策略
-
-`Compiler` 作为架构名称保持稳定。
-
-升级版本绑定到各层组件：
-
-- Analyzer Schema
-- IR Schema
-- Writer Input Package Schema
-- Writer Prompt
-- QA Schema
-- Feedback Schema
-
-不要因为 Writer Prompt 升级就把整个 Compiler 改成 V2。
+任何节点不得读取、缓存或复制不属于自己上一个节点交付的对象；跨节点取数只能通过上一节点的正式输出。
