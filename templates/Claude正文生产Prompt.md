@@ -26,32 +26,21 @@ Status：ACTIVE
 
 权威规则：
 1. 选题包是正文阶段唯一上游交接对象，来源可以是 Codex 或用户手动提供，两者权威完全一致。
-2. 参数只能来自 production_variable_library.md，且必须满足 `当前状态=ACTIVE` 与 `触发资格=是`。
-3. CANDIDATE、REVIEW、DEPRECATED、ARCHIVED 变量不得进入日常正文，除非选题包明确标记为指定单变量实验。
-4. 不直接读取 Notion 或 runtime 之外的规则，不新增变量，不修改参数库，不发明系统规则。
-5. 不生成 Production Card，不要求补 Card，不引用历史 Production Card Prompt。
+2. 参数触发资格判定按 `production_variable_library.md` 自身的生命周期规则执行，本文件不重复维护该规则。
+3. 不直接读取 Notion 或 runtime 之外的规则，不新增变量，不修改参数库，不发明系统规则。
+4. 不生成 Production Card，不要求补 Card，不引用历史 Production Card Prompt。
 
 ## 第一步：执行 INPUT
 
-按 `docs/Codex选题采集协议.md` §1.1 定义的 INPUT Boundary 执行，本文件不重复该节的判定标准：提取 Source Facts + Benchmark Context，完成重复检查，输出 Input Package。
-
-如果按该节标准判断信息不完整或存在无法判断的重复，只回复：
-【选题包需要退回 Codex】
+按 `docs/Codex选题采集协议.md` §1.1 定义的 INPUT Boundary 执行，输出 Input Package。判定标准、Forbidden 事项唯一权威在该节，本文件不重复、不改写。
 
 ## 第二步：执行 DECISION
 
-按 `docs/内容架构总则.md` 第2、3、4节定义的四层语义、约束和禁止事项执行，本文件不重复该文件的判定内容：基于 Input Package 锁定 Reality（现实）、Main Gap（主认知落差）、Transformation（认知转换）、Core Judgment（唯一核心判断）。
-
-如果无法唯一确定四项中的任意一项，只回复：
-【选题包需要退回语义分析】
-
-四字段冻结后成为本次生产的 Single Source of Truth，第三步、第四步不得修改；如发现问题只能回复【退回语义分析】整体重做，不得自行修正。
+按 `docs/内容架构总则.md` 第2、3、4节定义的四层语义、约束和禁止事项执行，锁定 Reality（现实）、Main Gap（主认知落差）、Transformation（认知转换）、Core Judgment（唯一核心判断）。判定标准、冻结后的不可变性、退回条件唯一权威在该文件与 `docs/知乎OS Compiler V1.md` 第4节，本文件不重复、不改写。
 
 ## 第三步：执行 COMPILE
 
-按 `docs/知乎OS Structure Evolution V1.md` 第5节定义的结构选择边界（只能读取 `runtime/知乎结构库快照.md`、当前 Decision、历史资产检索摘要、账号画像执行快照）和 `production_variable_library.md` 的变量匹配顺序执行，本文件不重复这两份文件的判定规则：编译出 Reasoning Path（读者原有认知 → 错误推论 → 认知动摇点 → 真正机制 → 新认知）、Structure、Material Boundary（可用/禁用事实与案例）、本篇 Acceptance Criteria。
-
-这一步的输出即本次 Execution IR，不得决定具体措辞句子——具体措辞属于第四步 Writer Rules。
+按 `docs/知乎OS Structure Evolution V1.md` 第5节定义的结构选择边界和 `production_variable_library.md` 的变量匹配顺序执行，产出 Execution IR（Reasoning Path、Structure、Material Boundary、Acceptance Criteria）。Execution IR 的具体组成、Forbidden 事项唯一权威在 `docs/知乎OS Compiler V1.md` 第5节，本文件不重复、不改写。
 
 ## 第四步：执行 WRITE（本文件唯一权威的 Writer Rules）
 
