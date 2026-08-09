@@ -8,13 +8,17 @@ from disk and git, never trusted from the draft. Runs the generic validator
 against the computed candidate; only writes the target manifest if the
 candidate passes. Never mutates the target on failure.
 
-This script is the only place "Status: ACTIVE" is supposed to get written.
-Running it is the deliberate human act that constitutes Approval — nothing
-here approves content on your behalf.
+Release Builder is the only entry point allowed to write a published Runtime
+status (TRIAL / ACTIVE). Every call must explicitly declare its target status
+via --status; there is no default. Running it is the deliberate human act
+that constitutes Approval of that specific status — nothing here approves
+content on your behalf, and TRIAL is not a lesser form of ACTIVE, it is a
+distinct declared target with its own execution authority (see Compiler V1
+§14 and the Runtime Lifecycle note in §15).
 
 Usage:
   python3 scripts/release_runtime.py --draft runtime/ACTIVE_MANIFEST.md \
-      [--out runtime/ACTIVE_MANIFEST.md] [--commit <sha>]
+      --status TRIAL|ACTIVE [--out runtime/ACTIVE_MANIFEST.md] [--commit <sha>]
 
 If --out is omitted it defaults to --draft (in-place promotion).
 """
@@ -81,6 +85,7 @@ def render_manifest(manifest: dict) -> str:
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--draft", required=True)
+    parser.add_argument("--status", required=True, choices=["TRIAL", "ACTIVE"])
     parser.add_argument("--out", default=None)
     parser.add_argument("--commit", default=None)
     args = parser.parse_args(argv[1:])
@@ -119,7 +124,7 @@ def main(argv: list[str]) -> int:
     manifest["published_at"] = datetime.datetime.now(datetime.timezone.utc).strftime(
         "%Y-%m-%d %H:%M:%S UTC"
     )
-    manifest["status"] = "ACTIVE"
+    manifest["status"] = args.status
 
     rendered = render_manifest(manifest)
 

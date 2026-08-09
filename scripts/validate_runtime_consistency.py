@@ -23,7 +23,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MANIFEST = ROOT / "runtime" / "ACTIVE_MANIFEST.md"
-VALID_STATUS = {"DRAFT", "ACTIVE", "DEPRECATED"}
+VALID_STATUS = {"DRAFT", "TRIAL", "ACTIVE", "DEPRECATED"}
 
 
 def sha256(path: Path) -> str:
