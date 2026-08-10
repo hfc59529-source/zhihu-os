@@ -1,6 +1,6 @@
 # Governance Change Proposal B：Content Variable Activation Contract
 
-Status：DRAFT（Governance Plane 待审，不具备执行权威，不修改任何已发布权威文件）
+Status：APPROVED WITH SPECIFIED RESOLUTION（Governance Decision 已作出，见文末"Governance Decision"一节；对应拟修改文件清单与最小 Contract Diff 见 `docs/governance/Proposal-B_Decision_Diff.md`，Diff 本身尚未应用到任何权威文件，等待用户核对后落地）
 
 Proposed By：Claude（起草），发现来源：`ZH-20260810-001` 生产过程中的端到端 Realization 审计（见 `productions/ZH-20260810-001/Realization_Audit.md`）
 
@@ -79,3 +79,27 @@ CV 变量本身兼具两种特征：它们既是"参数库"里登记的通用规
 - 方案四（基于 §2a 历史证据）：在 `acceptance_criteria` 的 `{id, requirement}` 结构基础上，恢复历史 `Parameter_Call` 的双层记录方式——`requirement` 字段内部区分"触发依据"（为什么本题命中，对应历史"触发依据"）与"调用方式"（本题具体怎么体现，对应历史"调用方式"），CV ID 本身不再需要额外进入 `triggered_rule_ids`，因为 CV 的 Global 身份已经由 `production_variable_library.md` 的编号本身承载。
 
 本 Proposal 不推荐上述任一方案，候选方案的取舍、组合或另拟新方案，由 Governance Plane 决定。
+
+## 7. Governance Decision（用户裁决，2026-08-10）
+
+结论：**APPROVED WITH SPECIFIED RESOLUTION**——不采用上述四个候选方案的原样版本，形成组合裁决：
+
+```text
+CV = Runtime Parameter Identity（固定在 production_variable_library.md）
+↓ COMPILE Trigger
+CV Run Instantiation = Execution IR.acceptance_criteria（COMPILE 生成）
+↓ WRITE → Realization → AUDIT（按对应 AC 验证）
+
+triggered_rule_ids 继续只服务真正的 Global Rule，不承载 CV ID。
+```
+
+逐条裁决：
+
+- **问题0**：确认存在 Schema 语义缺口，不确认历史迁移因果（是假设，不是已证实的根因）。治理对象是"新 Execution IR 必须合法表达 CV Identity 与本 Run Instantiation 两层语义"，不是"恢复旧 Parameter_Call"。
+- **问题1**：CV Identity 固定在 Parameter Registry（`production_variable_library.md`），由 Governance 治理；Run Instantiation 由 COMPILE 每次生成，不是 COMPILE 自行判断"类型归属"。
+- **问题2**：不允许 CV ID 进入 `triggered_rule_ids`（该字段语义是 Global Rule ID，CV 是 Parameter Identity，两者不能因为都有"ID"就混同）；CV 的 Run Instantiation 允许且应当进入 `acceptance_criteria`，边界是 AC 只能写"本篇必须实现什么"，不得复制 CV 的 Registry 通用定义/适用题型/触发规则/权重——这样不违反"不得复制 Runtime 通用条款"的既有约束，因为复制对象是 Parameter Registry 不是 Runtime.Audit Rules，但复制行为本身仍受同一条禁止性规定约束。
+- **问题3**：不设"每 Run 分类权"。拆成 Parameter Identity（Governance）→ COMPILE（生成 Instantiation）之后，不存在每篇重新判断"CV 到底是 Global Rule 还是 Run-specific obligation"的场景——CV 永远是 Parameter，只有编译后的 Instantiation 进 AC。
+- **问题4**：不恢复独立 `Parameter_Call` 前置步骤。Compiler V1 把它合并进 Execution IR 的方向本身没问题，缺失的是语义承载而非文件本身；恢复独立文件会重新制造一个平行中间对象，破坏"Execution IR 是 Decision→WRITE 唯一正式中间对象"的架构。正确方向是在唯一的 Execution IR 内，用 AC 承载 CV 的 Run Instantiation。
+- **问题5**（历史 CV Realization 审核证据缺失）：不作为 B 的决策前置条件，留给 Proposal A / 后续 Auditability 设计参考，不影响本次裁决生效。
+
+下一步：不直接恢复 `ZH-20260810-001` 生产，先由 Claude 把本裁决转成拟修改文件清单 + 最小 Contract Diff（不实际修改权威文件），供用户核对是否与 Compiler V1 其它 Contract 冲突，确认后再落权威文件。

@@ -140,7 +140,11 @@ B. CV Activation Schema 未定义区：CV 变量激活后该进 `triggered_rule_
 
 Proposal B 二次修正：§2a"更接近根因"改为"待验证的迁移假设"（Evidence→Hypothesis，不是 Evidence→Root Cause）；§3"两个字段互斥"改为"用途不同，是否允许分别落入两字段待 Governance 判断"，不预设互斥。修正后 B 已具备足够证据进入正式 Governance Review（0–4 项待决策问题），历史 CV Realization 审核证据缺失不作为 B 的决策前置条件，留给 Proposal A / 后续 Auditability 设计参考。
 
-Next: 暂停，等待 Governance Plane 对 Proposal B 做正式逐条 Review 并给出 Governance Decision，再处理 Proposal A（Draft-v4 / Execution_IR-v2 均已就绪，未丢失，恢复时可直接从当前状态继续）。
+Proposal B 已获 Governance Decision：**APPROVED WITH SPECIFIED RESOLUTION**（CV Identity 固定在 Parameter Registry，Run Instantiation 由 COMPILE 写入 acceptance_criteria，triggered_rule_ids 不承载 CV ID，不恢复 Parameter_Call，不设每 Run 分类权）。裁决全文见 `Proposal-B_Content_Variable_Activation_Contract.md` §7。
+
+对应拟修改文件清单 + 最小 Contract Diff 已起草，见 `docs/governance/Proposal-B_Decision_Diff.md`，尚未应用到任何权威文件，等待用户核对是否与 Compiler V1 其它 Contract 冲突。
+
+Next: 暂停，等待用户核对 Diff 并决定是否落权威文件；落地后再处理 Proposal A；`ZH-20260810-001` 暂不恢复生产（Draft-v4 / Execution_IR-v2 均已就绪，未丢失）。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
