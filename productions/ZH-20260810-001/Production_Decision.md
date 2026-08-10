@@ -167,7 +167,13 @@ Final Contract Diff Review: PASS（用户确认，2.3 标题"澄清"→"新增�
 
 补充：本节修改与此前 Proposal A/B 全部文件均已提交并推送至 `compiler-v1-runtime-alignment` 分支（非 `main`），远端 `main` 分支的 `runtime/ACTIVE_MANIFEST.md` 仍是该分支自身的旧状态（`Status: DRAFT`），与本分支无关，不能互相验证。
 
-Next: 暂停。直接进入 Proposal A 的 Governance Review，不发布 Manifest。`ZH-20260810-001` 恢复生产前置条件：B 已落地（完成）+ A 完成 Governance Review 并落地（未完成）+ Manifest 统一发布一次（未完成）。
+## Proposal A Post-B Semantic Rebase
+
+用户要求 A 进入 Governance Review 前先做一次 Rebase：只更新被 B 改变的事实前提，不重定义问题、不预支裁决。已起草 `docs/governance/Proposal-A_PostB_Rebase_Diff.md`（DRAFT，未应用）。
+
+核查结论：Proposal A 原文本身没有把 CV 当作 `triggered_rule_ids` 候选对象——§1/§3/§6 通篇只讨论 `知乎ACTIVE规律快照.md` 的规则类变量，§2 证据也明确写"9条"（不含 CV 的 4 条）。真正需要 Rebase 的只有一处：§1 引用的 Data Contract 原文是 B 落地前的旧版本，需要更新为现行权威文本（已含 B 新增的"本字段不承载 CV"一句），并补一句"Post-B 范围确认"（确认关系，非范围变更）。§2 追加一条说明 CV 证据已转交 B，A 证据范围维持原状。§3–§6 核对后不改动。
+
+Next: 暂停。等待用户逐句审查 `Proposal-A_PostB_Rebase_Diff.md`，通过后应用到 `Proposal-A_Triggered_Rule_Audit_Binding.md`，再正式进入 A 的 Governance Review。不发布 Manifest。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
