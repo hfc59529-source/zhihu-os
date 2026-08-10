@@ -27,7 +27,7 @@ Proposed By：Claude（起草），发现来源：`ZH-20260810-001` 生产过程
 
 `知乎OS Compiler Data Flow V1.md` 的 `Execution IR` Schema 只有 `triggered_rule_ids`（Global Rule ID 列表）与 `acceptance_criteria`（`{id, requirement}` 结构的 Run 特有条目）两个字段，二者互斥且用途不同：
 
-- 进 `triggered_rule_ids`：意味着该变量的具体内容由 WRITE 自行去 `Runtime Release → Writer Rules 分区` 加载原文执行，Execution IR 里不展开。
+- 进 `triggered_rule_ids`：意味着该变量被声明为本 Run 触发的 Global Rule；但当前 Contract 尚未在本字段定义中明确 WRITE 如何由该 ID 获取对应 Writer Rule 并执行——`知乎OS Compiler V1.md` 第6节只规定 WRITE 的输入包含"规则引用：Runtime Release → Writer Rules 分区"，并未说明这个引用动作与 `triggered_rule_ids` 列表之间是否存在、以及应该是何种绑定关系；这正是 Proposal A 指出的同一个未闭合链路在 WRITE 侧的对应表现，不应在本 Proposal 中当作既定事实预支。
 - 进 `acceptance_criteria`：意味着该变量在本 Run 里被实例化为一条具体、可审的义务，Execution IR 里必须写清楚 `requirement`。
 
 CV 变量本身兼具两种特征：它们既是"参数库"里登记的通用规则（有适用题型、触发条件，跨 Run 复用），又往往需要"本 Run 具体怎么体现"这类实例化描述（例如 CV002"利益重分配"命中后，需要说明本 Run 里利益重分配具体体现在哪个场景/哪句话）。Data Contract 没有回答：**这种"既通用又需要实例化"的变量，激活后到底该二选一，还是需要同时出现在两个字段（ID 进 triggered_rule_ids，实例化描述进 acceptance_criteria）？**

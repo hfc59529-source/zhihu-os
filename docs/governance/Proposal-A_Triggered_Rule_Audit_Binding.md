@@ -35,7 +35,7 @@ Compiler V1 第11节 SSP 规定"通用可判定表达检查（重复、参数显
 
 ## 4. 影响范围
 
-- 直接影响：任何 Run 只要在 COMPILE 阶段命中 `知乎ACTIVE规律快照.md` 中的规则，其 `triggered_rule_ids` 字段就无法达到 Data Contract 要求的"只存 ID"标准，也无法被 AUDIT 用来加载对应检查项。
+- 直接影响：按当前已发布 Runtime Contract，理论上所有使用该路径（COMPILE 阶段命中 `知乎ACTIVE规律快照.md` 中的规则）的 Run 都会面临该问题；这是 contract-level inference（对照 Data Contract 原文得出的理论推断），目前实际复现证据仅有 `ZH-20260810-001` 一个样本，两者需区分对待，不应混同为已验证的普遍事实。
 - 间接影响：AUDIT 阶段对"Operational Quality Checks"这一类问题（区别于 Execution Compliance）事实上处于不可判定状态——不是没有问题，是没有合法 Expected Source 可以判定，导致相关 Issue 无法合法生成，只能记录为 Observation。
 - 已知范围：本 Proposal 的证据来自单一 Run（`ZH-20260810-001`），不代表已验证为系统全局现象；是否是长期存在、跨生产的普遍缺口，需要额外样本验证（不在本 Proposal 范围内）。
 

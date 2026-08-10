@@ -127,12 +127,14 @@ B. CV Activation Schema 未定义区：CV 变量激活后该进 `triggered_rule_
 
 两者均为 Governance Plane 问题，本 Run 不代为定义或修复。
 
-两份 Governance Change Proposal 已起草，均为 DRAFT，只写现状/证据/Contract Gap/影响范围/待决策问题/候选方案，不含建议方案，未修改任何权威文件：
+两份 Governance Change Proposal 已起草并经用户审阅修正，均为 DRAFT，不含建议方案，未修改任何权威文件：
 
-- `docs/governance/Proposal-A_Triggered_Rule_Audit_Binding.md`
-- `docs/governance/Proposal-B_Content_Variable_Activation_Contract.md`
+- `docs/governance/Proposal-A_Triggered_Rule_Audit_Binding.md`——影响范围已按用户要求区分 contract-level inference 与 empirical evidence。
+- `docs/governance/Proposal-B_Content_Variable_Activation_Contract.md`——第3节已修正，删除"WRITE 自行加载 Writer Rule 原文执行"这一未经 Data Contract 证明的假设表述，改为如实标注该绑定关系本身未定义。
 
-Next: 暂停，等待 Governance Plane 审阅并决定 A、B 两项 Proposal 后再决定是否恢复 `AUDIT 重新确认`（Draft-v4 / Execution_IR-v2 均已就绪，未丢失，恢复时可直接从当前状态继续）。
+治理顺序（用户判定）：B 先于 A。理由：A 处理"Global Rule 如何进入 Audit"，B 处理更前置的"什么东西算 Global Rule"（CV001–CV004 是否属于 Global Rule 本身未定义）；若先设计 A 的完整 AuditRule 映射，B 一旦确定 CV 类型模型后容易返工。建议顺序：修正 B → Governance Review B（确定 Parameter Activation 类型模型）→ Governance Review A（定义 Global Rule 的 Audit Binding）。
+
+Next: 暂停，等待 Governance Plane 按上述顺序审阅 B、A 后再决定是否恢复 `AUDIT 重新确认`（Draft-v4 / Execution_IR-v2 均已就绪，未丢失，恢复时可直接从当前状态继续）。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
