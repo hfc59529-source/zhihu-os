@@ -1,6 +1,8 @@
 # Governance Change Proposal A：Triggered Rule Audit Binding
 
-Status：DRAFT（Post-B Semantic Rebase 已应用，`APPROVE WITH TWO WORDING FIXES` 已落地；Governance Plane 待审，不具备执行权威，不修改任何已发布权威文件）
+Status：**VALID GAP / DEFERRED IMPLEMENTATION**（Governance Decision，2026-08-10）——问题真实存在（证据链干净、Post-B Rebase 已完成），但证据强度（单样本 `ZH-20260810-001`）配不上其涉及的改造成本（Global Rule ID Registry → Audit Rule Mapping → GPT审核清单 改造 → validator 新增校验 → Runtime 重新发布）。裁决：不现在启动 0–5 的 Governance Review，挂起。不具备执行权威，不修改任何已发布权威文件。
+
+重新激活条件：按 `templates/Failure Pattern模板.md` 的既有机制记账——同一失败模式（Operational Quality Checks 类问题因无合法 Expected Source 而无法进 AuditResult）在后续生产中累计达到 3 次、且归属节点明确、证据可复查时，才重新进入 Governance Review；未满 3 次只记录，不升级、不重启本 Proposal。
 
 Proposed By：Claude（起草），发现来源：`ZH-20260810-001` 生产过程中的端到端 Realization 审计（见 `productions/ZH-20260810-001/Realization_Audit.md`）
 
