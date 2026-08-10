@@ -34,7 +34,7 @@ Production ID: ZH-20260810-001
 | CV004｜风险传导 | ✓ | ✓ | ✓ | 同上 | 弱——更多是规范性判断("谁该负责")，risk 如何在链条中实际转移的描述较薄弱，第10段第二层条件部分有触及但不充分 | 否 |
 | CV005｜身份代入 | ✓ | 不触发（触发条件句式不符，已判定） | — | — | — | — |
 
-Activation 落点问题：`知乎OS Compiler Data Flow V1.md` 只定义了 `triggered_rule_ids`（规则类）和 `acceptance_criteria`（本篇正文义务）两个官方落点。本次 `Execution_IR-v1/v2` 把 CV 变量判定单独写成第6节内的一个自定义子表，既不是标准 `acceptance_criteria` 条目，也不是纯粹的规则 ID 列表——这本身是 COMPILE 阶段对 Schema 的一次偏移，之前没有被指出。**这属于本轮审计新发现的第五类风险，不在你列的四类"沉没参数"里**：变量被激活的方式本身没有落进 Compiler V1 定义的合法 Schema 位置，如实记录，不在本轮代为修正。
+Activation 落点问题（修正版）：`知乎OS Compiler Data Flow V1.md` 只定义了两个官方落点——`triggered_rule_ids`（Global Rule ID，只存 ID 不存正文）和 `acceptance_criteria`（本 Run 特有要求，且明确禁止把 Runtime 通用规则复制进 AC）。这不能反推成"CV 是内容变量，所以必须进 acceptance_criteria"——CV 究竟该算 Global Rule（走 triggered_rule_ids）还是 Run-specific obligation（走 acceptance_criteria），Data Contract 从未定义过。`production_variable_library.md` 第15条只说了"COMPILE 将命中变量写入 triggered_rule_ids（规则类变量）或 acceptance_criteria（本篇正文义务）"，但没有规定 CV 这一类具体归属哪一边。本次 `Execution_IR-v1/v2` 因此自造了第6节内的第三张 CV 表，这是症状，不是原因——**根因是 Data Contract 存在一个未定义区：ACTIVE 内容变量（CV）被激活后应该落在哪个官方字段，系统从未回答过**。这属于本轮审计新发现的第五类风险，不在原四类"沉没参数"框架里，如实记录，不在本轮代为定义或修正。
 
 ## 小结（仅对本篇成立，不外推）
 
@@ -46,3 +46,11 @@ Activation 落点问题：`知乎OS Compiler Data Flow V1.md` 只定义了 `trig
 ## 明确不下的结论
 
 本次样本量为 1 篇，不能回答"过去参数系统是否长期停在 Trigger/Activation 层"这个更大的问题，也不能确认"认知增量单点漏执行"还是"整个参数系统结构性没有闭环"哪个成立——需要你决定的下一步，按你的说法，是扩大到过去 5–10 篇做同样的端到端追踪，本文件的表格结构可以直接复用。
+
+## 确认成立的两个 Contract 问题（本轮修正后）
+
+A. **Audit 链路存在真实断点**：`知乎OS Compiler Data Flow V1.md` 第4节明确规定 `triggered_rule_ids` 不只是记录，AUDIT 还要"据此判断本 Run 应加载哪些条件触发的 Audit Rule"。但 `runtime/知乎ACTIVE规律快照.md` 里的规则从未分配过正式 Rule ID，`templates/GPT审核清单.md` 也没有逐条对应的 Global Rule 检查项——"Triggered Rule → Audit Rule 加载"这条 Data Contract 明文要求的链路，当前完全没有落地，不是本轮审计的推测，是对照 Data Contract 原文得出的事实。
+
+B. **CV Activation Schema 存在未定义区**：CV（内容变量）激活后应落在 `triggered_rule_ids` 还是 `acceptance_criteria`，Data Contract 从未规定，因此 COMPILE 只能自造第三个落点。
+
+以上两点是本轮生产暴露出的系统性 Governance 缺口，需要在 Governance Plane 处理（明确 CV 的类型归属、给规则类变量分配正式 Rule ID、把 Audit Rule 加载链路补上），本轮不代为决定或修复。按用户指示，`ZH-20260810-001` 在此暂停，不继续推进 Draft-v4，等这两个 contract 问题处理清楚后再决定是否恢复。

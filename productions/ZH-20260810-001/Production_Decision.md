@@ -4,7 +4,7 @@ Production ID: ZH-20260810-001
 
 ## Status
 
-PATCH_COMPLETED（v4）
+PAUSED（v4，Patch 已生成但暂不进入 AUDIT）
 
 ## Topic Binding
 
@@ -118,7 +118,16 @@ Issues[]：
 
 未改动：开头（第1–3段）、真正变量陈述（第4段）、核心判断（第9段）、迁移边界/第二层条件（第10段）、结尾回收（末段）。未重新推导 Decision/Reasoning Path，未引入 Material Boundary 之外的案例、真实企业或人物。
 
-Next: AUDIT 重新确认（GPT / 人工按 `templates/GPT审核清单.md`，针对性核对 Issue 1 对应的 `AcceptanceCriteria.1,4` 是否已兑现，且未产生新违规，通过后进入 `PATCH_VALIDATED`）。
+## 暂停原因（见 `Realization_Audit.md`）
+
+端到端 Realization 审计发现两个系统性 Governance 缺口，在这两点处理清楚前不继续推进 Draft-v4 进入 AUDIT，避免继续生产变成"人工绕过尚未闭合的 Runtime 接口"：
+
+A. Audit 链路真实断点：Data Contract 明确要求 `triggered_rule_ids` 驱动 AUDIT 加载对应 Audit Rule，但 `知乎ACTIVE规律快照.md` 无正式 Rule ID，链路未落地。
+B. CV Activation Schema 未定义区：CV 变量激活后该进 `triggered_rule_ids` 还是 `acceptance_criteria`，Data Contract 从未规定，COMPILE 因此自造了第三个落点。
+
+两者均为 Governance Plane 问题，本 Run 不代为定义或修复。
+
+Next: 暂停，等待 Governance Plane 处理 A、B 两项后再决定是否恢复 `AUDIT 重新确认`（Draft-v4 / Execution_IR-v2 均已就绪，未丢失，恢复时可直接从当前状态继续）。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
