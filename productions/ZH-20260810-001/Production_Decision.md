@@ -4,7 +4,7 @@ Production ID: ZH-20260810-001
 
 ## Status
 
-PATCH_COMPLETED
+DECISION_FROZEN（v2）
 
 ## Topic Binding
 
@@ -63,7 +63,34 @@ Writer 边界：只解决"累、抽象、没感觉"的正文实现问题（把�
 
 未改动：开头反转（第1–3段）、三变量核心陈述（第4段）、"没打算被监督、被纠正"这句机制结论（AUDIT 已判 PASS，不因 Patch 顺手改动）、结尾三条判断法回收（末两段）。未重新推导 Reality/Main Gap/Transformation/Core Judgment 或 Reasoning Path，未引入 Material Boundary 之外的案例、数据、真实人物或公司（店长仍为自造复合场景角色）。
 
-Next: AUDIT 重新确认（GPT / 人工按 `templates/GPT审核清单.md` 确认本次 Patch 是否解决"累、抽象、没感觉"且未产生新违规，通过后进入 `PATCH_VALIDATED` → 重新回到 `READY_FOR_USER_REVIEW`，不得跳过重新确认直接回验收）。
+## PatchAuditResult
+
+PATCH_VALIDATED
+
+Issues[]: 0
+
+Validated Draft: `Draft-v2.md`
+
+确认范围：Approved Issue（"看着有点累，没啥感觉，太抽象了"）已改善——场景从三个抽象变量逐条换问句，改为店长在具体环境中的连续可感知动作；核心链（本意好→不能终止责任判断→路径/监督/纠错→门店场景→责任归属→适用边界→三点回收）完整保留，未新增真实主体，未复用 Benchmark 禁用案例，未改动冻结的 Core Judgment。PATCH_VALIDATED 只确认 Patch 未破坏合同、方向正确，不代表阅读体验判断——"现在有没有感觉"仍是用户的 Decision Right，不由本次确认代为判断。
+
+## Approval（Draft-v2 验收结果）
+
+USER_REJECTED
+
+rejected_issues[]：
+
+1. user_feedback：读者读正文前会先问"这是谁在说、说给谁听、为什么说"——如果是高层说,第一反应是"谁做决策时本意是奔着失败去的",本意好本来就是绝大多数决策失败时的默认前提,拿它解释失败没有提供任何责任信息;而且执行层完全可以对称地说"我们执行的本意也是好的,只是上面决策和方案出了问题"，逻辑对称却通常不成立。关键冲突是"本意好能不能减免责任和后果"，不是"有没有监督、路径、纠错机制"。
+   violation_source（User 确认）：Decision.Core Judgment / Main Gap
+   return_stage（查 Architecture Routing Table 机械得出）：DECISION（Reality/Main Gap/Transformation 本身站不住 → DECISION）
+   不填 Expected/Actual/Expected Source：用户拒绝的是 Decision 本身抓错了解释目标，不对应某条已声明的 AcceptanceCriteria 或 AuditRule。
+
+处理路径：Return Stage = DECISION → 退回 DECISION 重新冻结，产生新版本 Decision（Semantic Freeze v2），重新沿流水线向下走（COMPILE → WRITE → AUDIT），最终重新进入 AUDIT，不直接跳回 READY_FOR_USER_REVIEW。Draft-v1 / Draft-v2 / 对应 Execution_IR-v1 作为历史版本保留，不删除，不覆盖。
+
+Semantic Freeze v2 已完成（见 `Semantic_Freeze-v2.md`）。新 Core Judgment："本意是好的"只能说明动机，不能减免结果责任；谁对哪个环节拥有决定权，谁就该对该环节的可归责后果负责，决策/执行责任判断对称。原"路径/监督/纠错"降级为判断执行层责任边界的第二层条件，不再是核心冲突。
+
+按用户要求，本轮先停在 DECISION_FROZEN v2，暂不继续推进 COMPILE，待确认这是单篇 Decision 失败还是 Compiler 稳定缺口后再决定后续。
+
+Next（待确认后）：COMPILE（基于新 Decision 重新生成 `Execution_IR-v2.md`）。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
