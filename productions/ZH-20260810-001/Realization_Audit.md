@@ -41,7 +41,7 @@ Activation 落点问题（修正版）：`知乎OS Compiler Data Flow V1.md` 只
 - 本篇没有出现"1类：ACTIVE 但从未 Trigger"——9条规则类变量和4条适用 CV 变量全部被 COMPILE 命中。
 - 没有出现"2类：Trigger 了但没 Activation"——全部写入了 Execution IR（尽管落点 Schema 有偏移）。
 - **出现 3类（Activation 但 Realization 缺失或存疑）**：情绪入口（弱）、结构节奏（部分）、CV002 利益重分配（弱）、CV004 风险传导（弱）。
-- **出现 4类（Realization 状态不确定 + Audit 无法验证）**：本篇触发的全部 13 条规则/变量，Audit 可验证列全部为"否"。这是最系统性的一条——不区分具体哪条规则，是整条"规则类变量"和"CV 变量"的审核通道当前对 AUDIT 都不可用，因为 `templates/GPT审核清单.md` 的 Operational Quality Checks 只有 6 个笼统类目（阅读体验/推进节奏/场景/表达自然/重复/收尾），不逐条对应 Runtime.Audit Rules 或 CV ID。
+- **出现 4类（Realization 状态不确定 + Audit 无法验证）**：范围限定说明——这不是系统全局事实，只是单样本观察：**在 `ZH-20260810-001` 这一个受控 Run 中，13 个被审计的 Activated variables/rules 均未找到合法 Audit Expected Source**。`templates/GPT审核清单.md` 的 Operational Quality Checks 只有 6 个笼统类目（阅读体验/推进节奏/场景/表达自然/重复/收尾），本样本中未观察到任何一条逐条对应 Runtime.Audit Rules 或 CV ID 的情况。是否对其它历史生产同样成立，需要扩大样本才能回答，本文件不作外推。
 
 ## 明确不下的结论
 

@@ -127,7 +127,12 @@ B. CV Activation Schema 未定义区：CV 变量激活后该进 `triggered_rule_
 
 两者均为 Governance Plane 问题，本 Run 不代为定义或修复。
 
-Next: 暂停，等待 Governance Plane 处理 A、B 两项后再决定是否恢复 `AUDIT 重新确认`（Draft-v4 / Execution_IR-v2 均已就绪，未丢失，恢复时可直接从当前状态继续）。
+两份 Governance Change Proposal 已起草，均为 DRAFT，只写现状/证据/Contract Gap/影响范围/待决策问题/候选方案，不含建议方案，未修改任何权威文件：
+
+- `docs/governance/Proposal-A_Triggered_Rule_Audit_Binding.md`
+- `docs/governance/Proposal-B_Content_Variable_Activation_Contract.md`
+
+Next: 暂停，等待 Governance Plane 审阅并决定 A、B 两项 Proposal 后再决定是否恢复 `AUDIT 重新确认`（Draft-v4 / Execution_IR-v2 均已就绪，未丢失，恢复时可直接从当前状态继续）。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
