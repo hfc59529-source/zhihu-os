@@ -1,14 +1,16 @@
 # Governance Change Proposal A：Triggered Rule Audit Binding
 
-Status：DRAFT（Governance Plane 待审，不具备执行权威，不修改任何已发布权威文件）
+Status：DRAFT（Post-B Semantic Rebase 已应用，`APPROVE WITH TWO WORDING FIXES` 已落地；Governance Plane 待审，不具备执行权威，不修改任何已发布权威文件）
 
 Proposed By：Claude（起草），发现来源：`ZH-20260810-001` 生产过程中的端到端 Realization 审计（见 `productions/ZH-20260810-001/Realization_Audit.md`）
 
 ## 1. 现状
 
-`docs/知乎OS Compiler Data Flow V1.md` 第4节对 COMPILE 输出对象 `Execution IR` 的 `triggered_rule_ids` 字段定义如下（原文）：
+`docs/知乎OS Compiler Data Flow V1.md` 第4节对 COMPILE 输出对象 `Execution IR` 的 `triggered_rule_ids` 字段定义如下（原文，含 Proposal B 落地后的最新表述）：
 
-> `triggered_rule_ids`：本 Run 按 Runtime.Compile Rules 条件触发的 Global Rule ID 列表（只存 ID，不存正文），AUDIT 据此判断本 Run 应加载哪些条件触发的 Audit Rule。
+> `triggered_rule_ids`：本 Run 按 Runtime.Compile Rules 条件触发的 Global Rule ID 列表（只存 ID，不存正文），AUDIT 据此判断本 Run 应加载哪些条件触发的 Audit Rule。本字段不承载 `production_variable_library.md` 登记的内容变量（CV）——CV 的 Global 身份始终只存在于 Parameter Registry，不进入本字段。（本字段中 Global Rule 本身如何被 WRITE / AUDIT 解析和执行，仍是 Proposal A 待决问题，本次修改不涉及、不预支。）
+
+**Post-B 范围确认**：Proposal B 已明确将 CV 排除出 `triggered_rule_ids`，并将"本字段中 Global Rule 如何被 WRITE/AUDIT 解析执行"保留给 Proposal A。Proposal A 原有证据与问题陈述本来就只针对 `知乎ACTIVE规律快照.md` 中的 9 条规则类变量，不包含 CV；因此 B 不改变 A 的证据对象范围。本句仅确认 CV 不属于 A，**不预先确认上述规则类变量是否应被治理定义为 Data Contract 所称的 Global Rule，该问题仍由 A 的 Governance Review 判断**。
 
 `docs/知乎OS Compiler V1.md` 第7节 AUDIT 定义中，Operational Quality Checks 的权威来源是：
 
@@ -23,6 +25,7 @@ Proposed By：Claude（起草），发现来源：`ZH-20260810-001` 生产过程
 - `Execution_IR-v1.md`、`Execution_IR-v2.md`（`ZH-20260810-001`）的 `Triggered Rule IDs` 一节，均记录了"该快照无正式 ID，只能以名称定位，不构成合法 ID 引用"。
 - `Realization_Audit.md`（`ZH-20260810-001`）对该 Run 中被 Activate 的 9 条规则类变量逐条核对，Audit 可验证一栏全部为"否"——即在这一个受控 Run 内，找不到任何一条能被 AUDIT 合法引用的 `AuditRule.<ID>`。
 - 该发现范围限定为 `ZH-20260810-001` 单一样本，尚未扩大到历史生产验证。
+- （Post-B 补充说明）`Realization_Audit.md` 原表中另有 4 条 CV 记录（CV001–CV004）。其中由 CV 字段归属、Activation Schema 与 Run-specific Realization Requirement 所暴露的 Contract 问题已由 Proposal B 单独处理并裁决；这些 CV 记录不属于 Proposal A 的证据范围。Proposal A 的证据范围维持原状，只包含前述 9 条规则类变量，不因 B 的裁决而扩大或缩小。
 
 ## 3. Contract Gap
 

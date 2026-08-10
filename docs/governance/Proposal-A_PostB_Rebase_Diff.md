@@ -39,13 +39,13 @@ B 落地后，该字段定义已变为（现行权威文本，`docs/知乎OS Com
 >
 > > `triggered_rule_ids`：本 Run 按 Runtime.Compile Rules 条件触发的 Global Rule ID 列表（只存 ID，不存正文），AUDIT 据此判断本 Run 应加载哪些条件触发的 Audit Rule。本字段不承载 `production_variable_library.md` 登记的内容变量（CV）——CV 的 Global 身份始终只存在于 Parameter Registry，不进入本字段。（本字段中 Global Rule 本身如何被 WRITE / AUDIT 解析和执行，仍是 Proposal A 待决问题，本次修改不涉及、不预支。）
 >
-> **Post-B 范围确认**：Proposal B（`APPROVED WITH SPECIFIED RESOLUTION`，已落地）已经把 CV 排除出本字段，并把"本字段中 Global Rule 如何被 WRITE/AUDIT 解析执行"明确划给本 Proposal（A）。这与 A 原有的问题范围一致，是确认关系，不是范围变更——A 讨论的对象（`知乎ACTIVE规律快照.md` 中的规则类变量）本来就不包含 CV，本次 Rebase 只是把这一点从"隐含成立"变成"有权威文本明确支持"。
+> **Post-B 范围确认**：Proposal B 已明确将 CV 排除出 `triggered_rule_ids`，并将"本字段中 Global Rule 如何被 WRITE/AUDIT 解析执行"保留给 Proposal A。Proposal A 原有证据与问题陈述本来就只针对 `知乎ACTIVE规律快照.md` 中的 9 条规则类变量，不包含 CV；因此 B 不改变 A 的证据对象范围。本句仅确认 CV 不属于 A，**不预先确认上述规则类变量是否应被治理定义为 Data Contract 所称的 Global Rule，该问题仍由 A 的 Governance Review 判断**。
 
 ### 2. §2 证据：追加一条来源说明，不改变原有两条证据
 
 在原有两条证据之后追加：
 
-> - （Post-B 补充说明）`Realization_Audit.md` 原表中另有 4 条 CV 记录（CV001–CV004），其 Activation/Realization/Audit 可验证性问题已转交 Proposal B 处理并裁决；本 Proposal A 的证据范围维持原状，只包含前述 9 条规则类变量，不因 B 的裁决而扩大或缩小。
+> - （Post-B 补充说明）`Realization_Audit.md` 原表中另有 4 条 CV 记录（CV001–CV004）。其中由 CV 字段归属、Activation Schema 与 Run-specific Realization Requirement 所暴露的 Contract 问题已由 Proposal B 单独处理并裁决；这些 CV 记录不属于 Proposal A 的证据范围。Proposal A 的证据范围维持原状，只包含前述 9 条规则类变量，不因 B 的裁决而扩大或缩小。
 
 ### 3. §3 Contract Gap、§4 影响范围、§5 待决策问题、§6 候选方案：不改动
 

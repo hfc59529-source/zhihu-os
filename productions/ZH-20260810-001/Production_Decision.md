@@ -173,7 +173,9 @@ Final Contract Diff Review: PASS（用户确认，2.3 标题"澄清"→"新增�
 
 核查结论：Proposal A 原文本身没有把 CV 当作 `triggered_rule_ids` 候选对象——§1/§3/§6 通篇只讨论 `知乎ACTIVE规律快照.md` 的规则类变量，§2 证据也明确写"9条"（不含 CV 的 4 条）。真正需要 Rebase 的只有一处：§1 引用的 Data Contract 原文是 B 落地前的旧版本，需要更新为现行权威文本（已含 B 新增的"本字段不承载 CV"一句），并补一句"Post-B 范围确认"（确认关系，非范围变更）。§2 追加一条说明 CV 证据已转交 B，A 证据范围维持原状。§3–§6 核对后不改动。
 
-Next: 暂停。等待用户逐句审查 `Proposal-A_PostB_Rebase_Diff.md`，通过后应用到 `Proposal-A_Triggered_Rule_Audit_Binding.md`，再正式进入 A 的 Governance Review。不发布 Manifest。
+Rebase Diff Review 结果：`APPROVE WITH TWO WORDING FIXES`（用户确认方向成立，两处措辞收紧：§1 Post-B 范围确认不预先认定"ACTIVE规律快照规则=Data Contract所称Global Rule"，该问题留给 A 的 Governance Review；§2 补充说明改为"CV 的 Contract/Schema 归属问题已转交 B"，不宣称 B 已处理 CV 的全部 Realization/Audit 问题）。两处已按修正应用到 `Proposal-A_Triggered_Rule_Audit_Binding.md`（§1、§2），§3–§6 未改动。Rebase 结束。
+
+Next: 暂停。Proposal A 已完成 Post-B Rebase，可以正式进入 Governance Review（0–5 待决策问题）。不发布 Manifest。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
