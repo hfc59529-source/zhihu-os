@@ -144,7 +144,13 @@ Proposal B 已获 Governance Decision：**APPROVED WITH SPECIFIED RESOLUTION**�
 
 对应拟修改文件清单 + 最小 Contract Diff 已起草，见 `docs/governance/Proposal-B_Decision_Diff.md`，尚未应用到任何权威文件，等待用户核对是否与 Compiler V1 其它 Contract 冲突。
 
-Next: 暂停，等待用户核对 Diff 并决定是否落权威文件；落地后再处理 Proposal A；`ZH-20260810-001` 暂不恢复生产（Draft-v4 / Execution_IR-v2 均已就绪，未丢失）。
+Diff 首次审查结论：`CHANGES_REQUIRED`（Governance Decision 本身无问题，问题在 Decision→Diff 的翻译）。已按用户四点要求修正 `Proposal-B_Decision_Diff.md`：
+1. 删除 2.1/2.2 中未经 Proposal A 裁决的"由 WRITE 直接依据 Runtime.Writer Rules 原文执行"表述，明确该绑定方式属于 A 的范围，B 不预支。
+2. 2.2/2.3/2.4 统一改为：AC 只承载 Run-specific Realization Requirement（本篇必须实现什么），不承载 Trigger Basis（为何命中）。
+3. 2.2/2.3 新增的"不得复制 Parameter Registry 内容"明确标注为 Proposal B 新增的禁止性约束，不再声称原条款本来就覆盖 Parameter Registry。
+4. 新增 §3a"显式留白"：CV Trigger Basis 是否需要持久化、落在哪个 Schema 位置，如实记录为未解决，不阻塞当前裁决。
+
+Next: 暂停，等待用户对修正后的 Diff 做最后一次 Contract Diff Review；本轮仍不修改 Compiler/Data Flow/Parameter Registry 任何权威文件，也不恢复 `ZH-20260810-001` 生产。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
