@@ -4,7 +4,7 @@ Production ID: ZH-20260810-001
 
 ## Status
 
-READY_FOR_AUDIT（v3）
+PATCH_COMPLETED（v4）
 
 ## Topic Binding
 
@@ -96,7 +96,29 @@ Draft-v3 已完成（见 `Draft-v3.md`）。WRITE 边界自查：未重新推导
 
 本次由用户人工查看 Draft-v3，属于 WRITE 完成后的非正式过目，不构成状态机定义的 REVIEW 节点；正式 REVIEW 只能发生在 AUDIT PASS 之后。
 
-Next: AUDIT（GPT / 人工按 `templates/GPT审核清单.md`，对照 `Execution_IR-v2.md` 的 Acceptance Criteria 1–6 独立执行，不使用 WRITE/用户前序讨论作为审核依据）。
+## AuditResult（Draft-v3）
+
+ISSUES
+
+Issues[]：
+
+1. Expected Source：`Execution IR v2.AcceptanceCriteria.1,4`
+   Expected：Breaking Point 必须真正完成对称性检验——"本意好"不能是只对决策层有效、对执行层无效的责任减免理由；正文须完整传达"本意好只能说明动机、不能减责；决定权对应责任，对决策/执行两端对称适用"。
+   Actual：涨价对照案例比较的是"有权决策失败（总部）"vs"无权越权失败（区域经理）"，引入了"是否越权"这一额外变量，实际证明的是权限差异导致的责任差异，不是同一个"本意好"理由在决策/执行两端的对称适用问题。
+   Violation Source：Reasoning Path.Breaking Point / AcceptanceCriteria.1,4 未被 WRITE 正确兑现；Execution IR 本身未被推翻。
+   Return Stage：WRITE
+
+其余项无合法 Issue：TS01 10 个 required_steps 均可定位；Material Boundary 未越界；"路径/监督/纠错"确实在核心判断之后出现且明确降为第二层条件，符合 AC.5；未发现新的禁用案例或真实主体。
+
+处理路径：Return Stage = WRITE → 退回 Claude 按 Execution IR 修改 Draft（Patch 模式），不退 COMPILE/DECISION——v2 判断未被推翻。
+
+## Patch v3 → v4
+
+变更范围：仅重写案例段（原第5–8段的"总部涨价 vs 区域经理越权涨价"），改为"总部改收费模式 vs 客服团队执行转签"——两个角色都在各自本来就有的职权范围内做决定，移除"是否越权"这一混淆变量，改为纯粹的"决策层本意好 vs 执行层本意好，两句结构相同的解释为何被区别对待"的对称检验；解释部分同步改写，不再依赖"有没有权"，改为"习惯性只在执行端追问本意好不够，很少用同一标准问决策端"。
+
+未改动：开头（第1–3段）、真正变量陈述（第4段）、核心判断（第9段）、迁移边界/第二层条件（第10段）、结尾回收（末段）。未重新推导 Decision/Reasoning Path，未引入 Material Boundary 之外的案例、真实企业或人物。
+
+Next: AUDIT 重新确认（GPT / 人工按 `templates/GPT审核清单.md`，针对性核对 Issue 1 对应的 `AcceptanceCriteria.1,4` 是否已兑现，且未产生新违规，通过后进入 `PATCH_VALIDATED`）。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
