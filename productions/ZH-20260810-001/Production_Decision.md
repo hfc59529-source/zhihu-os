@@ -4,7 +4,7 @@ Production ID: ZH-20260810-001
 
 ## Status
 
-READY_FOR_USER_REVIEW
+PATCH_COMPLETED
 
 ## Topic Binding
 
@@ -42,7 +42,28 @@ Issues[]: 0
 
 Audit PASS / Issue = 0，按 `docs/生产状态机与交接规范.md`「修改后确认与发布入口」直接进入 `READY_FOR_USER_REVIEW`，不空跑 Decision，不执行修改后确认。
 
-Next: REVIEW（用户判断 Draft-v1 是否接受，唯一验收权在用户；PASS 不能替代 USER_APPROVED，不得跳到 RELEASE_READY）。
+## Approval
+
+USER_REJECTED
+
+rejected_issues[]：
+
+1. user_feedback："看着有点累，没啥感觉，太抽象了。"
+   violation_source（User 确认）：Expression Constraints / Acceptance Criteria 的正文实现层（不是 Decision，不是 COMPILE 结构本身——门店案例的抽象变量换问句写法，没有让场景真正发生起来）。
+   return_stage（查 Architecture Routing Table 机械得出）：WRITE
+   不填 Expected/Actual/Expected Source：用户拒绝的是阅读体验未成立，不对应某条已声明的 AcceptanceCriteria 或 AuditRule 的合同违规。
+
+处理路径：退回 WRITE 时，Current Draft-v1 + 该条 user_feedback 作为 Approved Issues 输入，直接进入 `READY_FOR_PATCH`（不重新经过 AUDIT 才能进 PATCH，按用户拒绝路径本身即走 WRITE 内部修复）。
+
+Writer 边界：只解决"累、抽象、没感觉"的正文实现问题（把门店案例从"抽象变量换问句"改写成读者能看见的具体处境），不得重新推导 Reality/Main Gap/Transformation/Core Judgment 或 Reasoning Path，不得引入 Execution IR Material Boundary 之外的案例、数据、人物、公司。
+
+## Patch v1 → v2
+
+变更范围：仅改动 Approved Issue 指向的场景呈现段（原第5–7段的门店场景与因果追问部分），改写为带具体人物（店长）和可感知细节（排队、顾客催促、翻手册道歉）的连续叙事，替换掉"有没有配套的操作细则?…有没有人核实过…能不能往上改?"这种把三个抽象变量逐条换成问句的写法。
+
+未改动：开头反转（第1–3段）、三变量核心陈述（第4段）、"没打算被监督、被纠正"这句机制结论（AUDIT 已判 PASS，不因 Patch 顺手改动）、结尾三条判断法回收（末两段）。未重新推导 Reality/Main Gap/Transformation/Core Judgment 或 Reasoning Path，未引入 Material Boundary 之外的案例、数据、真实人物或公司（店长仍为自造复合场景角色）。
+
+Next: AUDIT 重新确认（GPT / 人工按 `templates/GPT审核清单.md` 确认本次 Patch 是否解决"累、抽象、没感觉"且未产生新违规，通过后进入 `PATCH_VALIDATED` → 重新回到 `READY_FOR_USER_REVIEW`，不得跳过重新确认直接回验收）。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
