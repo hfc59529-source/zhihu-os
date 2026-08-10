@@ -37,7 +37,7 @@ Proposed By：Claude（起草），发现来源：`ZH-20260810-001` 生产过程
 
 可以看到历史对象里每条 CV 实际包含三层：**CV ID（跨 Run 通用变量身份）+ 触发依据（本题为何命中）+ 调用方式（本题具体怎么实现）**。`ZH-20260808-003` 同样是 CV ID + 本题触发依据，但未像 002 那样明确单列"调用方式"一栏，两份历史对象在这一点上不完全一致。
 
-这项历史证据表明：旧 Schema 里 CV 天然存在两个层次——**Variable Identity**（CV002 本身是什么、适用什么题型，跨 Run 复用）与 **Run Instantiation**（这一篇里 CV002 具体体现为什么、体现在哪里）。这比"COMPILE 偶然自造第三张表"更接近本次 `ZH-20260810-001` 出现自造子表的根因：不是这次生产随意发明了一个新结构，而是 Compiler V1 把 `Parameter_Call` 合并进 `Execution IR` 时，很可能没有给历史上已经存在的"调用方式"这一层找到明确的新 Schema 落点，COMPILE 只能在 `triggered_rule_ids` 一节里自行补一张表来承载这层信息。
+这项历史证据表明：旧 Schema 里 CV 天然存在两个层次——**Variable Identity**（CV002 本身是什么、适用什么题型，跨 Run 复用）与 **Run Instantiation**（这一篇里 CV002 具体体现为什么、体现在哪里）。这只能证明"旧 `Parameter_Call` 存在 CV Identity + Trigger Basis + Run-specific Invocation 三层，新 Schema 没有明确对应关系"，还不能证明本次 `ZH-20260810-001` 自造第三张表就是这一"迁移丢失"直接导致的——两者之间是一个**待验证的迁移假设**，不是已证明的根因：Compiler V1 合并 `Parameter_Call` 后，历史 Run-specific Invocation 语义可能没有获得明确的新 Schema 落点，本 Run 因此自行补了一张表来承载这层信息；这个假设是否成立，需要更多证据（例如更多历史 Run 的对比、或直接询问 Compiler V1 设计者当初的取舍），本 Proposal 不代为下结论。
 
 第三项相关证据目前**未找到**：用户核查过程中没有找到对应的"历史 CV 调用后是否发生 Realization"的审核记录（例如 Parameter Compliance 或 CV Realization 审核对象）。可以确认的只是历史系统明确规定了"调用声明"这一步，但没有证据证明它同时建立了"调用后的 Realization 验证"这一步。这一点保持未知，不假设成立或不成立。
 
@@ -45,7 +45,7 @@ Proposed By：Claude（起草），发现来源：`ZH-20260810-001` 生产过程
 
 ## 3. Contract Gap
 
-`知乎OS Compiler Data Flow V1.md` 的 `Execution IR` Schema 只有 `triggered_rule_ids`（Global Rule ID 列表）与 `acceptance_criteria`（`{id, requirement}` 结构的 Run 特有条目）两个字段，二者互斥且用途不同：
+`知乎OS Compiler Data Flow V1.md` 的 `Execution IR` Schema 只有 `triggered_rule_ids`（Global Rule ID 列表）与 `acceptance_criteria`（`{id, requirement}` 结构的 Run 特有条目）两个字段，二者用途不同；但**当前 Contract 未明确同一 CV 的 Global Identity 与 Run-specific Instantiation 是否允许分别落入两个字段**（即 CV ID 进 `triggered_rule_ids`、同时该 CV 的本 Run 实例化描述进 `acceptance_criteria` 是否合法），这正是本节要交给 Governance Plane 判断的问题之一，不应预设"二者互斥"：
 
 - 进 `triggered_rule_ids`：意味着该变量被声明为本 Run 触发的 Global Rule；但当前 Contract 尚未在本字段定义中明确 WRITE 如何由该 ID 获取对应 Writer Rule 并执行——`知乎OS Compiler V1.md` 第6节只规定 WRITE 的输入包含"规则引用：Runtime Release → Writer Rules 分区"，并未说明这个引用动作与 `triggered_rule_ids` 列表之间是否存在、以及应该是何种绑定关系；这正是 Proposal A 指出的同一个未闭合链路在 WRITE 侧的对应表现，不应在本 Proposal 中当作既定事实预支。
 - 进 `acceptance_criteria`：意味着该变量在本 Run 里被实例化为一条具体、可审的义务，Execution IR 里必须写清楚 `requirement`。
