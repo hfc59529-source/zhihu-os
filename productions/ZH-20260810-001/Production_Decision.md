@@ -4,7 +4,7 @@ Production ID: ZH-20260810-001
 
 ## Status
 
-PAUSED（v4，Patch 已生成但暂不进入 AUDIT）
+READY_FOR_AUDIT（v4，重新确认——生产已恢复，见文末"系统级 Governance Decision"）
 
 ## Topic Binding
 
@@ -175,7 +175,27 @@ Final Contract Diff Review: PASS（用户确认，2.3 标题"澄清"→"新增�
 
 Rebase Diff Review 结果：`APPROVE WITH TWO WORDING FIXES`（用户确认方向成立，两处措辞收紧：§1 Post-B 范围确认不预先认定"ACTIVE规律快照规则=Data Contract所称Global Rule"，该问题留给 A 的 Governance Review；§2 补充说明改为"CV 的 Contract/Schema 归属问题已转交 B"，不宣称 B 已处理 CV 的全部 Realization/Audit 问题）。两处已按修正应用到 `Proposal-A_Triggered_Rule_Audit_Binding.md`（§1、§2），§3–§6 未改动。Rebase 结束。
 
-Next: 暂停。Proposal A 已完成 Post-B Rebase，可以正式进入 Governance Review（0–5 待决策问题）。不发布 Manifest。
+## 系统级 Governance Decision（用户裁定，2026-08-10）：冻结架构，恢复生产
+
+用户对 `compiler-v1-runtime-alignment` 分支现状做出整体判断：七节点主架构（INPUT→DECISION→COMPILE→WRITE→AUDIT→REVIEW→RELEASE）职责边界清楚，不需要推倒；但治理机制本身开始反噬生产——识别出三个问题：
+1. Runtime Manifest（`Based On Commit: 66b3ca5...`）已落后于开发状态（当前 `fe0e10e` 之后），不应把 Manifest consistency 当作日常生产启动条件。
+2. Compiler V1 存在"设计过度精确"（CV→AC、Trigger Basis 归属等规则耦合度过高），修一个 CV 牵出 A/B/SSP/Data Contract/Manifest 一整条链。
+3. **Proposal A 证据强度（单样本）配不上其改造成本**，裁定为 `VALID GAP / DEFERRED IMPLEMENTATION`（已同步更新 `Proposal-A_Triggered_Rule_Audit_Binding.md` Status），挂起，不现在做 Governance Review。
+
+裁决：**冻结架构，恢复生产，用生产验证架构**。接下来连续跑至少 10 篇真实生产（对应 Compiler V1 §14 试运行门槛），期间只允许以下三种情况打断生产：
+1. 生产根本跑不下去；
+2. 产生事实/授权/发布级严重错误；
+3. 同一系统缺陷重复出现、已形成跨样本证据（按既有 `templates/Failure Pattern模板.md` 累计3次机制判断）。
+
+其余问题（字段定义可以更严谨、Audit Rule 无正式ID、Contract wording 不完全闭环、Manifest 因开发提交暂时 mismatch、单篇 Schema ambiguity）**全部记账，不停产**。Manifest mismatch 现状保持不变，不发布。
+
+## `ZH-20260810-001` 恢复生产
+
+Proposal A 挂起不再是本篇的阻塞条件，Proposal B 已落地。恢复到暂停前的状态：Draft-v4 已针对 AUDIT Issue 1（Breaking Point 对称性检验）完成 Patch，尚未经过重新 AUDIT 确认。
+
+Status：READY_FOR_AUDIT（v4，重新确认）
+
+Next: AUDIT 重新确认（GPT / 人工按 `templates/GPT审核清单.md`，核对 Draft-v4 是否已解决 Issue 1，即涨价对照案例是否已改为总部改收费模式 vs 客服团队执行的对称检验，且未产生新违规）。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
