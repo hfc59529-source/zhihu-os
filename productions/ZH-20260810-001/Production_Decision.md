@@ -4,7 +4,7 @@ Production ID: ZH-20260810-001
 
 ## Status
 
-DECISION_FROZEN（v2）
+DRAFT_READY（v3）
 
 ## Topic Binding
 
@@ -88,9 +88,15 @@ rejected_issues[]：
 
 Semantic Freeze v2 已完成（见 `Semantic_Freeze-v2.md`）。新 Core Judgment："本意是好的"只能说明动机，不能减免结果责任；谁对哪个环节拥有决定权，谁就该对该环节的可归责后果负责，决策/执行责任判断对称。原"路径/监督/纠错"降级为判断执行层责任边界的第二层条件，不再是核心冲突。
 
-按用户要求，本轮先停在 DECISION_FROZEN v2，暂不继续推进 COMPILE，待确认这是单篇 Decision 失败还是 Compiler 稳定缺口后再决定后续。
+系统层判定：暂不成立"缺 Question Owner Gate"或"累计N篇升级"结论——两者都不是当前 Compiler V1 已定义的规则，不由单篇生产结果代为新增。本轮仅记录：Decision v1 Main Gap 站不住 → REVIEW 正确退回 DECISION → Semantic Freeze v2 已重新冻结，系统层 NO VERDICT，继续跑 v2 生产验证。
 
-Next（待确认后）：COMPILE（基于新 Decision 重新生成 `Execution_IR-v2.md`）。
+Execution IR v2 已完成（见 `Execution_IR-v2.md`）。核心变化：Reasoning Path 的 Breaking Point 从"监督/纠错机制是否存在"改为"本意好是否被对称适用于决策/执行两端"；Structure 沿用 TS01（题型未变，不重新推导）；required_steps/step_obligations 全部围绕对称性检验重写；Expression Constraints 新增"路径/监督/纠错不得早于核心判断段落出现、只能作为第二层条件"的约束；Acceptance Criteria 新增第5条专门核对这一降级是否兑现；CV 变量触发判定沿用 v1 结论（题型未变）。
+
+Draft-v3 已完成（见 `Draft-v3.md`）。WRITE 边界自查：未重新推导 Decision/Reasoning Path；场景改为自造的"总部涨价 vs 区域经理涨价"对照场景，未复用 v1 门店案例或 Answer_2 案例；"路径/监督/纠错"三项在正文中出现在核心判断段落之后，作为第二层条件，未早于核心判断出现；未使用"甩锅""洗地""傻子筛选"等禁用词。
+
+本次由用户人工查看 Draft-v3，属于 WRITE 完成后的非正式过目，不构成状态机定义的 REVIEW 节点；正式 REVIEW 只能发生在 AUDIT PASS 之后。
+
+Next: READY_FOR_AUDIT（GPT / 人工按 `templates/GPT审核清单.md`，对照 `Execution_IR-v2.md` 的 Acceptance Criteria 1–6 执行独立 AUDIT）。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
