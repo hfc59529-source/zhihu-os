@@ -161,7 +161,13 @@ Final Contract Diff Review: PASS（用户确认，2.3 标题"澄清"→"新增�
 4. 未修改 `Execution_IR-v2.md` 或恢复 `Draft-v4`，`ZH-20260810-001` 继续暂停。
 5. Proposal A 尚未进入 Governance Review，按约定顺序（B 落地 → consistency check → A Review → A 落地 → 恢复本篇）留待用户下一步处理。
 
-Next: 暂停。等待用户决定是否现在重新发布 Runtime Manifest，以及是否开始 Proposal A 的 Governance Review。`ZH-20260810-001` 恢复生产前置条件：B 已落地（完成）+ A 完成 Governance Review 并落地（未完成）。
+## Manifest 发布时机（用户裁定）
+
+不现在发布 Runtime Manifest。理由：Manifest 是 Runtime Release Boundary，不是治理过程中每个中间状态的记录点；如果现在发布，A 一旦裁决大概率还要再改权威文件、再使 Manifest 失效、再发布一次。正确事务边界：B 落地 → A Governance Review → A 裁决并落地 → 一次性 release Runtime → consistency PASS → 恢复 `ZH-20260810-001`。当前 `validate_runtime_consistency.py = Fail` 予以保留，视为正确状态（working tree 已变，尚未形成新的有效 Runtime Release），不修复。
+
+补充：本节修改与此前 Proposal A/B 全部文件均已提交并推送至 `compiler-v1-runtime-alignment` 分支（非 `main`），远端 `main` 分支的 `runtime/ACTIVE_MANIFEST.md` 仍是该分支自身的旧状态（`Status: DRAFT`），与本分支无关，不能互相验证。
+
+Next: 暂停。直接进入 Proposal A 的 Governance Review，不发布 Manifest。`ZH-20260810-001` 恢复生产前置条件：B 已落地（完成）+ A 完成 Governance Review 并落地（未完成）+ Manifest 统一发布一次（未完成）。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
