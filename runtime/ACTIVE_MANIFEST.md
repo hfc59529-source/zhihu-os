@@ -2,8 +2,8 @@
 
 Runtime Version: ZH-RUNTIME-DRAFT
 Status: TRIAL
-Published At: 2026-08-09 18:41:36 UTC
-Based On Commit: 66b3ca5a0d373031231912174d6fea5c4b136f03
+Published At: 2026-08-10 12:52:59 UTC
+Based On Commit: 8b8d8d1bce663022741b40cda3f9ca7664b09cd6
 
 ## Partitions
 
@@ -11,7 +11,7 @@ Based On Commit: 66b3ca5a0d373031231912174d6fea5c4b136f03
 
 | path | sha256 |
 |---|---|
-| docs/知乎OS Compiler V1.md | 5d7bed21283cc5c3a877620aaaeab75623276d26e766fa4b53c9781e6ec11589 |
+| docs/知乎OS Compiler V1.md | 24538815db70ed4904fc51d7db7be5ab1440f38b26048f642ec565f0d8d9af50 |
 | docs/内容架构总则.md | cdf1c858368dec970170f646f6d9fc98aa0d411348e1b63c0f2927e785e70714 |
 | docs/知乎OS权威归属表.md | d161328f2dce7b216a45ebf8a6ff6198b9a15642249f7e08efcc092a75d303bb |
 
@@ -40,7 +40,7 @@ Based On Commit: 66b3ca5a0d373031231912174d6fea5c4b136f03
 
 | path | sha256 |
 |---|---|
-| production_variable_library.md | 562df06541120f4089321c0ad68c93c178636d04a708c1929709bcd9b65d31b4 |
+| production_variable_library.md | 463739bff19304810076f2beeadb414b0676cf0d212d97cf2413721eacf9259e |
 | runtime/production_variable_snapshot.md | 5666624c9f6c1dd56ceaeb689004e58684dec42f6a899cd1be1d0c65c9a159c1 |
 | runtime/知乎结构库快照.md | 8a0d2c841153c43667d3de9805683fc03ba84be48c1d284894dc17e3f57b76c2 |
 | runtime/知乎ACTIVE规律快照.md | 4ad77a341a9327a981ef89b77d26e90b24ca06fd04486226f99f1dda0ed06e1c |
