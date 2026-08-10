@@ -216,3 +216,44 @@ Source（如为参数缺口）：人工审核
 最终结论：REJECTED（文本冲突客观存在，但冲突文件并非同时构成当前有效权威；原命题不成立）→ CLOSED。
 处理动作：不修改任何正式协议或参数记录，不建立 Precedence/Supersession Rule（该需求随原命题一并解除）。本次审计过程中发现的另一个命题——"未经治理批准、未发布的设计工作副本被当作现行规则标注/使用，且 `validate_runtime_consistency.py` 这道 Runtime consistency gate 未能阻止这种情况被继续引用（含今日 TOPIC-20260809-002 / ZH-20260809-002 的生产实际引用了未发布版本的 `templates/Claude正文生产Prompt.md`）"——不属于本 Observation 范围，是否另立新 Observation 记录，留待下一步治理动作单独决定，不在本次收尾中一并处理。
 ```
+
+## Observation-04：Governance Authority Registry 与 Runtime Publication Boundary 不一致
+
+```text
+Observation ID：Observation-04
+Gap ID（如为参数缺口）：不适用
+Source（如为参数缺口）：人工审核
+对应内容 ID：不适用（本观察为系统一致性问题，非单篇正文问题；发现契机为 08-10 效果数据复盘讨论中途）
+题目：不适用
+审核来源：人工审核（用户 + 助手交叉核对 runtime/ACTIVE_MANIFEST.md 本地/远端与 docs/知乎OS权威归属表.md）
+问题类型：结构问题（当前问题类型限定表六项中无"治理权威文件未纳入 Runtime 发布边界"类别，暂归入结构问题，最贴近但不完全对应，需治理评审确认是否需要扩类型；与 Observation-03 同源问题类型缺口）
+关联 Parameter ID（如已存在对应参数记录）：不适用
+问题描述：
+Evidence A — Authority Registry：`docs/知乎OS权威归属表.md` 第92行明确声明 `docs/系统治理原则.md` 为"05 治理模块，是，证据门槛、状态流转和系统修改条件权威"，作用范围含"参数库、Observation、复盘模块、生产模块"。
+Evidence B — Runtime Manifest：本地 `runtime/ACTIVE_MANIFEST.md`（`Status: TRIAL`）的六个 Partition（Compiler Authority / Protocol Docs / Node Execution Assets / Parameter & Knowledge Snapshots / Governance Infrastructure / Historical Asset Tools）均未列出 `docs/系统治理原则.md`，未被 sha256 锁定发布。
+Evidence C — Manifest 落后 HEAD：该 TRIAL manifest 记录 `Published At: 2026-08-09 18:41:36 UTC`、`Based On Commit: 66b3ca5`，但当前分支 `compiler-v1-runtime-alignment` 的 HEAD 为 `77b7831`，中间另有 `dd156f2`、`02529cf`、`fd21879` 三次提交未被本次 TRIAL 覆盖。
+Evidence D — 远端落差：`origin/main` 上的 `runtime/ACTIVE_MANIFEST.md` 为 `Status: DRAFT`，`Published At`/`Based On Commit` 均为空，所有 Partition 内 sha256 字段为空——与本地/`origin/compiler-v1-runtime-alignment` 分支上有内容的 TRIAL manifest 是两个不同状态，不可互相引用。
+Impact：
+由 Evidence A+B+C+D 共同构成的结果是——本次讨论中反复援引的"Observation/Parameter 生命周期规则"（OPEN→VALIDATING→SUPPORTED/REJECTED/INCONCLUSIVE→CLOSED 等）及 Compiler §12/§13 关于 Learning Plane 的约束，其 Runtime execution eligibility 目前无法唯一判定：Authority Registry 声称它是治理权威，但 Runtime Manifest 既未锁定该文件本身，其 Based On Commit 也已落后当前 HEAD，且远端唯一已知发布态是空 DRAFT。
+初步修正意见：
+暂不提出。本条不预设"治理规则是否必须进入 Manifest 锁定"这一架构问题的答案，留给治理评审通过 Q1/Q2 两问逐步回答：
+Q1：`docs/系统治理原则.md` 是否属于 Runtime 必须锁定的执行依赖？若 YES，应补入 Manifest Partition 或另立被 Manifest 锁定的正式 Governance Runtime Asset；若 NO，需说明 Authority Registry 与 Runtime 权威判定标准为何允许分离，以及运行时实际引用哪个版本。
+Q2：仅在 Q1 结论明确后，才判断当前 HEAD（`77b7831`）是否具备重新执行 `scripts/release_runtime.py`、将 TRIAL 对齐到 HEAD 的发布资格。
+生命周期状态：OPEN
+缺口状态（如适用）：不适用
+审核结果（如适用）：未审核
+审核说明：不适用（尚未进入审核）
+归入参数 ID：不适用
+候选参数 ID：不适用
+正式参数 ID：不适用
+重复次数：1（首次记录）
+重复证据引用：不适用
+平台证据：不适用（本观察依赖文件文本与 git 状态本身，不依赖平台/账号样本；验证方式为治理评审核对 `docs/知乎OS权威归属表.md`、`runtime/ACTIVE_MANIFEST.md`（本地/`origin/compiler-v1-runtime-alignment`/`origin/main` 三处）、`git log --oneline -- runtime/ACTIVE_MANIFEST.md`、`scripts/validate_runtime_consistency.py` 实测结果）
+最终结论：待治理评审
+处理动作：
+本条 OPEN 期间禁止以下三项动作：
+1. 不据此修改 Manifest Partition（不擅自把 `docs/系统治理原则.md` 加入或排除某个 Partition）；
+2. 不直接执行 `scripts/release_runtime.py` 重新 release（避免隐含对 HEAD 发布资格和当前 Partition 边界正确性的未授权判断）；
+3. 不据此修改 `docs/系统治理原则.md` 本身。
+本 Observation 关闭前，08-10 效果数据（ZH-20260809-001 等）相关的 Observation/Hypothesis/Failure Pattern 状态判定同步搁置，不因本条 OPEN 而单独另开阻塞流程，两者并行但不相互提交对方结论。
+```
