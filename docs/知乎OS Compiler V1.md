@@ -136,7 +136,15 @@ Forbidden:
   Expression Constraints / Acceptance Criteria 只能是"本 Run 特有义务"，不得把
     Runtime.Audit Rules 中已存在的通用检查项（Global Operational Checks）复制
     进 Execution IR——通用规则永远只活在 Runtime Release 里，不允许被复制出第二份
-  Triggered Rule IDs 只能是 ID 引用，不得连带复制规则正文
+  Triggered Rule IDs 只能是 ID 引用，不得连带复制规则正文，且不得引用
+    `production_variable_library.md` 登记的内容变量（CV）
+  （Proposal B 新增禁止性约束，非对原条款的重新解释——原"不得复制通用条款"仅
+    约束 Runtime.Writer Rules / Runtime.Audit Rules，未涉及 Parameter Registry）：
+    由内容变量（CV）编译出的 Acceptance Criteria，只能写本 Run 的 Realization
+    Requirement（本篇必须具体实现什么），不得复制该 CV 在 Parameter Registry 中的
+    通用定义字段（变量定义、适用题型、触发条件、触发权重等），也不得把"本题为何
+    命中该 CV"这类 Trigger Basis 写进 Acceptance Criteria——AC 只保存可验收的义务，
+    不保存触发证据
 ```
 
 ## 6. WRITE
@@ -289,6 +297,8 @@ A/B 测试时，唯一变量必须是 Writer 模型本身。禁止同时改变 E
 | 读者真实困惑 / 事实边界 | INPUT |
 | Reality / Main Gap / Transformation / Core Judgment | DECISION |
 | 正文路线、结构、素材边界、本篇特有验收标准 | COMPILE（写入 Execution IR） |
+| 内容变量（CV）Identity：定义、适用题型、触发条件、触发权重 | `production_variable_library.md`（Parameter Registry） |
+| 内容变量（CV）本 Run Instantiation：本篇必须具体实现什么（Realization Requirement） | COMPILE（写入 Execution IR.acceptance_criteria） |
 | 人话表达、节奏、留白 | Runtime.Writer Rules |
 | 通用可判定表达检查（重复、参数显形等） | Runtime.Audit Rules |
 | 最终正文是否接受 | REVIEW（人工，唯一权威，不得由 AUDIT 或 RELEASE 代为判断） |

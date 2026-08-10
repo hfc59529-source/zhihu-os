@@ -150,7 +150,18 @@ Diff 首次审查结论：`CHANGES_REQUIRED`（Governance Decision 本身无问�
 3. 2.2/2.3 新增的"不得复制 Parameter Registry 内容"明确标注为 Proposal B 新增的禁止性约束，不再声称原条款本来就覆盖 Parameter Registry。
 4. 新增 §3a"显式留白"：CV Trigger Basis 是否需要持久化、落在哪个 Schema 位置，如实记录为未解决，不阻塞当前裁决。
 
-Next: 暂停，等待用户对修正后的 Diff 做最后一次 Contract Diff Review；本轮仍不修改 Compiler/Data Flow/Parameter Registry 任何权威文件，也不恢复 `ZH-20260810-001` 生产。
+## Proposal B 落地记录
+
+Final Contract Diff Review: PASS（用户确认，2.3 标题"澄清"→"新增约束"的编辑修正已同步）。Governance Decision: **APPROVED FOR APPLICATION**。
+
+已执行：
+1. `Proposal-B_Decision_Diff.md` 2.3 标题措辞修正。
+2. Diff 已应用到四处权威文件：`production_variable_library.md` 第15条、`docs/知乎OS Compiler Data Flow V1.md` 第4节、`docs/知乎OS Compiler V1.md` 第5节 Forbidden、`docs/知乎OS Compiler V1.md` 第11节 SSP 表。
+3. 跑 `scripts/validate_runtime_consistency.py`，结果 `Fail`：`docs/知乎OS Compiler V1.md`、`production_variable_library.md` 的 sha256 与 `runtime/ACTIVE_MANIFEST.md`（Status: TRIAL）记录不匹配——这是修改权威文件后的预期结果，不是新问题；是否重新发布 Runtime Manifest（`scripts/release_runtime.py`）是独立的 Governance/Runtime 发布决定，本轮未执行，等待用户决定。
+4. 未修改 `Execution_IR-v2.md` 或恢复 `Draft-v4`，`ZH-20260810-001` 继续暂停。
+5. Proposal A 尚未进入 Governance Review，按约定顺序（B 落地 → consistency check → A Review → A 落地 → 恢复本篇）留待用户下一步处理。
+
+Next: 暂停。等待用户决定是否现在重新发布 Runtime Manifest，以及是否开始 Proposal A 的 Governance Review。`ZH-20260810-001` 恢复生产前置条件：B 已落地（完成）+ A 完成 Governance Review 并落地（未完成）。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 

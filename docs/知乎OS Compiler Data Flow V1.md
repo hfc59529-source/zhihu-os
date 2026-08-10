@@ -125,9 +125,9 @@ Raw Input
 
 `structure.required_steps` / `structure.step_obligations`：本 Run 已实例化后的结构执行义务，不是结构库全文，AUDIT 核对"Structure 义务有没有缺失"时的 Expected 来源。
 
-`triggered_rule_ids`：本 Run 按 Runtime.Compile Rules 条件触发的 Global Rule ID 列表（只存 ID，不存正文），AUDIT 据此判断本 Run 应加载哪些条件触发的 Audit Rule。
+`triggered_rule_ids`：本 Run 按 Runtime.Compile Rules 条件触发的 Global Rule ID 列表（只存 ID，不存正文），AUDIT 据此判断本 Run 应加载哪些条件触发的 Audit Rule。本字段不承载 `production_variable_library.md` 登记的内容变量（CV）——CV 的 Global 身份始终只存在于 Parameter Registry，不进入本字段。（本字段中 Global Rule 本身如何被 WRITE / AUDIT 解析和执行，仍是 Proposal A 待决问题，本次修改不涉及、不预支。）
 
-`expression_constraints` 与 `acceptance_criteria` 只能是本次 Run 特有条目，不得复制 Runtime.Writer Rules / Runtime.Audit Rules 中已存在的通用条款。
+`expression_constraints` 与 `acceptance_criteria` 只能是本次 Run 特有条目，不得复制 Runtime.Writer Rules / Runtime.Audit Rules 中已存在的通用条款。`acceptance_criteria` 还承载由 COMPILE 依据已 Trigger 的内容变量（CV）编译出的 Run-specific Realization Requirement（本篇必须具体实现什么，例如"本文必须具体呈现该事件造成的权力/利益/责任重新分配"），不承载"本题为何命中该 CV"这类触发判定证据（Trigger Basis）——AC 只保存可验收的义务，不保存触发理由。此外新增一条 Proposal B 引入的禁止性约束（原条款只约束 Runtime.Writer Rules / Runtime.Audit Rules，不涉及 Parameter Registry，此处是新增，不是对原条款的重新解释）：不得复制该 CV 在 Parameter Registry 中的通用定义、适用题型、触发条件或触发权重。
 
 下一节点：WRITE。
 

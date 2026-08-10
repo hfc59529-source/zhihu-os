@@ -12,7 +12,7 @@ Status：ACTIVE
 2. 平台样本、216篇历史文章和后续发布文章，都只能回写本库对应变量记录。
 3. 禁止新增"平台变量库""账号变量库""候选变量库""实验变量库"等重复入口。
 4. 平台高频出现不等于具备触发资格（Trigger Eligibility）。
-5. Claude 正文生产默认只触发本库中 `当前状态=ACTIVE` 且 `触发资格=是` 的变量。触发（Trigger）指题目、样本特征或结构条件命中变量的适用题型与触发条件，使其进入本题触发矩阵；COMPILE 将命中变量写入 `Execution IR.triggered_rule_ids`（规则类变量）或 `Execution IR.acceptance_criteria`（本篇正文义务）是激活（Activation）；WRITE 按 Execution IR 生成正文是执行（Execution）；正文中实际体现该变量效果是实现（Realization）。四个环节按顺序发生，不得跳过。
+5. Claude 正文生产默认只触发本库中 `当前状态=ACTIVE` 且 `触发资格=是` 的变量。触发（Trigger）指题目、样本特征或结构条件命中变量的适用题型与触发条件，使其进入本题触发矩阵；COMPILE 将命中的内容变量（CV）统一编译为本 Run 的 Instantiation 义务，写入 `Execution IR.acceptance_criteria` 完成激活（Activation）——CV 的 Global Identity（定义、适用题型、触发条件、触发权重）始终只存在于本库，不进入 `Execution IR.triggered_rule_ids`；`triggered_rule_ids` 只承载按现行 Contract 定义的 Global Rule ID，不承载 CV；WRITE 按 Execution IR 生成正文是执行（Execution）；正文中实际体现该变量效果是实现（Realization）。四个环节按顺序发生，不得跳过。（本条只定义 CV 的 Activation 落点；`triggered_rule_ids` 中 Global Rule 本身如何被 WRITE/AUDIT 解析执行，不在本条定义范围。）
 6. `CANDIDATE` 和 `REVIEW` 状态的变量只允许在指定单变量实验中触发，不能进入日常默认生产。
 7. `DEPRECATED` 和 `ARCHIVED` 禁止触发。
 8. Trigger 不作为独立生产对象存在；每条变量自己的"适用题型 / 触发条件 / 禁用边界 / 当前状态 / 触发权重"合起来就是该变量的触发规则（Trigger Rule）。

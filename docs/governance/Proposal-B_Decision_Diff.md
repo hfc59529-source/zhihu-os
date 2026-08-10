@@ -1,6 +1,6 @@
 # Proposal B — Governance Decision → 拟修改文件清单 + 最小 Contract Diff
 
-Status：DRAFT（仅为待审查的修改草案，未应用到任何权威文件；本文件本身也不具备执行权威）
+Status：APPROVED FOR APPLICATION（Final Contract Diff Review: PASS，已批准应用到权威文件；本文件记录 Diff 内容与应用结果，本文件本身不具备执行权威，权威以已修改的目标文件为准）
 
 依据：`docs/governance/Proposal-B_Content_Variable_Activation_Contract.md` 已获 `APPROVED WITH SPECIFIED RESOLUTION`，裁决摘要：
 
@@ -22,7 +22,7 @@ triggered_rule_ids 继续只服务真正的 Global Rule，不承载 CV ID。
 |---|---|---|
 | `production_variable_library.md` 第15条 | 措辞澄清（明确 CV 统一走 acceptance_criteria，不走 triggered_rule_ids） | 0, 2 |
 | `docs/知乎OS Compiler Data Flow V1.md` 第4节 | Schema 字段说明新增两句 | 2 |
-| `docs/知乎OS Compiler V1.md` 第5节 COMPILE | Forbidden 列表新增一条澄清，避免与"不得复制 Runtime 通用条款"混淆 | 2 |
+| `docs/知乎OS Compiler V1.md` 第5节 COMPILE | Forbidden 列表新增约束（Proposal B 新增禁止性约束，非对原条款的重新解释） | 2 |
 | `docs/知乎OS Compiler V1.md` 第11节 SSP 表 | 新增两行，明确 CV Identity 与 CV Run Instantiation 的唯一权威分别归属 | 1, 3 |
 
 不修改文件：`docs/知乎OS Compiler V1.md` 第9节 RELEASE 及以下节点、`templates/GPT审核清单.md`（AUDIT 载体不变，AUDIT 仍按 Execution IR.AcceptanceCriteria 核对，本裁决不改变 AUDIT 的核对方式，只改变 AC 的生成来源之一）、`runtime/ACTIVE_MANIFEST.md`（本裁决不涉及 Runtime 发布本身，是否需要重新发布由 Governance 另行决定，不在本 Diff 范围）。
