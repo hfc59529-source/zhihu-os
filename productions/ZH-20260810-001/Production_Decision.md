@@ -28,10 +28,6 @@ WRITE 边界确认：本次仅执行具体措辞、段落衔接、节奏、开�
 
 Next: AUDIT（GPT / 人工按 `templates/GPT审核清单.md` 执行，Expected Source 只能是 Execution IR.AcceptanceCriteria 或已发布 AuditRule）。
 
-## Observation for AUDIT（不预判，仅标注待核对点，不构成 AuditResult）
-
-Draft-v1 中"这件事从一开始就没打算被监督、被纠正"一句，用词从"监督/纠错机制是否存在"滑向了对决策者主观意图（"没打算"）的推断。Execution IR Reasoning Path 的 Mechanism 步骤冻结的是机制是否存在，未授权对决策者主观意图做推断；这是否构成 Material Boundary 或 Reasoning Path 层面的偏移，由 AUDIT 依据合法 Expected Source 判定 PASS/FAIL 与 Violation Source，本记录不代为裁决，不作为 WRITE 阶段的预先修改依据。
-
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
 `runtime/ACTIVE_MANIFEST.md` 当前 `Based On Commit: 66b3ca5...`，早于本次生产实际发生的 feature-branch HEAD；即本次 COMPILE 引用的 Runtime 快照（结构库/ACTIVE规律/参数库）绑定的是旧 commit 快照，不是当前分支最新状态。本 Run 未发现两者内容有实质冲突，但这属于 Manifest 发布流程本身的滞后，应在 Governance Plane 处理，不由单次生产代为修复。
