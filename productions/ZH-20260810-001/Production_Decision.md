@@ -4,7 +4,7 @@ Production ID: ZH-20260810-001
 
 ## Status
 
-DRAFT_READY
+READY_FOR_AUDIT
 
 ## Topic Binding
 
@@ -26,7 +26,11 @@ WRITE 边界确认：本次仅执行具体措辞、段落衔接、节奏、开�
 
 本次由用户人工查看 Draft-v1，属于 WRITE 完成后的非正式过目，不构成状态机定义的 REVIEW 节点；正式 REVIEW 只能发生在 AUDIT PASS 之后，见 `docs/生产状态机与交接规范.md`。
 
-Next: READY_FOR_AUDIT（GPT / 人工按 `templates/GPT审核清单.md` 执行 AUDIT）。
+Next: AUDIT（GPT / 人工按 `templates/GPT审核清单.md` 执行，Expected Source 只能是 Execution IR.AcceptanceCriteria 或已发布 AuditRule）。
+
+## Observation for AUDIT（不预判，仅标注待核对点，不构成 AuditResult）
+
+Draft-v1 中"这件事从一开始就没打算被监督、被纠正"一句，用词从"监督/纠错机制是否存在"滑向了对决策者主观意图（"没打算"）的推断。Execution IR Reasoning Path 的 Mechanism 步骤冻结的是机制是否存在，未授权对决策者主观意图做推断；这是否构成 Material Boundary 或 Reasoning Path 层面的偏移，由 AUDIT 依据合法 Expected Source 判定 PASS/FAIL 与 Violation Source，本记录不代为裁决，不作为 WRITE 阶段的预先修改依据。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
