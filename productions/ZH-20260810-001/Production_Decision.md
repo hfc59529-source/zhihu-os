@@ -4,7 +4,7 @@ Production ID: ZH-20260810-001
 
 ## Status
 
-DECISION_FROZEN
+DRAFT_READY
 
 ## Topic Binding
 
@@ -20,9 +20,13 @@ All downstream Semantic Freeze, Parameter Call, Reasoning Path, Draft, QA, Relea
 
 ## Current Gate
 
-Topic Package 完成，Semantic Freeze Gate 完成（见 `Semantic_Freeze-v1.md`），Execution IR 完成（见 `Execution_IR-v1.md`，六类内容：Reasoning Path / Structure / Material Boundary / Expression Constraints / Acceptance Criteria / Triggered Rule IDs）。
+Topic Package 完成，Semantic Freeze Gate 完成（见 `Semantic_Freeze-v1.md`），Execution IR 完成（见 `Execution_IR-v1.md`），Draft-v1 完成（见 `Draft-v1.md`）。
 
-Next: WRITE（Claude 写作角色按 Execution IR 生成 Draft-v1，不得重新推导 Reasoning Path/Decision，不得引入 Material Boundary 之外的案例）。
+WRITE 边界确认：本次仅执行具体措辞、段落衔接、节奏、开头收尾；未重新推导 Reality/Main Gap/Transformation/Core Judgment 或 Reasoning Path；未引入 Execution IR Material Boundary 之外的案例、数据、人物、公司（场景为自造复合场景，非真实企业）。
+
+本次由用户人工查看 Draft-v1，属于 WRITE 完成后的非正式过目，不构成状态机定义的 REVIEW 节点；正式 REVIEW 只能发生在 AUDIT PASS 之后，见 `docs/生产状态机与交接规范.md`。
+
+Next: READY_FOR_AUDIT（GPT / 人工按 `templates/GPT审核清单.md` 执行 AUDIT）。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
