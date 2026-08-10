@@ -134,7 +134,11 @@ B. CV Activation Schema 未定义区：CV 变量激活后该进 `triggered_rule_
 
 治理处理顺序（本次用户判定，仅适用于本轮 A/B 两项 Proposal 的处理次序，不构成系统级永久规则）：B 先于 A。理由：A 处理"Global Rule 如何进入 Audit"，B 处理更前置的"什么东西算 Global Rule"（CV001–CV004 是否属于 Global Rule 本身未定义）；若先设计 A 的完整 AuditRule 映射，B 一旦确定 CV 类型模型后容易返工。本轮顺序：修正 B → Governance Review B（确定 Parameter Activation 类型模型）→ Governance Review A（定义 Global Rule 的 Audit Binding）。
 
-Next: 暂停，等待 Governance Plane 按上述顺序审阅 B、A 后再决定是否恢复 `AUDIT 重新确认`（Draft-v4 / Execution_IR-v2 均已就绪，未丢失，恢复时可直接从当前状态继续）。
+## Proposal B 更新（用户核查历史 Parameter_Call 后）
+
+用户直接核对 `productions/ZH-20260808-002/Parameter_Call-v1.md`、`ZH-20260808-003/Parameter_Call-v1.md`，发现历史 CV 记录天然包含"CV ID（Variable Identity）+ 触发依据 + 调用方式（Run Instantiation）"三层，其中 002 的"调用方式"字段完整，003 未单列。Proposal B 已据此更新：新增 §2a 历史证据，Contract Gap 核心问题改写为"Compiler V1 合并 Parameter_Call 时是否丢失了 CV Identity → Run-specific Instantiation 这层语义"，待决策问题新增第0/4/5项，候选方案新增方案四（恢复双层记录）。历史行为明确标注"只作为设计证据，不自动升级为新 Contract"。第三项证据（历史是否存在 CV Realization 审核）未找到，标注为未知，不假设成立或不成立。
+
+Next: 暂停，等待 Governance Plane 按 B→A 顺序审阅（B 已更新为含历史证据的版本）后再决定是否恢复 `AUDIT 重新确认`（Draft-v4 / Execution_IR-v2 均已就绪，未丢失，恢复时可直接从当前状态继续）。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
