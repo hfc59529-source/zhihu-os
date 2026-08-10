@@ -138,7 +138,9 @@ B. CV Activation Schema 未定义区：CV 变量激活后该进 `triggered_rule_
 
 用户直接核对 `productions/ZH-20260808-002/Parameter_Call-v1.md`、`ZH-20260808-003/Parameter_Call-v1.md`，发现历史 CV 记录天然包含"CV ID（Variable Identity）+ 触发依据 + 调用方式（Run Instantiation）"三层，其中 002 的"调用方式"字段完整，003 未单列。Proposal B 已据此更新：新增 §2a 历史证据，Contract Gap 核心问题改写为"Compiler V1 合并 Parameter_Call 时是否丢失了 CV Identity → Run-specific Instantiation 这层语义"，待决策问题新增第0/4/5项，候选方案新增方案四（恢复双层记录）。历史行为明确标注"只作为设计证据，不自动升级为新 Contract"。第三项证据（历史是否存在 CV Realization 审核）未找到，标注为未知，不假设成立或不成立。
 
-Next: 暂停，等待 Governance Plane 按 B→A 顺序审阅（B 已更新为含历史证据的版本）后再决定是否恢复 `AUDIT 重新确认`（Draft-v4 / Execution_IR-v2 均已就绪，未丢失，恢复时可直接从当前状态继续）。
+Proposal B 二次修正：§2a"更接近根因"改为"待验证的迁移假设"（Evidence→Hypothesis，不是 Evidence→Root Cause）；§3"两个字段互斥"改为"用途不同，是否允许分别落入两字段待 Governance 判断"，不预设互斥。修正后 B 已具备足够证据进入正式 Governance Review（0–4 项待决策问题），历史 CV Realization 审核证据缺失不作为 B 的决策前置条件，留给 Proposal A / 后续 Auditability 设计参考。
+
+Next: 暂停，等待 Governance Plane 对 Proposal B 做正式逐条 Review 并给出 Governance Decision，再处理 Proposal A（Draft-v4 / Execution_IR-v2 均已就绪，未丢失，恢复时可直接从当前状态继续）。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
