@@ -4,7 +4,7 @@ Production ID: ZH-20260810-001
 
 ## Status
 
-DRAFT_READY（v3）
+READY_FOR_AUDIT（v3）
 
 ## Topic Binding
 
@@ -96,7 +96,7 @@ Draft-v3 已完成（见 `Draft-v3.md`）。WRITE 边界自查：未重新推导
 
 本次由用户人工查看 Draft-v3，属于 WRITE 完成后的非正式过目，不构成状态机定义的 REVIEW 节点；正式 REVIEW 只能发生在 AUDIT PASS 之后。
 
-Next: READY_FOR_AUDIT（GPT / 人工按 `templates/GPT审核清单.md`，对照 `Execution_IR-v2.md` 的 Acceptance Criteria 1–6 执行独立 AUDIT）。
+Next: AUDIT（GPT / 人工按 `templates/GPT审核清单.md`，对照 `Execution_IR-v2.md` 的 Acceptance Criteria 1–6 独立执行，不使用 WRITE/用户前序讨论作为审核依据）。
 
 ## Known Risk（如实记录，不阻塞本次 COMPILE）
 
