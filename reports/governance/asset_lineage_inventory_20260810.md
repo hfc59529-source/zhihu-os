@@ -48,7 +48,9 @@ Runtime validity = PASS
 | CV005｜身份代入 | 账号样本数 16、命中数 14、阅读差异 +40pp | 证据引用待补录；平台样本字段 UNKNOWN；成功数/成功率 UNKNOWN |
 | CV006｜结尾动作 | 账号样本数 16、命中数 13 | 证据引用待补录；平台样本字段 UNKNOWN；成功数/成功率 UNKNOWN |
 
-这说明旧 L2 不是完全丢失；但它只被摘要式搬运，没有通过 Observation → Parameter 的治理接口建立完整证据血缘。更准确地说，这批证据能证明账号历史样本中的变量观察和初步相关性，不能单独证明当前 Parameter Lifecycle 意义上的 Effect Validity。
+这说明旧 L2 不是完全丢失；但它只被摘要式搬运，尚未迁移成当前 Compiler V1 / Parameter Registry Schema 能完整解释的 provenance。更准确地说，这批证据能证明账号历史样本中的变量观察和初步相关性，但尚未回答 legacy ACTIVE Parameter 在当前 Runtime 下如何继承、复核或降级。
+
+注意：当前 Observation → Parameter 规则是现行治理接口，不能直接倒推为历史 L2 当时必须遵守的流程，也不能据此证明 CV001-CV006 当初 ACTIVE 非法。当前问题是迁移语义未对齐，不是已证明的历史违规。
 
 ## Broken Links
 
@@ -72,21 +74,21 @@ Runtime validity = PASS
 证据引用：待补录
 ```
 
-断链性质：证据存在，但没有先进入正式 Observation，再由 Parameter 记录引用 Observation ID。`production_variable_library.md` 当前要求 Parameter 的证据引用连接 Observation，而不是直接引用零散文件路径。
+断链性质：证据存在，但按当前 Schema 还没有被表达成可解释的 Parameter provenance。`production_variable_library.md` 当前要求 Parameter 的证据引用具备治理接口；但该要求不能溯及证明历史 L2 形成时漏做了 Observation。
 
-Runtime 影响：COMPILE 能看到 CV 当前状态和触发资格，但看不到每个状态来自哪些样本、哪些反例、哪些统计，也看不到这些证据的结论等级仅为 observational association（观察性关联），不是 controlled validation（受控验证）。
+Runtime 影响：COMPILE 能看到 CV 当前状态和触发资格，但看不到每个状态在当前 Schema 下如何解释：哪些来自历史账号样本观察，哪些来自受控实验，哪些属于 grandfathered / legacy ACTIVE 继承。
 
 ### 2. Observation → Parameter Registry
 
-`data/Milestone_Observations.md` 已定义 Observation 与 Parameter 的隔离关系，并要求：
+`data/Milestone_Observations.md` 已定义当前 Observation 与 Parameter 的隔离关系，并要求：
 
 ```text
 每次参数修改必须在 Parameter 记录的"证据引用"字段关联 Observation ID
 ```
 
-但当前 CV001-CV010 的 `证据引用` 多为“待补录”。
+但同一文件也说明历史记录存在旧状态口径，后来才采用正式生命周期，历史记录不倒填新状态。因此当前 CV001-CV010 的 `证据引用` 多为“待补录”，只能证明当前 Schema 下 provenance 表达不足，不能证明历史形成过程违规。
 
-断链性质：治理层已经定义血缘规则，但历史迁移没有执行完。
+断链性质：治理层已经定义新的血缘表达规则，但 legacy Parameter 如何接入该规则尚未被单独裁决。
 
 Runtime 影响：后续无法判断某个参数状态来自 L2 统计、Observation 支撑、人工审核，还是旧系统遗留。
 
@@ -136,9 +138,9 @@ Runtime 影响：Registry 中 `账号成功数 / 成功率` 不能从这些样�
 |---|---|---|---|
 | 原始数据 | `data/l0_content_assets.csv`、`data/review_data_snapshots.csv` | Evidence Asset | 保留；只做来源，不直接进 Runtime |
 | 分层样本 | `data/l1_sample_list.csv`、`reports/l1_sample_report.md` | Evidence Asset | 保留；为 L2/复盘提供样本入口 |
-| 变量标注 | `l2_variable_records.md` | Evidence Asset | 应先建立 Observation，再由 Registry 引用 Observation ID |
-| 变量验证 | `l2_variable_validation.md` | Evidence Asset | 应先建立 Observation，记录统计边界和非因果限制 |
-| 治理观察 | `data/Milestone_Observations.md` | Governance Asset | 是 L1/L2 历史证据进入 Parameter Registry 的治理接口 |
+| 变量标注 | `l2_variable_records.md` | Evidence Asset | 作为 legacy provenance 材料保留，等待迁移规则裁决 |
+| 变量验证 | `l2_variable_validation.md` | Evidence Asset | 作为 observational association 证据保留，不能直接证明 Effect Validity |
+| 治理观察 | `data/Milestone_Observations.md` | Governance Asset | 是当前治理接口，但是否用于承接 legacy ACTIVE 需另立迁移规则 |
 | 旧 Card 匹配 | `reports/VT-001_parameter_trigger_evidence_report_20260802.md` | Research / Legacy Evidence | 保留研究价值；不能直接证明 Compiler V1 参数有效 |
 | Evidence Gate | `reports/evidence_gate_review_20260808.md` | Gate Asset | 保留；用于阻止错误回写 |
 | Runtime Snapshot | `runtime/production_variable_snapshot.md` | Runtime Asset, stale for current Run | 每次生产前刷新，不复用旧题测试快照 |
@@ -153,26 +155,19 @@ Runtime 影响：Registry 中 `账号成功数 / 成功率` 不能从这些样�
 ```text
 COMPILE 可以使用 production_variable_library.md 中已具备 ACTIVE + Trigger Eligibility 的 CV。
 COMPILE 不得把 L1/L2 历史资产直接当作 Runtime 输入。
-L1/L2 只能通过治理迁移进入 Parameter Registry 或 refreshed Runtime Snapshot 后，才影响生产。
+L1/L2 只能在治理规则明确后，通过合法迁移进入 Parameter Registry 或 refreshed Runtime Snapshot 后，才改变生产权重、状态或触发资格。
 ```
 
 ## Recommended Next Action
 
-不要重采全部历史数据。先做一次最小接线试点：
+不要重采全部历史数据。也不要立刻补 Observation 或改 CV001-CV006。先补一条迁移规则：
 
-1. 不重采数据。
-2. 不改 CV001-CV006 状态、权重或触发资格。
-3. 为历史 L1/L2 证据建立正式 Observation，记录：
-   - 样本来源：`data/l0_content_assets.csv` → `data/l1_sample_list.csv`
-   - 16 篇变量标注：`l2_variable_records.md`
-   - 高低组差异：`l2_variable_validation.md`
-   - L1 抽样口径：`reports/l1_sample_report.md`
-   - 统计边界：只做差异统计，不解释因果；本轮不进入 L3
-4. CV001-CV006 的 `Evidence References` 只引用该 Observation ID，不直接引用文件路径。
-5. 保持平台字段为 UNKNOWN，除非存在可归属平台样本统计。
-6. 保持账号成功数 / 成功率为 UNKNOWN，除非 Evidence Gate 放行对应 Production 结果。
-7. 是否支持 CV001-CV006 当前 ACTIVE 合法性，另做 Governance Review；不得由本次接线自动确认。
-8. 接线完成后重新 release TRIAL Runtime。
+1. 定义 grandfathered / legacy ACTIVE Parameter 在 Compiler V1 下的继承资格。
+2. 明确哪些 legacy ACTIVE 可以临时保留触发资格，哪些需要 REVIEW / CANDIDATE / DEPRECATED。
+3. 明确历史 L1/L2 observational association 是否可以作为 provenance material，而不是 Effect Validity 证明。
+4. 明确是否允许新建“migration observation / migration record”来描述旧证据；若允许，必须标注为 2026-08-10 迁移记录，不得伪装成历史当时的 Observation。
+5. 在迁移规则批准前，不补 CV001-CV006 的 Evidence References，不改状态、权重或触发资格。
+6. 迁移规则批准并执行后，重新 release TRIAL Runtime。
 
 ## Corrected Evidence Level
 
@@ -189,7 +184,7 @@ L1/L2 只能通过治理迁移进入 Parameter Registry 或 refreshed Runtime Sn
 - 可以证明哪些变量与高/低阅读组存在初步差异提示。
 - 可以证明哪些变量暂未显示区分度。
 - 不能单独证明某变量造成高阅读、高收益或收藏。
-- 不能单独满足 Parameter Lifecycle 中“指定单变量实验 → 连续3篇同向验证 → 累计10篇同向验证”的 Effect Validity 要求。
+- 不能单独满足当前 Parameter Lifecycle 中“指定单变量实验 → 连续3篇同向验证 → 累计10篇同向验证”的 Effect Validity 要求；但该当前要求不能自动溯及判定历史 ACTIVE 非法。
 
 当前真正断点：
 
@@ -200,12 +195,18 @@ L2 observational association
 ↓
 摘要进入 Parameter Registry
 ↓
-缺少 Observation ID / experiment lineage / success definition / controlled validation
+当前 Schema 下缺少清晰的 provenance / experiment lineage / success definition / controlled validation 说明
 ↓
-却已经被标为 ACTIVE
+legacy ACTIVE 在新 Runtime 下的继承资格尚未单独裁决
 ```
 
-这不是样本来源错误，而是证据等级和参数状态之间的治理接口缺失。
+这不是样本来源错误，也不是已经证明历史 ACTIVE 非法，而是 Legacy → Current Governance Schema migration gap。
+
+禁止事项：
+
+- 禁止用当前 Observation 规则追溯判定历史 L2 当时违规。
+- 禁止用 2026-08-10 新建 Observation 伪装成早期 ACTIVE 的原始血缘。
+- 禁止在没有 legacy ACTIVE 迁移规则前，直接补 Evidence References 来制造闭环。
 
 ## Stop Condition
 
