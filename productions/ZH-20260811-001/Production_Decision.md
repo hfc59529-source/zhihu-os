@@ -71,24 +71,21 @@ Migration Fix 适用范围核查（追溯效力边界）
               对 legacy ACTIVE 参数在新 Observation 规则出台后的处理，明确写了"该当前要求不能自动溯及
               判定历史 ACTIVE 非法""继承资格尚未单独裁决"——历史合法性与当前继续生产资格是两个独立问题，
               不能用后者的裁决结论覆盖前者。因此修正：`Semantic_Freeze-v1.md` 在其生成时依据的 Contract
-              下历史合法性保留，不判 FAIL；但其能否继续作为当前 Runtime 下游输入，取决于系统里是否存在
-              "既有冻结对象在 Runtime Contract 升级后如何验证继承资格"的规则——核查结果：不存在。这是
-              第三个 Contract 缺口（继承资格裁决规则缺失），与前两个缺口（Triggered Rule IDs / QT-QI
-              capability loss）性质不同，尚待裁决具体处理方式，本文件不擅自代为裁决。
-              `Execution_IR-v3.md`/`Draft-v3.md`/`AUDIT-v3.md` 的状态相应从"因上游 FAIL 而 SUPERSEDED"
-              改记为"因上游继承资格未裁决而暂缓使用"，二者处置结果相同（当前不作为下游输入），但定性
-              不同，不应混淆。
+              下历史合法性保留，不判 FAIL；但其能否继续作为当前 Runtime 下游输入，属于"既有冻结对象在
+              Runtime Contract 升级后的继承资格"问题，当前系统尚未裁决。本文件不把"继承资格未裁决"
+              升级为新的全局 Contract 缺口，也不在本篇内研究继承规则。恢复生产的最短路径是直接采用
+              已按现行 QT-QI Contract 完整生成的 `Semantic_Freeze-v2.md` 作为当前 Decision 候选，进入
+              后续 COMPILE；这不否定 v1 的历史合法性，也不需要先裁决 v1 的继承资格。
 ↓
-DECISION v2   PASS（`Semantic_Freeze-v2.md`：在继承资格裁决结果出炉前，作为并行方案从 Input Package
+DECISION v2   PASS（`Semantic_Freeze-v2.md`：作为满足现行 QT-QI Contract 的独立 Decision，从 Input Package
               重新执行 QT-00 + QI-01～QI-06 → Reality → Main Gap → Transformation → Core Judgment 产出。
               QT-QI 识别记录 QI-02 = 求解释；Main Gap 在 QI-04 认知缺口类目内部下钻，找到 Top1/Top2/Top3
               均未覆盖的子问题——三条高赞解释的是"形式动作为什么会出现"（起源），题目原句"越来越严重"
               问的是"为什么难以撤销、只增不减"（维持/累积机制），二者是不同因果对象，不构成同类竞争；
               Transformation 沿用 v1 已核实有效的收窄结论（材料的真实接收方/被打开时机），但改为解释
               "撤销与新增在责任归属上的成本收益不对称"这一棘轮机制，未把 QI-02 的问题类型从"求解释"
-              替换为"求判断"，不触发新 Forbidden 条款。v2 的有效性不依赖 v1 是否被判 FAIL——即便 v1
-              继承资格裁决结果是"仍可使用"，v2 作为独立、更贴合当前 Contract 的版本依然可用；本文件
-              不因 v1 定性修正而撤回 v2）
+              替换为"求判断"，不触发新 Forbidden 条款。v2 的有效性不依赖 v1 继承资格裁决结果；即便
+              v1 未来被裁决为仍可继续使用，v2 作为独立满足当前 Contract 的版本依然可直接采用）
 ```
 
 ## 违规记录
@@ -146,15 +143,15 @@ DECISION v2   PASS（`Semantic_Freeze-v2.md`：在继承资格裁决结果出炉
 
 因此：`ZH-20260811-001` 是否正式计入 Compiler §14 的 10 篇 Production Validation，本文件不下结论，标记为 **UNRESOLVED**，留待 Governance Plane 或 ZH-MILESTONE-010 复盘时明确该 Schema 缺口。
 
-## Disposition（DECISION v2 重做后，QT-QI Migration Fix 追溯适用）
+## Disposition（DECISION v2 采用后）
 
-- 正式状态（按状态机权威枚举）：`DECISION_FROZEN`（退回重做，v2）。
-- DECISION execution：v1 FAIL（追溯判定，QI-02 问题类型被未经证据替换）；v2 pass（QT-QI 识别完整，QI-02 = 求解释未被替换）。
-- COMPILE execution：v1 blocked（Triggered Rule IDs 缺口）；v2 pass 但 Structure 实例化错误；v3 pass（Structure 问题已修正）——但 v1/v2/v3 三版 Execution IR 均建立在已 FAIL 的 `Semantic_Freeze-v1.md` 之上，全部随之失去有效上游，标记 SUPERSEDED。
-- WRITE：Draft-v1/Draft-v2/Draft-v3 及对应 AUDIT-v1/AUDIT-v3 均建立在已 FAIL 的 DECISION 之上，全部标记 SUPERSEDED，保留为历史产物。当前 WRITE 状态：未开始（需等 COMPILE 基于 `Semantic_Freeze-v2.md` 重新产出 Execution IR）。
+- 正式状态（按状态机权威枚举）：`DECISION_FROZEN`（当前采用 v2）。
+- DECISION execution：v1 历史合法性保留；v1 当前继承资格未裁决；v2 pass（QT-QI 识别完整，QI-02 = 求解释未被替换），作为当前有效 Decision 进入后续生产。
+- COMPILE execution：v1 blocked（Triggered Rule IDs 缺口）；v2 pass 但 Structure 实例化错误；v3 pass（Structure 问题已修正）——三版 Execution IR 均建立在 `Semantic_Freeze-v1.md` 之上。由于当前采用 `Semantic_Freeze-v2.md`，旧 IR 不作为本轮后续输入，保留为历史产物；不再用"上游 FAIL"解释其失效。
+- WRITE：Draft-v1/Draft-v2/Draft-v3 及对应 AUDIT-v1/AUDIT-v3 均基于旧 Decision 链路产出。由于当前采用 `Semantic_Freeze-v2.md`，旧 Draft/AUDIT 不作为本轮后续输入，保留为历史产物。当前 WRITE 状态：未开始（需等 COMPILE 基于 `Semantic_Freeze-v2.md` 重新产出 Execution IR）。
 - Milestone-010 eligibility：UNRESOLVED（见上节，不预先认定计入或不计入 10 篇）。
-- Governance disposition：本次 DECISION 重做是 `docs/知乎OS Compiler V1.md` 第4节 2026-08-11 Migration Fix（QT-QI capability 迁移缺口）的追溯适用，与更早的 Triggered Rule IDs contract 修复是两个独立缺口，互不影响彼此有效性。`Proposal-A_Triggered_Rule_Audit_Binding.md` 的完整 Registry 方案仍维持 VALID GAP / DEFERRED IMPLEMENTATION，不受本次影响。
-- `Semantic_Freeze-v1.md`（历史 FAIL 记录）、`Execution_IR-v1/v2/v3.md`、`Draft-v1/v2/v3.md`、`AUDIT-v1/v3.md` 原样保留归档，均标记 SUPERSEDED，不再作为当前生产链输入；当前有效上游是 `Semantic_Freeze-v2.md`。
+- Governance disposition：本次只确认 QT-QI Migration Fix 不能追溯否定 `Semantic_Freeze-v1.md` 的历史合法性；v1 继承资格未裁决，但不阻塞采用 `Semantic_Freeze-v2.md` 继续生产。`Proposal-A_Triggered_Rule_Audit_Binding.md` 的完整 Registry 方案仍维持 VALID GAP / DEFERRED IMPLEMENTATION，不受本次影响。
+- `Semantic_Freeze-v1.md`（历史合法，当前继承资格未裁决）、`Execution_IR-v1/v2/v3.md`、`Draft-v1/v2/v3.md`、`AUDIT-v1/v3.md` 原样保留归档，不作为当前生产链输入；当前有效上游是 `Semantic_Freeze-v2.md`。
 
 ## Next
 
