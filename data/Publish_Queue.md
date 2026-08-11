@@ -26,6 +26,12 @@
 
 **状态取值**：RELEASE_READY（用户已验收，Release-v1 已就绪，未排期）/ QUEUED（已进发布队列）/ DRAFT_BOX（已写入知乎草稿箱，等人工最终检查）/ PUBLISHED（已正式发布）/ LEGACY_RELEASE_READY（历史批次已完成当时版本 Release 文件，但未经过当前 User Review Gate）
 
+## 当前队列（011 起，均经过正式 USER_APPROVED Gate）
+
+| Production ID | USER_APPROVED | Release-v1 | 发布时间 | 状态 |
+|---|---|---|---|---|
+| ZH-20260811-001 | 2026-08-11（对象锁定：Draft-v7 + Semantic_Freeze-v2 + Execution_IR-v4 + AUDIT-v10 PASS） | `productions/ZH-20260811-001/Release-v1.md` | 待定（见当前优先级第3条，等批量排期） | RELEASE_READY |
+
 ## 发布闭环（后续单独验证，当前不执行）
 
 ```
