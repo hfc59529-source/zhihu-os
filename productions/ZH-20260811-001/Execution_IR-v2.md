@@ -1,0 +1,76 @@
+Production ID: ZH-20260811-001
+
+# Execution IR v2
+
+来源 Decision：`Semantic_Freeze-v1.md`（Reality / Main Gap / Transformation / Core Judgment，已冻结，本文件不修改其内容）
+
+Runtime Release 依据：TRIAL Runtime（2026-08-11 临时 COMPILE→WRITE continuity exception；见 `docs/知乎OS Compiler V1.md` 与 `docs/生产状态机与交接规范.md`）
+
+v2 变更范围：仅将 v1 中因 Triggered Rule IDs 候选集合未发布造成的 COMPILE BLOCK，按临时 continuity exception 记录为 `CANDIDATE_SET_UNPUBLISHED` 并放行到 WRITE。Reasoning Path / Structure / Material Boundary / Expression Constraints / Acceptance Criteria 均沿用 v1，不重写语义输入。
+
+## Reasoning Path
+
+- Reader Mental Model：读者默认"这些形式动作（拍照/打卡/留痕/报告/晨会晚会）纯粹无效，唯一疑问是领导为什么还要坚持"。
+- False Inference：把"有没有用"这把尺子直接套在"对完成工作有没有帮助"上，凡是对工作没帮助的动作就判定为纯粹折腾，进而归因为领导瞎搞或公司不干实事。
+- Breaking Point：决定一个形式动作会不会被取消的，不是它对工作有没有帮助，而是这份材料/记录未来会不会被人打开、被谁打开——会被"审查者"或"需要看到你还在管的人"打开的动作，无论多繁琐都不会消失，因为它服务的对象从来不是"把事情做好"，而是"证明它被做过"。
+- Mechanism：读者一直用同一把尺子（对工作有没有用）衡量所有形式动作，所以每次都要重新解释一遍"组织为什么需要控制"；换成"这份材料以后被谁打开、什么时候打开"这一个问题，就能当场把动作分成两类，不需要重新理解组织。
+- Transformation：判断标准从"这个动作对工作有没有帮助"转为"这个动作产生的材料，未来会被谁打开、在什么情况下打开"。
+
+## Structure
+
+调用结构：`ACTIVE-TS01｜老师爆款机制推进结构`（`runtime/知乎结构库快照.md`，STRUCT-V3.0-TEACHER-TS01）
+
+匹配依据：职场组织题/机制判断题；读者已有直觉答案（"这些动作就是没用"）但停留在情绪归因层，题目高赞已把"为什么存在"讲透，需要的是可迁移判断框架而非新一轮机制论证。TS02（解决题场景施工结构）不适用——本题不是"怎么办"的行动步骤题，禁用边界排除。
+
+### required_steps / step_obligations（本 Run 实例化，逐条对应 TS01 固定推进顺序）
+
+1. 开头困惑/反差 —— 从选题包问题描述给出的具体动作起笔（拍照、打卡、留痕、总结、晨会晚会、一个工作八个群），不从"什么是形式主义"定义或组织理论起手。
+2. 原始理解 —— 点出读者默认"没用=纯粹折腾"，把疑问锁定在"领导为什么还要坚持"。
+3. 核心反转 —— 首屏 150 字内指出：决定一个动作会不会被砍掉的，不是它对工作有没有用，而是这份材料以后会不会被打开、被谁打开。
+4. 真正变量 —— 抛出后文要追问的判断轴：这份记录的真实接收方是谁、什么时候会被打开。
+5. 具体场景 —— 用选题包给定的动作类型（打卡拍照、留痕报告、晨会晚会、多个工作群）逐一代入判断轴，不得替换为 Top1 的周雪光理论场景、Top2 的流水席故事场景、Top3 的具体案例原话。
+6. 因果追问链（3-5层）—— 至少包含：为什么打卡拍照还在？因为它是"你确实到场/确实执行"的证据，出事时会被调出来看；为什么写周报总结还在？因为它是给上级看"你还在管、还在推进"的材料，不是给你自己用的；为什么建了八个群还在发消息？因为群消息本身就是留痕，谁在群里说过什么，事后可查；为什么真正没用的动作反而容易被砍？因为它压根不会再被任何人打开。
+7. 机制终点 —— 落到判断轴本身：形式动作是否被取消，取决于它有没有一个会在事后打开它的接收方，不取决于它对工作是否有帮助。
+8. 核心判断 —— 压成一句话：能不能被砍掉，不看这个动作对工作有没有用，看它产生的材料以后会不会被人打开、被谁打开；会被打开的，服务的对象是"证明它被做过"，不是"把事情做好"。
+9. 迁移边界 —— 说明判断成立的场景（存在明确的上级检查、追责或考核链条的组织环境）与不适用的场景（团队极小、没有层级检查、动作本身就是执行者自己需要的工作记录）。
+10. 结尾回收 —— 回到开头列举的具体动作，给出可复用的一句自问："这份东西以后会被谁打开、什么时候打开"，对应下方 Acceptance Criteria 中 CV006 的判断标准。
+
+## Material Boundary
+
+允许使用：
+
+- 选题包问题描述中已核验的具体动作（拍照、打卡、留痕、总结、晨会晚会、一个工作八个群）。
+- 高赞回答已提炼出的机制类别（留痕作为责任证据、动作作为存在证明）可作背景参照，不得复用其具体理论框架、类比故事或案例原文。
+
+禁止使用：
+
+- Top1 的周雪光《国家治理的制度逻辑》理论框架及其表述方式。
+- Top2 的农村流水席/筹备委员会类比故事。
+- Top3 的具体案例细节及"焦虑的排泄物"等原创表述。
+- 任何未经核验的具体企业名称、真实人物案例或政策表态。
+
+## Expression Constraints
+
+- 不得把本题写成"形式主义为什么存在"的第四个机制论证，正文重心须落在"怎么当场判断"，不是"为什么会有"。
+- 不得把判断标准写成道德化批判（骂领导、骂公司），须回到"接收方是谁"这一可操作的判断轴。
+- 不得使用 Possible_Current_Gap 原提出但已被 DECISION 否决的"责任转移/证据制造/争夺控制权/遮蔽真实结果"四分类作为正文分类框架，避免把未经证据支撑的"控制权争夺"写成既定结论。
+- 不得写成参数讲义或管理学教材语气，须保持具体场景代入。
+
+## Acceptance Criteria（由 CV Instantiation 编译，仅本 Run Realization Requirement，不复制 CV 在 Registry 中的通用定义/触发条件/触发权重）
+
+1. 【CV001 Realization】正文须在首屏内明确纠正"动作没用=纯粹折腾"的默认理解，指出决定动作存废的是材料的真实接收方，不是动作对工作是否有帮助。
+2. 【CV003 Realization】正文须把"形式动作会不会被取消"放回组织中的检查/追责关系里解释，不得归因为领导个人性格或喜好。
+3. 【CV004 Realization】正文须说明形式动作产生的材料如何在责任链条中被用作证据或存在证明，说清谁会在什么情况下调用它。
+4. 【CV006 Realization】结尾须给出一句可复用判断标准：读者今后遇到新的形式动作要求时，可用"这份东西以后会被谁打开、什么时候打开"来判断这个动作会不会被取消。
+
+## Triggered Rule IDs
+
+`CANDIDATE_SET_UNPUBLISHED`
+
+核验来源：当前 Runtime Release 尚未发布任何 ID 化的 Runtime.Audit Rules 固定候选集合；`templates/GPT审核清单.md` B 组 Operational Quality Checks 仅为未 ID 化定性检查，不能生成 AuditRule.<ID> 引用。
+
+适用依据：2026-08-11 临时 COMPILE→WRITE continuity exception。该记录视为 Triggered Rule IDs 字段已如实完成，不阻断 `EXECUTION_IR_READY`；它只表示 AUDIT.B 无法通过本字段加载条件触发的 AuditRule.<ID>，不复制规则正文、不自造 Rule ID、不影响 Execution Compliance / Acceptance Criteria / REVIEW / RELEASE。
+
+## Gate Result
+
+PASS。COMPILE 六个 Output 字段均已完成；其中 Triggered Rule IDs 按临时 continuity exception 记录为 `CANDIDATE_SET_UNPUBLISHED`。本 Execution IR 可进入 WRITE，状态可流转为 `EXECUTION_IR_READY`。
