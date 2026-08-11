@@ -388,4 +388,4 @@ GPT / 人工审核固定使用 [GPT审核清单.md](/Users/huangsheng/Documents/
 - PASS。
 - Issues[]：每条包含 Expected Source、Expected、Actual、Violation Source、Return Stage。
 
-Return Stage 由 Violation Source 查 Architecture Routing Table 机械得出（见 [`docs/知乎OS Compiler V1.md`](docs/知乎OS%20Compiler%20V1.md) 第7节），不再是"正文问题→Claude / 系统问题→Codex"的二分：Expression/Acceptance 未兑现退回 WRITE，Structure/Material 对不上退回 COMPILE，Reality/Main Gap/Transformation 站不住退回 DECISION，支撑事实本身错误退回 INPUT。单次问题按 Return Stage 退回对应节点；同一失败模式累计 3 次且归属节点明确，才进入 Governance Plane 变更评审。
+Return Stage 由 Violation Source 查 Architecture Routing Table 机械得出（见 [`docs/知乎OS Compiler V1.md`](docs/知乎OS%20Compiler%20V1.md) 第7节），不再是"正文问题→Claude / 系统问题→Codex"的二分：Expression/Acceptance 未兑现退回 WRITE，Structure/Material 对不上退回 COMPILE，Reality/Main Gap/Transformation 站不住退回 DECISION，支撑事实本身错误退回 INPUT。单次问题按 Return Stage 退回对应节点；同一失败模式累计 3 次且归属节点明确，才进入 Governance Plane 变更评审。一次静态审计即可证明的 deterministic defect（Schema 不闭合、接口对象不存在、Runtime 无法执行、必需依赖缺失、状态机无合法流转路径）不适用 3 次门槛，可记录证据后做最小 contract 修复。

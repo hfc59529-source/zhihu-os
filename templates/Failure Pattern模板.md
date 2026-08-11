@@ -32,5 +32,6 @@ REVIEW / AUDIT / RELEASE 本身不是 Failure Pattern 的归属层：AUDIT 只�
 - 单次问题只记录，不升级。
 - 同一失败模式累计 3 次，且归属节点明确（由 AUDIT 的 Return Stage 或人工审核确定），才允许进入 Governance Plane 变更评审。
 - 未满 3 次不得修改 Runtime Rules（Input/Decision/Compile/Writer/Audit/Release Rules）。
+- 例外：若失败模式是一次静态审计即可证明的 deterministic defect（Schema 不闭合、接口对象不存在、Runtime 无法执行、必需依赖缺失、状态机无合法流转路径），不适用 3 次门槛；可在记录证据后直接执行最小 contract 修复，使生产链恢复可执行。该例外不得用于经验性内容质量优化或因果尚未确定的问题。
 - 失败模式必须归属到唯一节点。
 - 如果无法归属，先记录为 `violation_source=Unknown`，不得升级。

@@ -28,13 +28,13 @@ COMPILE v1    BLOCK（Execution_IR-v1.md 前五字段 Reasoning Path/Structure/M
               当前 TRIAL Runtime（Based On Commit 5ebf151）B 组 Operational Quality Checks 仅六项定性检查，均未 ID 化，不存在合法候选集合。
               判定为 Runtime Contract 缺口，非本篇生产可自行解释或补全，COMPILE BLOCK，不进入 WRITE）
 ↓
-TEMP OVERRIDE  PASS（用户于 2026-08-11 临时裁决：只恢复 COMPILE→WRITE continuity。已在 docs/知乎OS Compiler V1.md 与
-              docs/生产状态机与交接规范.md 增加窄例外：当 Runtime.Audit Rules ID 化候选集合未发布时，
-              Triggered Rule IDs 可记录 CANDIDATE_SET_UNPUBLISHED 并视为字段如实完成；该例外不扩展到 AUDIT/REVIEW/RELEASE，
-              不创建 Human Override / Waiver 通用机制，不决定 Compiler §14 计数资格）
+CONTRACT FIX   PASS（用户于 2026-08-11 裁决：只恢复 COMPILE→WRITE continuity。已在 docs/知乎OS Compiler V1.md 与
+              docs/生产状态机与交接规范.md 增加兼容规则：当 Runtime 尚未发布 ID-bearing conditional Audit Rules 候选集合时，
+              Triggered Rule IDs 可记录 [] 并视为字段如实完成；Global Operational Checks 继续由 Runtime 的 AUDIT 执行载体直接加载，
+              不依赖 Triggered Rule IDs；该修复不扩展到 AUDIT/REVIEW/RELEASE，不创建 Human Override / Waiver 通用机制，不决定 Compiler §14 计数资格）
 ↓
 COMPILE v2    PASS（Execution_IR-v2.md 沿用 v1 已完成的 Reasoning Path/Structure/Material Boundary/Expression Constraints/Acceptance Criteria，
-              Triggered Rule IDs 按临时 continuity exception 记录为 CANDIDATE_SET_UNPUBLISHED；Execution IR 六字段完整，可进入 WRITE）
+              Triggered Rule IDs 按 compatibility rule 记录为 []；Execution IR 六字段完整，可进入 WRITE）
 ```
 
 ## 违规记录
@@ -47,7 +47,7 @@ COMPILE v2    PASS（Execution_IR-v2.md 沿用 v1 已完成的 Reasoning Path/St
 ## COMPILE 摘要
 
 - Execution IR v1：`Execution_IR-v1.md`（历史结果：六字段中五字段完成，第六字段 Triggered Rule IDs 无法合法填写；COMPILE execution：blocked）。
-- Execution IR v2：`Execution_IR-v2.md`（当前有效结果：Triggered Rule IDs 按 2026-08-11 临时 COMPILE→WRITE continuity exception 记录为 `CANDIDATE_SET_UNPUBLISHED`；COMPILE execution：pass）。
+- Execution IR v2：`Execution_IR-v2.md`（当前有效结果：Triggered Rule IDs 按 2026-08-11 Triggered Rule IDs compatibility rule 记录为 `[]`；COMPILE execution：pass）。
 - Structure：ACTIVE-TS01（老师爆款机制推进结构），TS02 因非"怎么办"行动题被排除。
 - Reasoning Path 独立重新推导：Breaking Point（材料的真实接收方决定动作存废，而非动作对工作是否有用）由 Main Gap 中已保留的 Gap 核对论证重新推出，未从被删除的 Reversal Point 原文搬运；Structure 的 step3 核心反转措辞与 DECISION v1 被删除的 Reversal Point 表述不同，是 COMPILE 独立编译结果。
 - Acceptance Criteria 编译自 CV001（认知校正）、CV003（组织视角）、CV004（风险传导）、CV006（结尾动作），对应 production_variable_library.md 登记定义。
@@ -84,7 +84,7 @@ COMPILE v2    PASS（Execution_IR-v2.md 沿用 v1 已完成的 Reasoning Path/St
 
 历史 v1 阶段，本篇在正式状态机中的合法状态是 `DECISION_FROZEN`（因为 `Execution_IR-v1.md` 六字段中 Triggered Rule IDs 未完成，必要输出未全部存在，不满足向 `EXECUTION_IR_READY` 流转的条件），附加说明"COMPILE 执行受阻（Triggered Rule IDs Runtime Contract 缺口）"。上文各处出现的"COMPILE BLOCK"均应理解为这一事实的描述性用语，不是新状态。
 
-2026-08-11 用户临时裁决后，`docs/知乎OS Compiler V1.md` 与 `docs/生产状态机与交接规范.md` 已增加窄例外：Runtime.Audit Rules ID 化候选集合未发布时，Triggered Rule IDs 可记录 `CANDIDATE_SET_UNPUBLISHED`，并视为字段如实完成。`Execution_IR-v2.md` 已按该例外完成六字段，因此本篇当前正式状态流转为 **`EXECUTION_IR_READY`**。
+2026-08-11 用户裁决后，`docs/知乎OS Compiler V1.md` 与 `docs/生产状态机与交接规范.md` 已增加兼容规则：Runtime 未发布 ID-bearing conditional Audit Rules 候选集合时，Triggered Rule IDs 可记录 `[]`，并视为字段如实完成；Global Operational Checks 继续由 Runtime 的 AUDIT 执行载体直接加载，不依赖 Triggered Rule IDs。`Execution_IR-v2.md` 已按该规则完成六字段，因此本篇当前正式状态流转为 **`EXECUTION_IR_READY`**。
 
 ## Milestone-010 计数资格：UNRESOLVED
 
@@ -92,13 +92,13 @@ COMPILE v2    PASS（Execution_IR-v2.md 沿用 v1 已完成的 Reasoning Path/St
 
 因此：`ZH-20260811-001` 是否正式计入 Compiler §14 的 10 篇 Production Validation，本文件不下结论，标记为 **UNRESOLVED**，留待 Governance Plane 或 ZH-MILESTONE-010 复盘时明确该 Schema 缺口。
 
-## Disposition（临时 continuity 裁决后）
+## Disposition（Triggered Rule IDs contract 修复后）
 
 - 正式状态（按状态机权威枚举）：`EXECUTION_IR_READY`。
-- COMPILE execution：v1 blocked；v2 pass（Triggered Rule IDs = `CANDIDATE_SET_UNPUBLISHED`）。
+- COMPILE execution：v1 blocked；v2 pass（Triggered Rule IDs = `[]`）。
 - WRITE：not started。
 - Milestone-010 eligibility：UNRESOLVED（见上节，不预先认定计入或不计入 10 篇）。
-- Governance disposition：本 Run 的 COMPILE→WRITE continuity 已由用户临时裁决放行；`Proposal-A_Triggered_Rule_Audit_Binding.md` 的长期方案仍维持 VALID GAP / DEFERRED IMPLEMENTATION，本文件不代替 Governance Review 做最终方案裁决。
+- Governance disposition：本 Run 的 COMPILE→WRITE continuity 已由 Triggered Rule IDs contract 最小修复放行；`Proposal-A_Triggered_Rule_Audit_Binding.md` 的完整 Registry 方案仍维持 VALID GAP / DEFERRED IMPLEMENTATION，本文件不代替 Governance Review 做最终 Registry 方案裁决。
 - `Semantic_Freeze-v1.md`（四字段冻结）与 `Execution_IR-v1.md`（历史 BLOCK 记录）原样保留；当前 WRITE 输入改用 `Execution_IR-v2.md`。
 
 ## Next

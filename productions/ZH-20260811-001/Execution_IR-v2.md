@@ -4,9 +4,9 @@ Production ID: ZH-20260811-001
 
 来源 Decision：`Semantic_Freeze-v1.md`（Reality / Main Gap / Transformation / Core Judgment，已冻结，本文件不修改其内容）
 
-Runtime Release 依据：TRIAL Runtime（2026-08-11 临时 COMPILE→WRITE continuity exception；见 `docs/知乎OS Compiler V1.md` 与 `docs/生产状态机与交接规范.md`）
+Runtime Release 依据：TRIAL Runtime（2026-08-11 Triggered Rule IDs compatibility rule；见 `docs/知乎OS Compiler V1.md` 与 `docs/生产状态机与交接规范.md`）
 
-v2 变更范围：仅将 v1 中因 Triggered Rule IDs 候选集合未发布造成的 COMPILE BLOCK，按临时 continuity exception 记录为 `CANDIDATE_SET_UNPUBLISHED` 并放行到 WRITE。Reasoning Path / Structure / Material Boundary / Expression Constraints / Acceptance Criteria 均沿用 v1，不重写语义输入。
+v2 变更范围：仅将 v1 中因 Triggered Rule IDs 候选集合未发布造成的 COMPILE BLOCK，按 Triggered Rule IDs compatibility rule 记录为 `[]` 并放行到 WRITE。Reasoning Path / Structure / Material Boundary / Expression Constraints / Acceptance Criteria 均沿用 v1，不重写语义输入。
 
 ## Reasoning Path
 
@@ -65,12 +65,12 @@ v2 变更范围：仅将 v1 中因 Triggered Rule IDs 候选集合未发布造�
 
 ## Triggered Rule IDs
 
-`CANDIDATE_SET_UNPUBLISHED`
+[]
 
 核验来源：当前 Runtime Release 尚未发布任何 ID 化的 Runtime.Audit Rules 固定候选集合；`templates/GPT审核清单.md` B 组 Operational Quality Checks 仅为未 ID 化定性检查，不能生成 AuditRule.<ID> 引用。
 
-适用依据：2026-08-11 临时 COMPILE→WRITE continuity exception。该记录视为 Triggered Rule IDs 字段已如实完成，不阻断 `EXECUTION_IR_READY`；它只表示 AUDIT.B 无法通过本字段加载条件触发的 AuditRule.<ID>，不复制规则正文、不自造 Rule ID、不影响 Execution Compliance / Acceptance Criteria / REVIEW / RELEASE。
+适用依据：2026-08-11 Triggered Rule IDs compatibility rule。`[]` 视为 Triggered Rule IDs 字段已如实完成，不阻断 `EXECUTION_IR_READY`；它只表示当前 Runtime 没有可供本字段引用的 ID-bearing conditional Audit Rules。Global Operational Checks 继续由 Runtime 的 AUDIT 执行载体直接加载，不依赖 Triggered Rule IDs；本字段不复制规则正文、不自造 Rule ID、不影响 Execution Compliance / Acceptance Criteria / REVIEW / RELEASE。
 
 ## Gate Result
 
-PASS。COMPILE 六个 Output 字段均已完成；其中 Triggered Rule IDs 按临时 continuity exception 记录为 `CANDIDATE_SET_UNPUBLISHED`。本 Execution IR 可进入 WRITE，状态可流转为 `EXECUTION_IR_READY`。
+PASS。COMPILE 六个 Output 字段均已完成；其中 Triggered Rule IDs 按 Triggered Rule IDs compatibility rule 记录为 `[]`。本 Execution IR 可进入 WRITE，状态可流转为 `EXECUTION_IR_READY`。

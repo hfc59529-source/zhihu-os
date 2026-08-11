@@ -1,8 +1,8 @@
 # Governance Change Proposal A：Triggered Rule Audit Binding
 
-Status：**VALID GAP / DEFERRED IMPLEMENTATION**（Governance Decision，2026-08-10）——问题真实存在（证据链干净、Post-B Rebase 已完成），但证据强度（单样本 `ZH-20260810-001`）配不上其涉及的改造成本（Global Rule ID Registry → Audit Rule Mapping → GPT审核清单 改造 → validator 新增校验 → Runtime 重新发布）。裁决：不现在启动 0–5 的 Governance Review，挂起。不具备执行权威，不修改任何已发布权威文件。
+Status：**VALID GAP / PARTIAL CONTRACT FIXED**（Governance Decision，2026-08-11）——完整 Registry 方案仍暂缓；但 `ZH-20260811-001` 证明该缺口已从 AUDIT 可验证性问题升级为 COMPILE→WRITE deterministic deadlock。已按 deterministic defect 例外执行最小 contract 修复：当 Runtime 未发布 ID-bearing conditional Audit Rules 候选集合时，`Triggered Rule IDs = []` 合法且不阻断 WRITE。该修复不创建 Global Rule ID Registry、不建立 Audit Rule Mapping、不改造 GPT审核清单，不预支完整 Proposal A 的最终方案。
 
-重新激活条件：按 `templates/Failure Pattern模板.md` 的既有机制记账——同一失败模式（Operational Quality Checks 类问题因无合法 Expected Source 而无法进 AuditResult）在后续生产中累计达到 3 次、且归属节点明确、证据可复查时，才重新进入 Governance Review；未满 3 次只记录，不升级、不重启本 Proposal。
+完整 Registry 重新激活条件：按 `templates/Failure Pattern模板.md` 的既有机制记账——同一失败模式（Operational Quality Checks 类问题因无合法 Expected Source 而无法进 AuditResult）在后续生产中累计达到 3 次、且归属节点明确、证据可复查时，才重新进入 Governance Review；未满 3 次只记录，不启动 Global Rule ID Registry / Audit Rule Mapping / GPT审核清单改造。该门槛不再约束已证明的 COMPILE→WRITE deterministic deadlock 最小 contract 修复。
 
 Proposed By：Claude（起草），发现来源：`ZH-20260810-001` 生产过程中的端到端 Realization 审计（见 `productions/ZH-20260810-001/Realization_Audit.md`）
 

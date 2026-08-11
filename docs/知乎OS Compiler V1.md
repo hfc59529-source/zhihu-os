@@ -124,12 +124,14 @@ Decision Right:
       ID——只存 ID，不存规则正文，规则正文唯一权威仍在 Runtime Release；
       没有这个字段，AUDIT 就不知道本 Run 该加载哪些条件触发的 Audit Rule）
 
-  临时 COMPILE→WRITE continuity exception（2026-08-11，TRIAL Runtime）：
-    当且仅当当前 Runtime Release 尚未发布任何 ID 化的 Runtime.Audit Rules
-    固定候选集合时，Triggered Rule IDs 字段允许记录
-    `CANDIDATE_SET_UNPUBLISHED` 及核验来源；该记录视为本字段已如实完成，
-    不视为 Execution IR 不完整，不阻断 COMPILE → WRITE。
-    该例外只表示 AUDIT.B 无法通过本字段加载条件触发的 AuditRule.<ID>；
+  TRIAL Runtime compatibility rule（2026-08-11）：
+    Triggered Rule IDs 仅在当前 Runtime Release 已发布正式 ID-bearing
+    conditional Audit Rules 固定候选集合时生成；若当前 Runtime Release
+    尚未发布此类候选集合，Triggered Rule IDs 必须填为 `[]`，并视为本字段
+    已如实完成，不视为 Execution IR 不完整，不阻断 COMPILE → WRITE。
+    `[]` 只表示当前 Runtime 没有可供本字段引用的 ID-bearing conditional
+    Audit Rules，不表示 Global Operational Checks 停止执行。Global Operational
+    Checks 继续由 Runtime 的 AUDIT 执行载体直接加载，不依赖 Triggered Rule IDs。
     不得复制规则正文、不得自造 Rule ID、不得影响 Execution Compliance /
     Acceptance Criteria / REVIEW / RELEASE，也不得推出通用 AuditResult 降级模型。
 
