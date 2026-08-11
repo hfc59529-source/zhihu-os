@@ -2,8 +2,8 @@
 
 Runtime Version: ZH-RUNTIME-DRAFT
 Status: TRIAL
-Published At: 2026-08-10 12:52:59 UTC
-Based On Commit: 8b8d8d1bce663022741b40cda3f9ca7664b09cd6
+Published At: 2026-08-11 10:40:18 UTC
+Based On Commit: 5ebf1516957b793584d51514c6d6f7e5b4c16869
 
 ## Partitions
 
@@ -33,7 +33,7 @@ Based On Commit: 8b8d8d1bce663022741b40cda3f9ca7664b09cd6
 | templates/GPT审核清单.md | 252a04b3fdeac9ae997d7fbfd8bf0221bffdfbc7ce245cca7b6d83873c2b64a7 |
 | docs/知乎内容质量参数库_V2.md | ebb5cdc46488b6b1426b6803521126864c4779f7a6546d860114d8cd6063d007 |
 | docs/生产状态机与交接规范.md | 2f5c4b0e8222b99b3594f19a4e550c291492f3f9360fa015ef838fd9d761ab99 |
-| data/Publish_Queue.md | c80c80562484815d8eb483ba0d2aae74f0ab5ebd2720db50c2e520a59207441a |
+| data/Publish_Queue.md | 0e166254884230f0390e7480424efb978b4499498b527afdea66855e22839828 |
 | templates/Failure Pattern模板.md | 1edb33ed19074e0e6ca3dd8d0418c62eca55682cc9bf2b799239f0ae767175c7 |
 
 ### Parameter & Knowledge Snapshots
