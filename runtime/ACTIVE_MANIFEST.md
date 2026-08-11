@@ -2,8 +2,8 @@
 
 Runtime Version: ZH-RUNTIME-DRAFT
 Status: TRIAL
-Published At: 2026-08-11 13:10:02 UTC
-Based On Commit: e7a0ddd
+Published At: 2026-08-11 13:20:02 UTC
+Based On Commit: 7f06b81ce5a46f85b7c93f95320a47198c9c29ac
 
 ## Partitions
 
@@ -30,7 +30,7 @@ Based On Commit: e7a0ddd
 | path | sha256 |
 |---|---|
 | templates/Claude正文生产Prompt.md | b9164c0e9ded19e883bbf85320bc20b1d0012e6060eacafc8a8253581a5c2f55 |
-| templates/GPT审核清单.md | 9d9708ccabc41fe788da59da25029fa66b700f3b90004915f086386c34f47335 |
+| templates/GPT审核清单.md | 631082a9cb7f41424b7e95801ee33e360db0c2db34d17d89f11b099812adb792 |
 | docs/知乎内容质量参数库_V2.md | ebb5cdc46488b6b1426b6803521126864c4779f7a6546d860114d8cd6063d007 |
 | docs/生产状态机与交接规范.md | b755809eb3c357496eb2643bf73494d69dea00e156a90a791045334c15560cd2 |
 | data/Publish_Queue.md | 0e166254884230f0390e7480424efb978b4499498b527afdea66855e22839828 |
