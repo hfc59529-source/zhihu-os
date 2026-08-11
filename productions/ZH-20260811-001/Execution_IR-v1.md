@@ -63,8 +63,8 @@ Runtime Release 依据：TRIAL Runtime，Based On Commit `5ebf151`（见 `runtim
 
 ## Triggered Rule IDs
 
-无。当前 Runtime Release 未发布 ID 化的 Global Audit Rule 目录（`Runtime.Audit Rules` 的 Operational Quality Checks 以 `templates/GPT审核清单.md` B 组条目为准，为定性检查项，非可引用的 Rule ID）；本字段不引用 `production_variable_library.md` 登记的内容变量（CV），CV 已在上方 Acceptance Criteria 完成 Instantiation。
+BLOCKED — Runtime Contract 缺口，本字段无法合法填写，详见 `Production_Decision.md` 的 COMPILE BLOCK 记录。
 
 ## Gate Result
 
-COMPILE 完成，Execution IR 待进入 WRITE。
+BLOCK。COMPILE 六个必需 Output 字段中，Triggered Rule IDs 无法在当前 Runtime 下合法生成，不满足 Compiler V1 对 Execution IR 的完整性要求。本 Execution IR 不得进入 WRITE。

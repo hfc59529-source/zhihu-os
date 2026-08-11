@@ -22,9 +22,11 @@ DECISION v1   BLOCK（Semantic_Freeze-v1.md 首版越权，输出六字段：Rea
 DECISION v2   PASS（Semantic_Freeze-v1.md 收缩为 Reality/Main Gap/Transformation/Core Judgment 四字段；原 Gap Decision 分析内容折入 Main Gap 段落作为
               论证过程保留，不再作为独立字段标题出现；Reversal Point 段落整体移除，留给 COMPILE 自行从冻结四字段编译）
 ↓
-COMPILE       PASS（Execution_IR-v1.md，从冻结四字段独立重新编译 Reasoning Path/Structure/Material Boundary/Expression Constraints/Acceptance Criteria/
-              Triggered Rule IDs；Reasoning Path 的 Breaking Point 与 Structure 未从 DECISION v1 已删除的 Reversal Point/Structural Direction 搬运，
-              而是重新从 Reality/Main Gap/Transformation/Core Judgment 推导；Structure = ACTIVE-TS01，Acceptance Criteria 编译自 CV001/CV003/CV004/CV006）
+COMPILE v1    BLOCK（Execution_IR-v1.md 前五字段 Reasoning Path/Structure/Material Boundary/Expression Constraints/Acceptance Criteria 均已从冻结四字段
+              独立重新编译，未搬运 DECISION v1 已删除的 Reversal Point/Structural Direction；但第六字段 Triggered Rule IDs 无法合法生成——Compiler V1
+              第122-125行要求该字段须从 Runtime.Audit Rules 固定候选集合中选出实际命中的 Global Rule ID，经核对 templates/GPT审核清单.md 全文，
+              当前 TRIAL Runtime（Based On Commit 5ebf151）B 组 Operational Quality Checks 仅六项定性检查，均未 ID 化，不存在合法候选集合。
+              判定为 Runtime Contract 缺口，非本篇生产可自行解释或补全，COMPILE BLOCK，不进入 WRITE）
 ```
 
 ## 违规记录
@@ -36,12 +38,20 @@ COMPILE       PASS（Execution_IR-v1.md，从冻结四字段独立重新编译 R
 
 ## COMPILE 摘要
 
-- Execution IR：`Execution_IR-v1.md`。
+- Execution IR：`Execution_IR-v1.md`（状态：BLOCK，六字段中五字段完成，第六字段 Triggered Rule IDs 无法合法填写）。
 - Structure：ACTIVE-TS01（老师爆款机制推进结构），TS02 因非"怎么办"行动题被排除。
 - Reasoning Path 独立重新推导：Breaking Point（材料的真实接收方决定动作存废，而非动作对工作是否有用）由 Main Gap 中已保留的 Gap 核对论证重新推出，未从被删除的 Reversal Point 原文搬运；Structure 的 step3 核心反转措辞与 DECISION v1 被删除的 Reversal Point 表述不同，是 COMPILE 独立编译结果。
 - Acceptance Criteria 编译自 CV001（认知校正）、CV003（组织视角）、CV004（风险传导）、CV006（结尾动作），对应 production_variable_library.md 登记定义。
 - Material Boundary 明确禁止复用 Top1/Top2/Top3 高赞的具体理论框架、类比故事、案例原文；Expression Constraints 明确禁止使用 DECISION 已否决的"责任转移/证据制造/争夺控制权/遮蔽真实结果"四分类作为正文分类框架。
 
+## COMPILE BLOCK：Triggered Rule IDs Runtime Contract 缺口
+
+- 依据：`docs/知乎OS Compiler V1.md` 122-125行明确 Triggered Rule IDs 须从 `Runtime.Audit Rules` 固定候选集合中选出本 Run 实际命中的 Global Rule ID；同文 137-142行明确该字段只能是 ID 引用，不得复制规则正文，也不得凭空判定。
+- 核验：逐条核对 `templates/GPT审核清单.md` 全文，B 组 Operational Quality Checks 仅有六项定性检查（阅读体验/推进节奏/场景/表达自然/重复/收尾），全部未分配 ID；当前 TRIAL Runtime（`runtime/ACTIVE_MANIFEST.md`，Based On Commit `5ebf151`）未发布任何 ID 化的 Global Audit Rule 候选集合。
+- 判定：这不是"本题没有命中规则"，而是"合法候选集合本身不存在"——COMPILE 没有权限把这个空缺解释成"无"，因为"无"是"核对过候选集合、确认零命中"的结论，而当前候选集合根本未发布。这是 Runtime Contract 层面的可实现性缺口，不属于 INPUT/DECISION/COMPILE/WRITE 中任一节点的执行错误。
+- 记录：`runtime/logs/failure_patterns.jsonl` 新增 `FP-20260811-001`，`violation_source: Unknown`，`occurrence_count: 1`，`upgrade_candidate: false`。按 `templates/Failure Pattern模板.md` 使用规则，未满 3 次不修改 Runtime Rules；但因该缺口会阻塞任何题目从 COMPILE 进入 WRITE，已在记录中建议 Governance Plane 优先评审是否为 Runtime.Audit Rules 发布 ID 化候选集合，不必等待满 3 次样本。
+- 处理路径：本篇不越权自行补全 Runtime.Audit Rules 或自造 Rule ID；`Execution_IR-v1.md` 保持 BLOCK 状态，不进入 WRITE。
+
 ## Next
 
-COMPILE PASS，Execution IR 已生成。待用户指示后进入 WRITE。
+COMPILE BLOCK。Execution IR 前五字段已完成，Triggered Rule IDs 因 Runtime Contract 缺口无法合法生成。是否进入 WRITE 取决于用户如何处理该缺口（例如：由 Governance 补发 Rule ID 候选集合后重新 COMPILE；或用户明确授权本 Run 以"候选集合为空、本字段留空"的方式豁免放行）。在用户就此缺口给出明确指示前，不推进到 WRITE。
