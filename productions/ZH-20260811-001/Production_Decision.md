@@ -52,6 +52,21 @@ COMPILE v1    BLOCK（Execution_IR-v1.md 前五字段 Reasoning Path/Structure/M
 - 记录：`runtime/logs/failure_patterns.jsonl` 新增 `FP-20260811-001`，`violation_source: Unknown`，`occurrence_count: 1`，`upgrade_candidate: false`。按 `templates/Failure Pattern模板.md` 使用规则，未满 3 次不修改 Runtime Rules；但因该缺口会阻塞任何题目从 COMPILE 进入 WRITE，已在记录中建议 Governance Plane 优先评审是否为 Runtime.Audit Rules 发布 ID 化候选集合，不必等待满 3 次样本。
 - 处理路径：本篇不越权自行补全 Runtime.Audit Rules 或自造 Rule ID；`Execution_IR-v1.md` 保持 BLOCK 状态，不进入 WRITE。
 
+## Current-System State Check（5ebf151 Runtime vs HEAD b45b545）
+
+- 触发原因：COMPILE BLOCK 判定发生在前，但当时只核对了 Runtime 锁定的 `templates/GPT审核清单.md`，未核对 Runtime 发布之后 main 分支是否已有相关修正尚未 Release。用户指出必须先看 `5ebf151 Runtime` 与当前 `main HEAD` 之间的版本关系，才能把"Runtime 缺口"坐实，而不是仅凭单文件推断。
+- 核验范围：`git log --oneline 5ebf151..HEAD`。
+- 核验结果：`5ebf151` 到 HEAD `b45b545` 之间共 6 个提交：
+  1. `05768ef`（提交信息"GPT审核清单"）——经 `git show --stat` 与 `git show` 核对，**实际只修改了 `runtime/ACTIVE_MANIFEST.md`** 的 `Published At` / `Based On Commit` / `data/Publish_Queue.md` 哈希三处版本指针，未触及 `templates/GPT审核清单.md` 文件内容本身。
+  2. `a277121`、`85cc51d`、`c802de9`、`9a9281a`、`b45b545` ——均为本篇生产（ZH-20260811-001）自身在 DECISION/COMPILE 阶段产出的文件变更（Topic Package、Semantic_Freeze、Production_Decision、Execution_IR、failure_patterns.jsonl），与 Runtime.Audit Rules 或 GPT 审核清单无关。
+  3. 结论：`templates/GPT审核清单.md` 在 `5ebf151` 发布前后到 HEAD 为止**没有发生任何内容变更**。
+- 哈希交叉验证：`shasum -a 256 templates/GPT审核清单.md` 实测值 `252a04b3fdeac9ae997d7fbfd8bf0221bffdfbc7ce245cca7b6d83873c2b64a7`，与 `runtime/ACTIVE_MANIFEST.md` 中 Compiler Authority 分区锁定的哈希完全一致，确认该文件自 Runtime 发布以来未发生任何未同步的漂移。
+- 三种可能性排除：
+  1. ❌「main 已修正、只是未重新 Release」——不成立，文件内容自 `5ebf151` 起从未变化。
+  2. ✅「`5ebf151` 已发布 Runtime 本身的真实缺口」——成立，且该缺口在当前 HEAD 也依然存在，不是过时快照问题。
+  3. 「Compiler 与 Audit 资产之间存在新的 Contract inconsistency」——成立，但准确表述是：该接口（Triggered Rule IDs 需从 ID 化候选集合中选取）自 Runtime 发布以来从未被满足过，不是后续漂移产生的新不一致。
+- 判定：Triggered Rule IDs 缺口正式坐实为 **persistent Runtime Contract inconsistency**（非版本滞后、非本篇生产误判、非 HEAD 已修复），COMPILE BLOCK 判定维持不变。
+
 ## Next
 
-COMPILE BLOCK。Execution IR 前五字段已完成，Triggered Rule IDs 因 Runtime Contract 缺口无法合法生成。是否进入 WRITE 取决于用户如何处理该缺口（例如：由 Governance 补发 Rule ID 候选集合后重新 COMPILE；或用户明确授权本 Run 以"候选集合为空、本字段留空"的方式豁免放行）。在用户就此缺口给出明确指示前，不推进到 WRITE。
+COMPILE BLOCK。Current-System State Check 已完成并记录，缺口性质确认为持续性 Runtime Contract 缺口。是否发起 Governance Repair 待用户另行决定，本条只补记核验证据，不在此自行推进修复。Execution IR 前五字段已完成，Triggered Rule IDs 因 Runtime Contract 缺口无法合法生成。是否进入 WRITE 取决于用户如何处理该缺口（例如：由 Governance 补发 Rule ID 候选集合后重新 COMPILE；或用户明确授权本 Run 以"候选集合为空、本字段留空"的方式豁免放行）。在用户就此缺口给出明确指示前，不推进到 WRITE。
