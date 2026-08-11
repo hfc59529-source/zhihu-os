@@ -2,8 +2,8 @@
 
 Runtime Version: ZH-RUNTIME-DRAFT
 Status: TRIAL
-Published At: 2026-08-11 13:51:25 UTC
-Based On Commit: de366e2
+Published At: 2026-08-11 13:58:20 UTC
+Based On Commit: fe8276f
 
 ## Partitions
 
@@ -31,7 +31,7 @@ Based On Commit: de366e2
 |---|---|
 | templates/Claude正文生产Prompt.md | 56677d26616dd7b045a71e49d11578456846722686bc446411e86b23f5c858e5 |
 | templates/GPT审核清单.md | 631082a9cb7f41424b7e95801ee33e360db0c2db34d17d89f11b099812adb792 |
-| docs/知乎内容质量参数库_V2.md | 733c777fc716283055b5b0c5fba368901c9e6e6db0d7b35a0ce07060fb7dc0f9 |
+| docs/知乎内容质量参数库_V2.md | 1dd44575e99ea381a5a4bff10c25c27dbea64d6b0be96c193081b275e48fcea0 |
 | docs/生产状态机与交接规范.md | edec195ba4d13b8b0cf0aff3ad9ed49bfe8def2a3339b78121ab8cdb521cb92c |
 | data/Publish_Queue.md | 0e166254884230f0390e7480424efb978b4499498b527afdea66855e22839828 |
 | templates/Failure Pattern模板.md | 3ea79dae80db29d8a6883fb2fe375bdcf42996d6fc2a8e9e059f00d37f52345e |
