@@ -16,6 +16,7 @@ Defaults to runtime/ACTIVE_MANIFEST.md.
 from __future__ import annotations
 
 import hashlib
+import csv
 import re
 import subprocess
 import sys
@@ -24,6 +25,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MANIFEST = ROOT / "runtime" / "ACTIVE_MANIFEST.md"
 VALID_STATUS = {"DRAFT", "TRIAL", "ACTIVE", "DEPRECATED"}
+USER_GATE_START = "ZH-20260801-011"
 
 
 def sha256(path: Path) -> str:
@@ -104,6 +106,61 @@ def find_active_manifests(manifest_path: Path) -> list[Path]:
     return found
 
 
+def production_sort_key(production_id: str) -> str:
+    m = re.match(r"^(ZH-\d{8}-\d{3})$", production_id)
+    return m.group(1) if m else production_id
+
+
+def user_gate_applies(production_id: str) -> bool:
+    return production_sort_key(production_id) >= USER_GATE_START
+
+
+def validate_publish_gate() -> list[str]:
+    """Check published article map rows against the current release gate.
+
+    Historical bypasses are allowed only when they are explicitly recorded in
+    Publish_Queue.md. Future COMPLETE rows need visible USER_APPROVED evidence
+    in the queue or production ledger before they can pass this validator.
+    """
+    failures: list[str] = []
+    article_map = ROOT / "data" / "production_article_map.csv"
+    publish_queue = ROOT / "data" / "Publish_Queue.md"
+    ledger = ROOT / "data" / "production_ledger.md"
+
+    if not article_map.exists():
+        return failures
+
+    queue_text = publish_queue.read_text(encoding="utf-8") if publish_queue.exists() else ""
+    ledger_text = ledger.read_text(encoding="utf-8") if ledger.exists() else ""
+    bypass_section_match = re.search(
+        r"^## Gate Bypass Log\s*\n(.*?)(?=^## |\Z)",
+        queue_text,
+        re.MULTILINE | re.DOTALL,
+    )
+    bypass_text = bypass_section_match.group(1) if bypass_section_match else ""
+
+    with article_map.open(newline="", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            production_id = (row.get("production_id") or "").strip()
+            trace_status = (row.get("trace_status") or "").strip()
+            if not production_id or trace_status != "COMPLETE":
+                continue
+            if not production_id.startswith("ZH-") or not user_gate_applies(production_id):
+                continue
+
+            in_queue = re.search(rf"\|\s*{re.escape(production_id)}\s*\|.*\bUSER_APPROVED\b", queue_text)
+            in_bypass_log = re.search(rf"\|\s*{re.escape(production_id)}\s*\|", bypass_text)
+            in_ledger = re.search(rf"\|\s*{re.escape(production_id)}\s*\|.*\bUSER_APPROVED\b", ledger_text)
+
+            if not (in_queue or in_bypass_log or in_ledger):
+                failures.append(
+                    "PUBLISH-GATE COMPLETE article lacks USER_APPROVED evidence or Gate Bypass Log entry: "
+                    f"{production_id}"
+                )
+
+    return failures
+
+
 def main(argv: list[str]) -> int:
     manifest_path = Path(argv[1]).resolve() if len(argv) > 1 else DEFAULT_MANIFEST
     failures: list[str] = []
@@ -175,6 +232,8 @@ def main(argv: list[str]) -> int:
         actives = find_active_manifests(manifest_path)
         if len(actives) > 1:
             failures.append(f"INV-09 more than one ACTIVE manifest found: {[str(p) for p in actives]}")
+
+    failures.extend(validate_publish_gate())
 
     if failures:
         print("Fail")

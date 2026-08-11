@@ -65,6 +65,7 @@ Publish Queue（本文件）
 
 | Production ID | 发布凭证 | 生产状态机记录 |
 |---|---|---|
+| ZH-20260804-003 | answer_2068122609598911600（`data/production_article_map.csv`） | `data/production_ledger.md` 标记为 `PATCH_VALIDATION_REQUIRED`，但 `data/production_article_map.csv` 已为 COMPLETE；无正式 `USER_APPROVED → RELEASE_READY → Publish Queue` 证据 |
 | ZH-20260808-001 | answer_2069522411372933416（`data/production_article_map.csv`） | 无 User Review / USER_APPROVED 证据 |
 | ZH-20260808-002 | answer_2069533843439235799（`data/production_article_map.csv`） | Production_Decision.md 有非正式 User Review 文字记录，无正式 USER_APPROVED 字段 |
 | ZH-20260808-003 | answer_2069537531780129888（`data/production_article_map.csv`） | 无 User Review / USER_APPROVED 证据 |
