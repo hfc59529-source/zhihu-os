@@ -86,6 +86,13 @@ DECISION v2   PASS（`Semantic_Freeze-v2.md`：作为满足现行 QT-QI Contract
               "撤销与新增在责任归属上的成本收益不对称"这一棘轮机制，未把 QI-02 的问题类型从"求解释"
               替换为"求判断"，不触发新 Forbidden 条款。v2 的有效性不依赖 v1 继承资格裁决结果；即便
               v1 未来被裁决为仍可继续使用，v2 作为独立满足当前 Contract 的版本依然可直接采用）
+↓
+COMPILE v4    PASS（`Execution_IR-v4.md`：独立编译自 `Semantic_Freeze-v2.md` 的棘轮机制 Transformation，
+              不搬运 v1/v2/v3 任何 Reasoning Path/Structure/Acceptance Criteria。Structure.step6 因果
+              追问链落到"撤销与新增责任归属不对称"机制终点；Acceptance Criteria 重新激活 CV004——不同于
+              v1/v3 中 CV004 是外挂追加、超出收窄范围，本篇 Main Gap 本身就是责任传导机制，CV004 与
+              Reasoning Path 直接重合；CV006 仍不激活，功能由 Structure step9/10 承担；Triggered Rule
+              IDs 按 compatibility rule 记录为 []）
 ```
 
 ## 违规记录
