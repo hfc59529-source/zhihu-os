@@ -68,8 +68,8 @@
 | `docs/知乎内容质量参数库_V2.md`§0 QT-QI（Migration Fix，2026-08-11） | 01 生产模块 | 是，DECISION 强制输入（Compiler V1 第4节）：Production Card 退役、职责迁入 Compiler V1 时，QT-QI 问题理解识别域未被任何现行节点正式继承，DECISION 曾直接从 Input Package 跳到 Main Gap，未核对用户真实提问类型；本条目补上这一遗漏，仅授权 QT-00/QI-01～QI-06 六项识别字段进入 DECISION，该文件其余 PD/RR/RE/BT/CR 等正文质量参数消费者不变（仍是 COMPILE/WRITE/AUDIT），不因本次修复扩大范围 | DECISION（Reality/Main Gap/Transformation/Core Judgment 锁定前必须先完成） | 不得把 QT-QI 之外的参数域一并授权给 DECISION；不得反向声称本条目扩大了`docs/知乎内容质量参数库_V2.md`对 DECISION 的整体授权 |
 | `runtime/ACTIVE_MANIFEST.md` | 02 知识模块 | 是，Codex日常执行快照清单权威 | Codex日常生产、校验脚本 | Git docs/templates 修改未经 `scripts/release_runtime.py` 发布前不得直接影响生产 |
 | `runtime/知乎内容质量参数快照.md` | 02 知识模块 | 是，Codex日常参数执行权威 | GPT审核清单 | 未标记ACTIVE的参数不得进入生产触发 |
-| `runtime/知乎ACTIVE规律快照.md` | 02 知识模块 | 是，Codex日常规律执行权威（内容混装 COMPILE/Writer/Audit 职责，SPLIT REQUIRED，见迁移审计） | 爆款规律提取 | 单篇复盘不得直接覆盖runtime规律 |
-| `runtime/知乎结构库快照.md` | 02 知识模块 | 是，Runtime Execution Authority：当前 TRIAL/ACTIVE 版本真正可调用的 Compile Rules 结构数据，COMPILE 执行时唯一读取的结构规则内容 | 内容路由、COMPILE（受 Structure Evolution V1 第5节边界约束） | 未发布的结构草稿不得直接进入生产；不得反向声称持有 Research/Governance Authority（升级门槛判断仍在 Structure Evolution V1） |
+| `runtime/知乎ACTIVE规律快照.md` | 02 知识模块 | 是，Codex日常规律执行快照权威，但条目执行权限受 2026-08-11 Authority Provenance Patch 限制：来源为“存量ACTIVE，待平台样本统计复核”的条目降级为 `LEGACY_REVIEW / ADVISORY_ONLY`，不得写入 Execution IR 合同义务 | 爆款规律提取、COMPILE 风险提醒 | 单篇复盘不得直接覆盖runtime规律；未补齐证据链的效果代理不得升级为 Writer/Structure 合同 |
+| `runtime/知乎结构库快照.md` | 02 知识模块 | 是，Runtime Execution Authority：当前 TRIAL/ACTIVE 版本真正可调用的 Compile Rules 结构数据，COMPILE 执行时唯一读取的结构规则内容；结构合同权限另受本文件内 Contract Authority 字段控制，`PROVISIONAL_ADVISORY` 不得完整合同化 | 内容路由、COMPILE（受 Structure Evolution V1 第5节边界约束） | 未发布的结构草稿不得直接进入生产；未补齐 Structure Evolution V1 §4 证据的结构不得被反向声称为 `VERIFIED_CONTRACT`；不得反向声称持有 Research/Governance Authority（升级门槛判断仍在 Structure Evolution V1） |
 | `runtime/知乎账号画像快照.md` | 02 知识模块 | 是，账号画像执行快照权威 | 选题准入、选题扩展、案例选择、复盘样本优先级 | 不得新增 Execution IR 字段，不得直接修改 Prompt |
 | `production_variable_library.md`｜知乎内容变量参数库 | 02 知识模块 | 是，唯一内容变量权威库 | Claude正文生产Prompt、正文生产、平台样本学习、账号验证 | 不得新建平台变量库、账号变量库或第二套参数体系 |
 | `l2_variable_records.md` | 02 知识模块 | 变量标注材料，不是生产权威 | 知乎内容变量参数库、L2.5变量验证 | 不得作为第二套账号变量库 |

@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## 2026-08-11｜Authority Provenance Patch
+
+状态：Completed
+
+### 变更
+
+- 新增 COMPILE 的 Authority Provenance Check：结构、规律、变量或效果代理在写入 Execution IR 前，必须先核对 Runtime 执行权限。
+- 将 TS01 / TS02 标记为 `PROVISIONAL_ADVISORY`：可参考，但不得把固定推进顺序整体升级为 `required_steps` / `step_obligations`。
+- 将来源为“存量ACTIVE，待平台样本统计复核”的 ACTIVE 规律降级为 `LEGACY_REVIEW / ADVISORY_ONLY`，不得写入 Execution IR 合同义务或作为 AUDIT 失败依据。
+
+### 为什么改
+
+首篇真实 TRIAL Run 暴露出 Runtime 权限升级问题：低证据结构或效果代理一旦进入 ACTIVE 快照，会经 COMPILE 变成单篇正文合同，再由 AUDIT 强制兑现。此次补丁不重写 TS01 内容，而是先切断“未验证知识 → Writer 合同”的自动升级通道。
+
+### 影响范围
+
+- `docs/知乎OS Compiler V1.md`
+- `runtime/知乎结构库快照.md`
+- `runtime/知乎ACTIVE规律快照.md`
+
+### 后续验证
+
+下一篇生产必须检查 Execution IR：若调用 TS01 / TS02，只能记录为 provisional advisory reference；`required_steps` 必须来自本题 Decision 的必要推导，不能逐条搬运固定 10 步结构。
+
 ## 2026-08-05｜Milestone M4：内容架构冻结（Content Architecture Freeze）
 
 状态：Completed

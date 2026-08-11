@@ -4,15 +4,37 @@
 
 执行版本：ZH-RUNTIME-V3.0-TEACHER
 
-状态：ACTIVE
+状态：ACTIVE（快照文件有效；条目按各自执行权限调用）
 
 来源：由 Git 权威文件和治理确认结果发布到 runtime。第二阶段起，ACTIVE规律优先来自“平台变量证据卡 → 账号实验验证 → 证据等级确认”的链路；Notion 仅可作为历史参考，不具备 Production Authority。
+
+## Authority Provenance Patch｜2026-08-11
+
+本文件中来源口径为“存量ACTIVE，待平台样本统计复核”的规律，当前不得再视为
+Production Contract。
+
+统一执行权限：
+
+```text
+状态：LEGACY_REVIEW
+Execution Authority：ADVISORY_ONLY
+```
+
+含义：
+
+- 可作为复盘观察标签、风险提醒或候选假设。
+- 不得写入 Execution IR.required_steps / step_obligations。
+- 不得写入 Execution IR.acceptance_criteria。
+- 不得推荐结构并触发结构合同化。
+- 不得作为 AUDIT 判定 Execution Compliance 失败的依据。
+- 只有补齐“平台变量证据卡 → 账号实验验证 → 证据等级确认”链路后，才允许重新升级为 ACTIVE。
 
 ## 生产回流规则
 
 本快照是复盘反哺生产的唯一入口。
 
-生产链只允许读取本快照中的 ACTIVE 规律。内容变量只允许读取 `production_variable_library.md`。不得直接读取 L1 平台样本、变量证据卡、L2 正文变量矩阵、05 单篇复盘库或 05.5 规律验证库作为变量权威。
+生产链只允许读取本快照中执行权限允许的规律。内容变量只允许读取
+`production_variable_library.md`。不得直接读取 L1 平台样本、变量证据卡、L2 正文变量矩阵、05 单篇复盘库或 05.5 规律验证库作为变量权威。
 
 V3 起，ACTIVE 规律只作为结构实例化后的内容补充与风险提醒，不得替代 `runtime/知乎结构库快照.md` 中的 ACTIVE 老师结构，不得生成正文骨架。
 
@@ -48,7 +70,8 @@ ACTIVE 升级
 账号验证样本数：
 账号成功率：
 失败反证：
-状态：ACTIVE / EXPERIMENT / DEPRECATED
+状态：ACTIVE / EXPERIMENT / LEGACY_REVIEW / DEPRECATED
+Execution Authority：VERIFIED_CONTRACT / ADVISORY_ONLY / EXPERIMENT_ONLY
 Execution IR调用方式：
 ```
 
@@ -86,9 +109,12 @@ COMPILE → Execution IR
 
 写入规则：
 
-- 推荐主变量只能作为 COMPILE 的变量匹配依据，若被激活，写入 `Execution IR.acceptance_criteria` 的本 Run Realization Requirement。
-- 推荐辅助变量最多三个，只能作为 COMPILE 的变量匹配依据，若被激活，写入 `Execution IR.acceptance_criteria` 的本 Run Realization Requirement。
-- 推荐结构必须与结构库校验一致，并写入 `Execution IR.Structure`。
+- 推荐主变量只能作为 COMPILE 的变量匹配依据；只有执行权限为 `VERIFIED_CONTRACT`
+  的规律，才允许写入 `Execution IR.acceptance_criteria` 的本 Run Realization Requirement。
+- 推荐辅助变量最多三个，只能作为 COMPILE 的变量匹配依据；只有执行权限为
+  `VERIFIED_CONTRACT` 的规律，才允许写入 `Execution IR.acceptance_criteria` 的本 Run Realization Requirement。
+- 推荐结构必须与结构库校验一致；只有结构本身具备 `Contract Authority：VERIFIED_CONTRACT`
+  时，才允许写入 `Execution IR.Structure` 的合同义务。
 - 禁用变量不得写入 `Execution IR.acceptance_criteria` 或任何正文义务。
 - 命中规律只能作为变量证据或调用理由压缩呈现，不得输出验证流水账。
 
@@ -98,7 +124,9 @@ COMPILE → Execution IR
 
 ### 开头钩子
 
-状态：ACTIVE
+状态：LEGACY_REVIEW
+
+Execution Authority：ADVISORY_ONLY
 
 来源口径：存量ACTIVE，待平台样本统计复核
 
@@ -106,7 +134,9 @@ COMPILE → Execution IR
 
 ### 情绪入口
 
-状态：ACTIVE
+状态：LEGACY_REVIEW
+
+Execution Authority：ADVISORY_ONLY
 
 来源口径：存量ACTIVE，待平台样本统计复核
 
@@ -114,7 +144,9 @@ COMPILE → Execution IR
 
 ### 认知增量
 
-状态：ACTIVE
+状态：LEGACY_REVIEW
+
+Execution Authority：ADVISORY_ONLY
 
 来源口径：存量ACTIVE，待平台样本统计复核
 
@@ -122,7 +154,9 @@ COMPILE → Execution IR
 
 ### 结构节奏
 
-状态：ACTIVE
+状态：LEGACY_REVIEW
+
+Execution Authority：ADVISORY_ONLY
 
 来源口径：存量ACTIVE，待平台样本统计复核
 
@@ -130,7 +164,9 @@ COMPILE → Execution IR
 
 ### 观点锋利度
 
-状态：ACTIVE
+状态：LEGACY_REVIEW
+
+Execution Authority：ADVISORY_ONLY
 
 来源口径：存量ACTIVE，待平台样本统计复核
 
@@ -138,7 +174,9 @@ COMPILE → Execution IR
 
 ### 收藏价值
 
-状态：ACTIVE
+状态：LEGACY_REVIEW
+
+Execution Authority：ADVISORY_ONLY
 
 来源口径：存量ACTIVE，待平台样本统计复核
 
@@ -148,7 +186,9 @@ COMPILE → Execution IR
 
 ### 组织机制优先
 
-状态：ACTIVE
+状态：LEGACY_REVIEW
+
+Execution Authority：ADVISORY_ONLY
 
 来源口径：存量ACTIVE，待平台样本统计复核
 
@@ -156,7 +196,9 @@ COMPILE → Execution IR
 
 ### 责任转移优先
 
-状态：ACTIVE
+状态：LEGACY_REVIEW
+
+Execution Authority：ADVISORY_ONLY
 
 来源口径：存量ACTIVE，待平台样本统计复核
 
@@ -164,7 +206,9 @@ COMPILE → Execution IR
 
 ### 反道德化
 
-状态：ACTIVE
+状态：LEGACY_REVIEW
+
+Execution Authority：ADVISORY_ONLY
 
 来源口径：存量ACTIVE，待平台样本统计复核
 

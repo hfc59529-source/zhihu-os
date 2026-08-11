@@ -143,6 +143,29 @@ Decision Right:
       ID——只存 ID，不存规则正文，规则正文唯一权威仍在 Runtime Release；
       没有这个字段，AUDIT 就不知道本 Run 该加载哪些条件触发的 Audit Rule）
 
+  Authority Provenance Check（2026-08-11，TRIAL Runtime）：
+    COMPILE 在把任何结构、规律、变量或效果代理写入 Execution IR 之前，必须先核对
+    该对象在 Runtime 快照中的执行权限。
+
+    结构对象只允许三种执行权限：
+      VERIFIED_CONTRACT：已补齐 Structure Evolution V1 §4 证据，可把结构步骤完整
+        实例化为 required_steps / step_obligations。
+      PROVISIONAL_ADVISORY：可作为结构参考和匹配线索，但不得把固定推进顺序、通用
+        步骤或效果目标整体升级为本 Run 的 required_steps / step_obligations。
+        Execution IR 必须显式记录 authority_status / provenance_gap；本 Run 的
+        required_steps 只能来自 Decision 必要推导，不得来自结构模板的逐条搬运。
+      EXPERIMENT_ONLY：只能在本 Run 明确登记 Experiment ID 时调用，且不得进入常规
+        生产合同。
+
+    规律 / 效果代理（如钩子、情绪入口、收藏价值、互动、阅读、收益、Save Value 等）
+    默认没有 WRITE / Structure Contract Authority。除非其 Runtime 记录明确标为
+    VERIFIED_CONTRACT，否则只能用于候选观察、风险提醒或发布后效果评估，不得写入
+    required_steps、step_obligations 或 Acceptance Criteria。
+
+    AUDIT 不得因为 Draft 未兑现 PROVISIONAL_ADVISORY / ADVISORY_ONLY 对象中的固定
+    模板步骤而判定 Execution Compliance 失败；AUDIT 只能核对 Execution IR 中由
+    COMPILE 合法写入的 Run-specific 合同义务。
+
   TRIAL Runtime compatibility rule（2026-08-11）：
     Triggered Rule IDs 仅在当前 Runtime Release 已发布正式 ID-bearing
     conditional Audit Rules 固定候选集合时生成；若当前 Runtime Release
