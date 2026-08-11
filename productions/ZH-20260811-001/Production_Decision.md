@@ -67,13 +67,28 @@ COMPILE v1    BLOCK（Execution_IR-v1.md 前五字段 Reasoning Path/Structure/M
   3. 「Compiler 与 Audit 资产之间存在新的 Contract inconsistency」——成立，但准确表述是：该接口（Triggered Rule IDs 需从 ID 化候选集合中选取）自 Runtime 发布以来从未被满足过，不是后续漂移产生的新不一致。
 - 判定：Triggered Rule IDs 缺口正式坐实为 **persistent Runtime Contract inconsistency**（非版本滞后、非本篇生产误判、非 HEAD 已修复），COMPILE BLOCK 判定维持不变。
 
+## 状态机纠正（Production Status Schema 核对）
+
+`docs/生产状态机与交接规范.md` 状态表是 Production 生命周期状态的唯一权威来源，其枚举中 COMPILE 节点只有一个成功状态：`EXECUTION_IR_READY`（阶段0.3），前置状态是 `DECISION_FROZEN`（阶段0.2）。规则原文："状态只有在该阶段的必要输出和校验证据全部存在时，才能向下流转。"
+
+本文件此前多处使用"COMPILE BLOCK"作为 Pipeline Record 里的节点结果描述，这是可以的（用于叙述 COMPILE 执行受阻这一事实）；但不应把它读成或用作正式 Production Status——状态枚举中不存在 `COMPILE BLOCK` 这个值，擅自新增会造成与权威状态机的 Schema Drift。
+
+**本篇在正式状态机中的合法状态是 `DECISION_FROZEN`**（因为 `Execution_IR-v1.md` 六字段中 Triggered Rule IDs 未完成，必要输出未全部存在，不满足向 `EXECUTION_IR_READY` 流转的条件），附加说明"COMPILE 执行受阻（Triggered Rule IDs Runtime Contract 缺口）"。上文各处出现的"COMPILE BLOCK"均应理解为这一事实的描述性用语，不是新状态。
+
+## Milestone-010 计数资格：UNRESOLVED
+
+`docs/知乎OS Compiler V1.md` §14 只规定"至少完成 10 篇真实知乎生产验证"并列出观察指标（Execution IR 精简度、AUDIT 定位能力、人工修改次数、正文质量、工程成本），未定义"完成"的判定标准，也未定义"进入 Ledger 留痕"是否等同于"计入 10 篇"。`data/production_ledger.md` 目前保留 REJECTED（如 ZH-20260801-004、ZH-20260810-002）、治理事件样本（ZH-20260810-001）等各类未到达 RELEASE 的记录，但这证明的是"Ledger 留痕资格"，不足以证明"Milestone-010 计数资格"——两者是否等价，系统尚未明确定义。
+
+因此：`ZH-20260811-001` 是否正式计入 Compiler §14 的 10 篇 Production Validation，本文件不下结论，标记为 **UNRESOLVED**，留待 Governance Plane 或 ZH-MILESTONE-010 复盘时明确该 Schema 缺口。
+
 ## Disposition（本篇冻结）
 
-- 正式状态：`INPUT PASS → DECISION PASS → COMPILE BLOCK → WRITE NOT STARTED`。
-- 本篇不再继续推进：`Semantic_Freeze-v1.md`（四字段冻结）与 `Execution_IR-v1.md`（BLOCK，前五字段已编译）原样保留，不重写、不补全、不为绕过缺口而放行。
+- 正式状态（按状态机权威枚举）：`DECISION_FROZEN`，COMPILE 执行受阻，未达 `EXECUTION_IR_READY`，`WRITE` 未开始。
+- Milestone-010 计数资格：UNRESOLVED（见上节），不预先认定计入或不计入 10 篇。
+- 本篇不再继续推进：`Semantic_Freeze-v1.md`（四字段冻结）与 `Execution_IR-v1.md`（六字段中五字段完成，Triggered Rule IDs 因 Runtime Contract 缺口未完成）原样保留，不重写、不补全、不为绕过缺口而放行。
 - Governance Repair 作为独立治理动作另行发起，范围严格限定为"修复 Triggered Rule IDs 与 Runtime.Audit Rules 之间的契约缺口"，不顺带推进本篇生产，不顺带重构审核体系。
 - 回归验证路径：待 Runtime 修复并重新 Release 后，对 ZH-20260811-001 复用同一份已冻结的 `Semantic_Freeze-v1.md`（Reality/Main Gap/Transformation/Core Judgment 不变）重新跑 COMPILE，作为回归样本验证契约缺口是否真正修复；不重新走 DECISION。
 
 ## Next
 
-已冻结，等待 Governance Repair 完成后回归验证。Execution IR 前五字段已完成，Triggered Rule IDs 因 Runtime Contract 缺口无法合法生成。是否进入 WRITE 取决于用户如何处理该缺口（例如：由 Governance 补发 Rule ID 候选集合后重新 COMPILE；或用户明确授权本 Run 以"候选集合为空、本字段留空"的方式豁免放行）。在用户就此缺口给出明确指示前，不推进到 WRITE。
+已冻结，等待 Governance Repair 完成后回归验证。Execution IR 前五字段已完成，Triggered Rule IDs 因 Runtime Contract 缺口无法合法生成。是否进入 WRITE 取决于用户如何处理该缺口。`production_ledger.md` 暂不新增本篇记录——待用户确认应以状态机权威枚举中的哪个值（`DECISION_FROZEN`）登记，且不在登记时预先裁定 Milestone-010 计数资格。
