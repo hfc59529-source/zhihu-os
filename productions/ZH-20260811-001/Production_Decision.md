@@ -35,6 +35,26 @@ CONTRACT FIX   PASS（用户于 2026-08-11 裁决：只恢复 COMPILE→WRITE co
 ↓
 COMPILE v2    PASS（Execution_IR-v2.md 沿用 v1 已完成的 Reasoning Path/Structure/Material Boundary/Expression Constraints/Acceptance Criteria，
               Triggered Rule IDs 按 compatibility rule 记录为 []；Execution IR 六字段完整，可进入 WRITE）
+↓
+WRITE v1      完成（Draft-v1.md，writer_model=GPT-5.6 Sol）
+↓
+AUDIT v1      FAIL → Return Stage=WRITE（AUDIT-v1.md，Issue-001/002/003，均为 Structure.required_steps 未兑现）
+↓
+WRITE Patch   完成（Draft-v2.md，仅补三处 Issue，其余逐字保留）
+↓
+COMPILE 复核  RETRACTED（用户对照 Draft-v2 实际内容复核，发现 COMPILE v2 对 TS01 Structure.step6 的实例化错误——
+              把"因果追问链 3-5 层，每层新增因果信息"实例化成了打卡/周报/工作群三个动作横向平铺重复举证同一层结论，
+              不是纵向因果推进；同时 Explanation Target 锁定错误——Draft 实际回答的是"为什么打卡/周报/群存在"，
+              这一层已被 Semantic_Freeze-v1.md 判定为 Top1/Top3 讲透、不构成增量，正确的 Explanation Target
+              应为 Transformation 段锁定的"怎么当场判断眼前动作是否会被取消"；此外 Acceptance Criteria 未执行
+              触发矩阵第五层去重，CV004（风险传导）超出本篇收窄判断范围且触碰自身禁用边界，CV006（结尾动作）
+              与 Structure step9/10 功能重复。三处均为 COMPILE 对已有规则的错误执行，非规则缺失，非 WRITE
+              执行失误，因此不回 WRITE Patch，退回 COMPILE 重新编译）
+↓
+COMPILE v3    PASS（Execution_IR-v3.md：Structure.step6 重编为单线因果链，落到追责链/风险承接机制终点；
+              Explanation Target 收紧为"怎么当场判断"；Acceptance Criteria 去激活 CV004/CV006，仅保留
+              CV001+CV003；Triggered Rule IDs 仍按 compatibility rule 记录为 []。Draft-v1.md/Draft-v2.md/
+              AUDIT-v1.md 标记 SUPERSEDED，不再作为后续 WRITE 输入基础）
 ```
 
 ## 违规记录
@@ -92,15 +112,15 @@ COMPILE v2    PASS（Execution_IR-v2.md 沿用 v1 已完成的 Reasoning Path/St
 
 因此：`ZH-20260811-001` 是否正式计入 Compiler §14 的 10 篇 Production Validation，本文件不下结论，标记为 **UNRESOLVED**，留待 Governance Plane 或 ZH-MILESTONE-010 复盘时明确该 Schema 缺口。
 
-## Disposition（Triggered Rule IDs contract 修复后）
+## Disposition（COMPILE v3 重编后）
 
-- 正式状态（按状态机权威枚举）：`EXECUTION_IR_READY`。
-- COMPILE execution：v1 blocked；v2 pass（Triggered Rule IDs = `[]`）。
-- WRITE：not started。
+- 正式状态（按状态机权威枚举）：`EXECUTION_IR_READY`（重新流转，v3）。
+- COMPILE execution：v1 blocked；v2 pass 但 Structure 实例化错误（Explanation Target drift + 因果链平铺 + CV 未去重）；v3 pass（已修正三处）。
+- WRITE：v1 完成（Draft-v1.md）→ AUDIT v1 FAIL → WRITE Patch（Draft-v2.md）→ COMPILE 复核后 RETRACTED。Draft-v1/Draft-v2/AUDIT-v1 均标记 SUPERSEDED。当前 WRITE 状态：未基于 v3 重新开始。
 - Milestone-010 eligibility：UNRESOLVED（见上节，不预先认定计入或不计入 10 篇）。
-- Governance disposition：本 Run 的 COMPILE→WRITE continuity 已由 Triggered Rule IDs contract 最小修复放行；`Proposal-A_Triggered_Rule_Audit_Binding.md` 的完整 Registry 方案仍维持 VALID GAP / DEFERRED IMPLEMENTATION，本文件不代替 Governance Review 做最终 Registry 方案裁决。
-- `Semantic_Freeze-v1.md`（四字段冻结）与 `Execution_IR-v1.md`（历史 BLOCK 记录）原样保留；当前 WRITE 输入改用 `Execution_IR-v2.md`。
+- Governance disposition：本 Run 的 COMPILE→WRITE continuity 已由 Triggered Rule IDs contract 最小修复放行；`Proposal-A_Triggered_Rule_Audit_Binding.md` 的完整 Registry 方案仍维持 VALID GAP / DEFERRED IMPLEMENTATION，本文件不代替 Governance Review 做最终 Registry 方案裁决。本次 COMPILE 复核发现的问题（Structure 实例化错误、Explanation Target 锁定错误、CV 去重未执行）与 Triggered Rule IDs 缺口无关，是独立的 COMPILE 执行质量问题，不牵动上述 Contract Fix 的有效性。
+- `Semantic_Freeze-v1.md`（四字段冻结）、`Execution_IR-v1.md`（历史 BLOCK 记录）、`Execution_IR-v2.md`（历史 Structure 实例化错误记录）原样保留；当前 WRITE 输入改用 `Execution_IR-v3.md`。
 
 ## Next
 
-本篇可交接 WRITE，由 Claude / 写作角色基于 `Execution_IR-v2.md` 生成 `Draft-v1.md`。Codex 不生成正文。`production_ledger.md` 暂不新增本篇记录；Milestone-010 计数资格与 Ledger 登记方式仍待后续明确。
+本篇需交接 WRITE，由 Claude / 写作角色基于 `Execution_IR-v3.md` 重新生成 `Draft-v3.md`（不得复用 `Draft-v2.md` 文字，单线因果链需完整重写）。Codex 不生成正文。`production_ledger.md` 暂不新增本篇记录；Milestone-010 计数资格与 Ledger 登记方式仍待后续明确。
