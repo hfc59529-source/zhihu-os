@@ -2,8 +2,8 @@
 
 Runtime Version: ZH-RUNTIME-DRAFT
 Status: TRIAL
-Published At: 2026-08-11 13:58:20 UTC
-Based On Commit: fe8276f
+Published At: 2026-08-11 18:34:44 UTC
+Based On Commit: 5d8c41e218db3e5172bef1564d8f003cee6d1711
 
 ## Partitions
 
@@ -11,9 +11,9 @@ Based On Commit: fe8276f
 
 | path | sha256 |
 |---|---|
-| docs/知乎OS Compiler V1.md | 310ef2fbcb9b6cddc72d14a87335ccb5c4832230d7febc8c1528eb123052b646 |
+| docs/知乎OS Compiler V1.md | a6a7119d159c9d986d307c76c5cd30fbd94c516153c637feeacc6e73c6ba5e07 |
 | docs/内容架构总则.md | cdf1c858368dec970170f646f6d9fc98aa0d411348e1b63c0f2927e785e70714 |
-| docs/知乎OS权威归属表.md | 2bd83233918b3b438d8465b3c24aa52b925ec7aa3ae4946d1dd9a29ff9b771dd |
+| docs/知乎OS权威归属表.md | 40c169a09176edb63fcfbca9787ba0c36e3785167196593fe587a68f1085dcae |
 
 ### Protocol Docs
 
@@ -33,7 +33,7 @@ Based On Commit: fe8276f
 | templates/GPT审核清单.md | 631082a9cb7f41424b7e95801ee33e360db0c2db34d17d89f11b099812adb792 |
 | docs/知乎内容质量参数库_V2.md | 1dd44575e99ea381a5a4bff10c25c27dbea64d6b0be96c193081b275e48fcea0 |
 | docs/生产状态机与交接规范.md | edec195ba4d13b8b0cf0aff3ad9ed49bfe8def2a3339b78121ab8cdb521cb92c |
-| data/Publish_Queue.md | 0e166254884230f0390e7480424efb978b4499498b527afdea66855e22839828 |
+| data/Publish_Queue.md | 2c6613dbe319062e147067ec53c4f5c3f90c0538d34438555b53e0826f2a18af |
 | templates/Failure Pattern模板.md | 3ea79dae80db29d8a6883fb2fe375bdcf42996d6fc2a8e9e059f00d37f52345e |
 
 ### Parameter & Knowledge Snapshots
@@ -42,8 +42,8 @@ Based On Commit: fe8276f
 |---|---|
 | production_variable_library.md | a3ae0358b4ec343abbfa3a4da95a62100e56472bf410360583fd9e7281c26944 |
 | runtime/production_variable_snapshot.md | ee39d808cfdb09e86743a11164f0559d312e4e1ec0554b198f2e24e1522731c1 |
-| runtime/知乎结构库快照.md | af28fa7c8530b56dd973f68ce4b5e05c84c3f0b534984bc055f8529a964affbe |
-| runtime/知乎ACTIVE规律快照.md | 7d4239ffa5e3447c27f34d0de9abe3d3ccc33331707614cef0685e980ebbe045 |
+| runtime/知乎结构库快照.md | 4b3881d0ae2b6c56cdbb0f5fb58f2714225352e4b6089c3adc8ebcbb2442d5e2 |
+| runtime/知乎ACTIVE规律快照.md | 8af2dacb4385ef2b710d6d279e6bc2e71e0d7b567bb17e6063b3625b7ae11665 |
 | runtime/知乎内容质量参数快照.md | a5df4370eaee5fc84b45cff5b065e3d7118f4c08cec3b8c00f15c993b5ac815a |
 | runtime/知乎账号画像快照.md | be4bffffb6eb7916e11181b2006ce749434e1712767b547c2671dbcde72cf955 |
 | docs/知乎OS Structure Evolution V1.md | a16d5b025ba8e89dc387561ee91d222b57c5a6a5f66b3c36c08b17575f9c9dae |
