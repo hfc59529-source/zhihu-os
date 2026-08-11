@@ -4,7 +4,7 @@ Production ID: ZH-20260811-001
 
 Source Topic Package: `data/topic_candidates/2026-08-11/TOPIC-20260811-001.md`
 
-DECISION 重做依据：`docs/知乎OS Compiler V1.md` 第4节 2026-08-11 Migration Fix。`Semantic_Freeze-v1.md` 已判 FAIL——其 Main Gap/Transformation 把 QI-02 识别出的真实问题类型（求解释）替换为另一类型（求判断），未在 Main Gap 中显式写出替换理由和证据，违反新增 Forbidden 条款。按"冻结后不得局部改，只能整体退回 DECISION 重做"，本文件从 Input Package 重新执行，不修补 v1。
+本文件生成依据：`docs/知乎OS Compiler V1.md` 第4节 2026-08-11 Migration Fix。`Semantic_Freeze-v1.md` 的历史合法性不因本次 Migration Fix 追溯改变——系统目前没有"新增 Contract 条款可追溯判定已冻结对象当时违规"的规则，`Semantic_Freeze-v1.md` 是否仍具备继续作为下游输入的继承资格，是一个独立于本文件的、尚待裁决的问题（见 `Production_Decision.md`"Migration Fix 适用范围核查"节）。本文件不预设 v1 无效，而是作为完整按当前 Contract（含 QT-QI 强制输入）重新执行一遍 DECISION 的独立产物，供后续比较或直接采用。
 
 ## QT-QI 识别（DECISION 强制输入，Compiler V1 第4节 Migration Fix）
 

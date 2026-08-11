@@ -62,26 +62,33 @@ AUDIT v3      PASS（AUDIT-v3.md：Structure 十步逐条核对，v2 三处遗�
               因果链横向平铺、结尾同义重复——均已解决；CV001/CV003 落实，CV004/CV006 去激活未违反；
               Material Boundary / Expression Constraints 均达标；无 Approved Issues）
 ↓
-DECISION FAIL（Migration Fix 追溯适用）
-              用户核对 `docs/知乎OS Compiler V1.md` 第4节 2026-08-11 Migration Fix 后发现：Production Card
-              退役时，QT-QI 问题理解识别域（QT-00 题型 + QI-01～QI-06）未被任何现行节点正式继承，DECISION
-              此前直接从 Input Package 跳到 Main Gap，从未核对用户表层问题背后的真实提问类型。补上这条
-              Contract 后追溯核对 `Semantic_Freeze-v1.md`：本题 QI-02 真实问题应为"求解释"，但 v1 的
-              Main Gap/Transformation 把它替换为"求判断"（"怎么当场判断"），且未按新 Forbidden 条款在
-              Main Gap 中显式写出类型替换的理由和证据，只用"Top3 已讲透/同类竞争"带过。判定：
-              `Semantic_Freeze-v1.md` = FAIL。Compiler V1 规定"冻结后不得自行修改，只能整体退回 DECISION
-              重做"，因此 `Execution_IR-v3.md`（COMPILE v3）、`Draft-v3.md`（WRITE v3）、`AUDIT-v3.md`
-              全部失去有效上游，标记 SUPERSEDED，保留为历史产物，不再作为当前生产链输入。不存在
-              "REVALIDATION REQUIRED"这一中间状态（此前使用该措辞有误，系统状态机中无此定义），正确状态
-              直接是 DECISION FAIL → Return Stage = DECISION。
+Migration Fix 适用范围核查（追溯效力边界）
+              用户对照 `docs/知乎OS Compiler V1.md` 第4节 2026-08-11 Migration Fix 复核后指出：本文件上一
+              版把 `Semantic_Freeze-v1.md` 直接判为"FAIL"，措辞有误。核查 Compiler V1 与
+              `docs/生产状态机与交接规范.md`，均未定义"新增 Contract 条款可以追溯判定已冻结对象在生成
+              当时违规"这一规则；仅规定"冻结后发现问题只能整体退回重做"，未定义"发现问题"是否可以由
+              后续新增规则倒推产生。已有同构先例：`reports/governance/asset_lineage_inventory_20260810.md`
+              对 legacy ACTIVE 参数在新 Observation 规则出台后的处理，明确写了"该当前要求不能自动溯及
+              判定历史 ACTIVE 非法""继承资格尚未单独裁决"——历史合法性与当前继续生产资格是两个独立问题，
+              不能用后者的裁决结论覆盖前者。因此修正：`Semantic_Freeze-v1.md` 在其生成时依据的 Contract
+              下历史合法性保留，不判 FAIL；但其能否继续作为当前 Runtime 下游输入，取决于系统里是否存在
+              "既有冻结对象在 Runtime Contract 升级后如何验证继承资格"的规则——核查结果：不存在。这是
+              第三个 Contract 缺口（继承资格裁决规则缺失），与前两个缺口（Triggered Rule IDs / QT-QI
+              capability loss）性质不同，尚待裁决具体处理方式，本文件不擅自代为裁决。
+              `Execution_IR-v3.md`/`Draft-v3.md`/`AUDIT-v3.md` 的状态相应从"因上游 FAIL 而 SUPERSEDED"
+              改记为"因上游继承资格未裁决而暂缓使用"，二者处置结果相同（当前不作为下游输入），但定性
+              不同，不应混淆。
 ↓
-DECISION v2   PASS（Semantic_Freeze-v2.md：从 Input Package 重新执行 QT-00 + QI-01～QI-06 → Reality →
-              Main Gap → Transformation → Core Judgment。QT-QI 识别记录 QI-02 = 求解释；Main Gap 在
-              QI-04 认知缺口类目内部下钻，找到 Top1/Top2/Top3 均未覆盖的子问题——三条高赞解释的是"形式
-              动作为什么会出现"（起源），题目原句"越来越严重"问的是"为什么难以撤销、只增不减"（维持/
-              累积机制），二者是不同因果对象，不构成同类竞争；Transformation 沿用 v1 已核实有效的收窄
-              结论（材料的真实接收方/被打开时机），但改为解释"撤销与新增在责任归属上的成本收益不对称"
-              这一棘轮机制，未把 QI-02 的问题类型从"求解释"替换为"求判断"，不触发 Forbidden 条款）
+DECISION v2   PASS（`Semantic_Freeze-v2.md`：在继承资格裁决结果出炉前，作为并行方案从 Input Package
+              重新执行 QT-00 + QI-01～QI-06 → Reality → Main Gap → Transformation → Core Judgment 产出。
+              QT-QI 识别记录 QI-02 = 求解释；Main Gap 在 QI-04 认知缺口类目内部下钻，找到 Top1/Top2/Top3
+              均未覆盖的子问题——三条高赞解释的是"形式动作为什么会出现"（起源），题目原句"越来越严重"
+              问的是"为什么难以撤销、只增不减"（维持/累积机制），二者是不同因果对象，不构成同类竞争；
+              Transformation 沿用 v1 已核实有效的收窄结论（材料的真实接收方/被打开时机），但改为解释
+              "撤销与新增在责任归属上的成本收益不对称"这一棘轮机制，未把 QI-02 的问题类型从"求解释"
+              替换为"求判断"，不触发新 Forbidden 条款。v2 的有效性不依赖 v1 是否被判 FAIL——即便 v1
+              继承资格裁决结果是"仍可使用"，v2 作为独立、更贴合当前 Contract 的版本依然可用；本文件
+              不因 v1 定性修正而撤回 v2）
 ```
 
 ## 违规记录

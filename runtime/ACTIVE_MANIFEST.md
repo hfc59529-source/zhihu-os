@@ -2,8 +2,8 @@
 
 Runtime Version: ZH-RUNTIME-DRAFT
 Status: TRIAL
-Published At: 2026-08-11 12:13:23 UTC
-Based On Commit: d5f7f78
+Published At: 2026-08-11 12:48:07 UTC
+Based On Commit: 5115b88
 
 ## Partitions
 
@@ -11,9 +11,9 @@ Based On Commit: d5f7f78
 
 | path | sha256 |
 |---|---|
-| docs/知乎OS Compiler V1.md | ea7ece541c1df356883e66bb92c41e4628fdb30ed2bc8637480e3b95645d1235 |
+| docs/知乎OS Compiler V1.md | 8101224c99bf9a838a0114227811e48fe9b1582379f72bd5532409537f81356c |
 | docs/内容架构总则.md | cdf1c858368dec970170f646f6d9fc98aa0d411348e1b63c0f2927e785e70714 |
-| docs/知乎OS权威归属表.md | d161328f2dce7b216a45ebf8a6ff6198b9a15642249f7e08efcc092a75d303bb |
+| docs/知乎OS权威归属表.md | 705b59dd69b943b90d0771010a58d4f5a92b44b5d7a984029cf26141e116dd57 |
 
 ### Protocol Docs
 
