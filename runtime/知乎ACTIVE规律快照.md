@@ -6,7 +6,7 @@
 
 状态：ACTIVE
 
-来源：由 Notion 管理权威批准后发布到 runtime。第二阶段起，ACTIVE规律优先来自“平台变量证据卡 → 账号实验验证 → 证据等级确认”的链路。
+来源：由 Git 权威文件和治理确认结果发布到 runtime。第二阶段起，ACTIVE规律优先来自“平台变量证据卡 → 账号实验验证 → 证据等级确认”的链路；Notion 仅可作为历史参考，不具备 Production Authority。
 
 ## 生产回流规则
 
@@ -49,7 +49,7 @@ ACTIVE 升级
 账号成功率：
 失败反证：
 状态：ACTIVE / EXPERIMENT / DEPRECATED
-Production Card调用方式：
+Execution IR调用方式：
 ```
 
 调用时机：
@@ -61,7 +61,7 @@ Production Card调用方式：
 ↓
 ACTIVE 规律回流调用
 ↓
-Production Card
+COMPILE → Execution IR
 ```
 
 输入：
@@ -86,13 +86,13 @@ Production Card
 
 写入规则：
 
-- 推荐主变量写入 Production Card 的 `唯一主变量`。
-- 推荐辅助变量写入 Production Card 的 `辅助变量`，最多三个。
-- 推荐结构必须与结构库校验一致。
-- 禁用变量不得写入 Production Card 的主变量或辅助变量。
+- 推荐主变量只能作为 COMPILE 的变量匹配依据，若被激活，写入 `Execution IR.acceptance_criteria` 的本 Run Realization Requirement。
+- 推荐辅助变量最多三个，只能作为 COMPILE 的变量匹配依据，若被激活，写入 `Execution IR.acceptance_criteria` 的本 Run Realization Requirement。
+- 推荐结构必须与结构库校验一致，并写入 `Execution IR.Structure`。
+- 禁用变量不得写入 `Execution IR.acceptance_criteria` 或任何正文义务。
 - 命中规律只能作为变量证据或调用理由压缩呈现，不得输出验证流水账。
 
-未命中时，不阻塞 Production Card；标注 `ACTIVE 规律未命中`，继续按结构库、`production_variable_library.md`、质量参数库和历史资产检索执行。
+未命中时，不阻塞 COMPILE；标注 `ACTIVE 规律未命中`，继续按结构库、`production_variable_library.md`、质量参数库和历史资产检索执行。
 
 ## 通用传播规律
 

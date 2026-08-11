@@ -277,13 +277,13 @@ L3｜ACTIVE变量：生产触发
 - Trigger Candidate 只回答题目是否值得优先生产，不得输出 ACTIVE、结构、参数、核心判断或正文方向。
 - 开放式决策题默认 REJECT：问题主体是“如果你……”“你会不会……”“你会怎么选……”“你会如何处理……”，且核心目标是让回答者做选择时，不进入正式生产，不生成 Production Card，不采集 `Answer_Benchmark_Top3`。
 - 开放式决策题稳定判断法：如果把题目改成“为什么”仍能回答机制，则保留；如果改成“为什么”以后问题就不存在，直接放弃。
-- 读者视角校准只回答视角，不回答内容；只能迁移旧 Production Card 已有能力，输出读者真实困惑、读者原始理解和实际读者范围。
-- 读者真实困惑、读者原始理解、实际读者范围三个字段的唯一权威来源是选题包「3. 读者视角校准」节。Production Card 必须直接消费选题包中的这三个字段，不得重新生成或独立推导第二份版本；如认为选题包中的字段有误，必须退回选题包修正，不得在 Card 内部另写一份。
+- 读者视角校准只回答视角，不回答内容；只能迁移旧入口已有的读者视角校准能力，输出读者真实困惑、读者原始理解和实际读者范围。
+- 读者真实困惑、读者原始理解、实际读者范围三个字段是选题包「3. 读者视角校准」节的输入事实。DECISION 必须消费这些字段并完成 QT-QI 识别，不得在 WRITE 内部重新生成第二份版本；如认为选题包字段有误，必须退回 INPUT / Topic Package 修正。
 - Topic Package 只回答题目事实、必要上下文、是否值得写、重复检查、风险提示、`Answer_Benchmark_Top3`、`Existing_View_Coverage`、`Possible_Current_Gap`、`Existing_Parameter_Matches` 和 `New_Parameter_Observations`。
 - `Answer_Benchmark_Top3` 只回答竞争环境、同题高赞回答已覆盖内容、`Possible_Current_Gap`、已有参数命中和待审核参数缺口。
-- Top3 参数命中不是参数验证：高赞回答命中某参数，只能说明该参数出现在高赞回答中，不能说明该参数导致高赞。真正的参数验证只能来自本账号 Production Card 调用后的发布结果和复盘数据。
-- `Possible_Current_Gap` / Candidate Gap 仅为研究结论，不属于 Production Card 输入，不具有约束力；Claude / Production Card 可以接受、修改、否决，或完全重新定义正文切入。
-- ACTIVE、核心判断、最终参数、结构和表达，必须在 Production Card 生成过程中由生产决策层推理得出，不得由 Topic、Trigger 或 `Answer_Benchmark_Top3` 提前决定。
+- Top3 参数命中不是参数验证：高赞回答命中某参数，只能说明该参数出现在高赞回答中，不能说明该参数导致高赞。真正的参数验证只能来自本账号 Execution IR 激活参数、经 WRITE/AUDIT/REVIEW 后发布的结果和复盘数据。
+- `Possible_Current_Gap` / Candidate Gap 仅为研究结论，不属于 Decision 或 Execution IR 的约束输入，不具有约束力；DECISION / COMPILE 可以接受、修改、否决，或重新定义正文切入。
+- ACTIVE、核心判断、最终参数、结构和表达，必须在 Compiler V1 的 DECISION / COMPILE / WRITE 边界内推理得出，不得由 Topic、Trigger 或 `Answer_Benchmark_Top3` 提前决定。
 
 采集任务必须分流：
 
@@ -465,20 +465,20 @@ Codex 选题采集模式只有以下情况允许停止：
 
 正式生产前必须读取本地 runtime 执行快照。
 
-Notion 是管理权威，负责协议设计、参数维护、规律验证、版本审批、复盘与升级决策。
+Git docs/templates、`production_variable_library.md` 与 runtime 快照共同构成当前 Production Authority Chain；`runtime/ACTIVE_MANIFEST.md` 是日常执行清单权威。
 
 本地 `runtime/` 是 Codex 日常生产的唯一执行权威，负责正式生产时的知识、结构、参数和规律调用。
 
-Codex 日常生产不得实时读取 Notion，不得根据 Notion 页面临时改变运行规则。
+Codex 日常生产不得实时读取 Notion，不得根据 Notion 页面临时改变运行规则。Notion 只能作为历史参考或待迁移材料来源，不拥有管理、审批或执行权威。
 
 只有标记为 ACTIVE 并已发布到 `runtime/ACTIVE_MANIFEST.md` 的内容，才能进入生产链。
 
-Notion 内容发生修改，不代表立即生效；只有完成快照发布和版本更新后才生效。
+外部参考资料发生修改，不代表立即生效；只有先落到 Git 权威文件或参数库，再完成快照发布和版本更新后才生效。
 
-runtime 与 Notion 冲突时：
+runtime 与外部参考资料冲突时：
 
 - 日常生产按 runtime 执行。
-- 系统维护时以 Notion 审批结果生成新的 runtime 版本。
+- 系统维护时以 Git 权威文件和治理确认结果生成新的 runtime 版本。
 
 必须输出本地执行源审计：
 
@@ -514,14 +514,14 @@ runtime 与 Notion 冲突时：
 | 层级 | 载体 | 回答的问题 | 职责 |
 | --- | --- | --- | --- |
 | L1 协议层 | Git/MD | AI 应该怎么干 | 总控协议、调度协议、Prompt模板、Skill、Router、输入协议 |
-| L2 知识层 | Notion 管理源 / runtime 执行快照 | AI 依据什么干 | TOP文章、ACTIVE知识、用户画像、爆款规律、平台规则、评论规律、结构知识 |
+| L2 知识层 | Git 参数库 / runtime 执行快照 | AI 依据什么干 | TOP文章、ACTIVE知识、用户画像、爆款规律、平台规则、评论规律、结构知识 |
 | L3 执行层 | Codex | 今天具体干什么 | 读取选题采集协议、识别截图、读取原问题、生成选题包、保存候选池 |
 | L4 平台层 | 知乎/头条 | 真实反馈是什么 | 曝光、阅读、评论、收藏、收益 |
-| L5 学习层 | Notion复盘 | 下次如何优化 | 数据记录、假设、验证、复盘、更新知识、形成决策 |
+| L5 学习层 | Git 数据与报告 | 下次如何优化 | 数据记录、假设、验证、复盘、更新知识、形成决策 |
 
 Git/MD 只负责稳定协议，不参与日常学习。
 
-Notion 负责知识增长、审批和学习闭环；runtime 负责 Codex 日常执行。
+Git 数据、报告和治理文件负责知识增长、审批和学习闭环；runtime 负责 Codex 日常执行。
 
 ## 1.2 双循环
 

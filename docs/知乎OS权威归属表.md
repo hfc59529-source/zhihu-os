@@ -45,11 +45,11 @@
 | `README.md`｜知乎盈利系统首页 | 00 首页 | 是，顶层入口权威 | 全部页面、协议、日常生产 | 生产模块、知识模块、运行模块、复盘模块、治理模块不得另建首页或第二入口 |
 | 收益指标 / 当前实验 / 待办视图 | 00 首页 | 入口视图，数据以来源库为准 | 日常生产、复盘判断 | 首页只引用，不复制维护底层数据 |
 | `docs/知乎OS权威归属表.md` | 00 首页 | 是，归属判断权威 | README、总控协议、生产协议 | 其它页面不得另起一套归属表 |
-| `docs/知乎OS Compiler V1.md` | 01 生产模块 | 是，七节点流水线（INPUT/DECISION/COMPILE/WRITE/AUDIT/REVIEW/RELEASE）节点定义、Execution IR Schema 与 Architecture Routing Table 唯一权威；Status: DESIGN_FROZEN，未经 `runtime/ACTIVE_MANIFEST.md` 发布为 TRIAL/ACTIVE 前不具备执行权威 | 执行协议、总AI执行中心、Claude正文生产Prompt、生产状态机与交接规范、GPT审核清单、Failure Pattern模板、Structure Evolution V1 | 其它文件不得另立九对象链（Analyzer/Structure Matcher/Router/Slim IR/Runtime Assembly/Writer Input Package）或另立节点定义 |
+| `docs/知乎OS Compiler V1.md` | 01 生产模块 | 是，七节点流水线（INPUT/DECISION/COMPILE/WRITE/AUDIT/REVIEW/RELEASE）节点定义、Execution IR Schema 与 Architecture Routing Table 唯一权威；Status: DESIGN_FROZEN，已由 `runtime/ACTIVE_MANIFEST.md` 以 TRIAL 状态发布为受控试运行执行权威 | 执行协议、总AI执行中心、Claude正文生产Prompt、生产状态机与交接规范、GPT审核清单、Failure Pattern模板、Structure Evolution V1 | 其它文件不得另立九对象链（Analyzer/Structure Matcher/Router/Slim IR/Runtime Assembly/Writer Input Package）或另立节点定义 |
 | `docs/知乎OS执行协议.md` | 01 生产模块 | 是，生产执行总协议权威 | README、总AI执行中心 | 知识库、复盘库不得维护稳定流程；节点定义以 Compiler V1 为准，本文件不得另立 |
 | `docs/08_总AI执行中心.md` | 01 生产模块 | 是，AI调用协议权威 | 执行协议、QA | 变量库、质量参数库不得维护调度链路；节点定义以 Compiler V1 为准 |
 | `docs/00-设计原则.md` | 05 治理模块 | 是，系统设计边界权威 | README、执行协议、权威归属表 | 单篇复盘、临时实验不得直接改设计原则 |
-| Reasoning First 推导优先原则 | 05 治理模块 | 是，系统架构优先级权威；唯一出处为 `docs/00-设计原则.md` 原则0 | 平台样本学习、Evidence Schema、Knowledge Engine、Parser、Automation、Production Card | 协议中心、Parser、自动化脚本不得越过 Reasoning Grammar 直接定义字段或生产知识 |
+| Reasoning First 推导优先原则 | 05 治理模块 | 是，系统架构优先级权威；唯一出处为 `docs/00-设计原则.md` 原则0 | 平台样本学习、Evidence Schema、Knowledge Engine、Parser、Automation、Execution IR | 协议中心、Parser、自动化脚本不得越过 Reasoning Grammar 直接定义字段或生产知识 |
 | 中文字段优先规则 | 05 治理模块 | 是，字段命名与运行产物可读性权威；唯一出处为 `docs/00-设计原则.md` 原则13 | 所有 schema、JSON、模板、QA 报告、结构匹配产物 | 任何脚本或模板不得只新增英文关键字段 |
 | `docs/知乎平台样本学习协议.md` | 02 知识模块 | 是，平台样本采集、拆解、统计和账号验证链路权威 | README、执行协议、ACTIVE_MANIFEST、ACTIVE规律快照 | 日常生产不得直接读取平台样本或未验证平台变量证据 |
 | `skills/Skill006_知乎生产卡生成器.md` | 01 生产模块 | 否，`LEGACY_RETIRED`：Production Card 已退出日常生产主链，本文件只作历史归档，不具备执行权威 | 不适用——不再是任何日常生产上游 | 不得被 Codex/Claude 单篇任务引用、执行或转写 |

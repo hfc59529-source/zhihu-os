@@ -4,7 +4,7 @@ Status：ACTIVE
 
 ## 目标
 
-在生成 Production Card 之前，先从 `04｜内容资产库` 对应的本地 L0 总账中检索相似历史样本，输出可供 Skill006 使用的历史证据摘要。
+在 COMPILE 生成 Execution IR 之前，先从 `04｜内容资产库` 对应的本地 L0 总账中检索相似历史样本，输出可供 COMPILE 使用的历史证据摘要。
 
 本技能只负责历史资产检索，不负责正文创作，不负责复盘，不负责升级 ACTIVE。
 
@@ -80,7 +80,7 @@ python3 scripts/search_historical_assets.py "知乎问题标题" --output report
 历史风险：
 -
 
-是否建议进入Production Card：YES/NO
+是否建议进入COMPILE：YES/NO
 使用边界：
 ```
 
@@ -93,23 +93,23 @@ python3 scripts/search_historical_assets.py "知乎问题标题" --output report
 5. 如果标签字段仍为 `UNKNOWN`，必须明确提示“历史标签证据不足”，不得伪造变量或结构。
 6. C层样本代表“高阅读低收益”风险，必须在历史风险中提示。
 
-## 接入 Production Card 的规则
+## 接入 COMPILE 的规则
 
-Skill006 生成 Production Card 前，必须先读取 Skill000 输出，并把可用结论压缩进：
+COMPILE 生成 Execution IR 前，可以读取 Skill000 输出，并把可用结论压缩进：
 
-- 生产前分析
+- Decision 旁证
 - 变量证据
-- 结构调用
-- 本文策略
-- 禁止推导
+- Structure 匹配依据
+- Material Boundary
+- Acceptance Criteria 候选义务
 
 不得把 Skill000 原始检索日志、完整数据库字段、相似度细节交给 Claude。
 
-Production Card 中只允许引用被压缩后的结论，例如：
+Execution IR 中只允许引用被压缩后的结论，例如：
 
 ```text
 变量证据：
-唯一主变量：
+本 Run Realization Requirement：
 来源：ACTIVE变量库 + 历史资产命中样本
 调用理由：历史相似样本中反复出现组织信任/风险责任相关机制
 证据等级：HISTORICAL_RAW + ACTIVE
@@ -122,4 +122,4 @@ Production Card 中只允许引用被压缩后的结论，例如：
 - 历史样本不得直接升级 ACTIVE。
 - 历史样本只能生成候选规律，进入05.5验证后再决定是否升级 ACTIVE。
 - 当历史命中不足、收益覆盖不足或字段为 `UNKNOWN` 时，必须降级为弱参考。
-- Skill000 输出为 `NO` 时，不阻止用户继续生成 Production Card，但必须在生产前分析中标注“历史证据不足”。
+- Skill000 输出为 `NO` 时，不阻止 COMPILE 继续生成 Execution IR，但必须在 Material Boundary 或结构匹配依据中标注“历史证据不足”。

@@ -95,7 +95,7 @@ Codex 不得继续生成 Production Card 或正文。
 
 ## 2.0.0 读者视角校准
 
-读者视角校准是从旧 Production Card 字段中迁移到当前选题入口的既有能力，不是新增对象。它是 Production Card 之前的标准检查步骤，位于 Topic Pool 之后、Answer_Benchmark_Top3 之前。
+读者视角校准是从旧入口字段中迁移到当前选题入口的既有能力，不是新增对象。它是 INPUT Boundary 之前的标准检查步骤，位于 Topic Pool 之后、Answer_Benchmark_Top3 之前。
 
 ```text
 Topic Pool
@@ -104,7 +104,9 @@ Topic Pool
 ↓
 Answer_Benchmark_Top3
 ↓
-Production Card
+INPUT Boundary
+↓
+DECISION
 ```
 
 读者视角校准只回答视角，不回答内容。
@@ -167,9 +169,9 @@ Trigger Candidate 只用于判断题目生产优先级，不得绑定 ACTIVE、�
 - 现有参数库中哪些参数在高赞回答中出现并形成命中。
 - 哪些重要效果暂时无法被现有参数解释。
 
-`Possible_Current_Gap` / Candidate Gap 仅为研究结论，不属于 Production Card 输入，不具有约束力。Production Card / Claude 可以接受、修改、否决，或完全重新定义正文切入。最终决策权属于 Production Card 生成过程。
+`Possible_Current_Gap` / Candidate Gap 仅为研究结论，不属于 Decision 或 Execution IR 的约束输入，不具有约束力。DECISION 可以接受、修改、否决，或重新定义正文切入；最终决策权属于 Compiler V1 的 DECISION / COMPILE 节点，不属于 Topic Package 或 Answer_Benchmark_Top3。
 
-`Answer_Benchmark_Top3` 可以影响当前 Production Card 的参数候选和差异定位，但不能自动决定正文方向、自动新增 ACTIVE 参数、自动修改参数库，Claude 也不得重新打开知乎重复采集同题高赞回答。
+`Answer_Benchmark_Top3` 可以影响当前 DECISION / COMPILE 的参数候选和差异定位，但不能自动决定正文方向、自动新增 ACTIVE 参数、自动修改参数库，Claude 也不得重新打开知乎重复采集同题高赞回答。
 
 ## 2.0.3 Answer_Benchmark_Top3 固定用途
 
@@ -206,7 +208,7 @@ Trigger Candidate 只用于判断题目生产优先级，不得绑定 ACTIVE、�
 
 `Answer_Benchmark_Top3` 只能证明某参数出现在高赞回答中，不能证明该参数造成了高赞、收藏、评论或收益。高赞可能来自作者粉丝、发布时间、回答时机、账号权重、平台分发等外部因素。
 
-因此，本节只输出 `Parameter Match` / 参数命中，不输出参数验证。真正的参数验证只能来自本账号 Production Card 调用后的发布数据，包括阅读、赞同、收藏、评论、收益和后续复盘。
+因此，本节只输出 `Parameter Match` / 参数命中，不输出参数验证。真正的参数验证只能来自本账号 Execution IR 激活参数、经 WRITE/AUDIT/REVIEW 后发布的数据，包括阅读、赞同、收藏、评论、收益和后续复盘。
 
 ### C. 新参数缺口发现
 

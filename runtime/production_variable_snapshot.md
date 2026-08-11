@@ -5,7 +5,7 @@ Experiment ID：ZH-20260801-PARAM-CALL-001
 平台：知乎
 题型：战略/商业题
 生成日期：2026-08-01
-快照状态：PARAM_CALL_TEST_ONLY，未进入 Production Card，未生产正文
+快照状态：TRIAL_RUNTIME_SAMPLE，作为当前 TRIAL Runtime 的变量触发样例；未生成正文，不能单独代表正式生产结果
 
 ## 筛选顺序
 

@@ -125,7 +125,7 @@ ARCHIVED
 命中依据：
 禁用边界检查：
 本题用途：
-是否实际激活（写入 Execution IR.triggered_rule_ids 或 acceptance_criteria）：
+是否实际激活（CV 只能写入 Execution IR.acceptance_criteria，不得写入 triggered_rule_ids）：
 ```
 
 触发矩阵不是第二套变量库，不保存长期证据，不反向覆盖本库。

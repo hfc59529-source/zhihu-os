@@ -394,9 +394,9 @@ INPUT → DECISION → COMPILE → WRITE → AUDIT → REVIEW → RELEASE
 
 10 篇前禁止：批量迁移历史数据、删除旧资产、重构 Notion 首页或数据库结构。
 
-## 15. 待处理事项（本次未处理，如实记录）
+## 15. Runtime Migration 状态（2026-08-11）
 
-- `runtime/ACTIVE_MANIFEST.md` 的 Partitions 仍沿用旧资产分类，未按本文件的七节点重新组织；本文件本身也未进入任何 Runtime Release，Status 为 DESIGN_FROZEN，不具备执行权威。
-- Manifest Contract 的 Status 枚举已扩展为 `DRAFT | TRIAL | ACTIVE | DEPRECATED`（`scripts/validate_runtime_consistency.py` 的 `VALID_STATUS`、`scripts/release_runtime.py` 的 `--status` 参数化均已完成并测试），但尚未实际执行过一次 TRIAL 发布——`runtime/ACTIVE_MANIFEST.md` 仍是 `Status: DRAFT`。
-- Production Card、Skill006、Writer Input Package Schema 等旧对象的具体退场方式（删除 / 归档 / 内容迁入 Execution IR 载体）尚未落地，仅在设计层完成了职责判断（见对话记录中"现有系统哪些东西保留，哪些降级"一节）。
-- `data/parameter_call_log.md` 的记录表列结构已扩展（Trigger Matrix Trace 字段：Experiment ID / 推荐变量 / 实际激活变量 / 未激活变量 / 预期结果），但截至本次修改仍是空表——尚未有任何 TRIAL Run 产生过一条新结构的记录。
+- `runtime/ACTIVE_MANIFEST.md` 已发布 `Status: TRIAL`，本文件已列入 Compiler Authority；文件完整性由 `scripts/validate_runtime_consistency.py` 校验。
+- `runtime/ACTIVE_MANIFEST.md` 的 Partitions 仍沿用资产分类，尚未按七节点重新组织；这不阻断 TRIAL，但属于后续治理债务。
+- Production Card、Skill006、Writer Input Package Schema 等旧对象已在权威归属表中退为 `LEGACY_RETIRED` / `DEPRECATED`；当前迁移重点是确保 Manifest 执行面不再把它们当作现行接口。
+- `data/parameter_call_log.md` 的记录表列结构已扩展（Trigger Matrix Trace 字段：Experiment ID / 推荐变量 / 实际激活变量 / 未激活变量 / 预期结果），但仍需要真实 TRIAL Run 继续验证。

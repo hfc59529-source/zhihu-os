@@ -109,7 +109,7 @@ def row_line(row, include_score=False):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Search L0 historical Zhihu assets before Production Card generation.")
+    parser = argparse.ArgumentParser(description="Search L0 historical Zhihu assets before COMPILE generates Execution IR.")
     parser.add_argument("question", help="知乎问题标题")
     parser.add_argument("--limit", type=int, default=12)
     parser.add_argument("--output", type=Path)
@@ -197,7 +197,7 @@ def main():
     lines.extend(f"- {item}" for item in risk)
     lines.extend([
         "",
-        "是否建议进入Production Card：YES" if matches else "是否建议进入Production Card：NO",
+        "是否建议进入COMPILE：YES" if matches else "是否建议进入COMPILE：NO",
         "使用边界：历史资产只提供证据摘要；不得直接升级ACTIVE，不得替代runtime ACTIVE快照。",
     ])
 
