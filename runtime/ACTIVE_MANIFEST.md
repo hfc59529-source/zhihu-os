@@ -2,8 +2,8 @@
 
 Runtime Version: ZH-RUNTIME-DRAFT
 Status: TRIAL
-Published At: 2026-08-11 12:06:44 UTC
-Based On Commit: 5ebf1516957b793584d51514c6d6f7e5b4c16869
+Published At: 2026-08-11 12:13:23 UTC
+Based On Commit: d5f7f78
 
 ## Partitions
 
@@ -11,7 +11,7 @@ Based On Commit: 5ebf1516957b793584d51514c6d6f7e5b4c16869
 
 | path | sha256 |
 |---|---|
-| docs/知乎OS Compiler V1.md | b953533ad2ba009cc67ad20c22959c333298eb407b35fa4e93571e1622e6397f |
+| docs/知乎OS Compiler V1.md | ea7ece541c1df356883e66bb92c41e4628fdb30ed2bc8637480e3b95645d1235 |
 | docs/内容架构总则.md | cdf1c858368dec970170f646f6d9fc98aa0d411348e1b63c0f2927e785e70714 |
 | docs/知乎OS权威归属表.md | d161328f2dce7b216a45ebf8a6ff6198b9a15642249f7e08efcc092a75d303bb |
 
@@ -32,9 +32,9 @@ Based On Commit: 5ebf1516957b793584d51514c6d6f7e5b4c16869
 | templates/Claude正文生产Prompt.md | b9164c0e9ded19e883bbf85320bc20b1d0012e6060eacafc8a8253581a5c2f55 |
 | templates/GPT审核清单.md | 252a04b3fdeac9ae997d7fbfd8bf0221bffdfbc7ce245cca7b6d83873c2b64a7 |
 | docs/知乎内容质量参数库_V2.md | ebb5cdc46488b6b1426b6803521126864c4779f7a6546d860114d8cd6063d007 |
-| docs/生产状态机与交接规范.md | 753a4058f1455efef959f4604e50a6e82a090f538f8cfb3b0eca219721218921 |
+| docs/生产状态机与交接规范.md | b755809eb3c357496eb2643bf73494d69dea00e156a90a791045334c15560cd2 |
 | data/Publish_Queue.md | 0e166254884230f0390e7480424efb978b4499498b527afdea66855e22839828 |
-| templates/Failure Pattern模板.md | 1edb33ed19074e0e6ca3dd8d0418c62eca55682cc9bf2b799239f0ae767175c7 |
+| templates/Failure Pattern模板.md | 3ea79dae80db29d8a6883fb2fe375bdcf42996d6fc2a8e9e059f00d37f52345e |
 
 ### Parameter & Knowledge Snapshots
 
