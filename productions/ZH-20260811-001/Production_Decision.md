@@ -217,3 +217,30 @@ Gate Result：FAIL。Draft-v6 不进入 REVIEW/RELEASE，退回 WRITE 生成 Dra
 `AUDIT-v10.md`：用与 AUDIT-v9 相同的完整 Run Activation Set（A 组 + RR-01～RR-08 全量）复审，PASS。逐条复核 Issue-001~004：RR-01-03（连续判断链在 2 个判断后即有缓冲）、RR-03-01（机制后紧接缓冲段而非新判断）、RR-04-04/SEVERITY（318 字处切断，未延伸至 3 段）、RR-02-03（全文最长单句降至 79 字，无超 80 字句）均确认解决；Issue-005 随之解除。AUDIT-v9 中列为 Observation（非 Issue）的 RR-01-02、RR-07-09 保持不变，未在本次 Patch 范围内处理，不影响本次 Gate 判定。
 
 Gate Result：PASS。当前有效链路更新为：`Semantic_Freeze-v2.md` → `Execution_IR-v4.md` → `Draft-v7.md` → `AUDIT-v10.md`。Draft-v6/AUDIT-v7/AUDIT-v8/AUDIT-v9 原样保留归档，不再作为当前上游。下一节点：REVIEW，交给用户审阅 `Draft-v7.md`；只有用户再次明确 `USER_APPROVED` 后，才能进入 RELEASE。
+
+## USER REVIEW（2026-08-11）
+
+用户已明确给出：`USER_APPROVED`。
+
+批准对象锁定为：
+
+- Production ID：`ZH-20260811-001`
+- Draft：`Draft-v7.md`
+- Semantic Freeze：`Semantic_Freeze-v2.md`
+- Execution IR：`Execution_IR-v4.md`
+- Audit：`AUDIT-v10.md` PASS
+
+本次不需要再次 AUDIT，不重新推导 Decision / Execution IR，不生成新 Draft。当前状态从 `READY_FOR_USER_REVIEW` 推进为 `USER_APPROVED`；下一节点为 RELEASE。依据 `docs/生产状态机与交接规范.md` 与 `docs/生产审计决策流程.md`，`Release-v1.md` 由 RELEASE 角色生成或确认后，生产状态方可进入 `RELEASE_READY` 并写入 `data/Publish_Queue.md`。
+
+## RELEASE（2026-08-11）
+
+按 `docs/知乎OS Compiler V1.md` §9：RELEASE 节点无内容判断权，仅状态转换 `READY_FOR_RELEASE → RELEASED`，记录 Run ID + Runtime Version + 时间戳。
+
+`Release-v1.md` 已生成：
+
+- Run ID：`ZH-20260811-001`
+- Base：`Draft-v7.md`（正文逐字复制，未做任何改写）
+- Runtime Version：TRIAL（`runtime/ACTIVE_MANIFEST.md`，Based On Commit: `fe8276f`）
+- Released At：`2026-08-11T14:23:38Z`
+
+生产状态更新为 `RELEASE_READY`，下一节点是写入 `data/Publish_Queue.md`，进入发布闭环（该闭环标注"后续单独验证，当前不执行"，本次仅完成生产闭环终点）。Milestone-010 计数资格仍为 UNRESOLVED（见前节），本篇 RELEASE 完成不等同于自动裁定计入 10 篇验证。
