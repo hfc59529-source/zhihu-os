@@ -244,3 +244,14 @@ Gate Result：PASS。当前有效链路更新为：`Semantic_Freeze-v2.md` → `
 - Released At：`2026-08-11T14:23:38Z`
 
 生产状态更新为 `RELEASE_READY`，下一节点是写入 `data/Publish_Queue.md`，进入发布闭环（该闭环标注"后续单独验证，当前不执行"，本次仅完成生产闭环终点）。Milestone-010 计数资格仍为 UNRESOLVED（见前节），本篇 RELEASE 完成不等同于自动裁定计入 10 篇验证。
+
+## Publish Queue Entry（2026-08-11）
+
+`ZH-20260811-001` 已写入 `data/Publish_Queue.md` 当前队列，作为 011 起正式经过 `USER_APPROVED` Gate 的第一条 Production。队列记录如下：
+
+- USER_APPROVED：2026-08-11（对象锁定：Draft-v7 + Semantic_Freeze-v2 + Execution_IR-v4 + AUDIT-v10 PASS）
+- Release-v1：`productions/ZH-20260811-001/Release-v1.md`
+- 发布时间：待定（等批量排期）
+- 队列内状态：`RELEASE_READY`
+
+状态语义说明：`data/Publish_Queue.md` 的状态取值定义中写 `QUEUED=已进发布队列`，但同文件当前优先级第3条写“等有一批真正 `RELEASE_READY` 后，统一安排固定时间发布”，且当前队列已实际使用 `RELEASE_READY` 表示“已入队但未排期”。本篇不擅自将队列状态改为 `QUEUED`，先按现有队列记录保留 `RELEASE_READY`；`RELEASE_READY → QUEUED` 是否应由“写入 Publish Queue”触发，需后续由状态机 / 发布队列治理裁决。

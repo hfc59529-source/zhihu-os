@@ -2,7 +2,7 @@ Production ID: ZH-20260811-001
 
 # User Review Package
 
-当前状态：RELEASE_READY（`Release-v1.md` 已生成，Compiler V1 §9 RELEASE 节点完成 READY_FOR_RELEASE → RELEASED 状态转换；等待写入 `data/Publish_Queue.md`）
+当前状态：RELEASE_READY（`Release-v1.md` 已生成，Compiler V1 §9 RELEASE 节点完成 READY_FOR_RELEASE → RELEASED 状态转换；已写入 `data/Publish_Queue.md` 当前队列，等待后续排期 / 草稿箱 / 人工最终检查 / 正式发布）
 
 当前正文版本：Draft-v7
 
@@ -16,7 +16,9 @@ Production ID: ZH-20260811-001
 
 Release 记录：`Release-v1.md`（Run ID: ZH-20260811-001，Runtime Version: TRIAL / Based On Commit fe8276f，Released At: 2026-08-11T14:23:38Z）。RELEASE 节点未做任何内容判断，仅记录 Run ID + Runtime Version + 时间戳，正文与 Draft-v7 逐字一致。
 
-下一节点：写入 `data/Publish_Queue.md`，进入发布闭环（草稿箱 → 最终检查 → 正式发布），该闭环当前标注"后续单独验证，当前不执行"，本次仅完成生产闭环的 RELEASE_READY 状态。
+发布队列记录：已写入 `data/Publish_Queue.md` 当前队列（011 起正式 USER_APPROVED Gate 后第一条），队列内状态暂按该文件当前记录保留为 `RELEASE_READY`。
+
+下一节点：等待批量排期；排期后进入发布闭环（草稿箱 → 最终检查 → 正式发布）。`RELEASE_READY` / `QUEUED` 的精确定义存在语义不一致：`data/Publish_Queue.md` 状态取值写 `QUEUED=已进发布队列`，但当前优先级第3条又把已入当前队列、待批量排期的对象称为 `RELEASE_READY`。本包不擅自把队列状态改为 `QUEUED`，该语义留待状态机 / 发布队列治理裁决。
 
 ## 原知乎问题
 
