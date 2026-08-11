@@ -260,8 +260,8 @@ Gate Result：PASS。当前有效链路更新为：`Semantic_Freeze-v2.md` → `
 
 发布前最终检查中，用户撤回发布意向并判定 Draft-v7 成品内容价值不足，不得发布。`Release-v1.md` 保留为历史归档，不作为可发布稿使用；`ZH-20260811-001` 从 `data/Publish_Queue.md` 当前队列撤出，转入“发布前最终检查撤回记录”。知乎页面编辑器中曾粘贴 Release-v1 正文，但未点击“发布回答”，未形成 PUBLISHED。
 
-内容层失败归因不是 AUDIT-v9 所定位的 WRITE 表达硬伤。AUDIT-v10 证明 Draft-v7 已满足完整 Run Activation 的合规要求，但用户最终判定“合规”不等于“值得读”：`Semantic_Freeze-v2.md` 冻结的 Core Judgment（撤销责任高、新增责任低，因此形式主义只增不减）逻辑成立，却信息增量过低，普通读者用一句“谁敢取消？取消以后出事算你的；加流程反正没人追责”即可理解。`Execution_IR-v4.md` 继续调用 TS01 十步机制推进，并要求五层因果追问，将一层判断机械扩写为完整但低信息密度的正文。
+本次最终人工拒绝不能简单归为 AUDIT-v9 所定位的 WRITE 表达硬伤；AUDIT-v10 只能证明 Draft-v7 已满足当前完整 Run Activation 的合规要求，不能证明最终发布价值。当前只确认：机器 Gate PASS 与人工发布前判断之间存在差异。
 
-Observation：Core Judgment 逻辑成立且 Execution IR 完整，不代表其信息增量足以支撑长篇机制解释；固定多层 Structure 可能将低展开价值判断机械扩写，最终形成“高结构完整度、低信息密度”的正文。
+候选解释包括：INPUT 过早抽象、DECISION 冻结低信息增量 Core Judgment、COMPILE 对简单判断过度展开、WRITE 表达选择太平、AUDIT Contract 不覆盖最终发布价值、题目 / 角度本身不值得继续生产，以及“参数/变量是否真的有效调用”尚未被独立核实。原始系统问题是参数/规则调用不稳定；本次完整 AUDIT Activation PASS 不等于所有内容参数 / 变量参数 / 结构参数调用闭环已被证明。
 
-当前处置：记录为 Failure Observation；不立即修改 DECISION Gate、COMPILE 规则、TS01 或 AUDIT 规则。该问题尚属第一篇真实 TRIAL 内容失败样本，需后续样本复现并确认归属后，才进入 Governance Plane 变更评审。
+Observation：Unconfirmed Production Quality Failure Observation。当前处置为记录观察，不立即修改 DECISION Gate、COMPILE 规则、TS01、AUDIT 规则或参数调用规则。下一步应先复核参数调用链与 Human Reject / System Gate 差异；后续样本复现并确认归属后，才进入 Governance Plane 变更评审。

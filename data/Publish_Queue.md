@@ -37,7 +37,7 @@
 
 | Production ID | 原队列状态 | 撤回原因 | 当前处置 |
 |---|---|---|---|
-| ZH-20260811-001 | RELEASE_READY（已生成 `Release-v1.md`，已入当前队列，未发布） | 发布前最终检查发现成品内容价值不足：Core Judgment 逻辑成立但信息增量过低，TS01 多层结构将一层判断机械扩写为合规但无聊的机制文。 | USER_REJECTED / PUBLISH_ABORTED；`Release-v1.md` 仅作归档，不得发布；已记录 Failure Observation，不修改 Runtime Rules。 |
+| ZH-20260811-001 | RELEASE_READY（已生成 `Release-v1.md`，已入当前队列，未发布） | 发布前最终检查判定成品不可发；具体归因未确认，候选包括低信息增量、过度展开、表达平庸、参数/变量调用未闭合或题目角度不值得继续生产。 | USER_REJECTED / PUBLISH_ABORTED；`Release-v1.md` 仅作归档，不得发布；已记录未确认 Failure Observation，不修改 Runtime Rules。 |
 
 ## 发布闭环（后续单独验证，当前不执行）
 
