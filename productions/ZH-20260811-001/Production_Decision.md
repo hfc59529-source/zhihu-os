@@ -55,6 +55,12 @@ COMPILE v3    PASS（Execution_IR-v3.md：Structure.step6 重编为单线因果�
               Explanation Target 收紧为"怎么当场判断"；Acceptance Criteria 去激活 CV004/CV006，仅保留
               CV001+CV003；Triggered Rule IDs 仍按 compatibility rule 记录为 []。Draft-v1.md/Draft-v2.md/
               AUDIT-v1.md 标记 SUPERSEDED，不再作为后续 WRITE 输入基础）
+↓
+WRITE v3      完成（Draft-v3.md，从零生成，未复用 Draft-v1/v2 文字）
+↓
+AUDIT v3      PASS（AUDIT-v3.md：Structure 十步逐条核对，v2 三处遗留问题——Explanation Target drift、
+              因果链横向平铺、结尾同义重复——均已解决；CV001/CV003 落实，CV004/CV006 去激活未违反；
+              Material Boundary / Expression Constraints 均达标；无 Approved Issues）
 ```
 
 ## 违规记录
