@@ -67,6 +67,13 @@ COMPILE v1    BLOCK（Execution_IR-v1.md 前五字段 Reasoning Path/Structure/M
   3. 「Compiler 与 Audit 资产之间存在新的 Contract inconsistency」——成立，但准确表述是：该接口（Triggered Rule IDs 需从 ID 化候选集合中选取）自 Runtime 发布以来从未被满足过，不是后续漂移产生的新不一致。
 - 判定：Triggered Rule IDs 缺口正式坐实为 **persistent Runtime Contract inconsistency**（非版本滞后、非本篇生产误判、非 HEAD 已修复），COMPILE BLOCK 判定维持不变。
 
+## Disposition（本篇冻结）
+
+- 正式状态：`INPUT PASS → DECISION PASS → COMPILE BLOCK → WRITE NOT STARTED`。
+- 本篇不再继续推进：`Semantic_Freeze-v1.md`（四字段冻结）与 `Execution_IR-v1.md`（BLOCK，前五字段已编译）原样保留，不重写、不补全、不为绕过缺口而放行。
+- Governance Repair 作为独立治理动作另行发起，范围严格限定为"修复 Triggered Rule IDs 与 Runtime.Audit Rules 之间的契约缺口"，不顺带推进本篇生产，不顺带重构审核体系。
+- 回归验证路径：待 Runtime 修复并重新 Release 后，对 ZH-20260811-001 复用同一份已冻结的 `Semantic_Freeze-v1.md`（Reality/Main Gap/Transformation/Core Judgment 不变）重新跑 COMPILE，作为回归样本验证契约缺口是否真正修复；不重新走 DECISION。
+
 ## Next
 
-COMPILE BLOCK。Current-System State Check 已完成并记录，缺口性质确认为持续性 Runtime Contract 缺口。是否发起 Governance Repair 待用户另行决定，本条只补记核验证据，不在此自行推进修复。Execution IR 前五字段已完成，Triggered Rule IDs 因 Runtime Contract 缺口无法合法生成。是否进入 WRITE 取决于用户如何处理该缺口（例如：由 Governance 补发 Rule ID 候选集合后重新 COMPILE；或用户明确授权本 Run 以"候选集合为空、本字段留空"的方式豁免放行）。在用户就此缺口给出明确指示前，不推进到 WRITE。
+已冻结，等待 Governance Repair 完成后回归验证。Execution IR 前五字段已完成，Triggered Rule IDs 因 Runtime Contract 缺口无法合法生成。是否进入 WRITE 取决于用户如何处理该缺口（例如：由 Governance 补发 Rule ID 候选集合后重新 COMPILE；或用户明确授权本 Run 以"候选集合为空、本字段留空"的方式豁免放行）。在用户就此缺口给出明确指示前，不推进到 WRITE。
