@@ -191,3 +191,21 @@ RR-03 / RR-05 已 ACTIVE、对本篇明确应触发，但 `templates/GPT审核�
 ## Next
 
 本篇 AUDIT v7 已 PASS，下一节点是 REVIEW（人工验收，USER_APPROVED 才能进 RELEASE），交给用户审阅 `Draft-v6.md`。Codex 不生成正文。`production_ledger.md` 暂不新增本篇记录；Milestone-010 计数资格与 Ledger 登记方式仍待后续明确。
+
+## USER_APPROVED Retraction / Full Audit Requirement（2026-08-11）
+
+用户在生成 Release 前复核目录，发现 `AUDIT-v8.md` 与 `AUDIT-v7.md` 同分钟存在但审核基准不同：`AUDIT-v7.md` 只覆盖 A 组 + B 组 RR-02/RR-04/RR-07；`AUDIT-v8.md` 对 Draft-v5 使用更完整的 RR AuditRule Registry + Run Activation 执行闭环，激活 RR-01～RR-08 共 27 条规则，并发现 RR-01-02、RR-01-03、RR-03-01 等窄基准未覆盖的问题类别。
+
+因此，`AUDIT-v7.md` 对 `Draft-v6.md` 的 PASS 只能证明 Draft-v6 解决了 AUDIT-v6 指出的 RR-02/RR-04/RR-07 问题，不能证明其通过完整 Run Activation Set。用户收回上一轮 USER_APPROVED 意向，当前不得进入 RELEASE，不得生成或确认 `Release-v1.md`，不得写入发布队列。
+
+当前正式处置：`Draft-v6.md` 需生成 `AUDIT-v9.md`，审核基准为 A 组 Execution Compliance + `AUDIT-v8.md` 同等完整 Run Activation Set（RR-01～RR-08 全量）。只有 `AUDIT-v9.md` Clean Pass 后，才能重新进入 REVIEW；只有用户再次明确 `USER_APPROVED` 后，才能进入 RELEASE。
+
+## AUDIT v9（完整基准复审 Draft-v6）
+
+`AUDIT-v9.md`：FAIL → Return Stage=WRITE。
+
+Execution Compliance 沿用 AUDIT-v5 结论，未发现需退回 COMPILE/DECISION/INPUT 的问题。AUDIT-v6 指出的 RR-02-04/RR-04-02/RR-07-07 三项经复核确认已解决——Draft-v6 把 Draft-v5 逐句拆行的段落合并为长短交替的 7 段（32~226 字），不再同构，也不再换词重复陈述同一观点。
+
+但完整 Run Activation Set 测出窄基准从未覆盖过的新问题：Draft-v6 为解决 RR-04-02/07-07 把多段合并后，P4（"新增一项零风险"）→ P5（不对称 + 棘轮核心机制）→ P6（免责清理角色的边界条件）三段连续给出 3 个以上新判断，中间没有任何场景/对话/动作/停顿缓冲，触发 RR-01-03（连续认知上限）、RR-03-01（机制后缓冲承接）、RR-04-04（解释切断点）、RR-07-02（连续解释疲劳，致 RR-07 汇总为 REVISE）四项 Issue；另有 P4-S2（84字）、P6-S2（86字）等长句超过 RR-02-03 的 80 字标记线。四项 Issue 定位在同一处文本区域（P4-P6 的判断堆叠），修复路径互相不冲突，详见 `AUDIT-v9.md`。
+
+Gate Result：FAIL。Draft-v6 不进入 REVIEW/RELEASE，退回 WRITE 生成 Draft-v7，针对性在 P5→P6 之间插入缓冲、拆句超长句，其余内容逐字保留（不构成需要退回 COMPILE/DECISION/INPUT 的问题，Patch 规则适用）。

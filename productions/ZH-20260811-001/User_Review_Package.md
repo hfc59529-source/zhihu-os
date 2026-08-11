@@ -2,17 +2,17 @@ Production ID: ZH-20260811-001
 
 # User Review Package
 
-当前状态：READY_FOR_USER_REVIEW
+当前状态：READY_FOR_PATCH（AUDIT-v9 完整基准复审 FAIL，Return Stage=WRITE；不是用户验收状态，不得提交本包供用户审阅）
 
-当前正文版本：Draft-v6
+当前正文版本：Draft-v6（待 Patch 为 Draft-v7）
 
 正文来源文件：`productions/ZH-20260811-001/Draft-v6.md`
 
-当前有效链路：`Semantic_Freeze-v2.md` → `Execution_IR-v4.md` → `Draft-v6.md` → `AUDIT-v7.md`
+当前有效上游链路：`Semantic_Freeze-v2.md` → `Execution_IR-v4.md` → `Draft-v6.md` → `AUDIT-v9.md`（FAIL）
 
-审核结论：`AUDIT-v7.md` PASS。A 组 Execution Compliance 与 B 组 RR-02/RR-04/RR-07 均已重新核对，无遗留 Issue。
+审核结论：`AUDIT-v9.md` 用 `AUDIT-v8.md` 同等完整 Run Activation Set（A 组 + RR-01～RR-08 全量）复审 Draft-v6，结果 FAIL。AUDIT-v6 指出的 RR-02-04/RR-04-02/RR-07-07 已确认解决；但完整基准测出窄基准从未覆盖的新问题——P4→P5→P6 连续 3 段给出多个新判断且无缓冲，触发 RR-01-03/RR-03-01/RR-04-04/RR-07-02，另有两处超 80 字长句触发 RR-02-03。详见 `AUDIT-v9.md`。
 
-下一节点：REVIEW。只有用户明确 `USER_APPROVED` 后，才能进入 RELEASE / 生成或确认 `Release-v1.md` / 写入发布队列。
+下一节点：WRITE Patch。按 `AUDIT-v9.md` Issue-001~004 生成 Draft-v7（Issue-005 随之解除，无需单独处理），其余文字逐字保留。Draft-v7 完成后需再次执行完整 Run Activation Set 生成新版 AUDIT，Clean Pass 后才可重新进入 REVIEW；只有用户再次明确 `USER_APPROVED` 后，才能进入 RELEASE / 生成或确认 `Release-v1.md` / 写入发布队列。当前不得进入 REVIEW，本节及以下"当前正文"仅作历史参照，不构成待审阅版本。
 
 ## 原知乎问题
 
