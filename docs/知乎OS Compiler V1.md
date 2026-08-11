@@ -83,19 +83,37 @@ Forbidden:
 Input:
   数据对象：Input Package
   规则引用：Runtime Release → Decision Rules 分区
+    + `docs/知乎内容质量参数库_V2.md`§0 QT-QI｜问题理解系统
+      （仅 QT-00 题型判断 + QI-01 提问动机 / QI-02 真实问题 / QI-03 当前认知 /
+        QI-04 认知缺口 / QI-05 认知目标 / QI-06 阅读奖励 六项识别字段，
+        不含该文件其余 PD / RR / RE / BT / CR 等正文质量参数——那些参数的
+        消费者仍是 COMPILE/WRITE/AUDIT，不因本次修复扩大到 DECISION）
+
+  Migration Fix（2026-08-11，TRIAL Runtime）：
+    Production Card 退役、职责迁入 Compiler V1 时，QT-QI 问题理解识别域未被
+    任何现行节点正式继承，DECISION 此前直接从 Input Package 跳到 Main Gap，
+    未核对用户表层问题背后的真实提问类型。本修复把 QT-QI 六项识别字段列为
+    DECISION 的强制输入，不改变 QT-QI 定义本身，不把该文件其余质量参数域
+    授权给 DECISION。
 
 Decision Right:
-  锁定 Reality / Main Gap / Transformation / Core Judgment，一次性冻结
+  先完成 QT-QI 识别（QT-00 题型 + QI-01～QI-06），再锁定
+  Reality / Main Gap / Transformation / Core Judgment，一次性冻结
   （对应《内容架构总则》的语义冻结门）
 
 Output:
-  Decision（仅 Reality / Main Gap / Transformation / Core Judgment 四个字段）
+  Decision（Reality / Main Gap / Transformation / Core Judgment 四个字段
+    + QT-QI 识别记录：QT-00 题型判断、QI-01～QI-06 六项识别结果）
 
 Forbidden:
   不涉及"怎么写"（结构、开头、句式属于 COMPILE / WRITE）
   不得引入 Input Package 之外的事实
   冻结后不得自行修改；发现问题只能整体退回 INPUT/DECISION 重做，不能局部改
-```
+  Main Gap / Transformation 不得在未说明理由的情况下，把 QI-02 识别出的
+    真实问题类型替换为另一种类型（如把"求解释"换成"求判断"）；如确有理由
+    认为 Benchmark Context 已使原始问题类型不再构成有效增量，必须在 Main Gap
+    段落中显式写出这次类型替换的理由和证据，不得只靠"高赞已讲透"一句带过
+
 
 ## 5. COMPILE
 
