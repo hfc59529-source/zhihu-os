@@ -209,3 +209,11 @@ Execution Compliance 沿用 AUDIT-v5 结论，未发现需退回 COMPILE/DECISIO
 但完整 Run Activation Set 测出窄基准从未覆盖过的新问题：Draft-v6 为解决 RR-04-02/07-07 把多段合并后，P4（"新增一项零风险"）→ P5（不对称 + 棘轮核心机制）→ P6（免责清理角色的边界条件）三段连续给出 3 个以上新判断，中间没有任何场景/对话/动作/停顿缓冲，触发 RR-01-03（连续认知上限）、RR-03-01（机制后缓冲承接）、RR-04-04（解释切断点）、RR-07-02（连续解释疲劳，致 RR-07 汇总为 REVISE）四项 Issue；另有 P4-S2（84字）、P6-S2（86字）等长句超过 RR-02-03 的 80 字标记线。四项 Issue 定位在同一处文本区域（P4-P6 的判断堆叠），修复路径互相不冲突，详见 `AUDIT-v9.md`。
 
 Gate Result：FAIL。Draft-v6 不进入 REVIEW/RELEASE，退回 WRITE 生成 Draft-v7，针对性在 P5→P6 之间插入缓冲、拆句超长句，其余内容逐字保留（不构成需要退回 COMPILE/DECISION/INPUT 的问题，Patch 规则适用）。
+
+## WRITE Patch（Draft-v7）+ AUDIT v10（完整基准复审）
+
+`Draft-v7.md`：按 `AUDIT-v9.md` Issue-001~004 执行 Patch（非重写）——在 P5（核心机制）与 P6（原边界条件段）之间插入一段 67 字场景缓冲（"你可以想一下自己所在的群列表……"，未引入新机制），并拆分原 P4-S2（84字）、P6-S2（86字）两处超 80 字长句。核心机制、上游判断、材料边界未改动，其余文字逐字保留。Issue-005 未单独施工，随结构调整自动解除。
+
+`AUDIT-v10.md`：用与 AUDIT-v9 相同的完整 Run Activation Set（A 组 + RR-01～RR-08 全量）复审，PASS。逐条复核 Issue-001~004：RR-01-03（连续判断链在 2 个判断后即有缓冲）、RR-03-01（机制后紧接缓冲段而非新判断）、RR-04-04/SEVERITY（318 字处切断，未延伸至 3 段）、RR-02-03（全文最长单句降至 79 字，无超 80 字句）均确认解决；Issue-005 随之解除。AUDIT-v9 中列为 Observation（非 Issue）的 RR-01-02、RR-07-09 保持不变，未在本次 Patch 范围内处理，不影响本次 Gate 判定。
+
+Gate Result：PASS。当前有效链路更新为：`Semantic_Freeze-v2.md` → `Execution_IR-v4.md` → `Draft-v7.md` → `AUDIT-v10.md`。Draft-v6/AUDIT-v7/AUDIT-v8/AUDIT-v9 原样保留归档，不再作为当前上游。下一节点：REVIEW，交给用户审阅 `Draft-v7.md`；只有用户再次明确 `USER_APPROVED` 后，才能进入 RELEASE。
