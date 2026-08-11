@@ -93,6 +93,17 @@ COMPILE v4    PASS（`Execution_IR-v4.md`：独立编译自 `Semantic_Freeze-v2.
               v1/v3 中 CV004 是外挂追加、超出收窄范围，本篇 Main Gap 本身就是责任传导机制，CV004 与
               Reasoning Path 直接重合；CV006 仍不激活，功能由 Structure step9/10 承担；Triggered Rule
               IDs 按 compatibility rule 记录为 []）
+↓
+WRITE v4      完成（Draft-v4.md，从零生成，未复用 Draft-v1/v2/v3 文字）
+↓
+AUDIT v4      FAIL → Return Stage=WRITE（AUDIT-v4.md，Issue-001：Structure.step9 迁移边界缺失，
+              Draft 从机制终点直接跳到结尾回收，未说明棘轮机制何时不成立）
+↓
+WRITE Patch   完成（Draft-v5.md，仅补 step9 迁移边界段落，其余逐字保留）
+↓
+AUDIT v5      PASS（AUDIT-v5.md：Issue-001 已补齐，两种场景——专门被授权且被免责的复审/清理角色
+              存在 vs 不存在——均已说明；Patch 段之外文字未改动；Structure 十步、Acceptance
+              Criteria、Material Boundary、Expression Constraints 全部达标；无新增 Issue）
 ```
 
 ## 违规记录
@@ -150,16 +161,16 @@ COMPILE v4    PASS（`Execution_IR-v4.md`：独立编译自 `Semantic_Freeze-v2.
 
 因此：`ZH-20260811-001` 是否正式计入 Compiler §14 的 10 篇 Production Validation，本文件不下结论，标记为 **UNRESOLVED**，留待 Governance Plane 或 ZH-MILESTONE-010 复盘时明确该 Schema 缺口。
 
-## Disposition（DECISION v2 采用后）
+## Disposition（AUDIT v5 PASS 后）
 
-- 正式状态（按状态机权威枚举）：`DECISION_FROZEN`（当前采用 v2）。
-- DECISION execution：v1 历史合法性保留；v1 当前继承资格未裁决；v2 pass（QT-QI 识别完整，QI-02 = 求解释未被替换），作为当前有效 Decision 进入后续生产。
-- COMPILE execution：v1 blocked（Triggered Rule IDs 缺口）；v2 pass 但 Structure 实例化错误；v3 pass（Structure 问题已修正）——三版 Execution IR 均建立在 `Semantic_Freeze-v1.md` 之上。由于当前采用 `Semantic_Freeze-v2.md`，旧 IR 不作为本轮后续输入，保留为历史产物；不再用"上游 FAIL"解释其失效。
-- WRITE：Draft-v1/Draft-v2/Draft-v3 及对应 AUDIT-v1/AUDIT-v3 均基于旧 Decision 链路产出。由于当前采用 `Semantic_Freeze-v2.md`，旧 Draft/AUDIT 不作为本轮后续输入，保留为历史产物。当前 WRITE 状态：未开始（需等 COMPILE 基于 `Semantic_Freeze-v2.md` 重新产出 Execution IR）。
+- 正式状态（按状态机权威枚举）：`AUDIT_PASS`（当前有效链路：`Semantic_Freeze-v2.md` → `Execution_IR-v4.md` → `Draft-v5.md`）。
+- DECISION execution：v1 历史合法性保留，当前继承资格未裁决，不作为当前上游；v2 pass（QT-QI 识别完整，QI-02 = 求解释未被替换），作为当前有效 Decision。
+- COMPILE execution：v1/v2/v3 建立在 `Semantic_Freeze-v1.md` 之上，保留归档，不作为当前上游；v4 pass，独立编译自 `Semantic_Freeze-v2.md` 的棘轮机制 Transformation。
+- WRITE execution：v1/v2/v3 保留归档，不作为当前上游；v4 完成 → AUDIT v4 FAIL（Issue-001，step9 迁移边界缺失）→ WRITE Patch → Draft-v5.md → AUDIT v5 PASS，无遗留 Issue。
 - Milestone-010 eligibility：UNRESOLVED（见上节，不预先认定计入或不计入 10 篇）。
-- Governance disposition：本次只确认 QT-QI Migration Fix 不能追溯否定 `Semantic_Freeze-v1.md` 的历史合法性；v1 继承资格未裁决，但不阻塞采用 `Semantic_Freeze-v2.md` 继续生产。`Proposal-A_Triggered_Rule_Audit_Binding.md` 的完整 Registry 方案仍维持 VALID GAP / DEFERRED IMPLEMENTATION，不受本次影响。
-- `Semantic_Freeze-v1.md`（历史合法，当前继承资格未裁决）、`Execution_IR-v1/v2/v3.md`、`Draft-v1/v2/v3.md`、`AUDIT-v1/v3.md` 原样保留归档，不作为当前生产链输入；当前有效上游是 `Semantic_Freeze-v2.md`。
+- Governance disposition：QT-QI Migration Fix 不能追溯否定 `Semantic_Freeze-v1.md` 的历史合法性；v1 继承资格未裁决，但不阻塞采用 `Semantic_Freeze-v2.md` 继续生产。`Proposal-A_Triggered_Rule_Audit_Binding.md` 的完整 Registry 方案仍维持 VALID GAP / DEFERRED IMPLEMENTATION，不受本次影响。
+- `Semantic_Freeze-v1.md`（历史合法，当前继承资格未裁决）、`Execution_IR-v1/v2/v3.md`、`Draft-v1/v2/v3.md`、`AUDIT-v1/v3.md` 原样保留归档，不作为当前生产链输入；当前有效链路是 `Semantic_Freeze-v2.md` → `Execution_IR-v4.md` → `Draft-v5.md`（AUDIT-v4/AUDIT-v5 记录 Patch 过程）。
 
 ## Next
 
-本篇需交接 COMPILE，基于 `Semantic_Freeze-v2.md` 重新编译 Execution IR（Reasoning Path 需从 v2 的 Transformation——"撤销与新增责任归属不对称的棘轮机制"——独立编译，不得搬运 v1/v2/v3 旧版 Execution IR 或 Draft 的推导内容）。COMPILE 通过后才交接 WRITE。Codex 不生成正文。`production_ledger.md` 暂不新增本篇记录；Milestone-010 计数资格与 Ledger 登记方式仍待后续明确。
+本篇 AUDIT 已 PASS，下一节点是 REVIEW（人工验收，USER_APPROVED 才能进 RELEASE），交给用户审阅 `Draft-v5.md`。Codex 不生成正文。`production_ledger.md` 暂不新增本篇记录；Milestone-010 计数资格与 Ledger 登记方式仍待后续明确。
