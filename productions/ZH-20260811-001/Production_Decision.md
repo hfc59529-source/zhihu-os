@@ -61,6 +61,27 @@ WRITE v3      完成（Draft-v3.md，从零生成，未复用 Draft-v1/v2 文字
 AUDIT v3      PASS（AUDIT-v3.md：Structure 十步逐条核对，v2 三处遗留问题——Explanation Target drift、
               因果链横向平铺、结尾同义重复——均已解决；CV001/CV003 落实，CV004/CV006 去激活未违反；
               Material Boundary / Expression Constraints 均达标；无 Approved Issues）
+↓
+DECISION FAIL（Migration Fix 追溯适用）
+              用户核对 `docs/知乎OS Compiler V1.md` 第4节 2026-08-11 Migration Fix 后发现：Production Card
+              退役时，QT-QI 问题理解识别域（QT-00 题型 + QI-01～QI-06）未被任何现行节点正式继承，DECISION
+              此前直接从 Input Package 跳到 Main Gap，从未核对用户表层问题背后的真实提问类型。补上这条
+              Contract 后追溯核对 `Semantic_Freeze-v1.md`：本题 QI-02 真实问题应为"求解释"，但 v1 的
+              Main Gap/Transformation 把它替换为"求判断"（"怎么当场判断"），且未按新 Forbidden 条款在
+              Main Gap 中显式写出类型替换的理由和证据，只用"Top3 已讲透/同类竞争"带过。判定：
+              `Semantic_Freeze-v1.md` = FAIL。Compiler V1 规定"冻结后不得自行修改，只能整体退回 DECISION
+              重做"，因此 `Execution_IR-v3.md`（COMPILE v3）、`Draft-v3.md`（WRITE v3）、`AUDIT-v3.md`
+              全部失去有效上游，标记 SUPERSEDED，保留为历史产物，不再作为当前生产链输入。不存在
+              "REVALIDATION REQUIRED"这一中间状态（此前使用该措辞有误，系统状态机中无此定义），正确状态
+              直接是 DECISION FAIL → Return Stage = DECISION。
+↓
+DECISION v2   PASS（Semantic_Freeze-v2.md：从 Input Package 重新执行 QT-00 + QI-01～QI-06 → Reality →
+              Main Gap → Transformation → Core Judgment。QT-QI 识别记录 QI-02 = 求解释；Main Gap 在
+              QI-04 认知缺口类目内部下钻，找到 Top1/Top2/Top3 均未覆盖的子问题——三条高赞解释的是"形式
+              动作为什么会出现"（起源），题目原句"越来越严重"问的是"为什么难以撤销、只增不减"（维持/
+              累积机制），二者是不同因果对象，不构成同类竞争；Transformation 沿用 v1 已核实有效的收窄
+              结论（材料的真实接收方/被打开时机），但改为解释"撤销与新增在责任归属上的成本收益不对称"
+              这一棘轮机制，未把 QI-02 的问题类型从"求解释"替换为"求判断"，不触发 Forbidden 条款）
 ```
 
 ## 违规记录
@@ -118,15 +139,16 @@ AUDIT v3      PASS（AUDIT-v3.md：Structure 十步逐条核对，v2 三处遗�
 
 因此：`ZH-20260811-001` 是否正式计入 Compiler §14 的 10 篇 Production Validation，本文件不下结论，标记为 **UNRESOLVED**，留待 Governance Plane 或 ZH-MILESTONE-010 复盘时明确该 Schema 缺口。
 
-## Disposition（COMPILE v3 重编后）
+## Disposition（DECISION v2 重做后，QT-QI Migration Fix 追溯适用）
 
-- 正式状态（按状态机权威枚举）：`EXECUTION_IR_READY`（重新流转，v3）。
-- COMPILE execution：v1 blocked；v2 pass 但 Structure 实例化错误（Explanation Target drift + 因果链平铺 + CV 未去重）；v3 pass（已修正三处）。
-- WRITE：v1 完成（Draft-v1.md）→ AUDIT v1 FAIL → WRITE Patch（Draft-v2.md）→ COMPILE 复核后 RETRACTED。Draft-v1/Draft-v2/AUDIT-v1 均标记 SUPERSEDED。当前 WRITE 状态：未基于 v3 重新开始。
+- 正式状态（按状态机权威枚举）：`DECISION_FROZEN`（退回重做，v2）。
+- DECISION execution：v1 FAIL（追溯判定，QI-02 问题类型被未经证据替换）；v2 pass（QT-QI 识别完整，QI-02 = 求解释未被替换）。
+- COMPILE execution：v1 blocked（Triggered Rule IDs 缺口）；v2 pass 但 Structure 实例化错误；v3 pass（Structure 问题已修正）——但 v1/v2/v3 三版 Execution IR 均建立在已 FAIL 的 `Semantic_Freeze-v1.md` 之上，全部随之失去有效上游，标记 SUPERSEDED。
+- WRITE：Draft-v1/Draft-v2/Draft-v3 及对应 AUDIT-v1/AUDIT-v3 均建立在已 FAIL 的 DECISION 之上，全部标记 SUPERSEDED，保留为历史产物。当前 WRITE 状态：未开始（需等 COMPILE 基于 `Semantic_Freeze-v2.md` 重新产出 Execution IR）。
 - Milestone-010 eligibility：UNRESOLVED（见上节，不预先认定计入或不计入 10 篇）。
-- Governance disposition：本 Run 的 COMPILE→WRITE continuity 已由 Triggered Rule IDs contract 最小修复放行；`Proposal-A_Triggered_Rule_Audit_Binding.md` 的完整 Registry 方案仍维持 VALID GAP / DEFERRED IMPLEMENTATION，本文件不代替 Governance Review 做最终 Registry 方案裁决。本次 COMPILE 复核发现的问题（Structure 实例化错误、Explanation Target 锁定错误、CV 去重未执行）与 Triggered Rule IDs 缺口无关，是独立的 COMPILE 执行质量问题，不牵动上述 Contract Fix 的有效性。
-- `Semantic_Freeze-v1.md`（四字段冻结）、`Execution_IR-v1.md`（历史 BLOCK 记录）、`Execution_IR-v2.md`（历史 Structure 实例化错误记录）原样保留；当前 WRITE 输入改用 `Execution_IR-v3.md`。
+- Governance disposition：本次 DECISION 重做是 `docs/知乎OS Compiler V1.md` 第4节 2026-08-11 Migration Fix（QT-QI capability 迁移缺口）的追溯适用，与更早的 Triggered Rule IDs contract 修复是两个独立缺口，互不影响彼此有效性。`Proposal-A_Triggered_Rule_Audit_Binding.md` 的完整 Registry 方案仍维持 VALID GAP / DEFERRED IMPLEMENTATION，不受本次影响。
+- `Semantic_Freeze-v1.md`（历史 FAIL 记录）、`Execution_IR-v1/v2/v3.md`、`Draft-v1/v2/v3.md`、`AUDIT-v1/v3.md` 原样保留归档，均标记 SUPERSEDED，不再作为当前生产链输入；当前有效上游是 `Semantic_Freeze-v2.md`。
 
 ## Next
 
-本篇需交接 WRITE，由 Claude / 写作角色基于 `Execution_IR-v3.md` 重新生成 `Draft-v3.md`（不得复用 `Draft-v2.md` 文字，单线因果链需完整重写）。Codex 不生成正文。`production_ledger.md` 暂不新增本篇记录；Milestone-010 计数资格与 Ledger 登记方式仍待后续明确。
+本篇需交接 COMPILE，基于 `Semantic_Freeze-v2.md` 重新编译 Execution IR（Reasoning Path 需从 v2 的 Transformation——"撤销与新增责任归属不对称的棘轮机制"——独立编译，不得搬运 v1/v2/v3 旧版 Execution IR 或 Draft 的推导内容）。COMPILE 通过后才交接 WRITE。Codex 不生成正文。`production_ledger.md` 暂不新增本篇记录；Milestone-010 计数资格与 Ledger 登记方式仍待后续明确。
