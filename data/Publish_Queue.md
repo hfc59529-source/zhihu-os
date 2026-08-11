@@ -46,6 +46,17 @@ Publish Queue（本文件）
 24h / 72h / 7天 数据回流
 ```
 
+## Gate Bypass Log
+
+以下批次未经本文件定义的入队流程（无 `USER_APPROVED` 记录、未在本文件登记入队），已被人工直接发布到知乎并产生真实 `answer_url`。裁决见 [`docs/governance/Publish_Runtime_Consistency_Issue_20260811.md`](../docs/governance/Publish_Runtime_Consistency_Issue_20260811.md)：判定为 Gate Bypass 异常，非合法第二发布路径，不据此新增发布模式或放宽入队规则。
+
+| Production ID | 发布凭证 | 生产状态机记录 |
+|---|---|---|
+| ZH-20260808-001 | answer_2069522411372933416（`data/production_article_map.csv`） | 无 User Review / USER_APPROVED 证据 |
+| ZH-20260808-002 | answer_2069533843439235799（`data/production_article_map.csv`） | Production_Decision.md 有非正式 User Review 文字记录，无正式 USER_APPROVED 字段 |
+| ZH-20260808-003 | answer_2069537531780129888（`data/production_article_map.csv`） | 无 User Review / USER_APPROVED 证据 |
+| ZH-20260809-001 | answer_2069838524929594559（`data/production_article_map.csv`） | 无 Production_Decision.md，无法核实 |
+
 ## 当前优先级
 
 1. 011 起，未经过 `USER_APPROVED` 的 Production 不得进入本队列。
