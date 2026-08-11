@@ -38,7 +38,7 @@ COMPILE v1    BLOCK（Execution_IR-v1.md 前五字段 Reasoning Path/Structure/M
 
 ## COMPILE 摘要
 
-- Execution IR：`Execution_IR-v1.md`（状态：BLOCK，六字段中五字段完成，第六字段 Triggered Rule IDs 无法合法填写）。
+- Execution IR：`Execution_IR-v1.md`（完成情况：六字段中五字段完成，第六字段 Triggered Rule IDs 无法合法填写；COMPILE execution：blocked）。
 - Structure：ACTIVE-TS01（老师爆款机制推进结构），TS02 因非"怎么办"行动题被排除。
 - Reasoning Path 独立重新推导：Breaking Point（材料的真实接收方决定动作存废，而非动作对工作是否有用）由 Main Gap 中已保留的 Gap 核对论证重新推出，未从被删除的 Reversal Point 原文搬运；Structure 的 step3 核心反转措辞与 DECISION v1 被删除的 Reversal Point 表述不同，是 COMPILE 独立编译结果。
 - Acceptance Criteria 编译自 CV001（认知校正）、CV003（组织视角）、CV004（风险传导）、CV006（结尾动作），对应 production_variable_library.md 登记定义。
