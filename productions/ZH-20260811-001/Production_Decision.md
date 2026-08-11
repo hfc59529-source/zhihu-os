@@ -104,6 +104,10 @@ WRITE Patch   完成（Draft-v5.md，仅补 step9 迁移边界段落，其余逐
 AUDIT v5      PASS（AUDIT-v5.md：Issue-001 已补齐，两种场景——专门被授权且被免责的复审/清理角色
               存在 vs 不存在——均已说明；Patch 段之外文字未改动；Structure 十步、Acceptance
               Criteria、Material Boundary、Expression Constraints 全部达标；无新增 Issue）
+↓
+AUDIT v6      FAIL → Return Stage=WRITE（AUDIT-v6.md：B 组 Runtime.Audit Rules 接入 RR-02/RR-04/RR-07
+              后复审 Draft-v5，发现 RR-04-02 段落长度变化不达标、RR-07-07 段落机械化中风险、
+              RR-02-04 解释冗余。v5 的 Execution Compliance 仍保留 PASS，但阅读体验执行面 FAIL）
 ```
 
 ## 违规记录
@@ -161,16 +165,16 @@ AUDIT v5      PASS（AUDIT-v5.md：Issue-001 已补齐，两种场景——专�
 
 因此：`ZH-20260811-001` 是否正式计入 Compiler §14 的 10 篇 Production Validation，本文件不下结论，标记为 **UNRESOLVED**，留待 Governance Plane 或 ZH-MILESTONE-010 复盘时明确该 Schema 缺口。
 
-## Disposition（AUDIT v5 PASS 后）
+## Disposition（AUDIT v6 FAIL 后）
 
-- 正式状态（按状态机权威枚举）：`AUDIT_PASS`（当前有效链路：`Semantic_Freeze-v2.md` → `Execution_IR-v4.md` → `Draft-v5.md`）。
+- 正式状态（按状态机权威枚举）：`READY_FOR_PATCH`（Return Stage = WRITE；当前有效链路：`Semantic_Freeze-v2.md` → `Execution_IR-v4.md` → `Draft-v5.md` → `AUDIT-v6.md`）。
 - DECISION execution：v1 历史合法性保留，当前继承资格未裁决，不作为当前上游；v2 pass（QT-QI 识别完整，QI-02 = 求解释未被替换），作为当前有效 Decision。
 - COMPILE execution：v1/v2/v3 建立在 `Semantic_Freeze-v1.md` 之上，保留归档，不作为当前上游；v4 pass，独立编译自 `Semantic_Freeze-v2.md` 的棘轮机制 Transformation。
-- WRITE execution：v1/v2/v3 保留归档，不作为当前上游；v4 完成 → AUDIT v4 FAIL（Issue-001，step9 迁移边界缺失）→ WRITE Patch → Draft-v5.md → AUDIT v5 PASS，无遗留 Issue。
+- WRITE execution：v1/v2/v3 保留归档，不作为当前上游；v4 完成 → AUDIT v4 FAIL（Issue-001，step9 迁移边界缺失）→ WRITE Patch → Draft-v5.md → AUDIT v5 Execution Compliance PASS → AUDIT v6 Runtime.Audit Rules FAIL（RR 阅读体验执行面 3 个 Issues）。
 - Milestone-010 eligibility：UNRESOLVED（见上节，不预先认定计入或不计入 10 篇）。
 - Governance disposition：QT-QI Migration Fix 不能追溯否定 `Semantic_Freeze-v1.md` 的历史合法性；v1 继承资格未裁决，但不阻塞采用 `Semantic_Freeze-v2.md` 继续生产。`Proposal-A_Triggered_Rule_Audit_Binding.md` 的完整 Registry 方案仍维持 VALID GAP / DEFERRED IMPLEMENTATION，不受本次影响。
-- `Semantic_Freeze-v1.md`（历史合法，当前继承资格未裁决）、`Execution_IR-v1/v2/v3.md`、`Draft-v1/v2/v3.md`、`AUDIT-v1/v3.md` 原样保留归档，不作为当前生产链输入；当前有效链路是 `Semantic_Freeze-v2.md` → `Execution_IR-v4.md` → `Draft-v5.md`（AUDIT-v4/AUDIT-v5 记录 Patch 过程）。
+- `Semantic_Freeze-v1.md`（历史合法，当前继承资格未裁决）、`Execution_IR-v1/v2/v3.md`、`Draft-v1/v2/v3.md`、`AUDIT-v1/v3.md` 原样保留归档，不作为当前生产链输入；当前有效链路是 `Semantic_Freeze-v2.md` → `Execution_IR-v4.md` → `Draft-v5.md` → `AUDIT-v6.md`。
 
 ## Next
 
-本篇 AUDIT 已 PASS，下一节点是 REVIEW（人工验收，USER_APPROVED 才能进 RELEASE），交给用户审阅 `Draft-v5.md`。Codex 不生成正文。`production_ledger.md` 暂不新增本篇记录；Milestone-010 计数资格与 Ledger 登记方式仍待后续明确。
+本篇 AUDIT v6 已 FAIL，下一节点是 WRITE Patch / Rewrite。不得交给 REVIEW，不得进入 RELEASE。后续写作角色需基于 `Execution_IR-v4.md` 和 `AUDIT-v6.md` 重写或大幅压缩 `Draft-v5.md`，重点处理段落机械化、解释冗余和节奏单一；Patch 完成后重新 AUDIT。Codex 不生成正文。`production_ledger.md` 暂不新增本篇记录；Milestone-010 计数资格与 Ledger 登记方式仍待后续明确。
