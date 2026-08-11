@@ -49,7 +49,7 @@ COMPILE v1    BLOCK（Execution_IR-v1.md 前五字段 Reasoning Path/Structure/M
 - 依据：`docs/知乎OS Compiler V1.md` 122-125行明确 Triggered Rule IDs 须从 `Runtime.Audit Rules` 固定候选集合中选出本 Run 实际命中的 Global Rule ID；同文 137-142行明确该字段只能是 ID 引用，不得复制规则正文，也不得凭空判定。
 - 核验：逐条核对 `templates/GPT审核清单.md` 全文，B 组 Operational Quality Checks 仅有六项定性检查（阅读体验/推进节奏/场景/表达自然/重复/收尾），全部未分配 ID；当前 TRIAL Runtime（`runtime/ACTIVE_MANIFEST.md`，Based On Commit `5ebf151`）未发布任何 ID 化的 Global Audit Rule 候选集合。
 - 判定：这不是"本题没有命中规则"，而是"合法候选集合本身不存在"——COMPILE 没有权限把这个空缺解释成"无"，因为"无"是"核对过候选集合、确认零命中"的结论，而当前候选集合根本未发布。这是 Runtime Contract 层面的可实现性缺口，不属于 INPUT/DECISION/COMPILE/WRITE 中任一节点的执行错误。
-- 记录：`runtime/logs/failure_patterns.jsonl` 新增 `FP-20260811-001`，`violation_source: Unknown`，`occurrence_count: 1`，`upgrade_candidate: false`。按 `templates/Failure Pattern模板.md` 使用规则，未满 3 次不修改 Runtime Rules；但因该缺口会阻塞任何题目从 COMPILE 进入 WRITE，已在记录中建议 Governance Plane 优先评审是否为 Runtime.Audit Rules 发布 ID 化候选集合，不必等待满 3 次样本。
+- 记录：`runtime/logs/failure_patterns.jsonl` 新增 `FP-20260811-001`，`violation_source: Unknown`，`occurrence_count: 1`，`upgrade_candidate: false`。按 `templates/Failure Pattern模板.md` 使用规则，未满 3 次不修改 Runtime Rules；~~已在记录中建议 Governance Plane 优先评审是否为 Runtime.Audit Rules 发布 ID 化候选集合，不必等待满 3 次样本~~——**此建议已被后续发现的 `Proposal-A_Triggered_Rule_Audit_Binding.md`（Status: VALID GAP / DEFERRED IMPLEMENTATION，2026-08-10）取代（superseded）：该 Proposal 已就同一 Contract Gap 正式裁决，明确绑定 3 次门槛作为重新激活条件，本条初始建议与该既有裁决冲突，不再具有当前有效性，仅作为历史判断保留，不应被读作当前建议。**
 - 处理路径：本篇不越权自行补全 Runtime.Audit Rules 或自造 Rule ID；`Execution_IR-v1.md` 保持 BLOCK 状态，不进入 WRITE。
 
 ## Current-System State Check（5ebf151 Runtime vs HEAD b45b545）
@@ -81,14 +81,15 @@ COMPILE v1    BLOCK（Execution_IR-v1.md 前五字段 Reasoning Path/Structure/M
 
 因此：`ZH-20260811-001` 是否正式计入 Compiler §14 的 10 篇 Production Validation，本文件不下结论，标记为 **UNRESOLVED**，留待 Governance Plane 或 ZH-MILESTONE-010 复盘时明确该 Schema 缺口。
 
-## Disposition（本篇冻结）
+## Disposition（本篇冻结，仅陈述事实，不预支下一步）
 
-- 正式状态（按状态机权威枚举）：`DECISION_FROZEN`，COMPILE 执行受阻，未达 `EXECUTION_IR_READY`，`WRITE` 未开始。
-- Milestone-010 计数资格：UNRESOLVED（见上节），不预先认定计入或不计入 10 篇。
-- 本篇不再继续推进：`Semantic_Freeze-v1.md`（四字段冻结）与 `Execution_IR-v1.md`（六字段中五字段完成，Triggered Rule IDs 因 Runtime Contract 缺口未完成）原样保留，不重写、不补全、不为绕过缺口而放行。
-- Governance Repair 作为独立治理动作另行发起，范围严格限定为"修复 Triggered Rule IDs 与 Runtime.Audit Rules 之间的契约缺口"，不顺带推进本篇生产，不顺带重构审核体系。
-- 回归验证路径：待 Runtime 修复并重新 Release 后，对 ZH-20260811-001 复用同一份已冻结的 `Semantic_Freeze-v1.md`（Reality/Main Gap/Transformation/Core Judgment 不变）重新跑 COMPILE，作为回归样本验证契约缺口是否真正修复；不重新走 DECISION。
+- 正式状态（按状态机权威枚举）：`DECISION_FROZEN`。
+- COMPILE execution：blocked（Triggered Rule IDs 字段因 Runtime Contract 缺口无法合法生成）。
+- WRITE：not started。
+- Milestone-010 eligibility：UNRESOLVED（见上节，不预先认定计入或不计入 10 篇）。
+- Governance disposition：UNRESOLVED（是否、何时、以何种范围启动 Governance Repair，或是否维持 `Proposal-A_Triggered_Rule_Audit_Binding.md` 现有的 3 次门槛不动，均未决定，本文件不代系统或用户做此判断）。
+- `Semantic_Freeze-v1.md`（四字段冻结）与 `Execution_IR-v1.md`（六字段中五字段完成）原样保留，不重写、不补全、不为绕过缺口而放行。
 
 ## Next
 
-已冻结，等待 Governance Repair 完成后回归验证。Execution IR 前五字段已完成，Triggered Rule IDs 因 Runtime Contract 缺口无法合法生成。是否进入 WRITE 取决于用户如何处理该缺口。`production_ledger.md` 暂不新增本篇记录——待用户确认应以状态机权威枚举中的哪个值（`DECISION_FROZEN`）登记，且不在登记时预先裁定 Milestone-010 计数资格。
+本篇处于冻结状态，不预支任何下一步动作（不预设"等待 Governance Repair"，不预设"待 Runtime 修复后重新 COMPILE"，不预设下一步生产安排）。`production_ledger.md` 暂不新增本篇记录。所有未决问题（Milestone-010 计数资格、Governance disposition、Ledger 登记方式）均待用户后续明确指示。
