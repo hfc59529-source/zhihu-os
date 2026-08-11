@@ -255,3 +255,13 @@ Gate Result：PASS。当前有效链路更新为：`Semantic_Freeze-v2.md` → `
 - 队列内状态：`RELEASE_READY`
 
 状态语义说明：`data/Publish_Queue.md` 的状态取值定义中写 `QUEUED=已进发布队列`，但同文件当前优先级第3条写“等有一批真正 `RELEASE_READY` 后，统一安排固定时间发布”，且当前队列已实际使用 `RELEASE_READY` 表示“已入队但未排期”。本篇不擅自将队列状态改为 `QUEUED`，先按现有队列记录保留 `RELEASE_READY`；`RELEASE_READY → QUEUED` 是否应由“写入 Publish Queue”触发，需后续由状态机 / 发布队列治理裁决。
+
+## USER_REJECTED / PUBLISH_ABORTED（2026-08-11）
+
+发布前最终检查中，用户撤回发布意向并判定 Draft-v7 成品内容价值不足，不得发布。`Release-v1.md` 保留为历史归档，不作为可发布稿使用；`ZH-20260811-001` 从 `data/Publish_Queue.md` 当前队列撤出，转入“发布前最终检查撤回记录”。知乎页面编辑器中曾粘贴 Release-v1 正文，但未点击“发布回答”，未形成 PUBLISHED。
+
+内容层失败归因不是 AUDIT-v9 所定位的 WRITE 表达硬伤。AUDIT-v10 证明 Draft-v7 已满足完整 Run Activation 的合规要求，但用户最终判定“合规”不等于“值得读”：`Semantic_Freeze-v2.md` 冻结的 Core Judgment（撤销责任高、新增责任低，因此形式主义只增不减）逻辑成立，却信息增量过低，普通读者用一句“谁敢取消？取消以后出事算你的；加流程反正没人追责”即可理解。`Execution_IR-v4.md` 继续调用 TS01 十步机制推进，并要求五层因果追问，将一层判断机械扩写为完整但低信息密度的正文。
+
+Observation：Core Judgment 逻辑成立且 Execution IR 完整，不代表其信息增量足以支撑长篇机制解释；固定多层 Structure 可能将低展开价值判断机械扩写，最终形成“高结构完整度、低信息密度”的正文。
+
+当前处置：记录为 Failure Observation；不立即修改 DECISION Gate、COMPILE 规则、TS01 或 AUDIT 规则。该问题尚属第一篇真实 TRIAL 内容失败样本，需后续样本复现并确认归属后，才进入 Governance Plane 变更评审。

@@ -30,7 +30,14 @@
 
 | Production ID | USER_APPROVED | Release-v1 | 发布时间 | 状态 |
 |---|---|---|---|---|
-| ZH-20260811-001 | 2026-08-11（对象锁定：Draft-v7 + Semantic_Freeze-v2 + Execution_IR-v4 + AUDIT-v10 PASS） | `productions/ZH-20260811-001/Release-v1.md` | 待定（见当前优先级第3条，等批量排期） | RELEASE_READY |
+
+（暂无。）
+
+## 发布前最终检查撤回记录
+
+| Production ID | 原队列状态 | 撤回原因 | 当前处置 |
+|---|---|---|---|
+| ZH-20260811-001 | RELEASE_READY（已生成 `Release-v1.md`，已入当前队列，未发布） | 发布前最终检查发现成品内容价值不足：Core Judgment 逻辑成立但信息增量过低，TS01 多层结构将一层判断机械扩写为合规但无聊的机制文。 | USER_REJECTED / PUBLISH_ABORTED；`Release-v1.md` 仅作归档，不得发布；已记录 Failure Observation，不修改 Runtime Rules。 |
 
 ## 发布闭环（后续单独验证，当前不执行）
 

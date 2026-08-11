@@ -2,7 +2,7 @@ Production ID: ZH-20260811-001
 
 # User Review Package
 
-当前状态：RELEASE_READY（`Release-v1.md` 已生成，Compiler V1 §9 RELEASE 节点完成 READY_FOR_RELEASE → RELEASED 状态转换；已写入 `data/Publish_Queue.md` 当前队列，等待后续排期 / 草稿箱 / 人工最终检查 / 正式发布）
+当前状态：USER_REJECTED / PUBLISH_ABORTED（发布前最终检查拦截；`Release-v1.md` 已生成但不得发布，仅作归档）
 
 当前正文版本：Draft-v7
 
@@ -12,13 +12,13 @@ Production ID: ZH-20260811-001
 
 审核结论：`AUDIT-v10.md` PASS。用与 `AUDIT-v9.md` 相同的完整 Run Activation Set（A 组 Execution Compliance + B 组 RR-01～RR-08 全量）复审 Draft-v7。AUDIT-v9 的 Issue-001~004（RR-01-03 连续判断无缓冲、RR-03-01 机制后无缓冲、RR-04-04/SEVERITY 解释未切断、RR-02-03 超 80 字长句）均确认解决，Issue-005（RR-07 汇总）随之解除，无遗留 Issue。
 
-用户验收结论：USER_APPROVED（2026-08-11）。批准对象锁定为 `Draft-v7.md`，上游为 `Semantic_Freeze-v2.md`、`Execution_IR-v4.md`，审核依据为 `AUDIT-v10.md` PASS。
+用户验收结论：USER_APPROVED 曾于 2026-08-11 给出，但在发布前最终检查中撤回。当前最终裁决为 USER_REJECTED / PUBLISH_ABORTED。批准对象曾锁定为 `Draft-v7.md`，上游为 `Semantic_Freeze-v2.md`、`Execution_IR-v4.md`，审核依据为 `AUDIT-v10.md` PASS。
 
-Release 记录：`Release-v1.md`（Run ID: ZH-20260811-001，Runtime Version: TRIAL / Based On Commit fe8276f，Released At: 2026-08-11T14:23:38Z）。RELEASE 节点未做任何内容判断，仅记录 Run ID + Runtime Version + 时间戳，正文与 Draft-v7 逐字一致。
+Release 记录：`Release-v1.md`（Run ID: ZH-20260811-001，Runtime Version: TRIAL / Based On Commit fe8276f，Released At: 2026-08-11T14:23:38Z）。该文件已作废归档，不得发布。RELEASE 节点未做任何内容判断，仅记录 Run ID + Runtime Version + 时间戳，正文与 Draft-v7 逐字一致。
 
-发布队列记录：已写入 `data/Publish_Queue.md` 当前队列（011 起正式 USER_APPROVED Gate 后第一条），队列内状态暂按该文件当前记录保留为 `RELEASE_READY`。
+发布队列记录：曾写入 `data/Publish_Queue.md` 当前队列，后因发布前最终检查 USER_REJECTED 撤出当前队列，改入“发布前最终检查撤回记录”。
 
-下一节点：等待批量排期；排期后进入发布闭环（草稿箱 → 最终检查 → 正式发布）。`RELEASE_READY` / `QUEUED` 的精确定义存在语义不一致：`data/Publish_Queue.md` 状态取值写 `QUEUED=已进发布队列`，但当前优先级第3条又把已入当前队列、待批量排期的对象称为 `RELEASE_READY`。本包不擅自把队列状态改为 `QUEUED`，该语义留待状态机 / 发布队列治理裁决。
+下一节点：本篇不发布。若未来重启该题，需从 DECISION / COMPILE 边界重新判断 Core Judgment 的内容价值和可展开性，不得从 `Draft-v7.md` 或 `Release-v1.md` 继续 Patch。
 
 ## 原知乎问题
 
