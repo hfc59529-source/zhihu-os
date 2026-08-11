@@ -2,8 +2,8 @@
 
 Runtime Version: ZH-RUNTIME-DRAFT
 Status: TRIAL
-Published At: 2026-08-11 18:34:44 UTC
-Based On Commit: 5d8c41e218db3e5172bef1564d8f003cee6d1711
+Published At: 2026-08-11 21:57:41 UTC
+Based On Commit: 86d62be56688c2aafdc0494a04743b24be876201
 
 ## Partitions
 
@@ -33,7 +33,7 @@ Based On Commit: 5d8c41e218db3e5172bef1564d8f003cee6d1711
 | templates/GPT审核清单.md | 631082a9cb7f41424b7e95801ee33e360db0c2db34d17d89f11b099812adb792 |
 | docs/知乎内容质量参数库_V2.md | 1dd44575e99ea381a5a4bff10c25c27dbea64d6b0be96c193081b275e48fcea0 |
 | docs/生产状态机与交接规范.md | edec195ba4d13b8b0cf0aff3ad9ed49bfe8def2a3339b78121ab8cdb521cb92c |
-| data/Publish_Queue.md | 2c6613dbe319062e147067ec53c4f5c3f90c0538d34438555b53e0826f2a18af |
+| data/Publish_Queue.md | 1cea7902a7c7e97835bd355bcdcafddc197841fdd69659e3e6bba48db0e52548 |
 | templates/Failure Pattern模板.md | 3ea79dae80db29d8a6883fb2fe375bdcf42996d6fc2a8e9e059f00d37f52345e |
 
 ### Parameter & Knowledge Snapshots
@@ -52,7 +52,7 @@ Based On Commit: 5d8c41e218db3e5172bef1564d8f003cee6d1711
 
 | path | sha256 |
 |---|---|
-| scripts/validate_runtime_consistency.py | 016d77cccd1d3f051d353981f32fd8770afef149a448a29da954351befa00efb |
+| scripts/validate_runtime_consistency.py | 9e1f00f2f35bd9edea4354cface7ca69c64680bf3609d34bf4eb03ff5c769fa0 |
 | scripts/release_runtime.py | 1f45ee39f777abd5ced06418e5215ac51499cdefa113590870745ca3933d607a |
 | docs/00-设计原则.md | 2a11524167fb4f1b24e7e2d8cf478adce3465ab3a27158f85ebe81b591f14e67 |
 
