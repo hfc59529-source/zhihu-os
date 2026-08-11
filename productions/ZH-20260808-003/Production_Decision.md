@@ -4,7 +4,7 @@ Production ID: ZH-20260808-003
 
 ## Status
 
-RELEASED_AWAITING_PUBLISH
+PUBLISHED_MAPPED
 
 ## Topic Binding
 
@@ -27,4 +27,12 @@ QA:
 - `validate_reasoning.py`: PASS
 - `validate_reading_experience.py`: PASS（risks: none）
 
-Next: Publish（人工发布）→ 回填 article_id → 锁定 ZH-20260808-003 ↔ article_id 映射。
+Published answer captured from Zhihu 内容管理页：
+
+- article_id: answer_2069537531780129888
+- answer_url: https://www.zhihu.com/answer/2069537531780129888
+- mapping authority: `data/production_article_map.csv`
+
+Next: wait for review-window data and earnings recovery.
+
+(2026-08-11 治理更正：Status 由 `RELEASED_AWAITING_PUBLISH` 更正为 `PUBLISHED_MAPPED`，此前该字段未跟随实际发布结果更新，与 `data/production_article_map.csv` 记录的 COMPLETE 状态不一致，现按发布事实同步。)
