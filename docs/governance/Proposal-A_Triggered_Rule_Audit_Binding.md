@@ -59,3 +59,11 @@ Compiler V1 第11节 SSP 规定"通用可判定表达检查（重复、参数显
 - 方案三：承认 `triggered_rule_ids → Audit Rule 加载` 这条链路当前不适用于 `知乎ACTIVE规律快照.md` 类的规则，修改 Data Contract 措辞，明确该字段只服务于未来会出现的、真正具备 ID 体系的 Global Rule，`知乎ACTIVE规律快照.md` 类内容改走 COMPILE 内部消化路径（不进入 triggered_rule_ids）。
 
 本 Proposal 不推荐上述任一方案，候选方案的取舍、组合或另拟新方案，由 Governance Plane 决定。
+
+## 7. Evidence Note（2026-08-11 追加，不改变本 Proposal Status）
+
+`ZH-20260811-001`（DECISION 已冻结四字段 PASS，COMPILE 进行至 Triggered Rule IDs 时因同一 ID 化候选集合不存在而 BLOCK）再次独立复现了本 Proposal 第1节所述缺口：`templates/GPT审核清单.md` B组 Operational Quality Checks 六项均无正式 ID，逐条核对结果与本 Proposal 一致。
+
+本次复现与 Proposal A 原有证据（`ZH-20260810-001`）存在一处差异，记录以供后续归属判断：本次症状发生在 COMPILE 阶段（Execution IR 无法合法生成 Triggered Rule IDs 字段，尚未进入 AUDIT/AuditResult），而 Proposal A 原有证据发生在 AUDIT 阶段（`Realization_Audit.md` 中 9 条规则类变量因无合法 `AuditRule.<ID>` 而 Audit 可验证性全部为"否"）。两者共享同一根因（Global Rule ID 候选集合不存在），但触发环节不同。
+
+已在 `runtime/logs/failure_patterns.jsonl` 的 `FP-20260811-001` 记录本次复现并交叉引用本 Proposal，`occurrence_count` 暂维持 1，不因本次独立复现自动计入本 Proposal 第5节重新激活条件所定义的"同一失败模式累计 3 次"——是否计入、如何计入，待 `violation_source` 归属明确后由 Governance Plane 确认，本条追加不预支该判断，不据此重启 Proposal A 的 Governance Review。
