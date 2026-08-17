@@ -101,6 +101,17 @@ Decision Right:
   Reality / Main Gap / Transformation / Core Judgment，一次性冻结
   （对应《内容架构总则》的语义冻结门）
 
+  Core Judgment Discovery（2026-08-17 修复）：
+    锁定 Core Judgment 前，不得直接把 Main Gap 平移成结论。先暂缓回答题面，
+    追问：一个真实的人为什么会问这个问题？他希望这个答案帮他判断、解释、
+    选择或重新理解什么现实处境？尝试找到题面背后真实存在的现实处境、利益
+    或认知冲突（读者原有默认认知 vs 可能的反转）。
+    只有确实发现真实差异时，才允许用它来形成或调整 Core Judgment；
+    找不到真实冲突时必须原样退出，不得为制造张力而虚构处境或冲突。
+    这一步是 DECISION 内部的思考过程，不产出新字段、不写入 Decision Output、
+    不进入 Execution IR、不设新 Gate；它唯一的作用是影响最终锁定的 Core
+    Judgment 本身是否成立、是否够具体。
+
 Output:
   Decision（Reality / Main Gap / Transformation / Core Judgment 四个字段
     + QT-QI 识别记录：QT-00 题型判断、QI-01～QI-06 六项识别结果）
