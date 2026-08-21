@@ -4,6 +4,16 @@
 
 本清单是 AUDIT 节点的执行载体，权威定义见 [`docs/知乎OS Compiler V1.md`](../docs/知乎OS%20Compiler%20V1.md) 第7节。AUDIT 核对两类合同：A. Execution Compliance（Execution IR 的 Run-specific Acceptance Criteria 是否兑现）；B. Operational Quality Checks（Runtime.Audit Rules 中已具备明确操作定义的通用表达约束）。
 
+## REVIEW Diagnosis 入口
+
+AUDIT 完成后，如需要向用户说明成稿质量瓶颈或讨论 Revision 方向，可使用 [`docs/生产状态机与交接规范.md`](../docs/生产状态机与交接规范.md) 的 `REVIEW DIAGNOSIS：成稿诊断语言`。
+
+边界：
+
+1. REVIEW DIAGNOSIS 不属于本清单 A/B 检查项，不生成 `AuditRule.<ID>`。
+2. REVIEW DIAGNOSIS 不得作为 AuditResult 的 Expected Source，不得改变 PASS / Issues[] 结论。
+3. REVIEW DIAGNOSIS 只用于诊断成稿瓶颈和确定最小修改方向，不构成 WRITE 要求，不要求维度齐全，不因单项缺失自动补写。
+
 ## A. Execution Compliance 检查（对应 Execution IR Acceptance Criteria）
 
 - [ ] 是否回应原问题
