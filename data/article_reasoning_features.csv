@@ -1,0 +1,8 @@
+article_id,production_id,question_title,D,M,P,I,closure,main_mechanism,intervention_type,audit_source,audit_status
+answer_2054590834364912396,UNKNOWN,领导的威严是怎么树立起来的？,2,2,2,1,弱闭环,UNKNOWN,UNKNOWN,reports/dmpi_historical_audit_20260821.md,7篇正文样本；D/M/P/I/closure为审计确认字段；main_mechanism/intervention_type未在原始审计中单独抽取为结构化字段，仅存在于该文对应的自然语言"判断"文本中，不在此臆造短标签
+answer_2053145297379923071,UNKNOWN,什么事情是你当了老板才知道的？,2,2,2,1,弱闭环,UNKNOWN,UNKNOWN,reports/dmpi_historical_audit_20260821.md,同上
+answer_2063268216005309342,UNKNOWN,为什么很多人，做到经理或总监，就再也上不去了？,2,2,2,1,弱闭环,UNKNOWN,UNKNOWN,reports/dmpi_historical_audit_20260821.md,同上
+answer_2054232041546425500,UNKNOWN,作为管理者，有哪些事情不能对员工讲？,2,2,2,2,强闭环,UNKNOWN,UNKNOWN,reports/dmpi_historical_audit_20260821.md,同上
+answer_2063019845868860854,UNKNOWN,基层工作现在的难点是什么？,2,2,1,1,弱闭环,UNKNOWN,UNKNOWN,reports/dmpi_historical_audit_20260821.md,同上
+answer_2053865051048654496,UNKNOWN,为什么很多人学习了大量的商业知识，别人的成功方法，成功案例，但是自己却还是失败的？,2,2,2,2,强闭环,UNKNOWN,UNKNOWN,reports/dmpi_historical_audit_20260821.md,同上
+answer_2053220343368757946,UNKNOWN,在知乎上泡这么久，工作、生活、工资还是没有起色是什么原因？,2,2,2,2,强闭环,UNKNOWN,UNKNOWN,reports/dmpi_historical_audit_20260821.md,同上
