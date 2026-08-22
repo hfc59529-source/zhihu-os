@@ -1,0 +1,8 @@
+run_id,production_id,article_id,question_title,match_method,confidence,note
+zhihu-20260729-middle-manager-promotion-001,zhihu-20260729-middle-manager-promotion-001,answer_2065829100695113964,为什么工作中，很多高层领导明知道某位中层领导缺乏管理能力，但还是提拔了他当中层？,exact_title,HIGH,run_id 与 production_id 字符串完全一致；标题在两表逐字相同
+zhihu-20260729-senior-leader-not-fired-001,zhihu-20260729-senior-leader-not-fired-001,answer_2065823788911048364,公司高层明明不行，大老板为什么还不裁掉他们？,exact_title,HIGH,run_id 与 production_id 字符串完全一致；标题在两表逐字相同
+zhihu-20260729-fuzzy-responsibility-boundary-001,zhihu-20260729-fuzzy-responsibility-boundary-001,answer_2065858842207032462,领导布置任务故意模糊责任界限，作为底层员工，如何在谁都不得罪的前提下，保护好自己？,exact_title,HIGH,run_id 与 production_id 字符串完全一致；publish_results.csv 中该题标题有一处异体字（"提前下"）；production_article_map.csv 与 dmpi 等其他文件用"前提下"，判定为同一记录的录入笔误，非两条不同记录
+ZH-20260802-001,ZH-20260802-001,answer_2067141025638921938,提拔你当了部门负责人，第一件事该干啥？,exact_title,HIGH,run_id 与 production_id 字符串完全一致；标题在两表逐字相同
+ZH-20260801-001,ZH-20260801-001,answer_2066924156592116539,职场中怎么改掉弱者气息？,exact_title,HIGH,run_id 与 production_id 字符串完全一致；标题在两表逐字相同
+ZH-20260731-unknown_mofish,ZH-20260731-unknown_mofish,answer_2066733997074523922,为什么老板明知你摸鱼却不拆穿？,exact_title,HIGH,run_id 与 production_id 字符串完全一致；production_article_map.csv 备注该条无正式 Production ID、不用于变量归因，桥接表仅记录映射关系，不改变其归因可用性判定
+ZH-20260801-003,ZH-20260801-003,answer_2066566025722832645,领导不声不响把你手里的任务拿走后，过了几个月，发现别人干不了，想还给你，你会怎么做呢？,exact_title,HIGH,run_id 与 production_id 字符串完全一致；标题在两表逐字相同
