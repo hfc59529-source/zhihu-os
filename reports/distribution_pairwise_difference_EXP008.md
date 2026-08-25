@@ -22,6 +22,13 @@ Question Context → Content Entry → Engagement → Distribution Interpretatio
 | PAIR-07 | 2.53x | 43.4% | 5d | LOW | RPM 差接近阈值上限 |
 | PAIR-08 | 2.06x | 10.4% | 9d | MEDIUM_LOW | 日期差较大，降权 |
 
+## Secondary Pairs
+
+| Pair | Views Ratio | RPM Delta | Age Delta | Evidence Weight | Note |
+|---|---:|---:|---:|---|---|
+| PAIR-03 | 4.91x | 25.3% | 0d | SECONDARY | 同日发布，但 RPM 低于高收益主样本区间 |
+| PAIR-06 | 3.55x | 12.1% | 1d | SECONDARY | 匹配干净，但低播放样本互动率更高，优先作为反例观察 |
+
 ## Initial Counter-Signal
 
 当前未标注前，已有一个值得保留的反例信号：
