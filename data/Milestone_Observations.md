@@ -353,13 +353,13 @@ I：Intervention，对应"我怎么办？"
 - 私信咨询
 - Paid/Costly Signal
 
-生命周期状态：VALIDATING
+生命周期状态：SUPPORTED
 缺口状态（如适用）：待审核
-审核结果（如适用）：未审核
-审核说明：当前证据为方向性增强，不足以升级为 ACTIVE 参数或生产协议；样本量小，极小阅读样本的盐粒 / 100 阅读会剧烈波动，且知乎致知计划收益算法未公开，不能把相关性解释为因果。
+审核结果（如适用）：正式参数
+审核说明：用户明确批准本条不再停留于复盘观察，直接嵌入现有 QT-QI → DECISION → COMPILE 生产链路；落点不是新增平行模块，而是强化 QI-02、QI-04.1、QI-05、QI-06、QI-08 与 COMPILE Reasoning Path 的执行规则。样本量小、极小阅读样本的盐粒 / 100 阅读会剧烈波动、知乎致知计划收益算法未公开等限制仍保留，后续继续验证效果，不把当前相关性解释为因果定论。
 归入参数 ID：不适用
 候选参数 ID（审核结果为候选参数时必填）：不适用
-正式参数 ID（审核结果为正式参数时必填）：不适用
+正式参数 ID（审核结果为正式参数时必填）：QT-QI.1
 重复次数：1（首次以 Self-Relevance / Revenue Density 分层方式记录）
 重复证据引用：
 - `reports/daily_review_20260825_zhihu_capture_recap.md`
@@ -367,11 +367,12 @@ I：Intervention，对应"我怎么办？"
 - `data/review_data_snapshots.csv` 中 2026-08-25 新增 5 条 REVIEW_DAY 内容记录
 平台证据：
 知乎创作中心内容管理页与收益分析 -> 致知计划 -> 内容收益明细。收益单位为盐粒，页面说明 100 盐粒 = 1 元人民币；本轮收益窗口为 2026-08-19 至 2026-08-25。
-最终结论：待后续 10-20 篇验证
+最终结论：SUPPORTED。作为生产原则进入 QT-QI / DECISION / COMPILE；效果仍需后续 10-20 篇继续验证。
 处理动作：
-1. 当前只记录 Hypothesis / Observation，不升级生产协议或参数库。
-2. 后续复盘中把题目结果拆分为 Traffic Winner、Value Winner 与 High-Intent Reader 样本观察。
-3. 每篇新增 Self-Relevance 与 Intervention Depth 两个复盘标签，只作为验证字段，不作为生产硬规则。
-4. 单篇判断不得仅按阅读量排序；至少并看阅读量、盐粒每 100 阅读、收藏率、私信咨询与 Paid/Costly Signal。
-5. 若连续样本支持，再讨论是否建立候选参数或收益目标参数映射；若反例增多，则标记 INCONCLUSIVE 或 REJECTED。
+1. 已将生产原则写入 `docs/知乎内容质量参数库_V2.md` 的 QT-QI.1，并同步 `runtime/知乎内容质量参数快照.md`。
+2. 已将 DECISION / COMPILE 执行边界写入 `docs/知乎OS Compiler V1.md`。
+3. 已将选题阶段 Personal Stakes 字段写入 `docs/Codex选题采集协议.md` 与 `templates/选题包模板.md`。
+4. 后续复盘中把题目结果拆分为 Traffic Winner、Value Winner 与 High-Intent Reader 样本观察。
+5. 每篇新增 Self-Relevance 与 Intervention Depth 两个复盘标签，既服务生产执行，也服务后续效果验证。
+6. 单篇判断不得仅按阅读量排序；至少并看阅读量、盐粒每 100 阅读、收藏率、私信咨询与 Paid/Costly Signal。
 ```

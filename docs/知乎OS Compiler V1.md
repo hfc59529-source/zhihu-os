@@ -85,19 +85,22 @@ Input:
   规则引用：Runtime Release → Decision Rules 分区
     + `docs/知乎内容质量参数库_V2.md`§0 QT-QI｜问题理解系统
       （仅 QT-00 题型判断 + QI-01 提问动机 / QI-02 真实问题 / QI-03 当前认知 /
-        QI-04 认知缺口 / QI-05 认知目标 / QI-06 阅读奖励 六项识别字段，
+        QI-04 认知缺口 / QI-04.1 用户隐藏约束 / QI-05 认知目标 /
+        QI-06 阅读奖励 / QI-07 情绪状态 / QI-08 行为预期，以及
+        QT-QI.1 高意图阅读生产原则，
         不含该文件其余 PD / RR / RE / BT / CR 等正文质量参数——那些参数的
         消费者仍是 COMPILE/WRITE/AUDIT，不因本次修复扩大到 DECISION）
 
   Migration Fix（2026-08-11，TRIAL Runtime）：
     Production Card 退役、职责迁入 Compiler V1 时，QT-QI 问题理解识别域未被
     任何现行节点正式继承，DECISION 此前直接从 Input Package 跳到 Main Gap，
-    未核对用户表层问题背后的真实提问类型。本修复把 QT-QI 六项识别字段列为
-    DECISION 的强制输入，不改变 QT-QI 定义本身，不把该文件其余质量参数域
-    授权给 DECISION。
+    未核对用户表层问题背后的真实提问类型。2026-08-11 本修复最初把 QT-QI
+    六项识别字段列为 DECISION 的强制输入；2026-08-25 High-Intent Reader
+    Rule 将其扩展为 QI-01～QI-08、QI-04.1 与 QT-QI.1。不改变该文件其余
+    质量参数域授权：PD / RR / RE / BT / CR 等仍不直接授权给 DECISION。
 
 Decision Right:
-  先完成 QT-QI 识别（QT-00 题型 + QI-01～QI-06），再锁定
+  先完成 QT-QI 识别（QT-00 题型 + QI-01～QI-08、QI-04.1 与 QT-QI.1），再锁定
   Reality / Main Gap / Transformation / Core Judgment，一次性冻结
   （对应《内容架构总则》的语义冻结门）
 
@@ -117,9 +120,18 @@ Decision Right:
     不进入 Execution IR、不设新 Gate；它唯一的作用是影响最终锁定的 Core
     Judgment 本身是否成立、是否够具体、是否够锋利。
 
+  High-Intent Reader Rule（2026-08-25，TRIAL Runtime）：
+    知乎回答不是只回答题面，也不是只回答提问者。DECISION 必须在 QI-02 中
+    同时识别提问者真实问题和观看者映射问题：大量围观读者为什么会点进来，
+    他们会把这个题映射成自己的什么现实处境。若题目存在明确 Personal Stakes，
+    Core Judgment 不得停留在解释第三方、社会现象或外部主体为什么这样；必须
+    推进到"这说明典型读者自己的处境是什么"。例如"老板怕失控"必须继续
+    转译为"你为什么拿不到权，以及你需要降低哪个失控成本"。
+
 Output:
   Decision（Reality / Main Gap / Transformation / Core Judgment 四个字段
-    + QT-QI 识别记录：QT-00 题型判断、QI-01～QI-06 六项识别结果）
+    + QT-QI 识别记录：QT-00 题型判断、QI-01～QI-08、QI-04.1 与
+      QT-QI.1 的识别结果）
 
 Forbidden:
   不涉及"怎么写"（结构、开头、句式属于 COMPILE / WRITE）
@@ -158,6 +170,14 @@ Decision Right:
       从 Runtime.Audit Rules 的固定候选集合中，实际命中了哪些 Global Rule
       ID——只存 ID，不存规则正文，规则正文唯一权威仍在 Runtime Release；
       没有这个字段，AUDIT 就不知道本 Run 该加载哪些条件触发的 Audit Rule）
+
+  Personal Stakes Compile Rule（2026-08-25，TRIAL Runtime）：
+    若 Decision 识别到明确 Personal Stakes，Reasoning Path 不得停留在对
+    第三方/社会现象的解释。COMPILE 必须把 Mechanism 映射回典型读者自身处境，
+    在 Reasoning Path、Structure step_obligations 或 Acceptance Criteria 中
+    完成至少一次位置判断（Positioning）：这个机制说明读者现在处在什么位置。
+    存在可控变量时，必须继续推进到 Intervention；Intervention 必须修改前面
+    诊断出来的变量，不得停留在"多沟通、提升能力、取得信任"等泛化建议。
 
   Authority Provenance Check（2026-08-11，TRIAL Runtime）：
     COMPILE 在把任何结构、规律、变量或效果代理写入 Execution IR 之前，必须先核对
