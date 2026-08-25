@@ -2,8 +2,8 @@
 
 Runtime Version: ZH-RUNTIME-DRAFT
 Status: TRIAL
-Published At: 2026-08-11 21:57:41 UTC
-Based On Commit: 86d62be56688c2aafdc0494a04743b24be876201
+Published At: 2026-08-25 07:59:56 UTC
+Based On Commit: 75535fa7b21de9d7f67c20a6330d8c6f5fef397e
 
 ## Partitions
 
@@ -11,9 +11,9 @@ Based On Commit: 86d62be56688c2aafdc0494a04743b24be876201
 
 | path | sha256 |
 |---|---|
-| docs/知乎OS Compiler V1.md | a6a7119d159c9d986d307c76c5cd30fbd94c516153c637feeacc6e73c6ba5e07 |
+| docs/知乎OS Compiler V1.md | cf3a7a48207496350a1338d231b9eda13cb9af094fda418d032441dc445606a8 |
 | docs/内容架构总则.md | cdf1c858368dec970170f646f6d9fc98aa0d411348e1b63c0f2927e785e70714 |
-| docs/知乎OS权威归属表.md | 40c169a09176edb63fcfbca9787ba0c36e3785167196593fe587a68f1085dcae |
+| docs/知乎OS权威归属表.md | 013d3472a960977d9942f6853e89ea36e4a2ed30cd1c046bfdf0ddf371fa7664 |
 
 ### Protocol Docs
 
@@ -22,17 +22,17 @@ Based On Commit: 86d62be56688c2aafdc0494a04743b24be876201
 | docs/08_总AI执行中心.md | a47d710be44361af3727363298f0b9a39d07d160bea1f65c8f7504fab8b27887 |
 | docs/知乎OS执行协议.md | 43db9f6b8653769514dec0018c9e3462c5d7a019fd203bb5f174dd4cafe776c9 |
 | templates/知乎OS总控提示词.md | 5a74d866473d5a5edb53c39c35ea953f2f22c74a9caaba6332b9e14f0f0679b4 |
-| docs/Codex选题采集协议.md | d878a821107b1dc73f071e4d88f87ff802ceafb5683126ccff890a156bafe8f1 |
-| templates/选题包模板.md | 41d97f3a9b1ce71d1df1dd105debaadcd36932dc1019ccbdbfea6b44b3309717 |
+| docs/Codex选题采集协议.md | 5f0b1945d1efce3c813d6f74b3fde5011ed4988e33f131dca41fe1f64f566a87 |
+| templates/选题包模板.md | 1f42eb653ed60a5564ed59e443bdeb5628eaa3d01eddc73b9cbc88405cd369fc |
 
 ### Node Execution Assets
 
 | path | sha256 |
 |---|---|
-| templates/Claude正文生产Prompt.md | 56677d26616dd7b045a71e49d11578456846722686bc446411e86b23f5c858e5 |
-| templates/GPT审核清单.md | 631082a9cb7f41424b7e95801ee33e360db0c2db34d17d89f11b099812adb792 |
-| docs/知乎内容质量参数库_V2.md | 1dd44575e99ea381a5a4bff10c25c27dbea64d6b0be96c193081b275e48fcea0 |
-| docs/生产状态机与交接规范.md | edec195ba4d13b8b0cf0aff3ad9ed49bfe8def2a3339b78121ab8cdb521cb92c |
+| templates/Claude正文生产Prompt.md | 441f4f310a3e37459375ceef1964d74cecf04ccef7a0b88747fdc5f343670e66 |
+| templates/GPT审核清单.md | 6db1a209139e3b97365f790afcb2f99d45f1b76b9a382bb39da4bf00e52b7abe |
+| docs/知乎内容质量参数库_V2.md | 30533a3f4d9e656c669e9c432e5b3bb67cf0d2b080c1d4090f07efd53bee7586 |
+| docs/生产状态机与交接规范.md | 7809fd027f30c63f64c6b4fa68d2e720bf18843236037cf41c087fac293de999 |
 | data/Publish_Queue.md | 1cea7902a7c7e97835bd355bcdcafddc197841fdd69659e3e6bba48db0e52548 |
 | templates/Failure Pattern模板.md | 3ea79dae80db29d8a6883fb2fe375bdcf42996d6fc2a8e9e059f00d37f52345e |
 
@@ -44,7 +44,7 @@ Based On Commit: 86d62be56688c2aafdc0494a04743b24be876201
 | runtime/production_variable_snapshot.md | ee39d808cfdb09e86743a11164f0559d312e4e1ec0554b198f2e24e1522731c1 |
 | runtime/知乎结构库快照.md | 4b3881d0ae2b6c56cdbb0f5fb58f2714225352e4b6089c3adc8ebcbb2442d5e2 |
 | runtime/知乎ACTIVE规律快照.md | 8af2dacb4385ef2b710d6d279e6bc2e71e0d7b567bb17e6063b3625b7ae11665 |
-| runtime/知乎内容质量参数快照.md | a5df4370eaee5fc84b45cff5b065e3d7118f4c08cec3b8c00f15c993b5ac815a |
+| runtime/知乎内容质量参数快照.md | 3a782e2fca077df22e99af67560b80338107b021f90f6f4301fa842665321700 |
 | runtime/知乎账号画像快照.md | be4bffffb6eb7916e11181b2006ce749434e1712767b547c2671dbcde72cf955 |
 | docs/知乎OS Structure Evolution V1.md | a16d5b025ba8e89dc387561ee91d222b57c5a6a5f66b3c36c08b17575f9c9dae |
 
