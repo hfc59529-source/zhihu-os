@@ -10,6 +10,8 @@ Question Context → Content Entry → Engagement → Distribution Interpretatio
 
 互动率属于 Post-distribution outcome / mediator，只能用来描述后置表现和提出反例，不得直接当作播放差异原因。
 
+Text-derived annotation 必须先在 `data/distribution_text_annotations_blind.csv` 里盲标完成，再 join 回 matched-pair 数据。未盲标前，本报告不得填写内容处理变量差异。
+
 ## Priority Pairs
 
 | Pair | Views Ratio | RPM Delta | Age Delta | Evidence Weight | Note |
