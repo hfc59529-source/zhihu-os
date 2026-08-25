@@ -9,3 +9,4 @@
 - [EXP001 - 正文生成接口表达层优化](experiments/EXP001.md)
 - [EXP002 - 平台表达变量与 AI 识别相关性实验](experiments/EXP002.md)
 - [EXP007 - Interaction Compiler：稳定冲突题的候选机制工具](experiments/EXP007.md)
+- [EXP008 - Distribution Model：高收益回答的播放差异验证](experiments/EXP008.md)
