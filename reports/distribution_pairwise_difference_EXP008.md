@@ -12,6 +12,8 @@ Question Context → Content Entry → Engagement → Distribution Interpretatio
 
 Text-derived annotation 必须先在 `data/distribution_text_annotations_blind.csv` 里盲标完成，再 join 回 matched-pair 数据。未盲标前，本报告不得填写内容处理变量差异。
 
+若 blind 表中 `answer_text` 为空，相关样本不得填写 first sentence / first 100 chars 差异，只能保留为正文缺失。
+
 ## Priority Pairs
 
 | Pair | Views Ratio | RPM Delta | Age Delta | Evidence Weight | Note |

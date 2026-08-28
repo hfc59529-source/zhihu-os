@@ -1,19 +1,67 @@
-blind_id,article_id,title,question_text,answer_text,audience_scope,audience_scope_evidence,conflict_strength,conflict_strength_evidence,emotional_charge,emotional_charge_evidence,first_sentence_judgment,first_sentence_evidence,first_100_interest_conflict,first_100_evidence,annotation_status,notes
-BLIND-D148A43B12,answer_2063268216005309342,为什么很多人，做到经理或总监，就再也上不去了？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-C39585FB98,answer_2061965818829739713,什么类型的人适合当领导？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-99E1891D06,answer_2063019845868860854,基层工作现在的难点是什么？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-1DA8A95CAB,answer_2061118130731096014,领导提拔你的最根本的原因是什么？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-9028D7A46E,answer_2062594251175810974,如何看待大力提拔选拔年轻干部?,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-1AC2A85247,answer_2062588572134289861,基层为什么越来越累？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-27BD0516B2,answer_2054353693386990646,什么样的员工容易被提拔为管理层？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-9A47A7E6E7,answer_2053150670178595072,销售那么挣钱，为什么大家不愿意做销售？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-C3A860288C,answer_2056059209934959217,怎么判断一个单位已经烂透了?,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-F2110ECA7E,answer_2055788329006784796,好领导一般都什么样？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-8483CE378F,answer_2053140800012391180,中年失业出路在哪？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-37FBDD9DB8,answer_2053482385552021494,为什么成功人士的精力都非常旺盛？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-E5541048A0,answer_2053893528665823152,职场中的人才，到底是「选拔」出来的还是「培养」出来的？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-C56953660B,answer_2052166992531027845,为什么现在的年轻人创业经常失败？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-0D8B145699,answer_2057129843288957834,现在就业大环境怎么样？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-4A8966CAFB,answer_2060382464640561232,提拔人的底层逻辑是什么？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-8EFCF261E6,answer_2052522859554156734,普通人怎么才能实现财务自由？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
-BLIND-06086A5698,answer_2052435404134127226,管理的本质是决策还是协调？,,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding.
+blind_id,title,question_text,answer_text,text_source_status,text_source_path,audience_scope,audience_scope_evidence,conflict_strength,conflict_strength_evidence,emotional_charge,emotional_charge_evidence,first_sentence_judgment,first_sentence_evidence,first_100_interest_conflict,first_100_evidence,annotation_status,notes
+BLIND-D148A43B12,为什么很多人，做到经理或总监，就再也上不去了？,为什么很多人，做到经理或总监，就再也上不去了？,"首屏：
+收录于 · 工作、钱与选择权 因为从经理往上走，组织考察的已经不是“你能不能把事情做好”。 组织愿不愿意把一部分资源、权力和风险交给你。 很多人以为，职场晋升是一条连续的阶梯：
+
+结构：
+1. 很多人以为，职场晋升是一条连续的阶梯：
+2. 员工做得好，升主管；
+3. 所以，很多人并不是能力不够，而是他过去赖以成功的那套能力，走到经理、总监这个位置以后，突然失效了。
+4. 第一层真相：经理是奖励，更高职位是一场押注
+5. 公司真正考虑的是：
+6. 第二层真相：你在当前位置太有价值，也可能成为晋升障碍
+
+结尾：
+谁有权分配补给； 出现意外时，谁来承担整支队伍的结果。 从经理开始，你面对的就不再只是工作。 而是组织如何分配权力。",HISTORICAL_SNAPSHOT,l2_variable_records.md,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-C39585FB98,什么类型的人适合当领导？,什么类型的人适合当领导？,,TEXT_MISSING,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-99E1891D06,基层工作现在的难点是什么？,基层工作现在的难点是什么？,"首屏：
+很多人觉得，现在基层越来越难，是因为事情越来越多。 其实不是。 基层真正的难点，不是工作变多了， 而是越来越多原本应该由组织解决的问题，最后都压到了基层。
+
+结构：
+1. 很多人觉得，现在基层越来越难，是因为事情越来越多。
+2. 基层真正的难点，不是工作变多了，
+3. 以前基层负责执行，现在基层还要负责解释、协调、背锅、安抚情绪，甚至替别人承担决策的后果。
+4. 一个组织效率高不高，不是看基层有多努力，而是看问题停留在哪一层。
+5. 最后所有成本都会落到离客户最近、离领导最远的人身上。
+6. 最后真正想办法的人，还是基层。
+
+结尾：
+基层越来越难，不是因为基层越来越差，而是越来越多组织无法解决的问题，最终都会沉到基层。 基层不是在完成工作。 很多时候，是在消化整个系统运行产生的成本。 你觉得现在基层最难的是工作越来越多，还是越来越多”不属于自己的问题”也要自己解决？",HISTORICAL_SNAPSHOT,l2_variable_records.md,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-1DA8A95CAB,领导提拔你的最根本的原因是什么？,领导提拔你的最根本的原因是什么？,,TEXT_MISSING,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-9028D7A46E,如何看待大力提拔选拔年轻干部?,如何看待大力提拔选拔年轻干部?,,TEXT_MISSING,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-1AC2A85247,基层为什么越来越累？,基层为什么越来越累？,,TEXT_MISSING,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-27BD0516B2,什么样的员工容易被提拔为管理层？,什么样的员工容易被提拔为管理层？,"首屏：
+很多员工升不上去，不是因为老板不知道你能干。 而是因为老板只敢把任务交给你，不敢把结果交给你。 这就是普通员工和管理层之间最大的差别。 普通员工完成任务。
+
+结构：
+1. 这就是普通员工和管理层之间最大的差别。
+2. 管理者承担结果。
+3. 很多人以为，自己工作能力强、干活多、加班多、态度好，就应该被提拔。
+4. 这就是很多员工最难接受的地方。
+5. 所以公司不会因为你辛苦，就一定提拔你。
+6. 公司也不会因为你技术强，就一定提拔你。
+
+结尾：
+职场里真正的分水岭，不是会不会干活。 而是你到底只能完成任务，还是能承担结果。 只能完成任务的人，是骨干。 能承担结果的人，才开始接近管理层。",HISTORICAL_SNAPSHOT,l2_variable_records.md,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-9A47A7E6E7,销售那么挣钱，为什么大家不愿意做销售？,销售那么挣钱，为什么大家不愿意做销售？,,TEXT_MISSING,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-C3A860288C,怎么判断一个单位已经烂透了?,怎么判断一个单位已经烂透了?,,TEXT_MISSING,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-F2110ECA7E,好领导一般都什么样？,好领导一般都什么样？,,TEXT_MISSING,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-8483CE378F,中年失业出路在哪？,中年失业出路在哪？,,TEXT_MISSING,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-37FBDD9DB8,为什么成功人士的精力都非常旺盛？,为什么成功人士的精力都非常旺盛？,,TEXT_MISSING,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-E5541048A0,职场中的人才，到底是「选拔」出来的还是「培养」出来的？,职场中的人才，到底是「选拔」出来的还是「培养」出来的？,"首屏：
+谢邀 @掘美骑游 真正的人才，不是公司培养出来的。 也不是公司选拔出来的。 而是在结果压力里筛出来的。
+
+结构：
+1. 真正的人才，不是公司培养出来的。
+2. 员工也有另一种幻想。
+3. 公司不是学校。
+4. 公司发工资，买的不是你的成长过程。
+5. 所以人才到底怎么来的？
+6. 真正成熟的公司，不会平均培养所有人。
+
+结尾：
+公司如果没有筛选机制，就会把资源浪费在不值得培养的人身上。 公司如果没有培养机制，就会把真正有潜力的人消耗掉。 所以人才不是单纯选出来，也不是单纯养出来。 人才是被结果筛出来，再被系统托起来的。",HISTORICAL_SNAPSHOT,l2_variable_records.md,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-C56953660B,为什么现在的年轻人创业经常失败？,为什么现在的年轻人创业经常失败？,,TEXT_MISSING,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-0D8B145699,现在就业大环境怎么样？,现在就业大环境怎么样？,,TEXT_MISSING,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-4A8966CAFB,提拔人的底层逻辑是什么？,提拔人的底层逻辑是什么？,,TEXT_MISSING,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-8EFCF261E6,普通人怎么才能实现财务自由？,普通人怎么才能实现财务自由？,,TEXT_MISSING,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
+BLIND-06086A5698,管理的本质是决策还是协调？,管理的本质是决策还是协调？,,TEXT_MISSING,,,PENDING,,PENDING,,PENDING,,PENDING,,PENDING,PENDING,Blind text-derived annotation only; do not use performance data while coding. Do not code first sentence or first 100 chars when answer_text is empty.
