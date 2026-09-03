@@ -376,3 +376,52 @@ I：Intervention，对应"我怎么办？"
 5. 每篇新增 Self-Relevance 与 Intervention Depth 两个复盘标签，既服务生产执行，也服务后续效果验证。
 6. 单篇判断不得仅按阅读量排序；至少并看阅读量、盐粒每 100 阅读、收藏率、私信咨询与 Paid/Costly Signal。
 ```
+
+## Observation-07：Secondary Distribution / Reactivation：发布十几天后的二次放量
+
+```text
+Observation ID：Observation-07
+Gap ID（如为参数缺口）：不适用
+Source（如为参数缺口）：数据复盘
+对应内容 ID：answer_2073162526121107666
+题目：体制内，为什么领导一眼就能看出你是老实人？
+审核来源：2026-09-03 收益复盘审计
+问题类型：结构问题（分发模型阶段拆分；非正文结构问题，暂归入结构问题）
+关联 Parameter ID（如已存在对应参数记录）：EXP008
+问题描述：
+2026-09-03 最近 7 天收益窗口中，`体制内，为什么领导一眼就能看出你是老实人？` 出现明显二次放量。该回答发布于 2026-08-18，并非发布当天一次性爆发；从 2026-08-30 至 2026-09-03 四天内，累计阅读由 3,711 增至 14,238，增加约 10,527。同期 2026-08-25 发布的新文样本反而出现第一轮后快速衰减：`为什么领导的心腹很少有异性？` 四天累计只增加约 102 阅读 / 8 盐粒；`劳务派遣以后是否会占据主流？` 四天累计只增加约 93 阅读 / 8 盐粒。
+
+该现象提示：知乎分发不应只按一次性 Initial Distribution 理解，至少存在研究层需要显式追踪的 `Secondary Distribution / Reactivation` 阶段。原先用 `views_per_day = 最终播放 / 发布天数` 作为弱校正时，会把“稳定增长”和“前期停滞后突然二次放量”平均掉，无法识别不同分发机制。
+
+初步修正意见：
+EXP008 研究层增加生命周期阶段视角：
+Question Context → Entry → Initial Distribution → Consumption / Engagement → Further Distribution → Reactivation → Long-tail Persistence。
+
+但本条只有一个非常强的 reactivation case，不能升级为生产规则，不能据此改正文协议或选题协议。后续应优先画重点文章时间曲线，而不是继续盲目增加内容变量。
+
+生命周期状态：SUPPORTED
+缺口状态（如适用）：不适用
+审核结果（如适用）：不适用
+审核说明：
+本条支持的是“存在二次放量现象，且 EXP008 研究框架需要显式记录该阶段”，不支持“已找到二次放量触发机制”，也不支持“某类内容可稳定复现二次激活”。因此只入研究库和 Observation，不入正式参数库。
+归入参数 ID：不适用
+候选参数 ID（审核结果为候选参数时必填）：不适用
+正式参数 ID（审核结果为正式参数时必填）：不适用
+重复次数：1（首次明确记录二次激活样本）
+重复证据引用：
+- `reports/daily_review_20260830_zhihu_capture_recap.md`
+- `reports/daily_review_20260903_zhihu_capture_recap.md`
+- `data/revenue_observations.csv` 中 `zhihu_knowledge_income_detail_20260830_recent7_browser` 与 `zhihu_knowledge_income_detail_20260903_recent7_browser` 记录
+- `research/experiments/EXP008.md` 的 “2026-09-03 研究层修正：二次激活样本”
+平台证据：
+知乎创作中心内容管理页与收益分析 -> 致知计划 -> 内容收益明细。收益单位为盐粒，页面说明 100 盐粒 = 1 元人民币。关键窗口为 2026-08-23 至 2026-08-29、2026-08-27 至 2026-09-02 两个最近 7 天收益窗口；窗口存在重叠，因此窗口数据只用于解释结构变化，累计值差异用于确认 2026-08-30 至 2026-09-03 的实际增量。
+最终结论：
+SUPPORTED。知乎播放不是一次性分配过程；截至当前证据，EXP008 最值得新增追踪的未知变量是“什么条件触发二次放量”。该结论属于研究层模型修正，不属于生产规则。
+处理动作：
+1. 已在 `research/experiments/EXP008.md` 入库二次激活研究层修正。
+2. 不修改 `production_variable_library.md`。
+3. 不修改正文生产协议、选题采集协议或 Runtime。
+4. 后续复盘优先补重点样本时间曲线：发布时间 → 第一轮增长 → 停滞 → 二次增长 → 长尾。
+5. 对收益拆分采用 `Revenue = Distribution Volume × Monetization Efficiency × Persistence` 的观察口径，避免把高播放、高 RPM、长尾持续混成同一个变量。
+6. 阶段性策略口径：当前不要继续把主要精力放在正文系统优化上；下一阶段优先破解 Distribution Gate，尤其是“为什么有些文章会获得第二轮放量”。
+```
