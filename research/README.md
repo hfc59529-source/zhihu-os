@@ -10,3 +10,7 @@
 - [EXP002 - 平台表达变量与 AI 识别相关性实验](experiments/EXP002.md)
 - [EXP007 - Interaction Compiler：稳定冲突题的候选机制工具](experiments/EXP007.md)
 - [EXP008 - Distribution Model：高收益回答的播放差异验证](experiments/EXP008.md)
+
+## Case Studies
+
+- [2026-09-03 Reactivation Case Study：老实人二次放量](../reports/reactivation_case_study_20260903_laoshiren.md)
