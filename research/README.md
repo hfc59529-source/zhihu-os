@@ -16,4 +16,5 @@
 - [2026-09-03 Reactivation Case Study：老实人二次放量](../reports/reactivation_case_study_20260903_laoshiren.md)
 - [2026-09-10 Reactivation Time Series：老实人二次分发续证](../reports/reactivation_timeseries_20260910_laoshiren.md)
 - [2026-09-10 Revenue Attribution Audit：第一次带团队](../reports/revenue_attribution_audit_20260910_first_team_lead.md)
+- [2026-09-10 Measurement Evidence：第一次带团队 73 盐粒归因](../reports/measurement_evidence_20260910_first_team_lead.md)
 - [2026-09-10 EXP008 Challenge Case：领导能力 Pairwise Difference v0](../reports/exp008_challenge_case_leadership_pairwise_20260910.md)

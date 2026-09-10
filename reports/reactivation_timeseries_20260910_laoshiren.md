@@ -81,6 +81,14 @@ Status：ACTIVE RESEARCH CASE / UPDATED 2026-09-10
 Reactivation 后的流量是否与首轮流量具有不同受众构成？
 ```
 
+边界：
+
+```text
+受众构成差异当前只是问题，不是结论。
+```
+
+在 P0 Revenue Attribution Audit 排除统计口径错位前，不把 `Audience Composition` 作为 Reactivation 的解释变量。
+
 ## Next Collection
 
 下一轮必须尽量补：
