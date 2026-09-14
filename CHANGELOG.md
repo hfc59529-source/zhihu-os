@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## 2026-09-14｜Topic Priority Research Weight
+
+状态：Completed / Research Layer Weight
+
+### 变更
+
+- 在 `docs/Codex选题采集协议.md` 的读者视角校准部分新增 `Leadership / Organizational Judgment Cluster` 选题排序候选加权信号。
+- 当推荐题属于“领导 / 识人 / 晋升 / 权力关系 / 上下级 / 组织判断”需求簇时，只允许作为 `Daily_Topic_Top3` 排序的 `优先级 +1`。
+- 明确该信号不进入 ACTIVE 写作规则，不修改正文模型、干预规则、Execution IR 或 Writer Rules。
+
+### 为什么改
+
+2026-09-14 最近 30 天收益复盘显示，高收益内容明显集中在领导与组织判断需求簇；但该发现仍停留在 Research Layer，只能影响下一轮选题排序，不能直接升级为生产规则。
+
+### 影响范围
+
+- `docs/Codex选题采集协议.md`
+- `reports/exp008_research_update_20260914.md`
+- `research/experiments/EXP008.md`
+
+### 后续验证
+
+继续按 `Observation -> Case -> Hypothesis -> Evidence -> Validation -> Rule` 推进。下一轮截图选题时使用该信号做轻微加权，同时保留重复风险、读者困惑、账号匹配、平台竞争和可回答空间等原有判断。
+
 ## 2026-08-11｜Authority Provenance Patch
 
 状态：Completed

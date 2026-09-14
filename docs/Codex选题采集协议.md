@@ -128,6 +128,37 @@ DECISION
 - 若题目能把读者从“我感觉不对”推进到“我知道自己在哪、为什么、该改什么”，即使阅读预估不是最高，也可提高生产优先级。
 - 本判断只影响选题排序和 Topic Package 记录，不提前决定 ACTIVE、核心判断、结构或正文参数。
 
+2026-09-14 Topic Priority Research Weight：
+
+`reports/exp008_research_update_20260914.md` 记录了一个 Research Layer 观察：
+
+```text
+Leadership / Organizational Judgment Cluster
+领导与组织判断需求簇
+```
+
+在下一轮推荐题 / 截图选题排序时，若题目属于以下需求簇，可作为候选加权信号：
+
+```text
+领导 / 识人 / 晋升 / 权力关系 / 上下级 / 组织判断
+```
+
+执行口径：
+
+```text
+原有选题判断
++
+Cluster Signal：优先级 +1
+```
+
+边界：
+
+- 只影响 `Daily_Topic_Top3` 排序，不替代原选题判断。
+- 不能仅凭属于该需求簇就选题。
+- 不构成 ACTIVE 写作规则，不修改正文模型、干预规则、Execution IR 或 Writer Rules。
+- `Revenue Attribution`、`Reactivation`、`Challenge Pair` 继续留在 Research Layer。
+- 若其他条件接近，优先拆解该需求簇题目；若重复风险、读者困惑、账号匹配、平台竞争或可回答空间较差，仍可降级或淘汰。
+
 禁止输出：
 
 - ACTIVE 应该选什么。
