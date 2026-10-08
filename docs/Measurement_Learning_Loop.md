@@ -114,3 +114,11 @@ python3 scripts/validate_runtime_consistency.py
 ```
 
 Runtime consistency 的既有 drift 单独报告；不得以自动重算hash、替换Based On Commit或重新release把失败变成通过。
+
+## 2026-10-09 Production Reference 通道修复
+
+reference_status是使用资格，不替换research_stage或既有对象状态。人工接受的描述性Finding允许PRODUCTION_REFERENCE参与人工选题；RESEARCH_ONLY不作为已接受参考，VALIDATED_RULE仍须原Rule Promotion，不能仅换标签升级。
+
+用户明确授权的本次接口修复用辅助metadata的reference_change_approvals保留授权出处、已接受Reference ID、具体目标文件及前后/diff/证据哈希，不伪造机制Validation。参考授权允许的文件仅为选题采集协议及已有生产参考清单；不能触及Compiler、Prompt、ACTIVE、runtime或门禁实现本身。门禁工程修复复用既有Observation的工程Validation和promotion_approvals，不能借Production Reference自行改写检查器。正式promotion_approvals的Validation与EXP008机制冻结约束保持。该接口修复授权不是任意后续规则变更的通行证。
+
+本地hook继续读取HEAD中的门禁实现。2026-10-09先由旧HEAD检查器依据工程验证与用户明确条件性授权放行检查器修复，再由提交后的新HEAD检查器识别参考授权。不得用--no-verify、关闭hook或修改hooksPath绕过。

@@ -128,36 +128,37 @@ DECISION
 - 若题目能把读者从“我感觉不对”推进到“我知道自己在哪、为什么、该改什么”，即使阅读预估不是最高，也可提高生产优先级。
 - 本判断只影响选题排序和 Topic Package 记录，不提前决定 ACTIVE、核心判断、结构或正文参数。
 
-2026-09-14 Topic Priority Research Weight：
+2026-09-14 Topic Priority Research Weight（历史记录，2026-10-09停用独立加权）：
 
-`reports/exp008_research_update_20260914.md` 记录了一个 Research Layer 观察：
+`Leadership / Organizational Judgment Cluster`（领导 / 识人 / 晋升 / 权力关系 / 上下级 / 组织判断）原 `Cluster Signal：优先级 +1`。
 
-```text
-Leadership / Organizational Judgment Cluster
-领导与组织判断需求簇
-```
+状态：`WEAKENED / SUPERSEDED AS STANDALONE SIGNAL`。
 
-在下一轮推荐题 / 截图选题排序时，若题目属于以下需求簇，可作为候选加权信号：
+原因：`reports/exp008_research_update_20261008.md`记录同日同粗簇4,719 vs425阅读（11.10×）。这说明粗簇不足以单独区分结果赢家与输家，不证明该簇整体毫无价值。根据用户2026-10-09明确决策，停止仅因命中该簇而给予+1；保留用于候选发现，按具体问题机会继续判断，不另设替代权重。
 
-```text
-领导 / 识人 / 晋升 / 权力关系 / 上下级 / 组织判断
-```
+### Latest Research Findings / Production References
 
-执行口径：
+每次输出 `Daily_Topic_Top3` 前，必须读取 `data/production_reference.md` 的当前 `PRODUCTION_REFERENCE` 清单及其源报告；核对 `data/learning_loop_metadata.json` 的适用资格与人工接受记录。引用失败或证据不可得应写UNKNOWN，不能假装完成读取。最近修改的研究文件不自动获得参考资格。
 
-```text
-原有选题判断
-+
-Cluster Signal：优先级 +1
-```
+只消费真实数据支持、人工接受、范围明确的Finding。将参考用于修正判断，逐个候选记录：Reference ID、相关历史Case/源数据、窗口与可比性、反例、UNKNOWN、对本次判断的影响（或不适用）。复用Topic Package现有“适合回答的原因 / 历史重复检查 / 推荐级别”，不另建Investment对象，不打总分，不自动生成新核心判断。
 
-边界：
+- Distribution与Monetization分别判断；历史收益必须记录归因可信度，不把盐粒/阅读称稳定RPM。
+- Lifecycle事实可以支持关注历史持续阅读Case；新题的长尾潜力仍是预测，标明相似性与不确定性，不保证迁移。
+- 粗题材簇只用于发现候选，不能独立决定优先级；继续检查Question-Level Opportunity。
+- 最终互动率不能单独作为前置分发强代理；不是宣布互动没有作用。
+- 数据窗口、身份、来源、样本与反例决定参考可用程度；数据缺失不等于零，不把相关写成因果。
 
-- 只影响 `Daily_Topic_Top3` 排序，不替代原选题判断。
-- 不能仅凭属于该需求簇就选题。
-- 不构成 ACTIVE 写作规则，不修改正文模型、干预规则、Execution IR 或 Writer Rules。
-- `Revenue Attribution`、`Reactivation`、`Challenge Pair` 继续留在 Research Layer。
-- 若其他条件接近，优先拆解该需求簇题目；若重复风险、读者困惑、账号匹配、平台竞争或可回答空间较差，仍可降级或淘汰。
+使用资格与research_stage、Observation/Parameter生命周期分开：
+
+| reference_status | 使用边界 |
+|---|---|
+| RESEARCH_ONLY | 只研究，不作为已接受的生产参考 |
+| PRODUCTION_REFERENCE | 人工接受的描述性Finding，可以参与人工选题；无自动权重、保证、正文要求或ACTIVE资格 |
+| VALIDATED_RULE | 已完成验证的机制才有资格申请Rule Promotion；不等于已经获批或已ACTIVE |
+
+Self-Relevance / Stakes / Identity Threat / Uncertainty / Audience Composition的EXP008新机制仍为RESEARCH_ONLY。已有历史批准规则不因同名而自动撤销，也不替这些新假设完成验证。
+
+这条通道不修改INPUT Boundary、Compiler、Prompt、ACTIVE或runtime。用户仍最终选题；AI建议不冒充人工决定。正式机制推广继续遵守Validation、反例检查、人工批准与限定变更门禁。
 
 禁止输出：
 

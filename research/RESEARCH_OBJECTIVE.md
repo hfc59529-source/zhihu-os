@@ -38,7 +38,7 @@
 
 它要求依据可用证据、证据局限与明确的不确定性决定如何配置回答机会；证据不足时，可以继续观察、有限探索、推迟判断或拒绝推广。探索不等于已验证规则，也不得绕过现有生产边界。
 
-研究结论若要改变生产规则，仍须经过已有Validation、Human Review和Scoped Promotion Approval，批准绑定具体变更。研究目标获得用户确认，不等于任何候选机制获得生产资格。不得据此修改Topic Selection权重、Compiler、正文Prompt或ACTIVE变量。
+研究结论若要改变生产规则，仍须经过已有Validation、Human Review和Scoped Promotion Approval，批准绑定具体变更。研究目标获得用户确认，不等于任何候选机制获得生产资格。本研究目标不自动授权修改Topic Selection权重、Compiler、正文Prompt或ACTIVE变量。人工接受、范围明确的数据Finding可进入Production Reference参与人工选题；正式机制规则仍须Validation与限定Promotion。2026-10-09用户另行明确停用了Cluster独立+1，见选题协议；不将此决定伪称为新机制验证。
 
 ## 如何证明我们知道原因
 

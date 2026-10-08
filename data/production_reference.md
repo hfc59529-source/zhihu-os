@@ -2,9 +2,26 @@
 
 用途：保存下一篇生产可引用的临时参考信息。
 
-边界：本文件只提供 CANDIDATE 级生产参考，不改变 ACTIVE Parameter、Prompt、生产协议或治理原则。
+边界：本文件保存人工接受、范围明确的PRODUCTION_REFERENCE及历史研究记录；不授予ACTIVE资格，不改变Compiler、正文Prompt或治理原则。参考采集与使用规则以选题协议为准。
 
-## 当前可引用 Candidate
+## Latest Production References — 2026-10-09
+
+资格：PRODUCTION_REFERENCE。来源：[EXP008 10月8日复盘](../reports/exp008_research_update_20261008.md)。人工接受与使用范围：用户2026-10-09在本任务明确确认并要求恢复该通道；结构化记录见 `data/learning_loop_metadata.json`。
+
+| Reference ID | 有证据的发现 | 下一轮人工选题参考 | 限制 |
+|---|---|---|---|
+| REF-20261008-DM | 同一报表窗口：老实人13,061阅读/983盐粒，性格领导4,719/1,220；阅读与收益排序相反 | 阅读与收益分开比较，不只优化预计播放 | 不证明受众机制；收益归因仍OPEN，非稳定RPM |
+| REF-20261008-LIFE | 老实人9/14后累计+10,226阅读/+668盐粒；经理/总监也有后期增长 | 查询相似Case后期表现，不只看首轮；考虑长期资产价值 | 未来长尾潜力是预测；日级轨迹和触发原因UNKNOWN |
+| REF-20261008-CLUSTER | 同日领导/组织粗簇4,719 vs425阅读，差11.10× | 停用Cluster独立+1；题材用于发现，具体问题继续比较 | 不证明整个簇无效，不保证Question-Level判断正确 |
+| REF-20261008-ENG | 历史matched-pair存在低播放端最终互动率更高的反例 | 降低仅凭最终互动率判断前置分发的置信度 | 不等于互动不影响后续分发，时间顺序待证 |
+| REF-20261008-MEASURE | 收益与阅读有效窗口、身份及缺失存在对齐问题 | 明示Evidence/Attribution Confidence与UNKNOWN，不伪装可比 | 缺失不填0，历史累计不回填固定窗口 |
+
+不得据此设置固定权重、生产变量总分或正文配方。研究机制候选仍RESEARCH_ONLY；VALIDATED_RULE仍须限定Promotion后才可能成为正式规则。
+
+## 历史 Candidate 参考（保留原文，不作为当前默认选题排序）
+
+以下为2026-08-04历史记录。不得将其中“组织题优先”等旧建议自动叠加为当前排序权重；本次读取以以上当前清单为准。历史正文方向建议也不构成当前WRITE要求。
+
 
 ### TRIG-20260804-L0-01｜历史 Trigger Candidate 排名
 

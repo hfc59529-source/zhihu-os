@@ -26,4 +26,6 @@
 
 ## 待审核接口提案
 
-- [Topic Investment / Production Entry Gate V1](proposals/TOPIC_INVESTMENT_ENTRY_GATE_V1.md)：复用选题包的证据说明与人工投资决定，PROPOSED，尚未进入生产协议。
+- [Topic Investment / Production Entry Gate V1](proposals/TOPIC_INVESTMENT_ENTRY_GATE_V1.md)：历史草案；已由2026-10-09最小Production Reference通道修复方案替代，不实施额外强制INVEST流程。
+
+当前人工选题参考见 [Production References](../data/production_reference.md)：只使用人工接受、范围明确的数据Finding，正式机制Promotion独立。

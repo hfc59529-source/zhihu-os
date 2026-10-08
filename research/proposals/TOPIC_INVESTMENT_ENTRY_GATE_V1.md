@@ -1,7 +1,7 @@
 # Topic Investment / Production Entry Gate V1
 
 日期：2026-10-09（Africa/Nairobi）
-状态：PROPOSED / HUMAN_REVIEW_PENDING；不是已生效的生产入口。
+状态：SUPERSEDED_BY_REFERENCE_BRIDGE（2026-10-09用户选择修复原参考通道）；保留草案，不作为强制INVEST入口，不实施额外Gate。
 来源：用户提出的八项Evidence-Informed Decision要求。
 上层目标：[Research Objective](../RESEARCH_OBJECTIVE.md)。
 
