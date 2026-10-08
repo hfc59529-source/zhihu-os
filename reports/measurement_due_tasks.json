@@ -1,0 +1,2719 @@
+{
+  "generated_at": "2026-10-08T20:33:44.564460+00:00",
+  "deployment_status": "DEPLOYMENT_GAP_NO_SCHEDULER_OR_PERSISTENT_COLLECTOR",
+  "mapping_gaps": [
+    {
+      "article_id": "answer_2029373249574774207",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2030107679599932685",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2030700555144798983",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2030703067474179564",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2031020673380905343",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2031043465350468668",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2031068072593896988",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2031112293572940307",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2031920655118151963",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2032551965536859426",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2032561926249693500",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2032962198964790676",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2032965845215863581",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2033168129644303173",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2033255338913309239",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2033320421248996304",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2033552128418034484",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2033579610575779775",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2033945616619976659",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2034079308348659440",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2034286377316114895",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2034782105096410790",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2035394910463972205",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2035833500021028670",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2036543506630628917",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2036892960231514447",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2036936724664808060",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2037176369822577725",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2037301152870553304",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2037716542494876001",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2037945901189162211",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2037962779198476798",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2038743676843714165",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2039067372124905667",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2039450687948448715",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2039821877502273024",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2039824132741796670",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2040099682353942616",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2040105319133622357",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2040903275587817983",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2040941704577032244",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2041179950925996819",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2041566990595346817",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2041574781628179786",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2041901198492571609",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2041904131837875193",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2042705460743164755",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2043015329039877573",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2044568204664640529",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2044790943048529135",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2044894853310501468",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2045151182084105805",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2045180777005060739",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2045542636187119695",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2045893705719199320",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2045901952949736557",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2046274558034961007",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2046606807397879943",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2046753806919131850",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2047030703498568645",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2047329103540492275",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2047796908547166728",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2048060397668799025",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2048124078108759083",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2048435552316396115",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2048453798197311175",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2048775676862403438",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2048851950859563263",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2049166277013459385",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2049495584235697589",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2049506954930919114",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2049537463798994800",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2049565225372987444",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2049566271080080854",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2049878143159346961",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2049891558510552408",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2049962038076745419",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2050261733617439584",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2050263891800745875",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2050325219429061311",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2050607952608993687",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2050670671613654994",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2051068881549137137",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2051077928444752820",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2051324842570428685",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2051359367144986316",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2051770988170421748",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2051789228971914350",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2052163119733118771",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2052166992531027845",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2052413467433473704",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2052418502003257602",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2052435404134127226",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2052522859554156734",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2052750811852285823",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2053140800012391180",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2053145297379923071",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2053150670178595072",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2053157392792261415",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2053220343368757946",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2053480564645269807",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2053482385552021494",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2053486147595194574",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2053865051048654496",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2053867781590988761",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2053893528665823152",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2054228397761597810",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2054232041546425500",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2054240797424346875",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2054353693386990646",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2054574617294018451",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2054587784929751057",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2054590834364912396",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2054893689000966034",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2054898094542696523",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2054902564374713230",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2054975156846604604",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2055068418550798191",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2055782599260426267",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2055788329006784796",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2055792541509891143",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2056050021309666323",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2056054123464860634",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2056059209934959217",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2056372914451227382",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2056382999558674292",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2056385824917288025",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2056387553188635619",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2056754549130639298",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2056777356090647461",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2056809213549195382",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2056875505937282502",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2057113692043490073",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2057119789592717236",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2057129843288957834",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2057135356257087891",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2057498521570484354",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2057527309524120066",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2057850959083180345",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2058937460239889829",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2058939451196413035",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2059667518034294029",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2059755290493444715",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2059803597349582238",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2060020354865705923",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2060374042914316421",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2060382464640561232",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2060482225242641580",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2060762618021913067",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2060814233038747008",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2060821175119484418",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2061118130731096014",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2061119572829270834",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2061120534465847836",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2061134122567962739",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2061182947722629609",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2061473929433289312",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2061474521207640764",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2061485398254264535",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2061486390307709805",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2061527256145694809",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2061964431832232066",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2061965818829739713",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2061967966275637336",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2062117017818339087",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2062118469357791071",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2062167228661994539",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2062168842034591494",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2062294662191305724",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2062295454298149891",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2062298576785610201",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2062303667714253844",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2062574178964968319",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2062588572134289861",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2062591904173257199",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2062594251175810974",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2062640327148692977",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2062920716366898029",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2063019845868860854",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2063261788725065564",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2063266042324034332",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2063268216005309342",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2063272654350684276",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2063277395864465795",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2063278960805418239",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2063378539873936478",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2063619939760714950",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2063702955019261348",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2063716034964624021",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2063996301998559500",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2064001332869181879",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2064010056581042982",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2064022392523985191",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2064037315291378046",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2064054719195223355",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2064075076014708522",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2065015151401624924",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2065019094504673760",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2065022033294107894",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2065106196743336800",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2067269682923676093",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2067298333178196355",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2067364159130448284",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2070241617638864496",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2070259249234587810",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2072695242105660190",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2072700856256946489",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2072702916264310647",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2072707525909206856",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2073136610447837103",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2073155311888867810",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2073162526121107666",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2073168934128334061",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2073175555583877483",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2073421967865206081",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2073425030852232498",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2073427373660361384",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2073432690196587901",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2073435663085597749",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2073787181685019073",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2073805620902376183",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2074160600402473800",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2074161499174655619",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2074171393848170265",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2074537453193519378",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2074538946114089128",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2074542713748321101",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2074544374151697192",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2074546696017666697",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2074881863097884985",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2074885270286217411",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2074886991645241672",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2074890614576105134",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2074892737510380763",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2075615517361161807",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2075618885651510464",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2075620088980444389",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2075628528083669533",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2075634250565562668",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2079598764940174512",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2079600004604354925",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2079605636388726499",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2079612017883856957",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2082863170411090086",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2082866756780024365",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2088659091669397557",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2088661039365805689",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2089419743648391887",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2089427499579191445",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2089430926573025115",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2089737322191499821",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2089738078135108851",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2089739305149375871",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2089743353147610645",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2089745414027220719",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2090153564316382041",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2090155270294986797",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2090156429357355355",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2090158335320405439",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2090160833322037819",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2090878739697739692",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2090881322340324945",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "answer_2091605539537032860",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "article_2088685312776069435",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "article_2089746693268959846",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "p_2029370264471835284",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "p_2030106915049575036",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "p_2037956690952320074",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "p_2053941871722895279",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "p_2059663118201008498",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "p_2061280912097255625",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "p_2063068730700076121",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "p_2063287944350266033",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "p_2063612464823120232",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "pin_2035388364875100805",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "pin_2053487945433211510",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "pin_2054205350237229211",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "pin_2054207387855217572",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "pin_2054964213148399357",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "pin_2062108685980152949",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "pin_2065094587811641066",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "pin_2074580896850633938",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    },
+    {
+      "article_id": "pin_2084271032089814541",
+      "status": "MAPPING_REQUIRED",
+      "production_id": "UNKNOWN"
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "answer_2067141025638921938:1h",
+      "article_id": "answer_2067141025638921938",
+      "production_id": "ZH-20260802-001",
+      "published_at": "发布于 08-02",
+      "target_window": "1h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2067141025638921938:3h",
+      "article_id": "answer_2067141025638921938",
+      "production_id": "ZH-20260802-001",
+      "published_at": "发布于 08-02",
+      "target_window": "3h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2067141025638921938:6h",
+      "article_id": "answer_2067141025638921938",
+      "production_id": "ZH-20260802-001",
+      "published_at": "发布于 08-02",
+      "target_window": "6h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2067141025638921938:12h",
+      "article_id": "answer_2067141025638921938",
+      "production_id": "ZH-20260802-001",
+      "published_at": "发布于 08-02",
+      "target_window": "12h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2067141025638921938:24h",
+      "article_id": "answer_2067141025638921938",
+      "production_id": "ZH-20260802-001",
+      "published_at": "发布于 08-02",
+      "target_window": "24h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2067141025638921938:72h",
+      "article_id": "answer_2067141025638921938",
+      "production_id": "ZH-20260802-001",
+      "published_at": "发布于 08-02",
+      "target_window": "72h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2067141025638921938:7d",
+      "article_id": "answer_2067141025638921938",
+      "production_id": "ZH-20260802-001",
+      "published_at": "发布于 08-02",
+      "target_window": "7d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2067141025638921938:14d",
+      "article_id": "answer_2067141025638921938",
+      "production_id": "ZH-20260802-001",
+      "published_at": "发布于 08-02",
+      "target_window": "14d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2067141025638921938:28d",
+      "article_id": "answer_2067141025638921938",
+      "production_id": "ZH-20260802-001",
+      "published_at": "发布于 08-02",
+      "target_window": "28d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066924156592116539:1h",
+      "article_id": "answer_2066924156592116539",
+      "production_id": "ZH-20260801-001",
+      "published_at": "2026-08-01 约 11:35 +03:00",
+      "target_window": "1h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066924156592116539:3h",
+      "article_id": "answer_2066924156592116539",
+      "production_id": "ZH-20260801-001",
+      "published_at": "2026-08-01 约 11:35 +03:00",
+      "target_window": "3h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066924156592116539:6h",
+      "article_id": "answer_2066924156592116539",
+      "production_id": "ZH-20260801-001",
+      "published_at": "2026-08-01 约 11:35 +03:00",
+      "target_window": "6h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066924156592116539:12h",
+      "article_id": "answer_2066924156592116539",
+      "production_id": "ZH-20260801-001",
+      "published_at": "2026-08-01 约 11:35 +03:00",
+      "target_window": "12h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066924156592116539:24h",
+      "article_id": "answer_2066924156592116539",
+      "production_id": "ZH-20260801-001",
+      "published_at": "2026-08-01 约 11:35 +03:00",
+      "target_window": "24h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066924156592116539:72h",
+      "article_id": "answer_2066924156592116539",
+      "production_id": "ZH-20260801-001",
+      "published_at": "2026-08-01 约 11:35 +03:00",
+      "target_window": "72h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066924156592116539:7d",
+      "article_id": "answer_2066924156592116539",
+      "production_id": "ZH-20260801-001",
+      "published_at": "2026-08-01 约 11:35 +03:00",
+      "target_window": "7d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066924156592116539:14d",
+      "article_id": "answer_2066924156592116539",
+      "production_id": "ZH-20260801-001",
+      "published_at": "2026-08-01 约 11:35 +03:00",
+      "target_window": "14d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066924156592116539:28d",
+      "article_id": "answer_2066924156592116539",
+      "production_id": "ZH-20260801-001",
+      "published_at": "2026-08-01 约 11:35 +03:00",
+      "target_window": "28d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066733997074523922:1h",
+      "article_id": "answer_2066733997074523922",
+      "production_id": "ZH-20260731-unknown_mofish",
+      "published_at": "发布于 07-31",
+      "target_window": "1h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066733997074523922:3h",
+      "article_id": "answer_2066733997074523922",
+      "production_id": "ZH-20260731-unknown_mofish",
+      "published_at": "发布于 07-31",
+      "target_window": "3h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066733997074523922:6h",
+      "article_id": "answer_2066733997074523922",
+      "production_id": "ZH-20260731-unknown_mofish",
+      "published_at": "发布于 07-31",
+      "target_window": "6h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066733997074523922:12h",
+      "article_id": "answer_2066733997074523922",
+      "production_id": "ZH-20260731-unknown_mofish",
+      "published_at": "发布于 07-31",
+      "target_window": "12h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066733997074523922:24h",
+      "article_id": "answer_2066733997074523922",
+      "production_id": "ZH-20260731-unknown_mofish",
+      "published_at": "发布于 07-31",
+      "target_window": "24h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066733997074523922:72h",
+      "article_id": "answer_2066733997074523922",
+      "production_id": "ZH-20260731-unknown_mofish",
+      "published_at": "发布于 07-31",
+      "target_window": "72h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066733997074523922:7d",
+      "article_id": "answer_2066733997074523922",
+      "production_id": "ZH-20260731-unknown_mofish",
+      "published_at": "发布于 07-31",
+      "target_window": "7d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066733997074523922:14d",
+      "article_id": "answer_2066733997074523922",
+      "production_id": "ZH-20260731-unknown_mofish",
+      "published_at": "发布于 07-31",
+      "target_window": "14d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066733997074523922:28d",
+      "article_id": "answer_2066733997074523922",
+      "production_id": "ZH-20260731-unknown_mofish",
+      "published_at": "发布于 07-31",
+      "target_window": "28d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066566025722832645:1h",
+      "article_id": "answer_2066566025722832645",
+      "production_id": "ZH-20260801-003",
+      "published_at": "发布于 07-31",
+      "target_window": "1h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066566025722832645:3h",
+      "article_id": "answer_2066566025722832645",
+      "production_id": "ZH-20260801-003",
+      "published_at": "发布于 07-31",
+      "target_window": "3h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066566025722832645:6h",
+      "article_id": "answer_2066566025722832645",
+      "production_id": "ZH-20260801-003",
+      "published_at": "发布于 07-31",
+      "target_window": "6h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066566025722832645:12h",
+      "article_id": "answer_2066566025722832645",
+      "production_id": "ZH-20260801-003",
+      "published_at": "发布于 07-31",
+      "target_window": "12h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066566025722832645:24h",
+      "article_id": "answer_2066566025722832645",
+      "production_id": "ZH-20260801-003",
+      "published_at": "发布于 07-31",
+      "target_window": "24h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066566025722832645:72h",
+      "article_id": "answer_2066566025722832645",
+      "production_id": "ZH-20260801-003",
+      "published_at": "发布于 07-31",
+      "target_window": "72h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066566025722832645:7d",
+      "article_id": "answer_2066566025722832645",
+      "production_id": "ZH-20260801-003",
+      "published_at": "发布于 07-31",
+      "target_window": "7d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066566025722832645:14d",
+      "article_id": "answer_2066566025722832645",
+      "production_id": "ZH-20260801-003",
+      "published_at": "发布于 07-31",
+      "target_window": "14d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2066566025722832645:28d",
+      "article_id": "answer_2066566025722832645",
+      "production_id": "ZH-20260801-003",
+      "published_at": "发布于 07-31",
+      "target_window": "28d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065858842207032462:1h",
+      "article_id": "answer_2065858842207032462",
+      "production_id": "zhihu-20260729-fuzzy-responsibility-boundary-001",
+      "published_at": "发布于 07-29",
+      "target_window": "1h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065858842207032462:3h",
+      "article_id": "answer_2065858842207032462",
+      "production_id": "zhihu-20260729-fuzzy-responsibility-boundary-001",
+      "published_at": "发布于 07-29",
+      "target_window": "3h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065858842207032462:6h",
+      "article_id": "answer_2065858842207032462",
+      "production_id": "zhihu-20260729-fuzzy-responsibility-boundary-001",
+      "published_at": "发布于 07-29",
+      "target_window": "6h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065858842207032462:12h",
+      "article_id": "answer_2065858842207032462",
+      "production_id": "zhihu-20260729-fuzzy-responsibility-boundary-001",
+      "published_at": "发布于 07-29",
+      "target_window": "12h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065858842207032462:24h",
+      "article_id": "answer_2065858842207032462",
+      "production_id": "zhihu-20260729-fuzzy-responsibility-boundary-001",
+      "published_at": "发布于 07-29",
+      "target_window": "24h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065858842207032462:72h",
+      "article_id": "answer_2065858842207032462",
+      "production_id": "zhihu-20260729-fuzzy-responsibility-boundary-001",
+      "published_at": "发布于 07-29",
+      "target_window": "72h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065858842207032462:7d",
+      "article_id": "answer_2065858842207032462",
+      "production_id": "zhihu-20260729-fuzzy-responsibility-boundary-001",
+      "published_at": "发布于 07-29",
+      "target_window": "7d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065858842207032462:14d",
+      "article_id": "answer_2065858842207032462",
+      "production_id": "zhihu-20260729-fuzzy-responsibility-boundary-001",
+      "published_at": "发布于 07-29",
+      "target_window": "14d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065858842207032462:28d",
+      "article_id": "answer_2065858842207032462",
+      "production_id": "zhihu-20260729-fuzzy-responsibility-boundary-001",
+      "published_at": "发布于 07-29",
+      "target_window": "28d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065829100695113964:1h",
+      "article_id": "answer_2065829100695113964",
+      "production_id": "zhihu-20260729-middle-manager-promotion-001",
+      "published_at": "发布于 07-29",
+      "target_window": "1h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065829100695113964:3h",
+      "article_id": "answer_2065829100695113964",
+      "production_id": "zhihu-20260729-middle-manager-promotion-001",
+      "published_at": "发布于 07-29",
+      "target_window": "3h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065829100695113964:6h",
+      "article_id": "answer_2065829100695113964",
+      "production_id": "zhihu-20260729-middle-manager-promotion-001",
+      "published_at": "发布于 07-29",
+      "target_window": "6h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065829100695113964:12h",
+      "article_id": "answer_2065829100695113964",
+      "production_id": "zhihu-20260729-middle-manager-promotion-001",
+      "published_at": "发布于 07-29",
+      "target_window": "12h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065829100695113964:24h",
+      "article_id": "answer_2065829100695113964",
+      "production_id": "zhihu-20260729-middle-manager-promotion-001",
+      "published_at": "发布于 07-29",
+      "target_window": "24h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065829100695113964:72h",
+      "article_id": "answer_2065829100695113964",
+      "production_id": "zhihu-20260729-middle-manager-promotion-001",
+      "published_at": "发布于 07-29",
+      "target_window": "72h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065829100695113964:7d",
+      "article_id": "answer_2065829100695113964",
+      "production_id": "zhihu-20260729-middle-manager-promotion-001",
+      "published_at": "发布于 07-29",
+      "target_window": "7d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065829100695113964:14d",
+      "article_id": "answer_2065829100695113964",
+      "production_id": "zhihu-20260729-middle-manager-promotion-001",
+      "published_at": "发布于 07-29",
+      "target_window": "14d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065829100695113964:28d",
+      "article_id": "answer_2065829100695113964",
+      "production_id": "zhihu-20260729-middle-manager-promotion-001",
+      "published_at": "发布于 07-29",
+      "target_window": "28d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065823788911048364:1h",
+      "article_id": "answer_2065823788911048364",
+      "production_id": "zhihu-20260729-senior-leader-not-fired-001",
+      "published_at": "发布于 07-29",
+      "target_window": "1h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065823788911048364:3h",
+      "article_id": "answer_2065823788911048364",
+      "production_id": "zhihu-20260729-senior-leader-not-fired-001",
+      "published_at": "发布于 07-29",
+      "target_window": "3h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065823788911048364:6h",
+      "article_id": "answer_2065823788911048364",
+      "production_id": "zhihu-20260729-senior-leader-not-fired-001",
+      "published_at": "发布于 07-29",
+      "target_window": "6h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065823788911048364:12h",
+      "article_id": "answer_2065823788911048364",
+      "production_id": "zhihu-20260729-senior-leader-not-fired-001",
+      "published_at": "发布于 07-29",
+      "target_window": "12h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065823788911048364:24h",
+      "article_id": "answer_2065823788911048364",
+      "production_id": "zhihu-20260729-senior-leader-not-fired-001",
+      "published_at": "发布于 07-29",
+      "target_window": "24h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065823788911048364:72h",
+      "article_id": "answer_2065823788911048364",
+      "production_id": "zhihu-20260729-senior-leader-not-fired-001",
+      "published_at": "发布于 07-29",
+      "target_window": "72h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065823788911048364:7d",
+      "article_id": "answer_2065823788911048364",
+      "production_id": "zhihu-20260729-senior-leader-not-fired-001",
+      "published_at": "发布于 07-29",
+      "target_window": "7d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065823788911048364:14d",
+      "article_id": "answer_2065823788911048364",
+      "production_id": "zhihu-20260729-senior-leader-not-fired-001",
+      "published_at": "发布于 07-29",
+      "target_window": "14d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2065823788911048364:28d",
+      "article_id": "answer_2065823788911048364",
+      "production_id": "zhihu-20260729-senior-leader-not-fired-001",
+      "published_at": "发布于 07-29",
+      "target_window": "28d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2068122609598911600:1h",
+      "article_id": "answer_2068122609598911600",
+      "production_id": "ZH-20260804-003",
+      "published_at": "发布于 08-04",
+      "target_window": "1h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2068122609598911600:3h",
+      "article_id": "answer_2068122609598911600",
+      "production_id": "ZH-20260804-003",
+      "published_at": "发布于 08-04",
+      "target_window": "3h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2068122609598911600:6h",
+      "article_id": "answer_2068122609598911600",
+      "production_id": "ZH-20260804-003",
+      "published_at": "发布于 08-04",
+      "target_window": "6h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2068122609598911600:12h",
+      "article_id": "answer_2068122609598911600",
+      "production_id": "ZH-20260804-003",
+      "published_at": "发布于 08-04",
+      "target_window": "12h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2068122609598911600:24h",
+      "article_id": "answer_2068122609598911600",
+      "production_id": "ZH-20260804-003",
+      "published_at": "发布于 08-04",
+      "target_window": "24h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2068122609598911600:72h",
+      "article_id": "answer_2068122609598911600",
+      "production_id": "ZH-20260804-003",
+      "published_at": "发布于 08-04",
+      "target_window": "72h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2068122609598911600:7d",
+      "article_id": "answer_2068122609598911600",
+      "production_id": "ZH-20260804-003",
+      "published_at": "发布于 08-04",
+      "target_window": "7d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2068122609598911600:14d",
+      "article_id": "answer_2068122609598911600",
+      "production_id": "ZH-20260804-003",
+      "published_at": "发布于 08-04",
+      "target_window": "14d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2068122609598911600:28d",
+      "article_id": "answer_2068122609598911600",
+      "production_id": "ZH-20260804-003",
+      "published_at": "发布于 08-04",
+      "target_window": "28d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069522411372933416:1h",
+      "article_id": "answer_2069522411372933416",
+      "production_id": "ZH-20260808-001",
+      "published_at": "2026-08-08",
+      "target_window": "1h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069522411372933416:3h",
+      "article_id": "answer_2069522411372933416",
+      "production_id": "ZH-20260808-001",
+      "published_at": "2026-08-08",
+      "target_window": "3h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069522411372933416:6h",
+      "article_id": "answer_2069522411372933416",
+      "production_id": "ZH-20260808-001",
+      "published_at": "2026-08-08",
+      "target_window": "6h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069522411372933416:12h",
+      "article_id": "answer_2069522411372933416",
+      "production_id": "ZH-20260808-001",
+      "published_at": "2026-08-08",
+      "target_window": "12h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069522411372933416:24h",
+      "article_id": "answer_2069522411372933416",
+      "production_id": "ZH-20260808-001",
+      "published_at": "2026-08-08",
+      "target_window": "24h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069522411372933416:72h",
+      "article_id": "answer_2069522411372933416",
+      "production_id": "ZH-20260808-001",
+      "published_at": "2026-08-08",
+      "target_window": "72h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069522411372933416:7d",
+      "article_id": "answer_2069522411372933416",
+      "production_id": "ZH-20260808-001",
+      "published_at": "2026-08-08",
+      "target_window": "7d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069522411372933416:14d",
+      "article_id": "answer_2069522411372933416",
+      "production_id": "ZH-20260808-001",
+      "published_at": "2026-08-08",
+      "target_window": "14d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069522411372933416:28d",
+      "article_id": "answer_2069522411372933416",
+      "production_id": "ZH-20260808-001",
+      "published_at": "2026-08-08",
+      "target_window": "28d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069533843439235799:1h",
+      "article_id": "answer_2069533843439235799",
+      "production_id": "ZH-20260808-002",
+      "published_at": "2026-08-08",
+      "target_window": "1h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069533843439235799:3h",
+      "article_id": "answer_2069533843439235799",
+      "production_id": "ZH-20260808-002",
+      "published_at": "2026-08-08",
+      "target_window": "3h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069533843439235799:6h",
+      "article_id": "answer_2069533843439235799",
+      "production_id": "ZH-20260808-002",
+      "published_at": "2026-08-08",
+      "target_window": "6h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069533843439235799:12h",
+      "article_id": "answer_2069533843439235799",
+      "production_id": "ZH-20260808-002",
+      "published_at": "2026-08-08",
+      "target_window": "12h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069533843439235799:24h",
+      "article_id": "answer_2069533843439235799",
+      "production_id": "ZH-20260808-002",
+      "published_at": "2026-08-08",
+      "target_window": "24h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069533843439235799:72h",
+      "article_id": "answer_2069533843439235799",
+      "production_id": "ZH-20260808-002",
+      "published_at": "2026-08-08",
+      "target_window": "72h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069533843439235799:7d",
+      "article_id": "answer_2069533843439235799",
+      "production_id": "ZH-20260808-002",
+      "published_at": "2026-08-08",
+      "target_window": "7d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069533843439235799:14d",
+      "article_id": "answer_2069533843439235799",
+      "production_id": "ZH-20260808-002",
+      "published_at": "2026-08-08",
+      "target_window": "14d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069533843439235799:28d",
+      "article_id": "answer_2069533843439235799",
+      "production_id": "ZH-20260808-002",
+      "published_at": "2026-08-08",
+      "target_window": "28d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069537531780129888:1h",
+      "article_id": "answer_2069537531780129888",
+      "production_id": "ZH-20260808-003",
+      "published_at": "发布于 17 小时前",
+      "target_window": "1h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069537531780129888:3h",
+      "article_id": "answer_2069537531780129888",
+      "production_id": "ZH-20260808-003",
+      "published_at": "发布于 17 小时前",
+      "target_window": "3h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069537531780129888:6h",
+      "article_id": "answer_2069537531780129888",
+      "production_id": "ZH-20260808-003",
+      "published_at": "发布于 17 小时前",
+      "target_window": "6h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069537531780129888:12h",
+      "article_id": "answer_2069537531780129888",
+      "production_id": "ZH-20260808-003",
+      "published_at": "发布于 17 小时前",
+      "target_window": "12h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069537531780129888:24h",
+      "article_id": "answer_2069537531780129888",
+      "production_id": "ZH-20260808-003",
+      "published_at": "发布于 17 小时前",
+      "target_window": "24h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069537531780129888:72h",
+      "article_id": "answer_2069537531780129888",
+      "production_id": "ZH-20260808-003",
+      "published_at": "发布于 17 小时前",
+      "target_window": "72h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069537531780129888:7d",
+      "article_id": "answer_2069537531780129888",
+      "production_id": "ZH-20260808-003",
+      "published_at": "发布于 17 小时前",
+      "target_window": "7d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069537531780129888:14d",
+      "article_id": "answer_2069537531780129888",
+      "production_id": "ZH-20260808-003",
+      "published_at": "发布于 17 小时前",
+      "target_window": "14d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069537531780129888:28d",
+      "article_id": "answer_2069537531780129888",
+      "production_id": "ZH-20260808-003",
+      "published_at": "发布于 17 小时前",
+      "target_window": "28d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069838524929594559:1h",
+      "article_id": "answer_2069838524929594559",
+      "production_id": "ZH-20260809-001",
+      "published_at": "发布于昨天 12:32",
+      "target_window": "1h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069838524929594559:3h",
+      "article_id": "answer_2069838524929594559",
+      "production_id": "ZH-20260809-001",
+      "published_at": "发布于昨天 12:32",
+      "target_window": "3h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069838524929594559:6h",
+      "article_id": "answer_2069838524929594559",
+      "production_id": "ZH-20260809-001",
+      "published_at": "发布于昨天 12:32",
+      "target_window": "6h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069838524929594559:12h",
+      "article_id": "answer_2069838524929594559",
+      "production_id": "ZH-20260809-001",
+      "published_at": "发布于昨天 12:32",
+      "target_window": "12h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069838524929594559:24h",
+      "article_id": "answer_2069838524929594559",
+      "production_id": "ZH-20260809-001",
+      "published_at": "发布于昨天 12:32",
+      "target_window": "24h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069838524929594559:72h",
+      "article_id": "answer_2069838524929594559",
+      "production_id": "ZH-20260809-001",
+      "published_at": "发布于昨天 12:32",
+      "target_window": "72h",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069838524929594559:7d",
+      "article_id": "answer_2069838524929594559",
+      "production_id": "ZH-20260809-001",
+      "published_at": "发布于昨天 12:32",
+      "target_window": "7d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069838524929594559:14d",
+      "article_id": "answer_2069838524929594559",
+      "production_id": "ZH-20260809-001",
+      "published_at": "发布于昨天 12:32",
+      "target_window": "14d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    },
+    {
+      "task_id": "answer_2069838524929594559:28d",
+      "article_id": "answer_2069838524929594559",
+      "production_id": "ZH-20260809-001",
+      "published_at": "发布于昨天 12:32",
+      "target_window": "28d",
+      "due_at": "UNKNOWN",
+      "task_status": "PUBLISH_TIME_UNCERTAIN",
+      "overdue_seconds": 0,
+      "sample_count": 0,
+      "historical_recovery": "DO_NOT_BACKFILL_WITH_CURRENT_TOTALS"
+    }
+  ]
+}

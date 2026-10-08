@@ -1,0 +1,24 @@
+#!/bin/sh
+# Run committed gate code against the staged index; unstaged edits cannot authorize a commit.
+TASK_GATE=$(mktemp -d)
+trap 'rm -rf "$TASK_GATE"' EXIT HUP INT TERM
+if git cat-file -e HEAD:scripts/learning_loop.py 2>/dev/null; then
+  git show HEAD:scripts/learning_loop.py > "$TASK_GATE/learning_loop.py"
+else
+  git show :scripts/learning_loop.py > "$TASK_GATE/learning_loop.py" || exit 1
+fi
+# Pass root explicitly because trusted script is executed from a temporary directory.
+python3 - "$TASK_GATE/learning_loop.py" <<'PYHOOK'
+import importlib.util, subprocess, sys
+from pathlib import Path
+spec = importlib.util.spec_from_file_location('trusted_learning_gate', sys.argv[1])
+m = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(m)
+root = Path(subprocess.check_output(['git','rev-parse','--show-toplevel']).decode().strip())
+try:
+    m.check_promotion(root, staged=True)
+except Exception as exc:
+    print('Promotion pre-commit BLOCKED:', exc, file=sys.stderr)
+    sys.exit(1)
+print('Promotion pre-commit: PASS')
+PYHOOK

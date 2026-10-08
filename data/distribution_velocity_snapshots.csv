@@ -1,1 +1,1 @@
-article_id,title,published_at,checkpoint,collected_at,views,likes,comments,favorites,thanks,earnings,source,notes
+article_id,title,published_at,checkpoint,collected_at,views,likes,comments,favorites,thanks,earnings,source,notes,production_id,target_window,due_at,observed_at,actual_age,timing_delta,timing_status,measurement_source,measurement_status,measurement_id,evidence_reference,measurement_window_start,measurement_window_end,earnings_window_start,earnings_window_end,earnings_match_status,attribution_status

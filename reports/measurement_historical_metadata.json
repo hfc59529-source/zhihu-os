@@ -1,0 +1,1245 @@
+{
+  "classification_only": true,
+  "records": [
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-2",
+      "article_id": "answer_2067141025638921938",
+      "production_id": "ZH-20260802-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "d11c56155d8d6c31adc553133e6e77f5fc5147c09940d7aaa8e627b37f2a7003"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-3",
+      "article_id": "answer_2066924156592116539",
+      "production_id": "ZH-20260801-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "7b874a1e1e76f7d7df2089ebaf6c2db84819a6d1ff7a6015873939f318da8083"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-4",
+      "article_id": "answer_2066733997074523922",
+      "production_id": "ZH-20260731-unknown_mofish",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "fb22fcdec6459a5105acd7d4258160b13723b6f676fcf2405b0065a46bc1e881"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-5",
+      "article_id": "answer_2066566025722832645",
+      "production_id": "ZH-20260801-003",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "fcb3ee1d264c361395001c6b39c206e79689645a64acdc627fa06a3195d73195"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-6",
+      "article_id": "answer_2065858842207032462",
+      "production_id": "zhihu-20260729-fuzzy-responsibility-boundary-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "3f626d62b351e9850f93e3cd62def16242635cb6c3c92dd1ffe69a4f331755e7"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-7",
+      "article_id": "answer_2065829100695113964",
+      "production_id": "zhihu-20260729-middle-manager-promotion-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "91dff191ffdaf7b2b187b7e2dd3bec031cf1448036198d34257e31fb33603bf2"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-8",
+      "article_id": "answer_2065823788911048364",
+      "production_id": "zhihu-20260729-senior-leader-not-fired-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "e7fe6fe6e29289ec2b35eb3e1078c5071fe854efb2335d90d57b5bd2ebeb259c"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-9",
+      "article_id": "answer_2067364159130448284",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "57a85a12a348cbaedbe012bce3297f43679b4a8d4d68ce97fb53e91b30e67204"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-10",
+      "article_id": "answer_2067298333178196355",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "ba5a48ea24675abc8b5f9264fbb31b84490acab1a544c065a4a4b899ba15ca70"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-11",
+      "article_id": "answer_2067269682923676093",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "f2f799bc7eb64d72f5f386b833183cc1837b6169c73759a8601cb65006a1814b"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-12",
+      "article_id": "answer_2068803220621861489",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "f3556d9945895f0228b38d7dd63d834bf686d78af87de405de4a69b76f11a429"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-13",
+      "article_id": "answer_2068793379685717155",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "8608fbede8646bb30042ca8ee094ce0546403ced7c6724ee94bcc4bab6155e02"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-14",
+      "article_id": "answer_2068390478618399357",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "c4a1900ae0c29901302ac9aa6e0f6c332654b2bb2358948fc35105b9f1cff3b7"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-15",
+      "article_id": "answer_2068122609598911600",
+      "production_id": "ZH-20260804-003",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "a41a14c1dc635ca4f2f3a4a5c3ba0b179bf8f64b1b46779a043085e96a09673f"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-16",
+      "article_id": "answer_2067364159130448284",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "a8ad6aa3dea9263401d91fc9bb57f042966941193bb958b289c80ee7fd6b27ef"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-17",
+      "article_id": "answer_2067298333178196355",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "2c99085be6a88319b37833d74ae3f3199a9f259ba549a6e84e2b5542e79e64ca"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-18",
+      "article_id": "answer_2067269682923676093",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "d289a5d2893d61c29b3ad68e48cc6375c36771d46103bdf7559bf0e8df3d81ff"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-19",
+      "article_id": "answer_2067141025638921938",
+      "production_id": "ZH-20260802-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "3f6f743dc0a4d1ad247e569272fd494a48c29bcccd24391994953d5c55a317c3"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-20",
+      "article_id": "answer_2066924156592116539",
+      "production_id": "ZH-20260801-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "57e6dd32341e5aa3a004e6f057df551d1bc9eaf098b80ccc1a5c1940f602dab8"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-21",
+      "article_id": "answer_2069537531780129888",
+      "production_id": "ZH-20260808-003",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "bad2fdf07b042c9b86bec76068e8cf98e05a6c3fd388e38834ec43b74d59a46c"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-22",
+      "article_id": "answer_2069533843439235799",
+      "production_id": "ZH-20260808-002",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "88e341fb06bf9dc13565afc50c1f423357de6d1aa7c1a9e745b70143861c5fa0"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-23",
+      "article_id": "answer_2069522411372933416",
+      "production_id": "ZH-20260808-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "b0e748bd51b95768c1c9fa3b2195f2a79131874f7d0f8d9f36bc41a28d0fb65b"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-24",
+      "article_id": "answer_2068803220621861489",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "bb14e11370366207a5282ea8aa3b3eadedb673cfe639f79eaef8129051dbc593"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-25",
+      "article_id": "answer_2068793379685717155",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "4bb90b2d8e86b2ee095cad04ad1ebf7b2425ef548f8413c22339b69c31404417"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-26",
+      "article_id": "answer_2068390478618399357",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "50c7575c6d5ccc5580be085609d04a7757aaa026b098cdca028e7584b5afa40d"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-27",
+      "article_id": "answer_2068122609598911600",
+      "production_id": "ZH-20260804-003",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "4d928fc3c107a232ade0c75ba05c0703003a2146a684638198567407dc159288"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-28",
+      "article_id": "answer_2067364159130448284",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "da5fb96dec228747f9c4c0d3c5f98a20e52e48ecfb2d5b8b22382ac60bbc7423"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-29",
+      "article_id": "answer_2067298333178196355",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "5f0438fbd8b2a662d6d981b30bcd118cc0fb829ee3166dcd573bef40ba01fbdf"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-30",
+      "article_id": "answer_2067269682923676093",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "4f587444d736b318d030997e4c7847f529d762dcc02e21c5d9f3ecabb7aea143"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-31",
+      "article_id": "answer_2067141025638921938",
+      "production_id": "ZH-20260802-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "888a6dba52ebacc990c64fe5b1e9f6333fe40414f222ceec08177385b47f763e"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-32",
+      "article_id": "answer_2066924156592116539",
+      "production_id": "ZH-20260801-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "20963d3793aca202f954dc67c128b743a6f831c7f20a57eb5db55c9d216e5adf"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-33",
+      "article_id": "answer_2066733997074523922",
+      "production_id": "ZH-20260731-unknown_mofish",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "ae88e79e1b04acc8bcd2199d05a3e83f5526546b310a98f5810f41232a24e313"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-34",
+      "article_id": "answer_2066566025722832645",
+      "production_id": "ZH-20260801-003",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "abf9e00a2329807f7d95c2d738322f83de15aa91c5e0fdc684e66d462df4beb2"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-35",
+      "article_id": "answer_2065858842207032462",
+      "production_id": "zhihu-20260729-fuzzy-responsibility-boundary-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "bc2e7ff94750089fd70da68445579020b8d80dbab062048c940f0e609ca04e98"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-36",
+      "article_id": "answer_2065829100695113964",
+      "production_id": "zhihu-20260729-middle-manager-promotion-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "65211ae8696894ab01184fe6bfc08e78dc19ae73e62034876d753a25fe4c9df6"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-37",
+      "article_id": "answer_2065823788911048364",
+      "production_id": "zhihu-20260729-senior-leader-not-fired-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "1e6c9d59911be99580a118308e5524a0c2d090b5b078ab238ede53d20ae06ef3"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-38",
+      "article_id": "answer_2069838524929594559",
+      "production_id": "ZH-20260809-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "a3951de6e4529dd82d94c1b37a5bb3848eb175bd159c76fecfdb948832896ab4"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-39",
+      "article_id": "answer_2069537531780129888",
+      "production_id": "ZH-20260808-003",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "c7a7ce787790220a4c69ff7457039a2645dea5f5abb557448d8dd615d2c972d7"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-40",
+      "article_id": "answer_2069533843439235799",
+      "production_id": "ZH-20260808-002",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "3c1abe69d2fe2236013ffdf51e5d439d0afa7a075440fc4e1cd389093cec5a97"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-41",
+      "article_id": "answer_2069522411372933416",
+      "production_id": "ZH-20260808-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "2510a7155e5552454cad9f4f288d6ce957cd3057822c10d89c621ee71b83db4d"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-42",
+      "article_id": "answer_2068803220621861489",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "2fb3b8e1fe58e072120dd663dd5298374897d44ff30133042f6398dc14804c51"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-43",
+      "article_id": "answer_2068793379685717155",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "658aec81fe97cc411949b8acb6f0415a9955d1b9ede816c948a02452f395c109"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-44",
+      "article_id": "answer_2068390478618399357",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "e98a714ff4572a909a8d0dcda0ba47394ffb16cc6a0e49b0abbdc505d256c9d8"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-45",
+      "article_id": "answer_2068122609598911600",
+      "production_id": "ZH-20260804-003",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "515c32bd64b53646cfc9f6b1c1b9f07c8684b85b3f3359730580082dc3520c21"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-46",
+      "article_id": "answer_2067364159130448284",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "511ea73ea5035690a4c892020c881de18f8d762d6a31d1c1d29d2ab857cea714"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-47",
+      "article_id": "answer_2067298333178196355",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "076ebcaf4f2b6117db29657726e68f9bdeaaf740b3bdda251f66d0dc56095bec"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-48",
+      "article_id": "answer_2067269682923676093",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "ee3245e658fd16243f0d99d035a342eab70627fc6a242c942e3303a85ce8b7f1"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-49",
+      "article_id": "answer_2067141025638921938",
+      "production_id": "ZH-20260802-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "cf5749b1cddb2592c0c6c10a13dc9e588779a0eddc353b61cb6f1073118a35f0"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-50",
+      "article_id": "answer_2066924156592116539",
+      "production_id": "ZH-20260801-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "86487376a4a76c3ab1cb0ee4dc176b47049f6629d52c0a1881a1080c815f9ca3"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-51",
+      "article_id": "answer_2066733997074523922",
+      "production_id": "ZH-20260731-unknown_mofish",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "a303a87829e1b2d963d9badf4b3cfda2424213e242ff6ae2f75269ffc916b994"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-52",
+      "article_id": "answer_2066566025722832645",
+      "production_id": "ZH-20260801-003",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "1b6b6bd838f9d15d85f0f25398a605053ffff808d9d02afdc15c79676c96a48d"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-53",
+      "article_id": "answer_2065858842207032462",
+      "production_id": "zhihu-20260729-fuzzy-responsibility-boundary-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "2ada3cd155ffb6bc8047426aee94fd4ffc3a02393d330a77f1bc907a1a6befdf"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-54",
+      "article_id": "answer_2065829100695113964",
+      "production_id": "zhihu-20260729-middle-manager-promotion-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "076066ca49ad093e90b6c2fe9ce0a6bf5d733a354622271ca8236cc4b3dcba92"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-55",
+      "article_id": "answer_2065823788911048364",
+      "production_id": "zhihu-20260729-senior-leader-not-fired-001",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "c5f24e49c82edc91b5a15adc3075c17780d20b7314f1cd002576b9b8f3b64f1f"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-56",
+      "article_id": "answer_2065579209939068444",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "5a741b7bbbfb990ca96d7c943231a95826b68a88382e2636e8844497c4226be2"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-57",
+      "article_id": "answer_2065572500503803251",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "b81ba6f949722070fb5db6b1bfd54d32535cbc8ecb37820f415e8604956c2269"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-58",
+      "article_id": "answer_2074171393848170265",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "5b7d70cccdb303b44a186f87be0ae044c34124fd37289b7d29eef924fc2d3599"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-59",
+      "article_id": "answer_2074161499174655619",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "23a061d02dc0392da2473314ef05c665a9b3627031a940a3fe5f368bded387e7"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-60",
+      "article_id": "answer_2074160600402473800",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "14068b82f9eb90e128b7800fc0e170bfd4d547f2d060a07c41187468c7aaab62"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-61",
+      "article_id": "answer_2073805620902376183",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "52df9bda39b4752d00fc65fac9cb08ad84a7b7e70fcde9e38ccbf105bb63dfc2"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-62",
+      "article_id": "answer_2073787181685019073",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "ed36a6785a852c2020b7f222547699421b8c649784568e3d6871730a75abae2f"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-63",
+      "article_id": "answer_2073435663085597749",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "46e142104fc93a8a461b500f9ba265ff5a0c239eae220bb40d1b75447325660e"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-64",
+      "article_id": "answer_2073432690196587901",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "4222542395a7edb5cf6cf4e4a5d267094e72e3f3f2de09dcf2594934b74c5997"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-65",
+      "article_id": "answer_2073427373660361384",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "021dc208555899284b4452e88673deedf09a2df10e7d8f062ec97f7cf1ec74e8"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-66",
+      "article_id": "answer_2073425030852232498",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "1ec2084c3e23a9665d3ee9c885612f8bfd54f353f1c75c9284e0addb922bd3c6"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-67",
+      "article_id": "answer_2073421967865206081",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "74d6c5b353dac070776ebf644562fea2cf9a46bb249556dbc3959de4478947c8"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-68",
+      "article_id": "answer_2073175555583877483",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "d6f26a7ad57a4b11a594edf3667955abb406fe7490458f71cf70e0440a6a233c"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-69",
+      "article_id": "answer_2073168934128334061",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "e29821d396759e6003db7c0afd5a872df3bb70751dc5a33eb7c3b32bcb1010e4"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-70",
+      "article_id": "answer_2073162526121107666",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "deed00cd8a3102e84f5c619fbeaf3fa7664ed9320b4c16d03841ed76fb5e919d"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-71",
+      "article_id": "answer_2073155311888867810",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "9b8bf1ac9fadf662582ca8f5f952f06e5492633ed328ba5026d05007af26d5ea"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-72",
+      "article_id": "answer_2073136610447837103",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "51195841574e1f6cba5c55de963198ce60dda84c810f5e007f83fd4e638e71bc"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-73",
+      "article_id": "answer_2072707525909206856",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "d948083cbd1d41bc44837a6f7cb1743884e5c3890e34f38af97cd0f171cf3ef1"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-74",
+      "article_id": "answer_2072702916264310647",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "4e477e3d78feb21e127b3befba07387c136e26cafa352da8cbe0dc9c26cba039"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-75",
+      "article_id": "answer_2072700856256946489",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "6f2a57c62ccf464e61657d4bb990d29e8d36e0abb166897a0a2e92aecb65eeea"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-76",
+      "article_id": "answer_2072695242105660190",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "6c117227a0bb86f84569808147ddd1e08db4ca93e71a85f5f78ba0e225408d8a"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-77",
+      "article_id": "answer_2070259249234587810",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "cf2b34b919c0eeb21801166a50738117cc5d6dc7144595fb881927f400871582"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-78",
+      "article_id": "answer_2070241617638864496",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "f37bf12d0fa2eda1abc9fa78676bc7f33f8437e8a5189a444376e21bf353c10c"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-79",
+      "article_id": "pin_2074580896850633938",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "2061f1e692b146cacc2c8c87a100473efb56e4200d29fbad60838684fd6bf924"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-80",
+      "article_id": "answer_2074546696017666697",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "fa39dbd4029b09d84037c49c7f65becc0d05243b1555ab2d197cf3d0462f3870"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-81",
+      "article_id": "answer_2074544374151697192",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "4e1ed729d14537b2fe2f6862596c8ac8c77551bf55c23e3dafe943dbe88157be"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-82",
+      "article_id": "answer_2074542713748321101",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "1b12636ded48dc3e661f74ed44fb78f147d1ad6c2be065f260bd215ec21845fc"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-83",
+      "article_id": "answer_2074538946114089128",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "00272d266986c4ad943aca523665f0d1092c9f7bfa62e860c407e640dc895cbe"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-84",
+      "article_id": "answer_2074537453193519378",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "5dc094776b6ece661bf9939bb318cd5fd19193776c78a82386edd24ad906dd0c"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-85",
+      "article_id": "answer_2074892737510380763",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "5ebcc0f059dec1e740482f3e434d3aacfdf72c935c27f6bd882c167d050df6fe"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-86",
+      "article_id": "answer_2074890614576105134",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "2721c1a18f9aa1672f4c1482aef3ce6e4a71b7f293510008bac6ff6cbe020e1b"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-87",
+      "article_id": "answer_2074886991645241672",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "0365612f0f712c89b12a3222b11f67245ee4ae8c5b8b7c0f4448323d9eaf89d7"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-88",
+      "article_id": "answer_2074885270286217411",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "cc5e59bb9e910f3e9b3d681e71c9c1f12fb9c5976a2821a1a04ff438e31fcffa"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-89",
+      "article_id": "answer_2074881863097884985",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "e7227c1b02c9168dbf8a7e467f1f195520dcba475c4278816c6f36e29fe46855"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-90",
+      "article_id": "answer_2075634250565562668",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "f095c584610e4dbc51d28d108683d65355278db180cf9aeb399493f2f584f74e"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-91",
+      "article_id": "answer_2075628528083669533",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "74f5e49e2ee48826213198f73b4c719b72312aa9f51238613edac5967f6646bd"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-92",
+      "article_id": "answer_2075620088980444389",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "0fee9f5bbf2cea35d4e9e29577ec4e5164c42372f5b5967208c8223d78030c0b"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-93",
+      "article_id": "answer_2075618885651510464",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "f63ca6fc9ad1a4005956296c0b79bedfecce23e41908473dce98bb2b417ff5bd"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-94",
+      "article_id": "answer_2075615517361161807",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "fa733579e958f32d784318f5c54ed3c6511b907dbe91e034992be9b4ff29acfd"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-95",
+      "article_id": "answer_2079612017883856957",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "f5cb934eb1d9168f4bce5a569d6159cd055fc3a780e61e2d35f04e668c93419a"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-96",
+      "article_id": "answer_2079605636388726499",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "ae2f878d8545d1138ea900b3a9f131431bbcd33ee3130a73d9c543e7fba48061"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-97",
+      "article_id": "answer_2079600004604354925",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "3be1aa35bb241ea12b9d7f6ec18997c170d595de1796e61665eaba900fa0d723"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-98",
+      "article_id": "answer_2079598764940174512",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "efcc6bd07d6da998b478adac92e5a13f724b890c8abfed134b9e697b8aba26a3"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-99",
+      "article_id": "answer_2091605539537032860",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "a6e2bfd8c19cab8f4a06feaa227fb32833648330c2f10dd34b17ea94f55a4db9"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-100",
+      "article_id": "answer_2090881322340324945",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "9fb3918152e57dd6c1912cf519321466736594ee6fd3b63627da35a1d37df6b6"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-101",
+      "article_id": "answer_2090878739697739692",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "e8ffb2cb569c660c4ab540ab076b1745c5a7da937ecea84bb096b17b9f88e1e5"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-102",
+      "article_id": "answer_2090160833322037819",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "ab011423b08442af374c63b27d98f5d806ac53c8e1a8570547fa2fca8fc72e41"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-103",
+      "article_id": "answer_2090158335320405439",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "b9a80b69d833d594297abd408ae6a7e3a4c9658ecacad1bb0ddbe57240629aba"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-104",
+      "article_id": "answer_2090156429357355355",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "9d973b43c05a5356e15a82aa2d28d72b9afa4773a7d722174027970b248c8dcb"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-105",
+      "article_id": "answer_2090155270294986797",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "f473a683d48a92a1c0462583f0edf9837d21ad19076c269d5e6c9e41ae83de9c"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-106",
+      "article_id": "answer_2090153564316382041",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "8160cb807e9ae16cf948217a797d2e877cbc485d17b9aaaf1f5b1ec5c5601506"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-107",
+      "article_id": "article_2089746693268959846",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "6de1310420f68af7c3d8d617b694ef21e2a0f824c11e510a7481dd4ee7991611"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-108",
+      "article_id": "answer_2089745414027220719",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "1f82e531e430795bd456f8eec7f4e9d4237d80df94d892d088d9be4cf63e691e"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-109",
+      "article_id": "answer_2089743353147610645",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "43eee83c01e86eae2d5c5d18a167c3b28f6530384cd9263ac4150311bdc2100b"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-110",
+      "article_id": "answer_2089739305149375871",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "271b506605bfc07ae233e6c6889c563eaf9dd29dba1f39776b73cfd25b098c8c"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-111",
+      "article_id": "answer_2089738078135108851",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "791a166cb4c20d4c6f7aa598152e6e3fa54d1e98444677c74e760ce5490f6c3d"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-112",
+      "article_id": "answer_2089737322191499821",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "d0218b17b36e3782149035a4a369b83981307804b13cc384cd979cfd059b8cd8"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-113",
+      "article_id": "answer_2089430926573025115",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "89138e5c740c5d58b71561235c5337089373fe21114a8d1b4a7fc8c2c4b93c5b"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-114",
+      "article_id": "answer_2089427499579191445",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "57290eeb923b260e361420854bc8ebe73c61b1c9abb107075579e5549e0c5b46"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-115",
+      "article_id": "answer_2089419743648391887",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "5ddd5fb6f824542bbf83520c956ec07fe3fee79676c1330defeaac51a36438e3"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-116",
+      "article_id": "article_2088685312776069435",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "c38077e5e711d66dfdd832cee7ffbbf22399433852eb6024becae77981cfe71f"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-117",
+      "article_id": "answer_2088661039365805689",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "bcae697192b461f33e059ab89ac4c2fbfb356550eac42cad347fea53cc281705"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-118",
+      "article_id": "answer_2088659091669397557",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "95db243f3c9badf4fec112a287014ce22866091221cc218f2e5c5c853420f903"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-119",
+      "article_id": "pin_2084271032089814541",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "d475d4e90f6431343bd8af8d4a937906f14d3fec7d1ea103fedd534660f3ffed"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-120",
+      "article_id": "answer_2082866756780024365",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "7c77a2bf1cd4ae6c1853272b544ed94b77d96311e12f833b133f46323628bfa5"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-121",
+      "article_id": "answer_2082863170411090086",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "1b1b984513b7fe9e3c393e55152bb7f9d8911ec6dbeeb65d0c34c8e00ff5da25"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-122",
+      "article_id": "answer_2079612017883856957",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "be3231287efb4de08194ab88633781a17d737a792c70fd5fde3eaa18dc4b666e"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-123",
+      "article_id": "answer_2079605636388726499",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "4d997670fbdca329e71d8b702f126492e84f3ef730223abd08fa41e2b9743c79"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-124",
+      "article_id": "answer_2079600004604354925",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "cb346cade4f25608e371e700aef1bb76de59257e8ab1eb6c06e1a7a525bcc628"
+    },
+    {
+      "source_reference": "data/review_data_snapshots.csv#line-125",
+      "article_id": "answer_2079598764940174512",
+      "production_id": "UNKNOWN",
+      "data_window": "REVIEW_DAY",
+      "fixed_window_status": "HISTORICAL_BACKFILL",
+      "publish_time_status": "PUBLISH_TIME_UNCERTAIN",
+      "attribution_status": "ATTRIBUTION_UNKNOWN",
+      "source_row_sha256": "8f4cecbd2d104867da4df4be325e7ca649b1d5b1fd53950ef3f1b6eece7985bb"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "purpose": "Auxiliary metadata referencing existing objects; no independent Evidence/Governance objects",
+  "publication_metadata": [],
+  "research_stage_records": [
+    {
+      "source_object": "Experiment",
+      "source_object_id": "EXP008",
+      "source_reference": "research/experiments/EXP008.md",
+      "research_stage": "EVIDENCE",
+      "track": "DISTRIBUTION",
+      "evidence_reference": [
+        "reports/exp008_research_update_20261008.md"
+      ],
+      "transition_reason": "Document existing partial evidence only; not validation or automatic promotion",
+      "transition_at": "2026-10-08T20:26:39.214941+00:00",
+      "transition_by": "Codex (existing report metadata registration; not human approval)",
+      "validation_result": "INCONCLUSIVE"
+    }
+  ],
+  "lifecycle_observations": [
+    {
+      "article_id": "answer_2073162526121107666",
+      "phase": "UNKNOWN",
+      "phase_start": "UNKNOWN",
+      "phase_end": "UNKNOWN",
+      "evidence_reference": [
+        "reports/exp008_lifecycle_evidence_20261008.csv",
+        "reports/exp008_research_update_20261008.md"
+      ],
+      "confidence": "UNKNOWN",
+      "status": "EVIDENCE_COLLECTION_PENDING",
+      "review_status": "PENDING",
+      "source_object": "Experiment",
+      "source_object_id": "EXP008",
+      "notes": "Case-control follow-up registration only; no automatic phase classification or causal claim"
+    },
+    {
+      "article_id": "answer_2073175555583877483",
+      "phase": "UNKNOWN",
+      "phase_start": "UNKNOWN",
+      "phase_end": "UNKNOWN",
+      "evidence_reference": [
+        "reports/exp008_lifecycle_evidence_20261008.csv",
+        "reports/exp008_research_update_20261008.md"
+      ],
+      "confidence": "UNKNOWN",
+      "status": "EVIDENCE_COLLECTION_PENDING",
+      "review_status": "PENDING",
+      "source_object": "Experiment",
+      "source_object_id": "EXP008",
+      "notes": "Case-control follow-up registration only; no automatic phase classification or causal claim"
+    },
+    {
+      "article_id": "answer_2075615517361161807",
+      "phase": "UNKNOWN",
+      "phase_start": "UNKNOWN",
+      "phase_end": "UNKNOWN",
+      "evidence_reference": [
+        "reports/exp008_lifecycle_evidence_20261008.csv",
+        "reports/exp008_research_update_20261008.md"
+      ],
+      "confidence": "UNKNOWN",
+      "status": "EVIDENCE_COLLECTION_PENDING",
+      "review_status": "PENDING",
+      "source_object": "Experiment",
+      "source_object_id": "EXP008",
+      "notes": "Case-control follow-up registration only; no automatic phase classification or causal claim"
+    },
+    {
+      "article_id": "answer_2075620088980444389",
+      "phase": "UNKNOWN",
+      "phase_start": "UNKNOWN",
+      "phase_end": "UNKNOWN",
+      "evidence_reference": [
+        "reports/exp008_lifecycle_evidence_20261008.csv",
+        "reports/exp008_research_update_20261008.md"
+      ],
+      "confidence": "UNKNOWN",
+      "status": "EVIDENCE_COLLECTION_PENDING",
+      "review_status": "PENDING",
+      "source_object": "Experiment",
+      "source_object_id": "EXP008",
+      "notes": "Case-control follow-up registration only; no automatic phase classification or causal claim"
+    }
+  ],
+  "promotion_approvals": []
+}

@@ -1,0 +1,37 @@
+{
+  "source_object": "Experiment",
+  "source_object_id": "EXP008",
+  "promotion_allowed": false,
+  "tasks": [
+    {
+      "task_id": "EXP008-P0-ALIGNMENT",
+      "priority": "P0",
+      "task": "Revenue Attribution Measurement Alignment",
+      "track": "MEASUREMENT",
+      "status": "OPEN",
+      "requires_human_review": true,
+      "input_reference": "reports/exp008_research_update_20261008.md#5",
+      "acceptance": "Same article and effective single-day read/revenue windows; missing is not zero; inaccessible history stays UNKNOWN"
+    },
+    {
+      "task_id": "EXP008-P1-LIFECYCLE",
+      "priority": "P1",
+      "task": "Reactivation / Lifecycle Case-Control Evidence",
+      "track": "DISTRIBUTION",
+      "status": "OPEN",
+      "requires_human_review": true,
+      "input_reference": "reports/exp008_lifecycle_evidence_20261008.csv",
+      "acceptance": "Daily endpoints and sources for 老实人/性格适合领导/心腹异性/劳务派遣; never infer phases automatically"
+    },
+    {
+      "task_id": "EXP008-P1-PAIR02",
+      "priority": "P1",
+      "task": "PAIR-02 Independent Blind Annotation",
+      "track": "DISTRIBUTION",
+      "status": "PENDING_INDEPENDENT_HUMAN",
+      "requires_human_review": true,
+      "blind_input": "reports/exp008_pair02_blind_input.json",
+      "acceptance": "Unexposed reviewer; establish version; lock annotation before outcome join; partial entry is not full text"
+    }
+  ]
+}

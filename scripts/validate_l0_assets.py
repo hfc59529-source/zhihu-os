@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import csv
+import math
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -43,14 +44,22 @@ DEEP_REVIEW_VALUES = {"是", "否"}
 
 
 def parse_number(value):
-    if value == "":
+    # Missing is never zero; NA/N/A have no established applicability semantics.
+    text = ("" if value is None else str(value)).strip()
+    if text.upper() in {"", "UNKNOWN", "NA", "N/A", "NULL"}:
         return None
-    text = value.replace(",", "").strip()
+    text = text.replace(",", "")
     multipliers = {"万": 10000, "k": 1000, "K": 1000}
     for suffix, multiplier in multipliers.items():
         if text.endswith(suffix):
-            return float(text[: -len(suffix)]) * multiplier
-    return float(text)
+            number = float(text[: -len(suffix)]) * multiplier
+            if not math.isfinite(number):
+                raise ValueError("non-finite number")
+            return number
+    number = float(text)
+    if not math.isfinite(number):
+        raise ValueError("non-finite number")
+    return number
 
 
 def main():
@@ -112,6 +121,7 @@ def main():
     print(f"missing_fields: {missing_fields or 'OK'}")
     print(f"duplicate_article_ids: {duplicate_ids or 'OK'}")
     print(f"missing_required_values: {missing_required_values or 'OK'}")
+    print("numeric_missing_markers: " + str(Counter(str(r.get(f, "")).strip().upper() for r in rows for f in NUMERIC_FIELDS if str(r.get(f, "")).strip().upper() in {"", "UNKNOWN", "NA", "N/A", "NULL"})))
     print(f"numeric_sortable: {'OK' if not numeric_errors else numeric_errors}")
     print(f"enum_values: {'OK' if not enum_errors else enum_errors}")
     print("content_types:")
