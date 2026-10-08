@@ -27,7 +27,7 @@ EXTRA_FIELDS = ['production_id', 'target_window', 'due_at', 'observed_at', 'actu
                 'earnings_match_status', 'attribution_status']
 # Existing production surfaces only; this infrastructure protocol is not a content rule.
 PROTECTED_EXCEPTIONS = {'docs/Measurement_Learning_Loop.md'}
-PROTECTED_EXACT = {'production_variable_library.md',
+PROTECTED_EXACT = {'production_variable_library.md', 'data/production_reference.md',
                    'scripts/release_runtime.py', 'scripts/validate_runtime_consistency.py',
                    'scripts/learning_loop.py', '.githooks/pre-commit'}
 
@@ -290,6 +290,42 @@ def validate_metadata(root, meta):
                 raise ValueError('approval scope does not cover target surface')
 
 
+def validate_reference_changes(root, meta):
+    records = meta.get('production_reference_records', [])
+    for r in records:
+        if r.get('reference_status') not in {'RESEARCH_ONLY', 'PRODUCTION_REFERENCE', 'VALIDATED_RULE'}:
+            raise ValueError('invalid reference eligibility')
+        references(root, [r['source_reference']])
+        if r['reference_status'] == 'PRODUCTION_REFERENCE':
+            require(r, ['accepted_by', 'accepted_at', 'acceptance_reference', 'scope'])
+            if r.get('finding_kind') != 'DATA_FINDING':
+                raise ValueError('candidate mechanisms are not production references')
+            timestamp(r['accepted_at'])
+            references(root, [r['acceptance_reference']])
+        if r['reference_status'] == 'VALIDATED_RULE':
+            matching = [x for x in meta['research_stage_records'] if x['source_object_id'] == r['source_object_id']]
+            if not matching or matching[-1]['research_stage'] not in {'VALIDATION', 'RULE_CANDIDATE'} or matching[-1].get('validation_result') != 'PASSED' or matching[-1].get('counterexample_check') != 'PASSED':
+                raise ValueError('validated rule label without validation')
+    for r in meta.get('reference_change_approvals', []):
+        # A reference is not a broad permission to change the production system.
+        if r.get('approval_status') != 'APPROVED' or r.get('approval_kind') != 'REFERENCE_INTERFACE_REPAIR' or r.get('target_file') not in {
+            'docs/Codex选题采集协议.md', 'data/production_reference.md'}:
+            raise ValueError('reference approval exceeds interface scope')
+        require(r, ['approved_by', 'approved_at', 'human_approval_reference', 'proposed_change'])
+        timestamp(r['approved_at'])
+        references(root, r['evidence_references'] + [r['human_approval_reference']])
+        eligible = {x['reference_id'] for x in records if x['reference_status'] == 'PRODUCTION_REFERENCE'}
+        if not r.get('reference_ids') or not set(r['reference_ids']).issubset(eligible):
+            raise ValueError('unaccepted findings in reference change')
+        for ref in r['evidence_references'] + [r['human_approval_reference']]:
+            path = ref.split('#', 1)[0]
+            if r.get('evidence_sha256', {}).get(path) != digest((root/path).read_bytes()):
+                raise ValueError('reference acceptance evidence changed')
+        for key in ['before_sha256', 'after_sha256', 'diff_sha256']:
+            if not re.fullmatch('[a-f0-9]{64}', r.get(key, '')):
+                raise ValueError('reference change digest required')
+
+
 def scope_for(path):
     if path == 'production_variable_library.md' or path == 'runtime/production_variable_snapshot.md':
         return {'ACTIVE Variable'}
@@ -315,6 +351,7 @@ def check_promotion(root, base='HEAD', staged=False):
     raw = git(root, 'show', ':' + META) if staged else (root / META).read_bytes()
     meta = json.loads(raw)
     validate_metadata(root, meta)
+    validate_reference_changes(root, meta)
     options = ['--cached'] if staged else []
     names = git(root, 'diff', *options, '--name-only', '-z', base).decode().split('\0')
     blocked = []
@@ -331,10 +368,13 @@ def check_promotion(root, base='HEAD', staged=False):
         matches = [r for r in meta['promotion_approvals'] if r['approval_status'] == 'APPROVED' and r['target_file'] == path and
                    r['before_sha256'] == digest(before) and r['after_sha256'] == digest(after) and r['diff_sha256'] == digest(diff)]
         if not matches:
+            matches = [r for r in meta.get('reference_change_approvals', []) if r['target_file'] == path and
+                       r['before_sha256'] == digest(before) and r['after_sha256'] == digest(after) and r['diff_sha256'] == digest(diff)]
+        if not matches:
             blocked.append(path)
         elif staged:
             # Approval and validation artifacts must themselves exist in the index.
-            for ref in matches[0]['evidence_references'] + [matches[0]['research_reference'], matches[0]['human_approval_reference']]:
+            for ref in matches[0]['evidence_references'] + [matches[0]['human_approval_reference']] + ([matches[0]['research_reference']] if 'research_reference' in matches[0] else []):
                 reference_path = ref.split('#', 1)[0]
                 if git(root, 'show', ':' + reference_path) != (root/reference_path).read_bytes():
                     raise ValueError('staged evidence differs from reviewed evidence: ' + reference_path)
@@ -363,6 +403,7 @@ def validate_measurements(root):
 def refresh(root, now):
     meta = load_meta(root)
     validate_metadata(root, meta)
+    validate_reference_changes(root, meta)
     validate_measurements(root)
     mapped = {p['article_id'] for p, _ in publications(root)}
     unmapped = sorted({r['article_id'] for r in read_csv(root, 'data/l0_content_assets.csv')} - mapped)
@@ -410,6 +451,7 @@ def main():
             print('Scoped promotion gate: PASS (no automatic promotion)')
         else:
             validate_metadata(ROOT, load_meta(ROOT))
+            validate_reference_changes(ROOT, load_meta(ROOT))
             validate_measurements(ROOT)
             print('Learning metadata / acquired measurement validation: PASS')
     except (ValueError, KeyError, TypeError, OSError, subprocess.CalledProcessError) as exc:

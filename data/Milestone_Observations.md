@@ -425,3 +425,12 @@ SUPPORTED。知乎播放不是一次性分配过程；截至当前证据，EXP00
 5. 对收益拆分采用 `Revenue = Distribution Volume × Monetization Efficiency × Persistence` 的观察口径，避免把高播放、高 RPM、长尾持续混成同一个变量。
 6. 阶段性策略口径：当前不要继续把主要精力放在正文系统优化上；下一阶段优先破解 Distribution Gate，尤其是“为什么有些文章会获得第二轮放量”。
 ```
+
+## GATE-REFERENCE-INTERFACE-20261009
+
+对象：Observation（工程接口缺陷，不是内容变量）。
+状态：SUPPORTED。
+观察：HEAD提交检查器忽略Production Reference授权记录，合法参考变更只能被误归入正式机制Promotion；旧检查器真实模拟已复现拒绝。
+工程验证：24项Learning Loop测试通过，合法参考接口放行，非法机制/ACTIVE/Prompt/Compiler/门禁修改仍拒绝。具体证据见 `reports/production_reference_gate_validation_20261009.md`。
+结论：支持限定接口修复，不支持任何知乎分发、变现或长尾机制；EXP008阶段保持原样。
+处理：本轮用户明确授权受控提交检查器修复；复用现有metadata保存工程Validation与具体变更hash，随后新HEAD检查器审核业务参考通道。禁止绕过hook，禁止runtime发布。

@@ -16,6 +16,24 @@
       "transition_at": "2026-10-08T20:26:39.214941+00:00",
       "transition_by": "Codex (existing report metadata registration; not human approval)",
       "validation_result": "INCONCLUSIVE"
+    },
+    {
+      "source_object": "Observation",
+      "source_object_id": "GATE-REFERENCE-INTERFACE-20261009",
+      "source_reference": "data/Milestone_Observations.md#GATE-REFERENCE-INTERFACE-20261009",
+      "research_stage": "VALIDATION",
+      "track": "MEASUREMENT",
+      "evidence_reference": [
+        "reports/production_reference_gate_validation_20261009.md",
+        "scripts/test_learning_loop.py",
+        "data/Milestone_Observations.md"
+      ],
+      "transition_reason": "Actual engineering contract validation passed; no EXP008 or content mechanism validation",
+      "transition_at": "2026-10-08T22:26:56.778522+00:00",
+      "transition_by": "Codex (test results recorder)",
+      "validation_result": "PASSED",
+      "counterexample_check": "PASSED",
+      "validated_claim": "Gate can distinguish manually accepted data references from formal rule promotion; permission-negative tests pass"
     }
   ],
   "lifecycle_observations": [
@@ -84,5 +102,164 @@
       "notes": "Case-control follow-up registration only; no automatic phase classification or causal claim"
     }
   ],
-  "promotion_approvals": []
+  "promotion_approvals": [
+    {
+      "research_object": "Observation",
+      "research_object_id": "GATE-REFERENCE-INTERFACE-20261009",
+      "research_reference": "reports/production_reference_gate_validation_20261009.md",
+      "validated_claim": "Engineering interface repair only; no content mechanism promoted",
+      "validation_result": "PASSED",
+      "counterexample_check": "PASSED",
+      "evidence_references": [
+        "reports/production_reference_gate_validation_20261009.md",
+        "scripts/test_learning_loop.py",
+        "data/Milestone_Observations.md"
+      ],
+      "target_file": "scripts/learning_loop.py",
+      "target_section": "validate_reference_changes / check_promotion / protected carrier",
+      "proposed_change": "Recognize scoped manually accepted DATA_FINDING references; preserve Rule Promotion; reference cannot authorize gate/Compiler/Prompt/ACTIVE changes",
+      "change_version": "REFERENCE-BRIDGE-GATE-V1",
+      "approved_by": "User (explicit conditional task authorization)",
+      "approved_at": "2026-10-08T22:26:56.778580+00:00",
+      "approval_scope": "Production Protocol",
+      "approval_status": "APPROVED",
+      "human_approval_reference": "reports/production_reference_acceptance_20261009.md",
+      "promotion_timestamp": "2026-10-08T22:26:56.778580+00:00",
+      "before_sha256": "6bad704d7ac9d824a5253ed9f073ea8e8eba37647d138af9fb5625cd4ef4d4f0",
+      "after_sha256": "066ae6ad0b1cb1cef3d56c5a81fa4642219667f174d2b8eabfab8cebafae2ecc",
+      "diff_sha256": "f0be5e6123bd9942a38a9a2eceb7d872f1002ffa9a6b220408b96cd8cbf738ad",
+      "evidence_sha256": {
+        "reports/production_reference_gate_validation_20261009.md": "fb9b302e1547cf2b9ce15471ecb282bf69af009e1a4407e9ef3cf6d65c826484",
+        "scripts/test_learning_loop.py": "143a02e941044992ccbe40c77781b2c93a4a8361135be6f3745cff6524ffdb53",
+        "data/Milestone_Observations.md": "c522a2c8d98049840be858bc0a8ef0e07cb3a6c6f8f289537a8cfacc17833aea",
+        "reports/production_reference_acceptance_20261009.md": "3b8bb05244f00c93ab8bbc86741729770440fc39b9cc0eba9540f25600b97bec"
+      }
+    }
+  ],
+  "production_reference_records": [
+    {
+      "reference_id": "REF-20261008-DM",
+      "source_object": "Experiment",
+      "source_object_id": "EXP008",
+      "source_reference": "reports/exp008_research_update_20261008.md",
+      "reference_status": "PRODUCTION_REFERENCE",
+      "accepted_by": "User",
+      "accepted_at": "2026-10-08T21:44:36.514595+00:00",
+      "acceptance_reference": "reports/production_reference_acceptance_20261009.md",
+      "scope": "Manual Topic Selection only; no automatic score, causal rule, Compiler, Prompt or ACTIVE change",
+      "finding_kind": "DATA_FINDING"
+    },
+    {
+      "reference_id": "REF-20261008-LIFE",
+      "source_object": "Experiment",
+      "source_object_id": "EXP008",
+      "source_reference": "reports/exp008_research_update_20261008.md",
+      "reference_status": "PRODUCTION_REFERENCE",
+      "accepted_by": "User",
+      "accepted_at": "2026-10-08T21:44:36.514595+00:00",
+      "acceptance_reference": "reports/production_reference_acceptance_20261009.md",
+      "scope": "Manual Topic Selection only; no automatic score, causal rule, Compiler, Prompt or ACTIVE change",
+      "finding_kind": "DATA_FINDING"
+    },
+    {
+      "reference_id": "REF-20261008-CLUSTER",
+      "source_object": "Experiment",
+      "source_object_id": "EXP008",
+      "source_reference": "reports/exp008_research_update_20261008.md",
+      "reference_status": "PRODUCTION_REFERENCE",
+      "accepted_by": "User",
+      "accepted_at": "2026-10-08T21:44:36.514595+00:00",
+      "acceptance_reference": "reports/production_reference_acceptance_20261009.md",
+      "scope": "Manual Topic Selection only; no automatic score, causal rule, Compiler, Prompt or ACTIVE change",
+      "finding_kind": "DATA_FINDING"
+    },
+    {
+      "reference_id": "REF-20261008-ENG",
+      "source_object": "Experiment",
+      "source_object_id": "EXP008",
+      "source_reference": "reports/exp008_research_update_20261008.md",
+      "reference_status": "PRODUCTION_REFERENCE",
+      "accepted_by": "User",
+      "accepted_at": "2026-10-08T21:44:36.514595+00:00",
+      "acceptance_reference": "reports/production_reference_acceptance_20261009.md",
+      "scope": "Manual Topic Selection only; no automatic score, causal rule, Compiler, Prompt or ACTIVE change",
+      "finding_kind": "DATA_FINDING"
+    },
+    {
+      "reference_id": "REF-20261008-MEASURE",
+      "source_object": "Experiment",
+      "source_object_id": "EXP008",
+      "source_reference": "reports/exp008_research_update_20261008.md",
+      "reference_status": "PRODUCTION_REFERENCE",
+      "accepted_by": "User",
+      "accepted_at": "2026-10-08T21:44:36.514595+00:00",
+      "acceptance_reference": "reports/production_reference_acceptance_20261009.md",
+      "scope": "Manual Topic Selection only; no automatic score, causal rule, Compiler, Prompt or ACTIVE change",
+      "finding_kind": "DATA_FINDING"
+    },
+    {
+      "reference_id": "EXP008-CANDIDATE-MECHANISMS",
+      "source_object": "Experiment",
+      "source_object_id": "EXP008",
+      "source_reference": "reports/exp008_research_update_20261008.md",
+      "reference_status": "RESEARCH_ONLY",
+      "scope": "Self-Relevance / Stakes / Identity Threat / Uncertainty / Audience Composition; no causal promotion"
+    }
+  ],
+  "reference_change_approvals": [
+    {
+      "approval_kind": "REFERENCE_INTERFACE_REPAIR",
+      "approval_status": "APPROVED",
+      "approved_by": "User (direct task authorization)",
+      "approved_at": "2026-10-08T21:47:34.342484+00:00",
+      "target_file": "docs/Codex选题采集协议.md",
+      "proposed_change": "Restore explicitly authorized manual Production Reference channel; supersede Cluster standalone +1; preserve causal promotion restrictions",
+      "human_approval_reference": "reports/production_reference_acceptance_20261009.md",
+      "reference_ids": [
+        "REF-20261008-DM",
+        "REF-20261008-LIFE",
+        "REF-20261008-CLUSTER",
+        "REF-20261008-ENG",
+        "REF-20261008-MEASURE"
+      ],
+      "evidence_references": [
+        "reports/production_reference_acceptance_20261009.md",
+        "reports/exp008_research_update_20261008.md"
+      ],
+      "evidence_sha256": {
+        "reports/exp008_research_update_20261008.md": "c41aa1fe1ccd161a8af45f59679174220890a4bacd5670afa3e3e93806abb2b0",
+        "reports/production_reference_acceptance_20261009.md": "3b8bb05244f00c93ab8bbc86741729770440fc39b9cc0eba9540f25600b97bec"
+      },
+      "before_sha256": "d225418802e5e0363de9efe620ff8395c12b447c17cc8d6038cea5d94af79649",
+      "after_sha256": "9bce3b7e2673c244685f5e2850c3640fe62bcfd9460cee251235e976e67e34c2",
+      "diff_sha256": "aac8f1bc06280d51939a7e3fe19b4470150b1933d613493fb15471dd85330f26"
+    },
+    {
+      "approval_kind": "REFERENCE_INTERFACE_REPAIR",
+      "approval_status": "APPROVED",
+      "approved_by": "User (direct task authorization)",
+      "approved_at": "2026-10-08T21:47:34.368760+00:00",
+      "target_file": "data/production_reference.md",
+      "proposed_change": "Restore explicitly authorized manual Production Reference channel; supersede Cluster standalone +1; preserve causal promotion restrictions",
+      "human_approval_reference": "reports/production_reference_acceptance_20261009.md",
+      "reference_ids": [
+        "REF-20261008-DM",
+        "REF-20261008-LIFE",
+        "REF-20261008-CLUSTER",
+        "REF-20261008-ENG",
+        "REF-20261008-MEASURE"
+      ],
+      "evidence_references": [
+        "reports/production_reference_acceptance_20261009.md",
+        "reports/exp008_research_update_20261008.md"
+      ],
+      "evidence_sha256": {
+        "reports/exp008_research_update_20261008.md": "c41aa1fe1ccd161a8af45f59679174220890a4bacd5670afa3e3e93806abb2b0",
+        "reports/production_reference_acceptance_20261009.md": "3b8bb05244f00c93ab8bbc86741729770440fc39b9cc0eba9540f25600b97bec"
+      },
+      "before_sha256": "855863cef90adab7aed08b345adf38d69aebdd9ff92d98206af49a9477e1c4b7",
+      "after_sha256": "60b2209454b9af13f538dd48e413a1c4e37c756857bfe984f9f3bdb9eae070d7",
+      "diff_sha256": "09daf9daff74b52455aa0bc644f3a1a88fdddce9f5e9ab2131441db2e2176171"
+    }
+  ]
 }

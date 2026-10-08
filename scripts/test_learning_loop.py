@@ -178,6 +178,44 @@ class LearningLoopTests(unittest.TestCase):
         self.assertTrue(ll.protected('docs/Codex选题采集协议.md'))
         self.assertTrue(ll.protected('production_variable_library.md'))
 
+    def test_reference_eligibility_requires_human_acceptance(self):
+        r={'reference_id':'r1','source_object_id':'EXP008','source_reference':'reports/evidence.md','reference_status':'PRODUCTION_REFERENCE'}
+        self.meta['production_reference_records']=[r]
+        with self.assertRaises(ValueError):ll.validate_reference_changes(self.root,self.meta)
+        r.update(finding_kind='DATA_FINDING',accepted_by='User',accepted_at='2026-10-09T00:00:00Z',acceptance_reference='reports/evidence.md',scope='manual selection only')
+        ll.validate_reference_changes(self.root,self.meta)
+        r['reference_status']='VALIDATED_RULE'
+        with self.assertRaises(ValueError):ll.validate_reference_changes(self.root,self.meta)
+
+    def test_reference_permission_cannot_touch_prompt_or_active(self):
+        self.meta['reference_change_approvals']=[{'approval_kind':'REFERENCE_INTERFACE_REPAIR','approval_status':'APPROVED','target_file':'templates/Claude正文生产Prompt.md'}]
+        with self.assertRaises(ValueError):ll.validate_reference_changes(self.root,self.meta)
+        self.meta['reference_change_approvals'][0]['target_file']='production_variable_library.md'
+        with self.assertRaises(ValueError):ll.validate_reference_changes(self.root,self.meta)
+
+    def test_reference_bridge_allows_exact_change_without_causal_validation(self):
+        self.setup_git()
+        (self.root/'docs/content.md').write_text('old rule')
+        path='docs/Codex选题采集协议.md'
+        (self.root/path).write_text('old reference interface')
+        self.run_git('add','.');self.run_git('commit','-qm','interface baseline')
+        (self.root/path).write_text('new reference interface')
+        self.meta['production_reference_records']=[{'reference_id':'r1','source_object_id':'EXP008','source_reference':'reports/evidence.md','reference_status':'PRODUCTION_REFERENCE','finding_kind':'DATA_FINDING','accepted_by':'User','accepted_at':'2026-10-09T00:00:00Z','acceptance_reference':'reports/evidence.md','scope':'manual selection only'}]
+        self.meta['reference_change_approvals']=[{'approval_kind':'REFERENCE_INTERFACE_REPAIR','approval_status':'APPROVED','target_file':path,'approved_by':'User','approved_at':'2026-10-09T00:00:00Z','human_approval_reference':'reports/evidence.md','proposed_change':'reference interface only','reference_ids':['r1'],'evidence_references':['reports/evidence.md'],'evidence_sha256':{'reports/evidence.md':ll.digest((self.root/'reports/evidence.md').read_bytes())},'before_sha256':ll.digest(b'old reference interface'),'after_sha256':ll.digest(b'new reference interface'),'diff_sha256':ll.digest(self.run_git('diff','--binary','HEAD','--',path))}]
+        self.save();ll.check_promotion(self.root)
+        self.assertEqual(self.meta['research_stage_records'],[])
+        (self.root/path).write_text('unapproved expanded rule')
+        with self.assertRaises(ValueError):ll.check_promotion(self.root)
+
+    def test_reference_permission_cannot_rewrite_gate_or_compiler(self):
+        for path in ['scripts/learning_loop.py', 'docs/知乎OS Compiler V1.md']:
+            self.meta['reference_change_approvals']=[{'approval_kind':'REFERENCE_INTERFACE_REPAIR','approval_status':'APPROVED','target_file':path}]
+            with self.assertRaises(ValueError):ll.validate_reference_changes(self.root,self.meta)
+
+    def test_accepted_candidate_mechanism_cannot_be_data_finding(self):
+        self.meta['production_reference_records']=[{'reference_id':'candidate','source_object_id':'EXP008','source_reference':'reports/evidence.md','reference_status':'PRODUCTION_REFERENCE','finding_kind':'CANDIDATE_MECHANISM','accepted_by':'User','accepted_at':'2026-10-09T00:00:00Z','acceptance_reference':'reports/evidence.md','scope':'manual selection only'}]
+        with self.assertRaises(ValueError):ll.validate_reference_changes(self.root,self.meta)
+
     def test_index_gate_ignores_unstaged_approval(self):
         self.setup_git();self.run_git('add','docs/content.md')
         self.meta['research_stage_records']=[self.stage()];self.meta['promotion_approvals']=[self.approval()];self.save()
