@@ -393,3 +393,5 @@ Return Stage 由 Violation Source 查 Architecture Routing Table 机械得出（
 ## Measurement + Learning Loop
 
 发布后测量与研究基础设施见 [执行契约](docs/Measurement_Learning_Loop.md) 和 [实施验收报告](reports/measurement_learning_loop_implementation_20261008.md)。启动先运行 `python3 scripts/learning_loop.py refresh`；本命令生成任务与校验视图，不承担后台准点采集或自动推广规则。
+
+系统当前研究方向见 [Research Objective](research/RESEARCH_OBJECTIVE.md)：研究回答机会、分发、收益与长期存活，并验证我们是否真的知道原因。它是研究目标，不自动改变生产规则。
