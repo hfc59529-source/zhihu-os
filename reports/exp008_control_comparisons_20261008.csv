@@ -1,0 +1,5 @@
+comparison,a_title,b_title,a_published_date,b_published_date,a_period_reads,b_period_reads,a_period_salt,b_period_salt,a_density,b_density,reads_ratio,evidence_status,window
+同日生命周期/收益反向,体制内，为什么领导一眼就能看出你是老实人？,什么性格的人适合当领导？,2026-08-18,2026-08-18,13061,4719,983,1220,75.26,258.53,2.77,DESCRIPTIVE_SAME_CALENDAR_WINDOW_NOT_CAUSAL_MATCH,2026-09-09..2026-10-07
+同日组织需求簇反例,什么性格的人适合当领导？,为什么职场上会出现提拔一批，躺平一批？,2026-08-18,2026-08-18,4719,425,1220,66,258.53,155.29,11.1,DESCRIPTIVE_SAME_CALENDAR_WINDOW_NOT_CAUSAL_MATCH,2026-09-09..2026-10-07
+旧资产vs停滞对照,体制内，为什么领导一眼就能看出你是老实人？,为什么领导的心腹很少有异性？,2026-08-18,2026-08-25,13061,147,983,12,75.26,81.63,88.85,DESCRIPTIVE_SAME_CALENDAR_WINDOW_NOT_CAUSAL_MATCH,2026-09-09..2026-10-07
+同日高阅读低盐粒vs低阅读高盐粒,真的很好奇，现在基本没有35+的工作机会了，失业了的35+人群都去哪里挣钱了？,互联网已经将绝大部分信息差抹除了，知识已经随处可以获得，为何大部分人依旧无法获得大幅突破？,2026-10-03,2026-10-03,1107,26,76,22,68.65,846.15,42.58,DESCRIPTIVE_SAME_CALENDAR_WINDOW_NOT_CAUSAL_MATCH,2026-09-09..2026-10-07

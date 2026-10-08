@@ -2,6 +2,8 @@
 
 Status：ACTIVE CASE / ATTRIBUTION_UNRESOLVED
 
+2026-10-08续证：内容管理阅读131，当前收益导出未列出该篇；不记为0，也不续填73。P0 Measurement Gate仍OPEN。另有同期导出“认真工作能否提拔”0本期阅读/4盐粒，支持继续核对归因口径，不能确认错位原因或Audience Composition。详见 `exp008_research_update_20261008.md`；本轮未启动新变现实验。
+
 Created：2026-09-10
 
 Measurement Evidence：

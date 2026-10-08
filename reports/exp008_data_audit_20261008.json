@@ -1,0 +1,36 @@
+{
+  "git_baseline": "6a6b910",
+  "collected_at": [
+    "2026-10-08T22:38:46+03:00"
+  ],
+  "interactions": 27,
+  "interaction_types": {
+    "answer": 24,
+    "article": 2,
+    "pin": 1
+  },
+  "matched_revenues": 16,
+  "revenue_records": 47,
+  "revenue_types": {
+    "回答": 46,
+    "文章": 1
+  },
+  "revenue_window": [
+    "2026-09-09",
+    "2026-10-07"
+  ],
+  "inclusive_days": 29,
+  "period_reads": 29186,
+  "period_salt": 3695,
+  "fixed_age_snapshots": 0,
+  "velocity_rows": 0,
+  "old_pairs": 9,
+  "exact_current_pair_sides": 8,
+  "complete_current_pairs": 2,
+  "source_sha256": {
+    "data/review_data_snapshots.csv": "3e3d1601352783580049b543176b40db3400be5d79decf068834aa35d5d5c043",
+    "data/revenue_observations.csv": "fe0c984e9291de383f4bff8afc024c8b091305569138e16adb25589db4fcec8a",
+    "data/raw_exports/zhihu_knowledge_income_detail_20261008_20260909_20261007_browser.csv": "4682d53a27d19f3503c6ae3b51399fdba2e720bee8c9424c78bb71a206ecb29f",
+    "data/raw_exports/zhihu_interactions_20261008_browser.tsv": "40143d7953d9a6298373b7307d66791779f0b1ef574a287fa55b996ef72522b4"
+  }
+}

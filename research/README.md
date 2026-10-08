@@ -18,3 +18,4 @@
 - [2026-09-10 Revenue Attribution Audit：第一次带团队](../reports/revenue_attribution_audit_20260910_first_team_lead.md)
 - [2026-09-10 Measurement Evidence：第一次带团队 73 盐粒归因](../reports/measurement_evidence_20260910_first_team_lead.md)
 - [2026-09-10 EXP008 Challenge Case：领导能力 Pairwise Difference v0](../reports/exp008_challenge_case_leadership_pairwise_20260910.md)
+- [2026-10-08 EXP008 恢复研究：Distribution / Monetization 续证与反例审计](../reports/exp008_research_update_20261008.md)

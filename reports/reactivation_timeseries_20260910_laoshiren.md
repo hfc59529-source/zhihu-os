@@ -2,6 +2,8 @@
 
 Status：ACTIVE RESEARCH CASE / UPDATED 2026-09-10
 
+2026-10-08续证：收益累计阅读33,069 / 盐粒2,312，较09-14增加10,226 / 668；当前窗口09-09..10-07阅读13,061 / 盐粒983。原曲线继续保留，本轮新增序列见 `exp008_lifecycle_evidence_20261008.csv` 和 `exp008_research_update_20261008.md`。窗口重叠不相加；未定位新激活日或来源。“什么性格适合领导”仍有显著后期流量，不能再当永久死亡对照。
+
 关联：`reports/reactivation_case_study_20260903_laoshiren.md`
 
 ## Current Update
