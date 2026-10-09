@@ -148,6 +148,18 @@ DECISION
 - 最终互动率不能单独作为前置分发强代理；不是宣布互动没有作用。
 - 数据窗口、身份、来源、样本与反例决定参考可用程度；数据缺失不等于零，不把相关写成因果。
 
+### Audience Gate（生产前读者理解）
+
+每次输出 `Daily_Topic_Top3` 前，随当前清单读取 `REF-20261009-AUDIENCE` 的源报告 `reports/audience_evidence_20261009.md` 及 metadata 人工接受记录；在选定题目生成 Topic Package、进入 INPUT 前再次核对适用性与窗口。失败写 UNKNOWN。Audience Gate 复用既有读者视角校准，不设独立 INVEST 对象，不替代或绕过现有 Gate。
+
+推理顺序：谁会点开这个问题 → 他处于什么现实状态 → 为什么点开 → 他真正想解决什么 → 题目表面在问什么 → 底层冲突是什么 → 当前回答能否比已有答案再深一层。
+
+逐候选把前四步写入现有“实际读者范围 / 观看者映射问题 / Personal Stakes / Question Owner / Primary Reader / Reading Motivation / 提问者真正想知道什么”，把表面问题与底层冲突写入“原问题 / 核心矛盾”；结合 Answer_Benchmark_Top3，把能否再深一层的证据、反例与 UNKNOWN 写入“适合回答的原因 / 推荐级别”。记录 Reference ID、近30日窗口和对本次判断的影响或不适用。缺 Benchmark 不得假定深度优势；此处只评估机会，不提前生成核心判断、Main Gap 或正文。
+
+当前人工接受的概括：“25–40岁男性为绝对主体，地域明显集中于经济活跃地区。”性别和年龄是分别统计，不提供交叉比例。不得从地域推断收入水平、职位层级、是否创业、是否老板或购买力；具体读者状态和动机须标明推断并由问题上下文核对。
+
+内容允许按“职场问题 → 组织问题 → 决策问题 → 商业问题”逐步上移，不要求立即转型为泛商业号。画像是近30日参考证据，未来允许新数据更新或推翻，不是永久画像。Audience Gate 帮助区分“问问题的人想知道什么”和“看问题的人想得到什么”；不得因问题不明显符合“25–40岁男性”而自动 Kill，不增加固定权重或总分，不覆盖已有 References，也不改变 INPUT Boundary、Compiler、Prompt 或 ACTIVE。
+
 使用资格与research_stage、Observation/Parameter生命周期分开：
 
 | reference_status | 使用边界 |

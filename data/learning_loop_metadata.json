@@ -204,6 +204,18 @@
       "source_reference": "reports/exp008_research_update_20261008.md",
       "reference_status": "RESEARCH_ONLY",
       "scope": "Self-Relevance / Stakes / Identity Threat / Uncertainty / Audience Composition; no causal promotion"
+    },
+    {
+      "reference_id": "REF-20261009-AUDIENCE",
+      "source_object": "Audience Evidence",
+      "source_object_id": "AUDIENCE-20261009",
+      "source_reference": "reports/audience_evidence_20261009.md",
+      "reference_status": "PRODUCTION_REFERENCE",
+      "finding_kind": "DATA_FINDING",
+      "accepted_by": "User (direct task authorization)",
+      "accepted_at": "2026-10-09T09:17:36.136683+00:00",
+      "acceptance_reference": "reports/audience_evidence_20261009.md",
+      "scope": "Rolling 30-day audience evidence; manual Pre-Run Audience Gate only; no score, fixed weight, automatic Kill, INVEST, causal promotion or permanent profile"
     }
   ],
   "reference_change_approvals": [
@@ -260,6 +272,48 @@
       "before_sha256": "855863cef90adab7aed08b345adf38d69aebdd9ff92d98206af49a9477e1c4b7",
       "after_sha256": "60b2209454b9af13f538dd48e413a1c4e37c756857bfe984f9f3bdb9eae070d7",
       "diff_sha256": "09daf9daff74b52455aa0bc644f3a1a88fdddce9f5e9ab2131441db2e2176171"
+    },
+    {
+      "approval_kind": "REFERENCE_INTERFACE_REPAIR",
+      "approval_status": "APPROVED",
+      "approved_by": "User (direct task authorization)",
+      "approved_at": "2026-10-09T09:17:36.136683+00:00",
+      "target_file": "data/production_reference.md",
+      "proposed_change": "Append accepted audience evidence and reuse existing Pre-Run reader calibration; preserve all existing Gates and References",
+      "human_approval_reference": "reports/audience_evidence_20261009.md",
+      "reference_ids": [
+        "REF-20261009-AUDIENCE"
+      ],
+      "evidence_references": [
+        "reports/audience_evidence_20261009.md"
+      ],
+      "evidence_sha256": {
+        "reports/audience_evidence_20261009.md": "e1f9c10de6685a88ef01bd7b186cc185fd4ad9707a42e74d274eefce4478cf76"
+      },
+      "before_sha256": "60b2209454b9af13f538dd48e413a1c4e37c756857bfe984f9f3bdb9eae070d7",
+      "after_sha256": "d964a95b9899248514c41bc26aa879ec0b400acf9557745a249fbf82aafe631d",
+      "diff_sha256": "bb8c1ab61a08ced9baada37e68dc280682f9f45673e94c27ab1cf6cb8d38fd0f"
+    },
+    {
+      "approval_kind": "REFERENCE_INTERFACE_REPAIR",
+      "approval_status": "APPROVED",
+      "approved_by": "User (direct task authorization)",
+      "approved_at": "2026-10-09T09:17:36.136683+00:00",
+      "target_file": "docs/Codex选题采集协议.md",
+      "proposed_change": "Append accepted audience evidence and reuse existing Pre-Run reader calibration; preserve all existing Gates and References",
+      "human_approval_reference": "reports/audience_evidence_20261009.md",
+      "reference_ids": [
+        "REF-20261009-AUDIENCE"
+      ],
+      "evidence_references": [
+        "reports/audience_evidence_20261009.md"
+      ],
+      "evidence_sha256": {
+        "reports/audience_evidence_20261009.md": "e1f9c10de6685a88ef01bd7b186cc185fd4ad9707a42e74d274eefce4478cf76"
+      },
+      "before_sha256": "9bce3b7e2673c244685f5e2850c3640fe62bcfd9460cee251235e976e67e34c2",
+      "after_sha256": "2cdee3b916107a4bdfa86711b1014f5fa94343bae964a59e871414511a9ed5b6",
+      "diff_sha256": "378608de6c077cf7e82515a2b3523aced4ed68000906c0bdde47f8bd0d1aeb5f"
     }
   ]
 }
