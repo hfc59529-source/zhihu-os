@@ -2,7 +2,7 @@
 
 ## 系统研究目标
 
-[Research Objective](RESEARCH_OBJECTIVE.md) 是经营目标与研究资源配置的权威说明：第一阶段以知乎业务月净收益3000元为目标，效率和内容资产服务于盈利，能力训练不计入盈利绩效。先比较扩大生产、优化旧资产与新增变现渠道，不启动批量内容实验。Question Value、Distribution、Monetization、Persistence及Epistemology / Validation服务于经营决策；研究反馈生产仍须验证、人工审核与限定推广。
+[Research Objective](RESEARCH_OBJECTIVE.md) 是经营目标与研究资源配置的权威说明：第一阶段围绕现有系统实现知乎平台内容月收益3000元，净收益另按成本核算，效率和内容资产服务于盈利，能力训练不计入盈利绩效。先分析现有收益与生产记录的增长约束，不扩展咨询等新业务，不直接启动批量内容实验。Question Value、Distribution、Monetization、Persistence及Epistemology / Validation服务于经营决策；研究反馈生产仍须验证、人工审核与限定推广。
 
 ## 研发原则
 

@@ -1,0 +1,3321 @@
+{
+  "source_observations": 388,
+  "reconciliation": [
+    {
+      "path": "data/raw_exports/zhihu_income_export_2026-07-01_2026-07-30.csv",
+      "rows": 61,
+      "status": "PASS"
+    },
+    {
+      "path": "data/raw_exports/zhihu_knowledge_income_detail_20260914_recent30_browser.csv",
+      "rows": 62,
+      "status": "PASS"
+    },
+    {
+      "path": "data/raw_exports/zhihu_knowledge_income_detail_20261008_20260909_20261007_browser.csv",
+      "rows": 47,
+      "status": "PASS"
+    }
+  ],
+  "window_summaries": [
+    {
+      "window": [
+        "2026-07-01",
+        "2026-07-30"
+      ],
+      "days": 30,
+      "rows": 61,
+      "salt": "10469",
+      "reads": 40079,
+      "new_salt": "4536",
+      "old_salt": "5933",
+      "read_earnings_alignment": "UNKNOWN",
+      "account_total_reconciliation": "UNKNOWN"
+    },
+    {
+      "window": [
+        "2026-08-16",
+        "2026-09-14"
+      ],
+      "days": 30,
+      "rows": 62,
+      "salt": "6466",
+      "reads": 54454,
+      "new_salt": "4605",
+      "old_salt": "1861",
+      "read_earnings_alignment": "UNKNOWN",
+      "account_total_reconciliation": "UNKNOWN"
+    },
+    {
+      "window": [
+        "2026-09-09",
+        "2026-10-07"
+      ],
+      "days": 29,
+      "rows": 47,
+      "salt": "3695",
+      "reads": 29186,
+      "new_salt": "453",
+      "old_salt": "3242",
+      "read_earnings_alignment": "UNKNOWN",
+      "account_total_reconciliation": "UNKNOWN"
+    }
+  ],
+  "bridge": {
+    "before_salt": "10469",
+    "after_salt": "6466",
+    "common_count": 30,
+    "common_before_salt": "9508",
+    "common_after_salt": "1820",
+    "common_delta_salt": "-7688",
+    "before_only_count": 31,
+    "before_only_before_salt": "961",
+    "after_only_count": 32,
+    "after_only_after_salt": "4646",
+    "after_only_post_prior_window_salt": "4633",
+    "after_only_preexisting_salt": "13",
+    "interpretation": "EXPORT_MEMBERSHIP_BRIDGE_NOT_TRUE_ENTRIES_OR_EXITS"
+  },
+  "common_content_changes": [
+    {
+      "title": "什么事情是你当了老板才知道的？",
+      "published_date": "2026-06-24",
+      "before_salt": "4607",
+      "after_salt": "442",
+      "delta_salt": "-4165",
+      "before_reads": "11892",
+      "after_reads": "2236"
+    },
+    {
+      "title": "为什么很多人，做到经理或总监，就再也上不去了？",
+      "published_date": "2026-07-22",
+      "before_salt": "1942",
+      "after_salt": "1040",
+      "delta_salt": "-902",
+      "before_reads": "8136",
+      "after_reads": "5635"
+    },
+    {
+      "title": "基层工作现在的难点是什么？",
+      "published_date": "2026-07-21",
+      "before_salt": "524",
+      "after_salt": "27",
+      "delta_salt": "-497",
+      "before_reads": "2097",
+      "after_reads": "445"
+    },
+    {
+      "title": "作为管理者，有哪些事情不能对员工讲？",
+      "published_date": "2026-06-27",
+      "before_salt": "441",
+      "after_salt": "6",
+      "delta_salt": "-435",
+      "before_reads": "504",
+      "after_reads": "57"
+    },
+    {
+      "title": "什么样的员工容易被提拔为管理层？",
+      "published_date": "2026-06-28",
+      "before_salt": "348",
+      "after_salt": "32",
+      "delta_salt": "-316",
+      "before_reads": "779",
+      "after_reads": "99"
+    },
+    {
+      "title": "怎么判断一个单位已经烂透了?",
+      "published_date": "2026-07-02",
+      "before_salt": "235",
+      "after_salt": "16",
+      "delta_salt": "-219",
+      "before_reads": "973",
+      "after_reads": "22"
+    },
+    {
+      "title": "职场中的人才，到底是「选拔」出来的还是「培养」出来的？",
+      "published_date": "2026-06-26",
+      "before_salt": "169",
+      "after_salt": "6",
+      "delta_salt": "-163",
+      "before_reads": "459",
+      "after_reads": "32"
+    },
+    {
+      "title": "为什么公司中层培养这么困难？培养中层的最大障碍到底是什么？",
+      "published_date": "2026-07-22",
+      "before_salt": "182",
+      "after_salt": "34",
+      "delta_salt": "-148",
+      "before_reads": "982",
+      "after_reads": "417"
+    },
+    {
+      "title": "好领导一般都什么样？",
+      "published_date": "2026-07-01",
+      "before_salt": "132",
+      "after_salt": "6",
+      "delta_salt": "-126",
+      "before_reads": "444",
+      "after_reads": "6"
+    },
+    {
+      "title": "领导提拔你的最根本的原因是什么？",
+      "published_date": "2026-07-16",
+      "before_salt": "110",
+      "after_salt": "6",
+      "delta_salt": "-104",
+      "before_reads": "517",
+      "after_reads": "50"
+    },
+    {
+      "title": "为什么越来越多的工厂开始涨薪留人了？",
+      "published_date": "2026-07-15",
+      "before_salt": "87",
+      "after_salt": "9",
+      "delta_salt": "-78",
+      "before_reads": "1047",
+      "after_reads": "366"
+    },
+    {
+      "title": "普通人怎么才能实现财务自由？",
+      "published_date": "2026-06-22",
+      "before_salt": "72",
+      "after_salt": "6",
+      "delta_salt": "-66",
+      "before_reads": "407",
+      "after_reads": "37"
+    },
+    {
+      "title": "为什么中建这种大央企也会发不出工资？",
+      "published_date": "2026-07-02",
+      "before_salt": "64",
+      "after_salt": "3",
+      "delta_salt": "-61",
+      "before_reads": "552",
+      "after_reads": "22"
+    },
+    {
+      "title": "中年失业出路在哪？",
+      "published_date": "2026-06-24",
+      "before_salt": "74",
+      "after_salt": "19",
+      "delta_salt": "-55",
+      "before_reads": "334",
+      "after_reads": "90"
+    },
+    {
+      "title": "下属做事主动性太低，推一下动一下，作为上级要怎么办，需要去提升哪方面的领导管理能力？",
+      "published_date": "2026-07-20",
+      "before_salt": "55",
+      "after_salt": "6",
+      "delta_salt": "-49",
+      "before_reads": "255",
+      "after_reads": "11"
+    },
+    {
+      "title": "如何看待大力提拔选拔年轻干部?",
+      "published_date": "2026-07-20",
+      "before_salt": "60",
+      "after_salt": "12",
+      "delta_salt": "-48",
+      "before_reads": "846",
+      "after_reads": "170"
+    },
+    {
+      "title": "为什么一个部门换领导后往往都容易面临整个部门大换血啊？",
+      "published_date": "2026-06-29",
+      "before_salt": "50",
+      "after_salt": "3",
+      "delta_salt": "-47",
+      "before_reads": "332",
+      "after_reads": "50"
+    },
+    {
+      "title": "为什么国企不把所有员工都按照劳务派遣的方式管理？",
+      "published_date": "2026-07-04",
+      "before_salt": "55",
+      "after_salt": "10",
+      "delta_salt": "-45",
+      "before_reads": "753",
+      "after_reads": "1"
+    },
+    {
+      "title": "销售那么挣钱，为什么大家不愿意做销售？",
+      "published_date": "2026-06-24",
+      "before_salt": "46",
+      "after_salt": "6",
+      "delta_salt": "-40",
+      "before_reads": "77",
+      "after_reads": "16"
+    },
+    {
+      "title": "什么事情是我当了老板才知道的？",
+      "published_date": "2026-06-26",
+      "before_salt": "43",
+      "after_salt": "4",
+      "delta_salt": "-39",
+      "before_reads": "133",
+      "after_reads": "46"
+    },
+    {
+      "title": "你是怎么发现职场都是一个草台班子的？？",
+      "published_date": "2026-07-02",
+      "before_salt": "38",
+      "after_salt": "6",
+      "delta_salt": "-32",
+      "before_reads": "99",
+      "after_reads": "18"
+    },
+    {
+      "title": "在职场久了我发现有些人能力一般般，领导却特别看重他，做任何事都会护着他，这是为什么呢？",
+      "published_date": "2026-07-22",
+      "before_salt": "38",
+      "after_salt": "6",
+      "delta_salt": "-32",
+      "before_reads": "277",
+      "after_reads": "26"
+    },
+    {
+      "title": "和领导相处有哪些红线不能碰？",
+      "published_date": "2026-07-22",
+      "before_salt": "49",
+      "after_salt": "24",
+      "delta_salt": "-25",
+      "before_reads": "654",
+      "after_reads": "185"
+    },
+    {
+      "title": "在知乎上泡这么久，工作、生活、工资还是没有起色是什么原因？",
+      "published_date": "2026-06-24",
+      "before_salt": "12",
+      "after_salt": "6",
+      "delta_salt": "-6",
+      "before_reads": "34",
+      "after_reads": "12"
+    },
+    {
+      "title": "何一最被低估的能力是什么：营销、产品、管理还是识人？",
+      "published_date": "2026-07-24",
+      "before_salt": "8",
+      "after_salt": "3",
+      "delta_salt": "-5",
+      "before_reads": "44",
+      "after_reads": "69"
+    },
+    {
+      "title": "公司高层明明不行，大老板为什么还不裁掉他们？",
+      "published_date": "2026-07-29",
+      "before_salt": "9",
+      "after_salt": "6",
+      "delta_salt": "-3",
+      "before_reads": "39",
+      "after_reads": "66"
+    },
+    {
+      "title": "从国企离职后在私企越混越迷茫，未来的路该怎么走？",
+      "published_date": "2026-07-19",
+      "before_salt": "9",
+      "after_salt": "8",
+      "delta_salt": "-1",
+      "before_reads": "50",
+      "after_reads": "29"
+    },
+    {
+      "title": "为什么很多小康家庭，到了中年会返贫？原因是什么？怎么破局？",
+      "published_date": "2026-07-28",
+      "before_salt": "14",
+      "after_salt": "16",
+      "delta_salt": "2",
+      "before_reads": "429",
+      "after_reads": "180"
+    },
+    {
+      "title": "公司倒闭前有什么征兆？",
+      "published_date": "2026-07-05",
+      "before_salt": "4",
+      "after_salt": "10",
+      "delta_salt": "6",
+      "before_reads": "261",
+      "after_reads": "69"
+    },
+    {
+      "title": "如果哪天你失业了，到处都找不到工作你该怎么办？",
+      "published_date": "2026-06-24",
+      "before_salt": "31",
+      "after_salt": "42",
+      "delta_salt": "11",
+      "before_reads": "428",
+      "after_reads": "290"
+    }
+  ],
+  "latest_records": [
+    {
+      "title": "什么性格的人适合当领导？",
+      "published_date": "2026-08-18",
+      "source_line": 364,
+      "period_reads": "4719",
+      "period_salt": "1220",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-08-27",
+          "2026-09-02"
+        ],
+        [
+          "2026-09-03",
+          "2026-09-09"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "1967",
+          "salt": "189",
+          "source_line": 180
+        },
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "1852",
+          "salt": "268",
+          "source_line": 224
+        },
+        {
+          "window": [
+            "2026-08-27",
+            "2026-09-02"
+          ],
+          "reads": "1492",
+          "salt": "243",
+          "source_line": 244
+        },
+        {
+          "window": [
+            "2026-09-03",
+            "2026-09-09"
+          ],
+          "reads": "1591",
+          "salt": "594",
+          "source_line": 266
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "7615",
+          "salt": "1774",
+          "source_line": 302
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "4719",
+          "salt": "1220",
+          "source_line": 364
+        }
+      ]
+    },
+    {
+      "title": "体制内，为什么领导一眼就能看出你是老实人？",
+      "published_date": "2026-08-18",
+      "source_line": 365,
+      "period_reads": "13061",
+      "period_salt": "983",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-08-27",
+          "2026-09-02"
+        ],
+        [
+          "2026-09-03",
+          "2026-09-09"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "2406",
+          "salt": "193",
+          "source_line": 182
+        },
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "1305",
+          "salt": "72",
+          "source_line": 225
+        },
+        {
+          "window": [
+            "2026-08-27",
+            "2026-09-02"
+          ],
+          "reads": "10855",
+          "salt": "520",
+          "source_line": 245
+        },
+        {
+          "window": [
+            "2026-09-03",
+            "2026-09-09"
+          ],
+          "reads": "6673",
+          "salt": "710",
+          "source_line": 267
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "22843",
+          "salt": "1644",
+          "source_line": 304
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "13061",
+          "salt": "983",
+          "source_line": 365
+        }
+      ]
+    },
+    {
+      "title": "为什么很多人，做到经理或总监，就再也上不去了？",
+      "published_date": "2026-07-22",
+      "source_line": 372,
+      "period_reads": "1528",
+      "period_salt": "273",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-04",
+          "2026-08-10"
+        ],
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-08-27",
+          "2026-09-02"
+        ],
+        [
+          "2026-09-03",
+          "2026-09-09"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "8136",
+          "salt": "1942",
+          "source_line": 47
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "10830",
+          "salt": "2684",
+          "source_line": 127
+        },
+        {
+          "window": [
+            "2026-08-04",
+            "2026-08-10"
+          ],
+          "reads": "1526",
+          "salt": "407",
+          "source_line": 9
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "2361",
+          "salt": "492",
+          "source_line": 191
+        },
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "1573",
+          "salt": "333",
+          "source_line": 229
+        },
+        {
+          "window": [
+            "2026-08-27",
+            "2026-09-02"
+          ],
+          "reads": "1296",
+          "salt": "239",
+          "source_line": 250
+        },
+        {
+          "window": [
+            "2026-09-03",
+            "2026-09-09"
+          ],
+          "reads": "660",
+          "salt": "74",
+          "source_line": 270
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "5635",
+          "salt": "1040",
+          "source_line": 315
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "1528",
+          "salt": "273",
+          "source_line": 372
+        }
+      ]
+    },
+    {
+      "title": "什么事情是你当了老板才知道的？",
+      "published_date": "2026-06-24",
+      "source_line": 386,
+      "period_reads": "1665",
+      "period_salt": "267",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-06-01",
+          "2026-06-30"
+        ],
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-04",
+          "2026-08-10"
+        ],
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-08-27",
+          "2026-09-02"
+        ],
+        [
+          "2026-09-03",
+          "2026-09-09"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-06-01",
+            "2026-06-30"
+          ],
+          "reads": "33169",
+          "salt": "12647",
+          "source_line": 38
+        },
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "11892",
+          "salt": "4607",
+          "source_line": 46
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "5093",
+          "salt": "1923",
+          "source_line": 169
+        },
+        {
+          "window": [
+            "2026-08-04",
+            "2026-08-10"
+          ],
+          "reads": "745",
+          "salt": "286",
+          "source_line": 20
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "576",
+          "salt": "123",
+          "source_line": 200
+        },
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "491",
+          "salt": "84",
+          "source_line": 237
+        },
+        {
+          "window": [
+            "2026-08-27",
+            "2026-09-02"
+          ],
+          "reads": "410",
+          "salt": "63",
+          "source_line": 256
+        },
+        {
+          "window": [
+            "2026-09-03",
+            "2026-09-09"
+          ],
+          "reads": "653",
+          "salt": "105",
+          "source_line": 278
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "2236",
+          "salt": "442",
+          "source_line": 338
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "1665",
+          "salt": "267",
+          "source_line": 386
+        }
+      ]
+    },
+    {
+      "title": "如何判断一个人是否有领导能力？",
+      "published_date": "2026-09-05",
+      "source_line": 357,
+      "period_reads": "803",
+      "period_salt": "174",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-03",
+          "2026-09-09"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-03",
+            "2026-09-09"
+          ],
+          "reads": "770",
+          "salt": "63",
+          "source_line": 258
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "967",
+          "salt": "87",
+          "source_line": 281
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "803",
+          "salt": "174",
+          "source_line": 357
+        }
+      ]
+    },
+    {
+      "title": "什么信号出现，就该果断选择跳槽？",
+      "published_date": "2026-10-04",
+      "source_line": 348,
+      "period_reads": "556",
+      "period_salt": "80",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "556",
+          "salt": "80",
+          "source_line": 348
+        }
+      ]
+    },
+    {
+      "title": "真的很好奇，现在基本没有35+的工作机会了，失业了的35+人群都去哪里挣钱了？",
+      "published_date": "2026-10-03",
+      "source_line": 350,
+      "period_reads": "1107",
+      "period_salt": "76",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "1107",
+          "salt": "76",
+          "source_line": 350
+        }
+      ]
+    },
+    {
+      "title": "为什么职场上会出现提拔一批，躺平一批？",
+      "published_date": "2026-08-18",
+      "source_line": 366,
+      "period_reads": "425",
+      "period_salt": "66",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-08-27",
+          "2026-09-02"
+        ],
+        [
+          "2026-09-03",
+          "2026-09-09"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "920",
+          "salt": "48",
+          "source_line": 184
+        },
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "232",
+          "salt": "28",
+          "source_line": 226
+        },
+        {
+          "window": [
+            "2026-08-27",
+            "2026-09-02"
+          ],
+          "reads": "138",
+          "salt": "12",
+          "source_line": 246
+        },
+        {
+          "window": [
+            "2026-09-03",
+            "2026-09-09"
+          ],
+          "reads": "82",
+          "salt": "16",
+          "source_line": 268
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "1353",
+          "salt": "92",
+          "source_line": 306
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "425",
+          "salt": "66",
+          "source_line": 366
+        }
+      ]
+    },
+    {
+      "title": "42岁，资深码农，失业了，求指导？",
+      "published_date": "2026-10-04",
+      "source_line": 344,
+      "period_reads": "713",
+      "period_salt": "59",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "713",
+          "salt": "59",
+          "source_line": 344
+        }
+      ]
+    },
+    {
+      "title": "40岁体制内中年突然被剥夺所有业务并被边缘化，请问如何调整心态?",
+      "published_date": "2026-10-02",
+      "source_line": 352,
+      "period_reads": "218",
+      "period_salt": "48",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "218",
+          "salt": "48",
+          "source_line": 352
+        }
+      ]
+    },
+    {
+      "title": "因为工作不到位，我批评了下属，下属甩脸子不搭理我，我该怎么处理她？",
+      "published_date": "2026-10-04",
+      "source_line": 346,
+      "period_reads": "447",
+      "period_salt": "43",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "447",
+          "salt": "43",
+          "source_line": 346
+        }
+      ]
+    },
+    {
+      "title": "两个领导斗法都拉拢我该保持中立还是选一边 ？",
+      "published_date": "2026-10-04",
+      "source_line": 347,
+      "period_reads": "192",
+      "period_salt": "30",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "192",
+          "salt": "30",
+          "source_line": 347
+        }
+      ]
+    },
+    {
+      "title": "发现职场是个「草台班子」后，我该怎么做？",
+      "published_date": "2026-10-04",
+      "source_line": 345,
+      "period_reads": "45",
+      "period_salt": "25",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "45",
+          "salt": "25",
+          "source_line": 345
+        }
+      ]
+    },
+    {
+      "title": "既为心腹，为什么反而会被领导批得最多、最狠？",
+      "published_date": "2026-08-23",
+      "source_line": 361,
+      "period_reads": "133",
+      "period_salt": "24",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-08-19",
+          "2026-08-25"
+        ],
+        [
+          "2026-08-27",
+          "2026-09-02"
+        ],
+        [
+          "2026-09-03",
+          "2026-09-09"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-08-19",
+            "2026-08-25"
+          ],
+          "reads": "322",
+          "salt": "17",
+          "source_line": 207
+        },
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "460",
+          "salt": "30",
+          "source_line": 218
+        },
+        {
+          "window": [
+            "2026-08-27",
+            "2026-09-02"
+          ],
+          "reads": "77",
+          "salt": "25",
+          "source_line": 241
+        },
+        {
+          "window": [
+            "2026-09-03",
+            "2026-09-09"
+          ],
+          "reads": "56",
+          "salt": "36",
+          "source_line": 262
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "584",
+          "salt": "99",
+          "source_line": 291
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "133",
+          "salt": "24",
+          "source_line": 361
+        }
+      ]
+    },
+    {
+      "title": "为什么大领导看人都很准呢？",
+      "published_date": "2026-08-19",
+      "source_line": 363,
+      "period_reads": "94",
+      "period_salt": "23",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-08-27",
+          "2026-09-02"
+        ],
+        [
+          "2026-09-03",
+          "2026-09-09"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "389",
+          "salt": "38",
+          "source_line": 177
+        },
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "67",
+          "salt": "24",
+          "source_line": 223
+        },
+        {
+          "window": [
+            "2026-08-27",
+            "2026-09-02"
+          ],
+          "reads": "43",
+          "salt": "8",
+          "source_line": 243
+        },
+        {
+          "window": [
+            "2026-09-03",
+            "2026-09-09"
+          ],
+          "reads": "16",
+          "salt": "8",
+          "source_line": 265
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "501",
+          "salt": "74",
+          "source_line": 299
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "94",
+          "salt": "23",
+          "source_line": 363
+        }
+      ]
+    },
+    {
+      "title": "互联网已经将绝大部分信息差抹除了，知识已经随处可以获得，为何大部分人依旧无法获得大幅突破？",
+      "published_date": "2026-10-03",
+      "source_line": 349,
+      "period_reads": "26",
+      "period_salt": "22",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "26",
+          "salt": "22",
+          "source_line": 349
+        }
+      ]
+    },
+    {
+      "title": "为什么绝大多数人的经验分享都是无效的？",
+      "published_date": "2026-10-02",
+      "source_line": 353,
+      "period_reads": "33",
+      "period_salt": "21",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "33",
+          "salt": "21",
+          "source_line": 353
+        }
+      ]
+    },
+    {
+      "title": "为什么有的领导身边能吸引很多人才，而有的领导却留不住核心骨干？",
+      "published_date": "2026-08-17",
+      "source_line": 367,
+      "period_reads": "245",
+      "period_salt": "20",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-08-27",
+          "2026-09-02"
+        ],
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "1371",
+          "salt": "177",
+          "source_line": 185
+        },
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "123",
+          "salt": "8",
+          "source_line": 227
+        },
+        {
+          "window": [
+            "2026-08-27",
+            "2026-09-02"
+          ],
+          "reads": "62",
+          "salt": "8",
+          "source_line": 247
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "1682",
+          "salt": "189",
+          "source_line": 307
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "245",
+          "salt": "20",
+          "source_line": 367
+        }
+      ]
+    },
+    {
+      "title": "自己带的团队里面的核心成员起冲突了怎么办?",
+      "published_date": "2026-10-06",
+      "source_line": 343,
+      "period_reads": "175",
+      "period_salt": "17",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "175",
+          "salt": "17",
+          "source_line": 343
+        }
+      ]
+    },
+    {
+      "title": "为什么说好团队是带出来的，不是管出来的？",
+      "published_date": "2026-10-03",
+      "source_line": 351,
+      "period_reads": "190",
+      "period_salt": "16",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "190",
+          "salt": "16",
+          "source_line": 351
+        }
+      ]
+    },
+    {
+      "title": "为什么越来越多的工厂开始涨薪留人了？",
+      "published_date": "2026-07-15",
+      "source_line": 378,
+      "period_reads": "287",
+      "period_salt": "16",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "1047",
+          "salt": "87",
+          "source_line": 59
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "1175",
+          "salt": "87",
+          "source_line": 148
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "68",
+          "salt": "3",
+          "source_line": 196
+        },
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "65",
+          "salt": "3",
+          "source_line": 232
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "366",
+          "salt": "9",
+          "source_line": 323
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "287",
+          "salt": "16",
+          "source_line": 378
+        }
+      ]
+    },
+    {
+      "title": "劳务派遣以后是否会占据主流？",
+      "published_date": "2026-08-25",
+      "source_line": 359,
+      "period_reads": "79",
+      "period_salt": "15",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-08-23",
+          "2026-08-29"
+        ],
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "640",
+          "salt": "55",
+          "source_line": 213
+        },
+        {
+          "window": [
+            "2026-08-27",
+            "2026-09-02"
+          ],
+          "reads": "214",
+          "salt": "16",
+          "source_line": 239
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "797",
+          "salt": "63",
+          "source_line": 286
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "79",
+          "salt": "15",
+          "source_line": 359
+        }
+      ]
+    },
+    {
+      "title": "基层工作现在的难点是什么？",
+      "published_date": "2026-07-21",
+      "source_line": 374,
+      "period_reads": "419",
+      "period_salt": "15",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-04",
+          "2026-08-10"
+        ],
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-08-27",
+          "2026-09-02"
+        ],
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "2097",
+          "salt": "524",
+          "source_line": 48
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "2646",
+          "salt": "654",
+          "source_line": 130
+        },
+        {
+          "window": [
+            "2026-08-04",
+            "2026-08-10"
+          ],
+          "reads": "237",
+          "salt": "66",
+          "source_line": 11
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "152",
+          "salt": "8",
+          "source_line": 193
+        },
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "84",
+          "salt": "16",
+          "source_line": 231
+        },
+        {
+          "window": [
+            "2026-08-27",
+            "2026-09-02"
+          ],
+          "reads": "78",
+          "salt": "10",
+          "source_line": 252
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "445",
+          "salt": "27",
+          "source_line": 318
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "419",
+          "salt": "15",
+          "source_line": 374
+        }
+      ]
+    },
+    {
+      "title": "跟领导汇报工作时，总被说抓不住重点，这该怎么办呀？",
+      "published_date": "2026-08-06",
+      "source_line": 368,
+      "period_reads": "532",
+      "period_salt": "13",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-07-12",
+          "2026-08-10"
+        ],
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "124",
+          "salt": "49",
+          "source_line": 110
+        },
+        {
+          "window": [
+            "2026-08-04",
+            "2026-08-10"
+          ],
+          "reads": "124",
+          "salt": "49",
+          "source_line": 5
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "8",
+          "salt": "12",
+          "source_line": 188
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "28",
+          "salt": "12",
+          "source_line": 310
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "532",
+          "salt": "13",
+          "source_line": 368
+        }
+      ]
+    },
+    {
+      "title": "为什么领导的心腹很少有异性？",
+      "published_date": "2026-08-25",
+      "source_line": 360,
+      "period_reads": "147",
+      "period_salt": "12",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-08-23",
+          "2026-08-29"
+        ],
+        [
+          "2026-09-03",
+          "2026-09-09"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "1064",
+          "salt": "88",
+          "source_line": 215
+        },
+        {
+          "window": [
+            "2026-08-27",
+            "2026-09-02"
+          ],
+          "reads": "421",
+          "salt": "28",
+          "source_line": 240
+        },
+        {
+          "window": [
+            "2026-09-03",
+            "2026-09-09"
+          ],
+          "reads": "60",
+          "salt": "4",
+          "source_line": 261
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "1253",
+          "salt": "100",
+          "source_line": 288
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "147",
+          "salt": "12",
+          "source_line": 360
+        }
+      ]
+    },
+    {
+      "title": "公司高层明明不行，大老板为什么还不裁掉他们？",
+      "published_date": "2026-07-29",
+      "source_line": 369,
+      "period_reads": "6",
+      "period_salt": "12",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-16",
+          "2026-09-14"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "39",
+          "salt": "9",
+          "source_line": 91
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "147",
+          "salt": "31",
+          "source_line": 115
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "66",
+          "salt": "6",
+          "source_line": 311
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "6",
+          "salt": "12",
+          "source_line": 369
+        }
+      ]
+    },
+    {
+      "title": "如果哪天你失业了，到处都找不到工作你该怎么办？",
+      "published_date": "2026-06-24",
+      "source_line": 384,
+      "period_reads": "103",
+      "period_salt": "12",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-06-01",
+          "2026-06-30"
+        ],
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-04",
+          "2026-08-10"
+        ],
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-09-03",
+          "2026-09-09"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-06-01",
+            "2026-06-30"
+          ],
+          "reads": "416",
+          "salt": "60",
+          "source_line": 36
+        },
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "428",
+          "salt": "31",
+          "source_line": 80
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "370",
+          "salt": "19",
+          "source_line": 167
+        },
+        {
+          "window": [
+            "2026-08-04",
+            "2026-08-10"
+          ],
+          "reads": "70",
+          "salt": "6",
+          "source_line": 19
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "110",
+          "salt": "36",
+          "source_line": 199
+        },
+        {
+          "window": [
+            "2026-09-03",
+            "2026-09-09"
+          ],
+          "reads": "37",
+          "salt": "6",
+          "source_line": 276
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "290",
+          "salt": "42",
+          "source_line": 336
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "103",
+          "salt": "12",
+          "source_line": 384
+        }
+      ]
+    },
+    {
+      "title": "男老板是在试探吗？还是我想多了？",
+      "published_date": "2026-08-21",
+      "source_line": 362,
+      "period_reads": "286",
+      "period_salt": "11",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-09-03",
+          "2026-09-09"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "419",
+          "salt": "13",
+          "source_line": 174
+        },
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "466",
+          "salt": "16",
+          "source_line": 222
+        },
+        {
+          "window": [
+            "2026-09-03",
+            "2026-09-09"
+          ],
+          "reads": "73",
+          "salt": "8",
+          "source_line": 264
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "1044",
+          "salt": "37",
+          "source_line": 296
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "286",
+          "salt": "11",
+          "source_line": 362
+        }
+      ]
+    },
+    {
+      "title": "领导提拔你的最根本的原因是什么？",
+      "published_date": "2026-07-16",
+      "source_line": 377,
+      "period_reads": "68",
+      "period_salt": "10",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "517",
+          "salt": "110",
+          "source_line": 58
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "556",
+          "salt": "110",
+          "source_line": 147
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "10",
+          "salt": "6",
+          "source_line": 195
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "50",
+          "salt": "6",
+          "source_line": 322
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "68",
+          "salt": "10",
+          "source_line": 377
+        }
+      ]
+    },
+    {
+      "title": "什么样的员工容易被提拔为管理层？",
+      "published_date": "2026-06-28",
+      "source_line": 381,
+      "period_reads": "50",
+      "period_salt": "10",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-06-01",
+          "2026-06-30"
+        ],
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-04",
+          "2026-08-10"
+        ],
+        [
+          "2026-08-23",
+          "2026-08-29"
+        ],
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-06-01",
+            "2026-06-30"
+          ],
+          "reads": "541",
+          "salt": "83",
+          "source_line": 27
+        },
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "779",
+          "salt": "348",
+          "source_line": 50
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "427",
+          "salt": "248",
+          "source_line": 160
+        },
+        {
+          "window": [
+            "2026-08-04",
+            "2026-08-10"
+          ],
+          "reads": "98",
+          "salt": "29",
+          "source_line": 15
+        },
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "31",
+          "salt": "32",
+          "source_line": 235
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "99",
+          "salt": "32",
+          "source_line": 331
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "50",
+          "salt": "10",
+          "source_line": 381
+        }
+      ]
+    },
+    {
+      "title": "如何看待大力提拔选拔年轻干部?",
+      "published_date": "2026-07-20",
+      "source_line": 375,
+      "period_reads": "63",
+      "period_salt": "9",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-04",
+          "2026-08-10"
+        ],
+        [
+          "2026-08-27",
+          "2026-09-02"
+        ],
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "846",
+          "salt": "60",
+          "source_line": 64
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "936",
+          "salt": "72",
+          "source_line": 132
+        },
+        {
+          "window": [
+            "2026-08-04",
+            "2026-08-10"
+          ],
+          "reads": "68",
+          "salt": "12",
+          "source_line": 12
+        },
+        {
+          "window": [
+            "2026-08-27",
+            "2026-09-02"
+          ],
+          "reads": "71",
+          "salt": "6",
+          "source_line": 253
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "170",
+          "salt": "12",
+          "source_line": 320
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "63",
+          "salt": "9",
+          "source_line": 375
+        }
+      ]
+    },
+    {
+      "title": "第一次带团队，成员做得没我快时，到底该不该自己上手？",
+      "published_date": "2026-10-02",
+      "source_line": 354,
+      "period_reads": "57",
+      "period_salt": "8",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "57",
+          "salt": "8",
+          "source_line": 354
+        }
+      ]
+    },
+    {
+      "title": "是什么让好员工开始摆烂的？",
+      "published_date": "2026-07-20",
+      "source_line": 376,
+      "period_reads": "104",
+      "period_salt": "7",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "373",
+          "salt": "22",
+          "source_line": 86
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "398",
+          "salt": "22",
+          "source_line": 134
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "104",
+          "salt": "7",
+          "source_line": 376
+        }
+      ]
+    },
+    {
+      "title": "在职场久了我发现有些人能力一般般，领导却特别看重他，做任何事都会护着他，这是为什么呢？",
+      "published_date": "2026-07-22",
+      "source_line": 373,
+      "period_reads": "36",
+      "period_salt": "6",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-16",
+          "2026-09-14"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "277",
+          "salt": "38",
+          "source_line": 74
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "294",
+          "salt": "47",
+          "source_line": 128
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "26",
+          "salt": "6",
+          "source_line": 316
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "36",
+          "salt": "6",
+          "source_line": 373
+        }
+      ]
+    },
+    {
+      "title": "公司倒闭前有什么征兆？",
+      "published_date": "2026-07-05",
+      "source_line": 379,
+      "period_reads": "135",
+      "period_salt": "6",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-16",
+          "2026-09-14"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "261",
+          "salt": "4",
+          "source_line": 106
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "294",
+          "salt": "13",
+          "source_line": 154
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "69",
+          "salt": "10",
+          "source_line": 324
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "135",
+          "salt": "6",
+          "source_line": 379
+        }
+      ]
+    },
+    {
+      "title": "领导总说“年轻人不要太计较工资，要先成长”，这句话到底是善意提醒，还是职场 PUA？",
+      "published_date": "2026-06-27",
+      "source_line": 382,
+      "period_reads": "5",
+      "period_salt": "6",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-06-01",
+          "2026-06-30"
+        ],
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-06-01",
+            "2026-06-30"
+          ],
+          "reads": "100",
+          "salt": "26",
+          "source_line": 28
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "5",
+          "salt": "6",
+          "source_line": 382
+        }
+      ]
+    },
+    {
+      "title": "职场中的人才，到底是「选拔」出来的还是「培养」出来的？",
+      "published_date": "2026-06-26",
+      "source_line": 383,
+      "period_reads": "23",
+      "period_salt": "6",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-06-01",
+          "2026-06-30"
+        ],
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-04",
+          "2026-08-10"
+        ],
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-06-01",
+            "2026-06-30"
+          ],
+          "reads": "353",
+          "salt": "251",
+          "source_line": 31
+        },
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "459",
+          "salt": "169",
+          "source_line": 53
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "87",
+          "salt": "28",
+          "source_line": 163
+        },
+        {
+          "window": [
+            "2026-08-04",
+            "2026-08-10"
+          ],
+          "reads": "12",
+          "salt": "6",
+          "source_line": 17
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "6",
+          "salt": "6",
+          "source_line": 198
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "32",
+          "salt": "6",
+          "source_line": 334
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "23",
+          "salt": "6",
+          "source_line": 383
+        }
+      ]
+    },
+    {
+      "title": "销售那么挣钱，为什么大家不愿意做销售？",
+      "published_date": "2026-06-24",
+      "source_line": 385,
+      "period_reads": "12",
+      "period_salt": "6",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-06-01",
+          "2026-06-30"
+        ],
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-09-03",
+          "2026-09-09"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-06-01",
+            "2026-06-30"
+          ],
+          "reads": "100",
+          "salt": "56",
+          "source_line": 37
+        },
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "77",
+          "salt": "46",
+          "source_line": 69
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "31",
+          "salt": "41",
+          "source_line": 168
+        },
+        {
+          "window": [
+            "2026-09-03",
+            "2026-09-09"
+          ],
+          "reads": "4",
+          "salt": "6",
+          "source_line": 277
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "16",
+          "salt": "6",
+          "source_line": 337
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "12",
+          "salt": "6",
+          "source_line": 385
+        }
+      ]
+    },
+    {
+      "title": "很多商业竞争，根本不存在所谓的“统一赢法”。",
+      "published_date": "2026-09-30",
+      "source_line": 355,
+      "period_reads": "5",
+      "period_salt": "4",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "5",
+          "salt": "4",
+          "source_line": 355
+        }
+      ]
+    },
+    {
+      "title": "明明承担了更多杂活，绩效却不如会展示成果的同事，该怎么调整？",
+      "published_date": "2026-09-30",
+      "source_line": 356,
+      "period_reads": "52",
+      "period_salt": "4",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "52",
+          "salt": "4",
+          "source_line": 356
+        }
+      ]
+    },
+    {
+      "title": "不走关系，不巴结领导，不讨好同事，只是认真做好工作，能得到提拔吗？",
+      "published_date": "2026-09-05",
+      "source_line": 358,
+      "period_reads": "0",
+      "period_salt": "4",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": false,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "0",
+          "salt": "4",
+          "source_line": 358
+        }
+      ]
+    },
+    {
+      "title": "为什么很多小康家庭，到了中年会返贫？原因是什么？怎么破局？",
+      "published_date": "2026-07-28",
+      "source_line": 370,
+      "period_reads": "49",
+      "period_salt": "3",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-04",
+          "2026-08-10"
+        ],
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-09-03",
+          "2026-09-09"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "429",
+          "salt": "14",
+          "source_line": 88
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "668",
+          "salt": "23",
+          "source_line": 117
+        },
+        {
+          "window": [
+            "2026-08-04",
+            "2026-08-10"
+          ],
+          "reads": "77",
+          "salt": "4",
+          "source_line": 7
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "81",
+          "salt": "13",
+          "source_line": 189
+        },
+        {
+          "window": [
+            "2026-09-03",
+            "2026-09-09"
+          ],
+          "reads": "25",
+          "salt": "3",
+          "source_line": 269
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "180",
+          "salt": "16",
+          "source_line": 312
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "49",
+          "salt": "3",
+          "source_line": 370
+        }
+      ]
+    },
+    {
+      "title": "为什么公司中层培养这么困难？培养中层的最大障碍到底是什么？",
+      "published_date": "2026-07-22",
+      "source_line": 371,
+      "period_reads": "139",
+      "period_salt": "3",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-04",
+          "2026-08-10"
+        ],
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-08-27",
+          "2026-09-02"
+        ],
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "982",
+          "salt": "182",
+          "source_line": 52
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "1615",
+          "salt": "246",
+          "source_line": 126
+        },
+        {
+          "window": [
+            "2026-08-04",
+            "2026-08-10"
+          ],
+          "reads": "466",
+          "salt": "64",
+          "source_line": 8
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "153",
+          "salt": "14",
+          "source_line": 190
+        },
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "100",
+          "salt": "9",
+          "source_line": 228
+        },
+        {
+          "window": [
+            "2026-08-27",
+            "2026-09-02"
+          ],
+          "reads": "68",
+          "salt": "3",
+          "source_line": 249
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "417",
+          "salt": "34",
+          "source_line": 314
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "139",
+          "salt": "3",
+          "source_line": 371
+        }
+      ]
+    },
+    {
+      "title": "为什么一个部门换领导后往往都容易面临整个部门大换血啊？",
+      "published_date": "2026-06-29",
+      "source_line": 380,
+      "period_reads": "36",
+      "period_salt": "3",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-06-01",
+          "2026-06-30"
+        ],
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-06-01",
+            "2026-06-30"
+          ],
+          "reads": "492",
+          "salt": "37",
+          "source_line": 24
+        },
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "332",
+          "salt": "50",
+          "source_line": 67
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "12",
+          "salt": "3",
+          "source_line": 197
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "50",
+          "salt": "3",
+          "source_line": 330
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "36",
+          "salt": "3",
+          "source_line": 380
+        }
+      ]
+    },
+    {
+      "title": "什么时候才会实现财富自由？",
+      "published_date": "2026-06-22",
+      "source_line": 388,
+      "period_reads": "39",
+      "period_salt": "3",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-06-01",
+          "2026-06-30"
+        ],
+        [
+          "2026-09-03",
+          "2026-09-09"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-06-01",
+            "2026-06-30"
+          ],
+          "reads": "385",
+          "salt": "12",
+          "source_line": 43
+        },
+        {
+          "window": [
+            "2026-09-03",
+            "2026-09-09"
+          ],
+          "reads": "11",
+          "salt": "3",
+          "source_line": 280
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "61",
+          "salt": "3",
+          "source_line": 342
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "39",
+          "salt": "3",
+          "source_line": 388
+        }
+      ]
+    },
+    {
+      "title": "中年失业出路在哪？",
+      "published_date": "2026-06-24",
+      "source_line": 387,
+      "period_reads": "70",
+      "period_salt": "2",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-06-01",
+          "2026-06-30"
+        ],
+        [
+          "2026-07-01",
+          "2026-07-30"
+        ],
+        [
+          "2026-08-04",
+          "2026-08-10"
+        ],
+        [
+          "2026-08-16",
+          "2026-08-23"
+        ],
+        [
+          "2026-08-27",
+          "2026-09-02"
+        ],
+        [
+          "2026-09-03",
+          "2026-09-09"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-06-01",
+            "2026-06-30"
+          ],
+          "reads": "682",
+          "salt": "63",
+          "source_line": 39
+        },
+        {
+          "window": [
+            "2026-07-01",
+            "2026-07-30"
+          ],
+          "reads": "334",
+          "salt": "74",
+          "source_line": 60
+        },
+        {
+          "window": [
+            "2026-07-12",
+            "2026-08-10"
+          ],
+          "reads": "273",
+          "salt": "52",
+          "source_line": 170
+        },
+        {
+          "window": [
+            "2026-08-04",
+            "2026-08-10"
+          ],
+          "reads": "29",
+          "salt": "6",
+          "source_line": 21
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-08-23"
+          ],
+          "reads": "20",
+          "salt": "10",
+          "source_line": 201
+        },
+        {
+          "window": [
+            "2026-08-23",
+            "2026-08-29"
+          ],
+          "reads": "10",
+          "salt": "3",
+          "source_line": 238
+        },
+        {
+          "window": [
+            "2026-08-27",
+            "2026-09-02"
+          ],
+          "reads": "18",
+          "salt": "3",
+          "source_line": 257
+        },
+        {
+          "window": [
+            "2026-09-03",
+            "2026-09-09"
+          ],
+          "reads": "23",
+          "salt": "6",
+          "source_line": 279
+        },
+        {
+          "window": [
+            "2026-08-16",
+            "2026-09-14"
+          ],
+          "reads": "90",
+          "salt": "19",
+          "source_line": 339
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "70",
+          "salt": "2",
+          "source_line": 387
+        }
+      ]
+    },
+    {
+      "title": "为什么现在的年轻人创业经常失败？",
+      "published_date": "2026-06-21",
+      "source_line": 389,
+      "period_reads": "9",
+      "period_salt": "2",
+      "read_earnings_alignment": "UNKNOWN",
+      "quadrant": "UNCLASSIFIED_ALIGNMENT_UNKNOWN",
+      "positive_disjoint_windows": [
+        [
+          "2026-06-01",
+          "2026-06-30"
+        ],
+        [
+          "2026-09-09",
+          "2026-10-07"
+        ]
+      ],
+      "repeat_positive_evidence": true,
+      "identity": "TITLE_TYPE_DATE_CANDIDATE",
+      "history": [
+        {
+          "window": [
+            "2026-06-01",
+            "2026-06-30"
+          ],
+          "reads": "296",
+          "salt": "94",
+          "source_line": 45
+        },
+        {
+          "window": [
+            "2026-09-09",
+            "2026-10-07"
+          ],
+          "reads": "9",
+          "salt": "2",
+          "source_line": 389
+        }
+      ]
+    }
+  ],
+  "latest_repeat_positive_count": 31,
+  "quadrant_counts": {
+    "UNCLASSIFIED_ALIGNMENT_UNKNOWN": 47
+  },
+  "hashes": {
+    "data/revenue_observations.csv": "fe0c984e9291de383f4bff8afc024c8b091305569138e16adb25589db4fcec8a",
+    "data/raw_exports/zhihu_income_export_2026-07-01_2026-07-30.csv": "acd2ee43d3fefb871896cdd00aa3cf61f05b02cc90ab2785b71d72d662d51539",
+    "data/raw_exports/zhihu_knowledge_income_detail_20260914_recent30_browser.csv": "29e27a37f406040f953749fa7aec51fbdb5f43a1b166cb1c3f29966d5019b2f2",
+    "data/raw_exports/zhihu_knowledge_income_detail_20261008_20260909_20261007_browser.csv": "4682d53a27d19f3503c6ae3b51399fdba2e720bee8c9424c78bb71a206ecb29f"
+  }
+}

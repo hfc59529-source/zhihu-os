@@ -1,0 +1,37 @@
+{
+  "scope": "PLATFORM_CONTENT_REVENUE_ONLY",
+  "window": [
+    "2026-09-09",
+    "2026-10-07"
+  ],
+  "all": {
+    "rows": 47,
+    "reads": 29186,
+    "salt": "3695",
+    "reported_yuan": "36.95",
+    "reported_yuan_per_1000_reads": "1.266017953813472212704721442"
+  },
+  "top10": {
+    "rows": 10,
+    "reads": 24795,
+    "salt": "3246",
+    "reported_yuan": "32.46",
+    "reported_yuan_per_1000_reads": "1.309134906231094978826376286"
+  },
+  "remaining37": {
+    "rows": 37,
+    "reads": 4391,
+    "salt": "449",
+    "reported_yuan": "4.49",
+    "reported_yuan_per_1000_reads": "1.022546117057617854702801184"
+  },
+  "title_type_candidate_links": 45,
+  "top10_audited_structure_links": 2,
+  "top10_mapped_production_links": 0,
+  "source_hashes": {
+    "data/revenue_observations.csv": "fe0c984e9291de383f4bff8afc024c8b091305569138e16adb25589db4fcec8a",
+    "data/l0_content_assets.csv": "9b84d14e045f26dd98e9db502c1b302720491b156f0587f4544be1a5139f8dca",
+    "data/production_article_map.csv": "9697eddecfd4e16c20e486e75a8d8b96b37bcd70e4894dac223308aeecbcb649",
+    "data/article_reasoning_features.csv": "9fc06ad68f5ed681bf3ae4f10ffdab0250305ecf9befcc00c5ca5502816e5d49"
+  }
+}
