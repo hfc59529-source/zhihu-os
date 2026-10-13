@@ -1,0 +1,32 @@
+{
+  "window": [
+    "2026-09-09",
+    "2026-10-07"
+  ],
+  "inclusive_calendar_days": 29,
+  "rows": 47,
+  "positive_rows": 47,
+  "total_salt": "3695",
+  "reported_yuan": "36.95",
+  "reads": 29186,
+  "top_n_share_percent": {
+    "1": "33.0176",
+    "2": "59.6211",
+    "5": "78.9445",
+    "10": "87.8484"
+  },
+  "before_window_rows": 33,
+  "before_window_salt": "3242",
+  "source_sha256": {
+    "data/revenue_observations.csv": "fe0c984e9291de383f4bff8afc024c8b091305569138e16adb25589db4fcec8a",
+    "data/raw_exports/zhihu_knowledge_income_detail_20261008_20260909_20261007_browser.csv": "4682d53a27d19f3503c6ae3b51399fdba2e720bee8c9424c78bb71a206ecb29f"
+  },
+  "raw_reconciliation": "47/47 PASS",
+  "target_yuan_scenario": 3000,
+  "baseline_calendar_month_reported_yuan": "49.09",
+  "target_to_baseline_ratio": "61.1122",
+  "cash_cost": "UNKNOWN",
+  "labor_hours": "UNKNOWN",
+  "net_profit": "UNKNOWN",
+  "repeatability": "UNKNOWN"
+}
